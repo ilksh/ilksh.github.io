@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "aqua" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
@@ -110,9 +110,6 @@ author:
   location         : "West Lafayette, IN, US"
   email            : "ksh727301@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "ksh727301@gmail.com"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin-square"
       url: "https://www.linkedin.com/in/kimsang0210/"
