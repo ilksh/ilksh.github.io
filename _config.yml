@@ -25,7 +25,7 @@ baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # "assets/image/profile.jpeg" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "Info"# overrides the website title displayed in the masthead, use " " for no title
+masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
  breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -104,7 +104,7 @@ analytics:
 # Site Author
 author:
   name             : "Aaron Kim"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "assets/image/profile.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an undergraduate student @ Purdue university, triple majoring in CS, DS, AI"
   location         : "West Lafayette, IN, United States"
   email            : "ksh727301@gmail.com"
