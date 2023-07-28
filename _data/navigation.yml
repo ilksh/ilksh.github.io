@@ -1,7 +1,7 @@
 # main links
 main:
   - title: "About"
-    url: "/https://ilksh.github.io/about/"
+    url: "https://ilksh.github.io/about/"
   - title: "Experience"
     url: "/experience/"
   - title: "Course Work"
