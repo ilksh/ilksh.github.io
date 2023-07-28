@@ -105,7 +105,7 @@ analytics:
 author:
   name             : "Aaron Kim"
   avatar           : "assets/image/profile.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an undergraduate student @ Purdue university, pursuing a triple major in Computer Science, Artificial Intelligence, and Data Science, with a minor in Statistics."
+  bio              : "I am an undergraduate student @ Purdue university, pursuing a triple major in CS, AI, and DS, with a minor in Statistics."
   location         : "West Lafayette, IN, United States"
   email            : "ksh727301@gmail.com"
   links:
