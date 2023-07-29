@@ -268,14 +268,5 @@ defaults:
       comments: true
       share: false
       related: false
-      # mathjax: true
-      # sidebar_main: true
-
-defaults:
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
+      mathjax: true
+      sidebar_main: true
