@@ -2,6 +2,7 @@
 title: "Introdcution"
 permalink: /about/
 layout: default
+author_profile: True
 ---
 
 ### My name is Aaron Kim
@@ -10,3 +11,4 @@ layout: default
 ### B
 #### C
 ##### D
+##### E
