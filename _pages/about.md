@@ -11,19 +11,19 @@ author_profile: True
 <dl class="timeline">
   <dt>2023-08-01</dt>
   <dd>
-    <img src="assets/image/armstrong_footprint.jpeg" alt="Image 1">
+    <img src="armstrong_footprint.jpeg" alt="Image 1">
     <p>Event 1 description goes here...</p>
   </dd>
 
   <dt>2023-08-02</dt>
   <dd>
-    <img src="assets/image/armstrong_footprint.jpeg" alt="Image 2">
+    <img src="armstrong_footprint.jpeg" alt="Image 2">
     <p>Event 2 description goes here...</p>
   </dd>
 
   <dt>2023-08-03</dt>
   <dd>
-    <img src="assets/image/armstrong_footprint.jpeg" alt="Image 3">
+    <img src="armstrong_footprint.jpeg" alt="Image 3">
     <p>Event 3 description goes here...</p>
   </dd>
 
