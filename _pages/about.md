@@ -4,10 +4,6 @@ permalink: /about/
 layout: default
 author_profile: True
 ---
-<figure class="align-left" style="margin-bottom:30px; margin-top:0px;">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/KiHyun%20Nam.png" alt="" 
-       style="margin-bottom: 0px; heigth: 320px; width: 320px;">
-</figure> 
 
 ## Experience
 
@@ -18,4 +14,9 @@ author_profile: True
 | 2015 - 2018| Job C                      |
 | 2018 - 2021| Job D                      |
 | 2021 - 2023| Job E                      |
+
+### My HTML/CSS Output
+
+<iframe src="/Users/sanghyunkim/Desktop/github.io/ilksh.github.io/_pages/ index.html" style="border: none; width: 100%; height: 400px;"></iframe>
+
 
