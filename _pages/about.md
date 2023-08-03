@@ -5,18 +5,50 @@ layout: default
 author_profile: True
 ---
 
-## Experience
+# My Vertical Timeline
 
-| Year       | Experience                 |
-|------------|----------------------------|
-| 2010 - 2012| Job A                      |
-| 2012 - 2015| Job B                      |
-| 2015 - 2018| Job C                      |
-| 2018 - 2021| Job D                      |
-| 2021 - 2023| Job E                      |
+```html
+<dl class="timeline">
+  <dt>2023-08-01</dt>
+  <dd>
+    <img src="assets/image/armstrong_footprint.jpeg" alt="Image 1">
+    <p>Event 1 description goes here...</p>
+  </dd>
 
-### My HTML/CSS Output
+  <dt>2023-08-02</dt>
+  <dd>
+    <img src="assets/image/armstrong_footprint.jpeg" alt="Image 2">
+    <p>Event 2 description goes here...</p>
+  </dd>
 
-<iframe src="_pages/index.html" style="border: none; width: 100%; height: 400px;"></iframe>
+  <dt>2023-08-03</dt>
+  <dd>
+    <img src="assets/image/armstrong_footprint.jpeg" alt="Image 3">
+    <p>Event 3 description goes here...</p>
+  </dd>
 
+  <!-- Add more events as needed -->
+</dl>
 
+<style>
+  dl.timeline {
+    margin: 0;
+    padding: 0;
+  }
+
+  dt {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  dd {
+    margin-bottom: 30px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+  }
+</style>
