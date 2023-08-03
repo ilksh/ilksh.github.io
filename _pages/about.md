@@ -17,6 +17,6 @@ author_profile: True
 
 ### My HTML/CSS Output
 
-<iframe src="/Users/sanghyunkim/Desktop/github.io/ilksh.github.io/_pages/ index.html" style="border: none; width: 100%; height: 400px;"></iframe>
+<iframe src="_pages/index.html" style="border: none; width: 100%; height: 400px;"></iframe>
 
 
