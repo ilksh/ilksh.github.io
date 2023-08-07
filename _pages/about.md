@@ -7,12 +7,5 @@ author_profile: True
 
 # My Vertical Timeline
 
-```mermaid
-timeline
-    title History of Social Media Platform
-    2002 : LinkedIn
-    2004 : Facebook
-         : Google
-    2005 : Youtube
-    2006 : Twitter
 
+{% include module.html image_path="armstrong_footprint.jpeg" title="Some title text" description="Some more text that will appear to the left of the image." %}
