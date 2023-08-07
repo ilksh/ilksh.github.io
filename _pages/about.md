@@ -7,5 +7,9 @@ author_profile: True
 
 # My Vertical Timeline
 
-
-{% include module.html image_path="armstrong_footprint.jpeg" title="Some title text" description="Some more text that will appear to the left of the image." %}
+<figure class="align-left" style="margin-bottom:30px; margin-top:0px;">
+  <img src="{{ site.url }}{{ site.baseurl }}_pages/armstrong_footprint.jpeg" alt="" 
+       style="margin-bottom: 0px; heigth: 320px; width: 320px;">
+</figure> 
+Purdue University
+Computer Science.
