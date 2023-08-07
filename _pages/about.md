@@ -7,7 +7,7 @@ excerpt: "About Me"
 search: true
 ---
  
-# My Vertical Timeline
+# About me
 
 <figure class="align-left" style="margin-bottom:30px; margin-top:0px;">
   <img src="armstrong_footprint.jpeg" alt="" 
