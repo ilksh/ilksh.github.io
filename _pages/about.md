@@ -77,10 +77,10 @@ b
 d
 
 ---
-### gallery 2
+### gallery 3
 
 
 <p float="left">
-  <img src="assets/image/armstrong_footprint.png" width="45%" />
-  <img src="assets/image/armstrong_footprint.png" width="45%" />
+  <img src="/Users/sanghyunkim/Desktop/GithubIo/ilksh.github.io/assets/image/armstrong_footprint.jpeg" width="45%" />
+  <img src="/Users/sanghyunkim/Desktop/GithubIo/ilksh.github.io/assets/image/armstrong_footprint.jpeg" width="45%" />
 </p>
