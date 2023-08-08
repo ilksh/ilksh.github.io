@@ -14,3 +14,37 @@ search: true
 Purdue University
 Computer Science.
 ---
+<p float="left">
+  <img src="armstrong_footprint.jpeg" width="45%" />
+  <img src="armstrong_footprint.jpeg" width="45%" />
+</p>
+
+| Syntax                                     | Description           |
+| ------------------------------------------ | --------------------- |
+| <img src="armstrong_footprint.jpeg" width="200"> | ## Title # ww |
+| Paragraph                                  | Text                  |
+
+<style>
+  .merged-row {
+    vertical-align: top;
+  }
+</style>
+
+<table>
+  <tr>
+    <th>Syntax</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td class="merged-row" rowspan="2">
+      <img src="armstrong_footprint.jpeg" width="200">
+      <h2>Title # ww</h2>
+    </td>
+    <td>Paragraph</td>
+  </tr>
+  <tr>
+    <td>Text</td>
+  </tr>
+</table>
+
+![Server Room](armstrong_footprint.jpeg "armstrong")
