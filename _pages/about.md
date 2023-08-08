@@ -87,5 +87,6 @@ d
      <div style="flex:1;padding-left:10px;">
           <img src="assets/image/armstrong_footprint.jpeg" width="300"/>
      </div>
-    
 </div>
+---
+![alt-text-1](armstrong_footprint.jpeg "title-1") ![alt-text-2](armstrong_footprint.jpeg "title-2")
