@@ -5,11 +5,12 @@ excerpt: "About Me"
 search: true
 ---
 
-<figure class="align-left" style="margin-bottom:30px; margin-top:0px;">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/image/armstrong_footprint.png" alt="" 
-       style="margin-bottom: 0px; heigth: 320px; width: 320px;">
-</figure> 
+## First Section
 
+<figure class="align-left" style="margin-bottom: 30px; margin-top: 0px;">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/image/armstrong_footprint.png" alt="" 
+       style="margin-bottom: 0px; height: 320px; width: 320px;">
+</figure>
 
 A
 
@@ -22,12 +23,16 @@ C
 E 
 
 F
----
+
+## Second Section
+
 <figure class="align-left" style="margin-bottom: 30px; margin-top: 0px;">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/image/armstrong_footprint.png" alt="" 
        style="margin-bottom: 0px; height: 320px; width: 320px; border-radius: 50%;">
 </figure>
----
+
+## Third Section
+
 <figure class="align-left" style="margin-bottom: 30px; margin-top: 0px;">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/image/armstrong_footprint.png" alt="" 
        style="margin-bottom: 0px; height: 320px; width: 320px; border-radius: 50%;">
@@ -35,14 +40,16 @@ F
     This is the caption for the image.
   </figcaption>
 </figure>
----
+
+## Fourth Section
+
 <figure class="align-left" style="margin-bottom: 30px; margin-top: 0px;">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/image/armstrong_footprint.png" alt="" 
        style="margin-bottom: 0px; height: 320px; width: 320px;">
 </figure>
 
 <div style="display: flex; align-items: center;">
-  <a href="[YOUR_LINK_HERE](https://github.com/ilksh/Baekjoon-Online-Judge)" style="margin-right: 20px;">
+  <a href="https://github.com/ilksh/Baekjoon-Online-Judge" style="margin-right: 20px;">
     <button style="padding: 10px 20px; background-color: #f2f2f2; border-radius: 5px; border: none;">
       Button Text
     </button>
@@ -57,5 +64,3 @@ F
 </div>
 
 ## D
-
-
