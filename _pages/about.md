@@ -80,8 +80,12 @@ d
 ### gallery 3
 
 
-<div style="display: flex; flex-direction: row;">>
-    <img src="assets/image/armstrong_footprint.jpeg" width="250" />
-    <img src="assets/image/armstrong_footprint.jpeg" width="250" />
+<div style="display:flex">
+     <div style="flex:1;padding-right:10px;">
+          <img src="assets/image/armstrong_footprint.jpeg" width="200"/>
+     </div>
+     <div style="flex:1;padding-left:10px;">
+          <img src="assets/image/armstrong_footprint.jpeg" width="300"/>
+     </div>
     
 </div>
