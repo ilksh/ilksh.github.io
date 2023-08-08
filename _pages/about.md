@@ -83,3 +83,12 @@ d
 | ![Image 1](armstrong_footprint.jpeg) | ![Image 2](armstrong_footprint.jpeg) |
 |:-----------------------------------------------:|:-----------------------------------------------:|
 | Caption for Image 1                            | Caption for Image 2                            |
+---
+<div style="display: flex;">
+  <div style="flex: 50%; padding: 10px;">
+    <img src="assets/image/armstrong_footprint.jpeg" alt="Image 1" style="width: 100%;">
+  </div>
+  <div style="flex: 50%; padding: 10px;">
+    <img src="assets/image/armstrong_footprint.jpeg" alt="Image 2" style="width: 100%;">
+  </div>
+</div>
