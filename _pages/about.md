@@ -82,10 +82,10 @@ d
 
 <div style="display:flex">
      <div style="flex:1;padding-right:10px;">
-          <img src="assets/image/armstrong_footprint.jpeg" width="200"/>
+           <img src="{{ site.url }}{{ site.baseurl }}/assets/image/armstrong_footprint.png", width="200"/>
      </div>
      <div style="flex:1;padding-left:10px;">
-          <img src="assets/image/armstrong_footprint.jpeg" width="300"/>
+          <img src="{{ site.url }}{{ site.baseurl }}/assets/image/armstrong_footprint.png", width="200"/>
      </div>
 </div>
 ---
@@ -93,6 +93,6 @@ d
 
 ---
 
-| ![Image 1](assets/image/armstrong_footprint.jpeg) | ![Image 2](assets/image/armstrong_footprint.jpeg) |
+| ![Image 1](_pages/armstrong_footprint.jpeg) | ![Image 2](_pages/armstrong_footprint.jpeg) |
 |:-----------------------------------------------:|:-----------------------------------------------:|
 | Caption for Image 1                            | Caption for Image 2                            |
