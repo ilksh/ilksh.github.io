@@ -78,5 +78,10 @@ d
 
 ---
 ### gallery 1
-| ![Image 1](armstrong_footprint.jpeg) | ![Image 2](armstrong_footprint.jpeg) |
 |:-----------------------:|:-----------------------:|
+| ![Image 1](armstrong_footprint.jpeg) | ![Image 2](armstrong_footprint.jpeg) |
+
+<p float="left">
+  <img src="armstrong_footprint.jpeg" width="45%" />
+  <img src="armstrong_footprint.jpeg" width="45%" />
+</p>
