@@ -80,7 +80,8 @@ d
 ### gallery 3
 
 
-<p float="left">
-  <img src="/Users/sanghyunkim/Desktop/GithubIo/ilksh.github.io/assets/image/armstrong_footprint.jpeg" width="45%" />
-  <img src="/Users/sanghyunkim/Desktop/GithubIo/ilksh.github.io/assets/image/armstrong_footprint.jpeg" width="45%" />
-</p>
+<div style="display: flex; flex-direction: row;">>
+    <img src="assets/image/armstrong_footprint.jpeg" width="250" />
+    <img src="assets/image/armstrong_footprint.jpeg" width="250" />
+    
+</div>
