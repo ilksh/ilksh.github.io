@@ -15,8 +15,8 @@ Purdue University
 Computer Science.
 ---
 <p float="left">
-  <img src="armstrong_footprint.jpeg" width="45%" />
-  <img src="armstrong_footprint.jpeg" width="45%" />
+  <img src="/Users/sanghyunkim/Desktop/githubio/ilksh.github.io/assets/image/armstrong_footprint.jpeg" width="45%" />
+  <img src="/Users/sanghyunkim/Desktop/githubio/ilksh.github.io/assets/image/armstrong_footprint.jpeg" width="45%" />
 </p>
 
 | Syntax                                     | Description           |
