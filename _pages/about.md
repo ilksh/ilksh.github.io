@@ -77,10 +77,11 @@ F
 
 ---
 ### gallery
-gallery2:
-  - url: "/Users/sanghyunkim/Desktop/GithubIo/ilksh.github.io/assets/image/armstrong_footprint.png"
-    image_path: "assets/image/armstrong_footprint.jpeg"
-    alt: "image 1"
- - url: "/Users/sanghyunkim/Desktop/GithubIo/ilksh.github.io/assets/image/armstrong_footprint.png"
-    image_path: "assets/image/armstrong_footprint.jpeg"
-    alt: "image 1"
+<div style="display: flex;">
+  <div style="flex: 50%; padding: 10px;">
+    <img src="assets/image/armstrong_footprint.jpeg" alt="Image 1" style="width: 100%;">
+  </div>
+  <div style="flex: 50%; padding: 10px;">
+    <img src="assets/image/armstrong_footprint.jpeg" alt="Image 2" style="width: 100%;">
+  </div>
+</div>
