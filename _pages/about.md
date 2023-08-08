@@ -79,9 +79,9 @@ F
 ### gallery
 <div style="display: flex;">
   <div style="flex: 50%; padding: 10px;">
-    <img src="assets/image/armstrong_footprint.jpeg" alt="Image 1" style="width: 100%;">
+    <img src="/Users/sanghyunkim/Desktop/GithubIo/ilksh.github.io/assets/image/armstrong_footprint.jpeg" alt="Image 1" style="width: 100%;">
   </div>
   <div style="flex: 50%; padding: 10px;">
-    <img src="assets/image/armstrong_footprint.jpeg" alt="Image 2" style="width: 100%;">
+    <img src="/Users/sanghyunkim/Desktop/GithubIo/ilksh.github.io/assets/image/armstrong_footprint.jpeg" alt="Image 2" style="width: 100%;">
   </div>
 </div>
