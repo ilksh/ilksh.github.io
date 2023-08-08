@@ -35,4 +35,14 @@ F
     This is the caption for the image.
   </figcaption>
 </figure>
+---
+<div style="display: flex; align-items: center;">
+  <div style="width: 320px; height: 320px; border-radius: 50%; overflow: hidden;">
+    <img src="{{ site.url }}{{ site.baseurl }}/assets/image/armstrong_footprint.png" alt="" 
+         style="width: 100%; height: 100%;">
+  </div>
+  <div style="width: 100px; height: 100px; background-color: #f2f2f2; margin-left: 20px; padding: 10px; border-radius: 5px;">
+    <p>This is the caption for the image.</p>
+  </div>
+</div>
 
