@@ -77,11 +77,10 @@ b
 d
 
 ---
-### gallery 1
-|:-----------------------:|:-----------------------:|
-| ![Image 1](armstrong_footprint.jpeg) | ![Image 2](armstrong_footprint.jpeg) |
+### gallery 2
+
 
 <p float="left">
-  <img src="armstrong_footprint.jpeg" width="45%" />
-  <img src="armstrong_footprint.jpeg" width="45%" />
+  <img src="assets/image/armstrong_footprint.png" width="45%" />
+  <img src="assets/image/armstrong_footprint.png" width="45%" />
 </p>
