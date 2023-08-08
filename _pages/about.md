@@ -72,10 +72,11 @@ F
 
 ## D
 
-
-
+a
+b
+d
 
 ---
 ### gallery 1
-| ![Image 1]("assets/image/armstrong_footprint.png") | ![Image 2]("assets/image/armstrong_footprint.png") |
+| ![Image 1](armstrong_footprint.jpeg) | ![Image 2](armstrong_footprint.jpeg) |
 
