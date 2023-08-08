@@ -90,3 +90,9 @@ d
 </div>
 ---
 ![alt-text-1](armstrong_footprint.jpeg "title-1") ![alt-text-2](armstrong_footprint.jpeg "title-2")
+
+---
+
+| ![Image 1](assets/image/armstrong_footprint.jpeg) | ![Image 2](assets/image/armstrong_footprint.jpeg) |
+|:-----------------------------------------------:|:-----------------------------------------------:|
+| Caption for Image 1                            | Caption for Image 2                            |
