@@ -79,4 +79,4 @@ d
 ---
 ### gallery 1
 | ![Image 1](armstrong_footprint.jpeg) | ![Image 2](armstrong_footprint.jpeg) |
-
+|:-----------------------:|:-----------------------:|
