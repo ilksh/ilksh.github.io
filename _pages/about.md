@@ -80,8 +80,6 @@ d
 ### gallery 3
 
 
-| ![Image 1](armstrong_footprint.jpeg) | ![Image 2](armstrong_footprint.jpeg) |
 |:-----------------------------------------------:|:-----------------------------------------------:|
+| ![Image 1](armstrong_footprint.jpeg) | ![Image 2](armstrong_footprint.jpeg) |
 | Caption for Image 1                            | Caption for Image 2                            |
----
-
