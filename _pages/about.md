@@ -9,3 +9,10 @@ search: true
   <img src="{{ site.url }}{{ site.baseurl }}/assets/image/armstrong_footprint.jpeg" alt="" 
        style="margin-bottom: 0px; heigth: 320px; width: 320px;">
 </figure> 
+
+
+A
+
+B
+
+C
