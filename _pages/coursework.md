@@ -16,7 +16,28 @@ search: true
 
 <figure class="align-left" style="margin-bottom: 30px; margin-top: 0px;">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/image/2022(Fall).png" alt="" 
-       style="margin-bottom: 0px; height: 230px; width: 260px; border-radius: 50%;">
+       style="margin-bottom: 0px; height: 270px; width: 500px;">
 </figure>
 
 ---
+
+
+# Purdue University - West Lafayette
+## Artificial Intelligence
+## Data Science
+## Computer Science 
+- Software Engineering track
+- Machine Intelligence
+
+---
+
+Purdue University - West Lafayette
+Artificial Intelligence
+Data Science
+Computer Science 
+     - Software Engineering track
+     - Machine Intelligence
+
+---
+
+![Image](/assets/image/2022(Fall).png)
