@@ -4,16 +4,15 @@ permalink: /course_work/
 search: true
 ---
 
-# Education
-## Purdue University - West Lafayetter
-### Computer Science (Concentration)
-- Software Engineering 
-- Machine Intelligence
-### Data Science
-### Artificial Intelligence
+$$
+\huge(Education) \\
+Purdue University - West Lafayette \\
+Computer Science (Concentration) \\
+
+Data Science \\
+Artificial Intelligence \\ 
+$$
 
 
-
-![Alt Text](ilksh.github.io/_pages/2022(Fall).png){:width="400px" height="auto"}
-
+<img src="assets/image/2022(Fall).png" alt="MarineGEO circle logo" style="height: 100px; width:100px;"/>
 ---

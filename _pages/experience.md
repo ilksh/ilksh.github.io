@@ -11,14 +11,15 @@ search: true
        style="margin-bottom: 0px; height: 230px; width: 260px; border-radius: 50%;">
 </figure>
 
-### Hackathon Mentor
-### _HelloWorld Purdue - Aug 2023_
 
-Sentence 1
+$$
+\large{Hackathon Mentor} \\
+\textit(HelloWorld Purdue - Aug 2023) \\ 
 
-Sentence 2
-
-Sentence 3
+Sentence 1 \\
+Sentence 2 \\
+Sentence 3 \\
+$$
 
 ---
 
