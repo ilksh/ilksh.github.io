@@ -15,7 +15,9 @@ search: true
 ### _HelloWorld Purdue - Aug 2023_
 
 Sentence 1
+
 Sentence 2
+
 Sentence 3
 
 ---
