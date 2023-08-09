@@ -15,10 +15,7 @@ search: true
 #### HelloWorld Purdue - Aug 2023
 
 I was a mentor
-
 aaaaaaaa
-
-bbbbbbb
 
 
 ---
