@@ -12,11 +12,11 @@ search: true
 </figure>
 
 ### Hackathon Mentor
-#### HelloWorld Purdue - Aug 2023
+### _HelloWorld Purdue - Aug 2023_
 
-I was a mentor
-aaaaaaaa
-
+Sentence 1
+Sentence 2
+Sentence 3
 
 ---
 
