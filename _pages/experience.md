@@ -35,7 +35,7 @@ Tutored CS course
 ---
 
 <figure class="align-left" style="margin-bottom: 30px; margin-top: 0px;">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/image/Nuvve.png" alt="" 
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/image/nuvve.jpeg" alt="" 
        style="margin-bottom: 0px; height: 320px; width: 320px; border-radius: 50%;">
 </figure>
 
