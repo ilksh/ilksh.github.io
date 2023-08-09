@@ -8,13 +8,16 @@ search: true
 
 <figure class="align-left" style="margin-bottom: 30px; margin-top: 0px;">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/image/helloworld.png" alt="" 
-       style="margin-bottom: 0px; height: 280px; width: 260px; border-radius: 50%;">
+       style="margin-bottom: 0px; height: 230px; width: 260px; border-radius: 50%;">
 </figure>
 
-### Hackathon Mentor
-#### HelloWorld Purdue - Aug 2023
+## Hackathon Mentor
+### HelloWorld Purdue - Aug 2023
 
 I was a mentor
+aaaaaaaa
+bbbbbbb
+
 
 ---
 
