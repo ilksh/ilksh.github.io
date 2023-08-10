@@ -13,8 +13,8 @@ search: true
 
 
 $$
-\large{Hackathon Mentor} \\
-\textit(HelloWorld Purdue - Aug 2023) \\ 
+Hackathon Mentor
+HelloWorld Purdue - Aug 2023 
 
 Sentence 1 \\
 Sentence 2 \\
