@@ -24,9 +24,9 @@ search: true
         html{
         scroll-behavior: smooth;
         }
-        body{
+        /* body{
         background: #ff7979;
-        }
+        } */ 
         ::selection{
         color: #fff;
         background: #ff7979;
