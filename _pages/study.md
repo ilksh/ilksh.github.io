@@ -7,14 +7,12 @@ search: true
 
 ### AAA
 
-<!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Responsive Timeline Design | CodingNepal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Users/sanghyunkim/Desktop/GithubIo/ilksh.github.io/_pages/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
