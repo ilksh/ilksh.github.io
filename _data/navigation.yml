@@ -7,7 +7,7 @@ main:
   - title: "Course Work"
     url: "/course_work/"
   - title: "Project"
-    url: "/project/"
+    url: "/project.html"
   - title: "Study"
     url: "/study/"
   #- title: "Quick-Start Guide"
