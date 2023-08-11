@@ -4,13 +4,6 @@ permalink: /course_work/
 search: true
 ---
 
-"---
-title: "Course Work"
-permalink: /course_work/
-search: true
----
-
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -165,13 +158,17 @@ search: true
 </head>
 <body>
  <p><strong>Purdue University - West Lafayette</strong></p>
-    <p><strong>Computer Science</strong></p>
+    <p><strong>Bachelor of Science in Computer Science</strong></p>
     <ul>
-        <li><em>Software Engineering</em></li>
-        <li><em>Machine Intelligence</em></li>
+        <p>Concentations in</p>
+        <ul>
+            <li><em>Software Engineering</em></li>
+            <li><em>Machine Intelligence</em></li>
+        </ul>
+        <p>Minor in Statistics </p>
     </ul>
-    <p><strong>Data Science</strong></p>
-    <p><strong>Artificial Intelligence</strong></p>
+    <p><strong>Bachelor of Science in Data Science</strong></p>
+    <p><strong>Bachelor of Science in Artificial Intelligence</strong></p>
   <div class="wrapper">
     <div class="center-line">
       <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
