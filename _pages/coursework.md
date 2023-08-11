@@ -59,12 +59,12 @@ html {
   align-items: center;
   justify-content: center;
   padding: 100px 0;
-  background-color: white;
+  background-color: #111;
 }
 .timeline {
-  width: 95%;
+  width: 120%;
   height: auto;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   position: relative;
 }
