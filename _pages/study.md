@@ -56,7 +56,7 @@ search: true
         justify-content: flex-end;
         }
         .wrapper .row section{
-        background: #fff;
+        background: gray;
         border-radius: 5px;
         width: calc(50% - 40px);
         padding: 20px;
@@ -67,7 +67,7 @@ search: true
         content: "";
         height: 15px;
         width: 15px;
-        background: #fff;
+        background: gray;
         top: 28px;
         z-index: -1;
         transform: rotate(45deg);
@@ -121,7 +121,7 @@ search: true
         .row section .bottom a{
         text-decoration: none;
         background: #ff7979;
-        color: #fff;
+        color: white;
         padding: 7px 15px;
         border-radius: 5px;
         /* font-size: 17px; */
@@ -174,7 +174,6 @@ search: true
           <span>1st Jan 2021</span>
         </div>
         <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p>
-        </div>
       </section>
     </div>
     <div class="row row-2">
