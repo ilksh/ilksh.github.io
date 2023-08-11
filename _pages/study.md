@@ -170,10 +170,6 @@ search: true
           <span class="title">Fall 2023</span>
         </div>
         <p>Probability<br>Elementry of Psychology</p>
-        <div class="bottom">
-          <a href="#">Read more</a>
-          <i>- Someone famous</i>
-        </div>
       </section>
     </div>
     <div class="row row-2">
