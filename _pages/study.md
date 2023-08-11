@@ -7,7 +7,6 @@ search: true
 
 ### new 
 
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,7 +24,7 @@ search: true
         scroll-behavior: smooth;
         }
         body{
-        background: #ff7979;
+        background:  #fff; /* Change background color to white */
         }
         ::selection{
         color: #fff;
@@ -41,7 +40,7 @@ search: true
         position: absolute;
         height: 100%;
         width: 4px;
-        background: #fff;
+        background: #b3ecff; /* Change timeline color to "#b3ecff" */
         left: 50%;
         top: 20px;
         transform: translateX(-50%);
@@ -56,7 +55,7 @@ search: true
         justify-content: flex-end;
         }
         .wrapper .row section{
-        background: #fff;
+        background: #b3ecff; /* Change box color to "#b3ecff" */
         border-radius: 5px;
         width: calc(50% - 40px);
         padding: 20px;
@@ -67,7 +66,7 @@ search: true
         content: "";
         height: 15px;
         width: 15px;
-        background: #fff;
+        background: #b3ecff; /* Change box color to "#b3ecff" */
         top: 28px;
         z-index: -1;
         transform: rotate(45deg);
@@ -87,7 +86,7 @@ search: true
         text-align: center;
         line-height: 40px;
         border-radius: 50%;
-        color: #ff7979;
+        color: #fff; /* Change font color to white */
         font-size: 17px;
         box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,0.08), 0 3px 0 4px rgba(0,0,0,0.05);
         }
@@ -158,7 +157,7 @@ search: true
             margin: 10px 0;
         }
     }
-    <style>
+    </style>
 </head>
 <body>
   <div class="wrapper">
@@ -167,7 +166,7 @@ search: true
     </div>
     <div class="row row-1">
       <section>
-        <i class="icon fas fa-home"></i>
+          <img src="/assets/image/Nuvve.png" alt="Nuvve Logo"> 
         <div class="details">
           <span class="title">Title of Section 1</span>
           <span>1st Jan 2021</span>
@@ -250,6 +249,5 @@ search: true
       </section>
     </div>
   </div>
-
 </body>
 </html>
