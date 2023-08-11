@@ -59,10 +59,10 @@ html {
   align-items: center;
   justify-content: center;
   padding: 100px 0;
-  background-color: #111;
+  background-color: white;
 }
 .timeline {
-  width: 80%;
+  width: 95%;
   height: auto;
   max-width: 800px;
   margin: 0 auto;
