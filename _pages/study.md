@@ -64,7 +64,7 @@ search: true
         content: "";
         height: 15px;
         width: 15px;
-        background: gray;
+        background: #b3ecff; /* change */
         top: 28px;
         z-index: -1;
         transform: rotate(45deg);
@@ -78,7 +78,7 @@ search: true
         .row section .icon,
         .center-line .scroll-icon{
         position: absolute;
-        background: #f2f2f2;
+        background: #b3ecff; /* change */
         height: 40px;
         width: 40px;
         text-align: center;
