@@ -24,9 +24,9 @@ search: true
         html{
         scroll-behavior: smooth;
         }
-        /* body{
-        background: #ff7979;
-        } */ 
+        body{
+        background: #00ccff;
+        } 
         ::selection{
         color: #fff;
         background: #ff7979;
@@ -158,10 +158,7 @@ search: true
             margin: 10px 0;
         }
         }
-
     </style>
-
-    
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
@@ -171,15 +168,12 @@ search: true
     </div>
     <div class="row row-1">
       <section>
-        <i class="icon fas fa-home"></i>
+        <img src="/Users/sanghyunkim/Desktop/GithubIo/ilksh.github.io/assets/image/helloworld.png" alt="Home" class="icon">
         <div class="details">
           <span class="title">Title of Section 1</span>
           <span>1st Jan 2021</span>
         </div>
         <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p>
-        <div class="bottom">
-          <a href="#">Read more</a>
-          <i>- Someone famous</i>
         </div>
       </section>
     </div>
