@@ -54,7 +54,7 @@ html {
 }
 .container {
   min-height: 100vh;
-  width: 120%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,9 +62,9 @@ html {
   background-color: #111;
 }
 .timeline {
-  width: 120%;
+  width: 80%;
   height: auto;
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
   position: relative;
 }
