@@ -4,171 +4,153 @@ permalink: /course_work/
 search: true
 ---
 
-### new 4
+### new 5
 
-<html lang="en">
-<head>
-  <title> Vertical Timeline </title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-    *{
-        margin:0;
-        padding:0;
-        box-sizing: border-box;
-    }
-    body{
-        font-family: 'Poppins', sans-serif;
-    }
-    .timeline-section{
-        background-color: #24292d;
-        min-height: 100vh;
-        padding: 100px 15px;
-    }
-    .timeline-items{
-        max-width: 1000px;
-        margin:auto;
-        display: flex;
-        flex-wrap: wrap;
-        position: relative;
-    }
-    .timeline-items::before{
-        content: '';
-        position: absolute;
-        width: 2px;
-        height: 100%;
-        background-color: #2f363e;
-        left: calc(50% - 1px);
-    }
-    .timeline-item{
-        margin-bottom: 40px;
-        width: 100%;
-        position: relative;
-    }
-    .timeline-item:last-child{
-        margin-bottom: 0;
-    }
-    .timeline-item:nth-child(odd){
-        padding-right: calc(50% + 30px);
-        text-align: right;
-    }
-    .timeline-item:nth-child(even){
-        padding-left: calc(50% + 30px);
-    }
-    .timeline-dot{
-        height: 16px;
-        width: 16px;
-        background-color: #eaa023;
-        position: absolute;
-        left: calc(50% - 8px);
-        border-radius: 50%;
-        top:10px;
-    }
-    .timeline-date{
-        font-size: 18px;
-        color: #eaa023;
-        margin:6px 0 15px;
-    }
-    .timeline-content{
-        background-color: #2f363e;
-        padding: 30px;
-        border-radius: 5px;
-    }
-    .timeline-content h3{
-        font-size: 20px;
-        color: #ffffff;
-        margin:0 0 10px;
-        text-transform: capitalize;
-        font-weight: 500;
-    }
-    .timeline-content p{
-        color: #c8c8c8;
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 22px;
-    }
-    /* responsive */
-    @media(max-width: 767px){
-        .timeline-items::before{
-            left: 7px;
-        }
-        .timeline-item:nth-child(odd){
-            padding-right: 0;
-            text-align: left;
-        }
-        .timeline-item:nth-child(odd),
-        .timeline-item:nth-child(even){
-            padding-left: 37px;
-        }
-        .timeline-dot{
-            left:0;
-        }
-    }
-    <style>
-</head>
-<body>
-<section class="timeline-section">
-	<div class="timeline-items">
-		<div class="timeline-item">
-			<div class="timeline-dot"></div>
-			<div class="timeline-date">2015</div>
-			<div class="timeline-content">
-				<h3>timeline item title</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-			</div>
-		</div>
-		<div class="timeline-item">
-			<div class="timeline-dot"></div>
-			<div class="timeline-date">2016</div>
-			<div class="timeline-content">
-				<h3>timeline item title</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-			</div>
-		</div>
-		<div class="timeline-item">
-			<div class="timeline-dot"></div>
-			<div class="timeline-date">2017</div>
-			<div class="timeline-content">
-				<h3>timeline item title</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-			</div>
-		</div>
-		<div class="timeline-item">
-			<div class="timeline-dot"></div>
-			<div class="timeline-date">2018</div>
-			<div class="timeline-content">
-				<h3>timeline item title</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-			</div>
-		</div>
-		<div class="timeline-item">
-			<div class="timeline-dot"></div>
-			<div class="timeline-date">2019</div>
-			<div class="timeline-content">
-				<h3>timeline item title</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-			</div>
-		</div>
-		<div class="timeline-item">
-			<div class="timeline-dot"></div>
-			<div class="timeline-date">2020</div>
-			<div class="timeline-content">
-				<h3>timeline item title</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-			</div>
-		</div>
-		<div class="timeline-item">
-			<div class="timeline-dot"></div>
-			<div class="timeline-date">2021</div>
-			<div class="timeline-content">
-				<h3>timeline item title</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-			</div>
-		</div>
-	</div>
-</section>
+<div class="container">
+  <div class="timeline">
+    <ul>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">20th may, 2010</h3>
+          <h1>Heading 1</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">20th may, 2010</h3>
+          <h1>Heading 2</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">20th may, 2010</h3>
+          <h1>Heading 3</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+        </div>
+      </li>
+      <li>
+        <div class="timeline-content">
+          <h3 class="date">20th may, 2010</h3>
+          <h1>Heading 4</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora ab laudantium voluptatibus aut eos placeat laborum, quibusdam exercitationem labore.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
 
-</body>
-</html>
+<style>
+/* Paste your CSS code here */
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Montserrat";
+}
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  background-color: #111;
+}
+.timeline {
+  width: 80%;
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
 
+.timeline ul {
+  list-style: none;
+}
+.timeline ul li {
+  padding: 20px;
+  background-color: #1e1f22;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.timeline ul li:last-child {
+  margin-bottom: 0;
+}
+.timeline-content h1 {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+.timeline-content p {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 300;
+}
+.timeline-content .date {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+@media only screen and (min-width: 768px) {
+  .timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: gray;
+  }
+  .timeline ul li {
+    width: 50%;
+    position: relative;
+    margin-bottom: 50px;
+  }
+  .timeline ul li:nth-child(odd) {
+    float: left;
+    clear: right;
+    transform: translateX(-30px);
+    border-radius: 20px 0px 20px 20px;
+  }
+  .timeline ul li:nth-child(even) {
+    float: right;
+    clear: left;
+    transform: translateX(30px);
+    border-radius: 0px 20px 20px 20px;
+  }
+  .timeline ul li::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: gray;
+    top: 0px;
+  }
+  .timeline ul li:nth-child(odd)::before {
+    transform: translate(50%, -50%);
+    right: -30px;
+  }
+  .timeline ul li:nth-child(even)::before {
+    transform: translate(-50%, -50%);
+    left: -30px;
+  }
+  .timeline-content .date {
+    position: absolute;
+    top: -30px;
+  }
+  .timeline ul li:hover::before {
+    background-color: aqua;
+  }
+}
+
+</style>
