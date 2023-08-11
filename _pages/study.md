@@ -166,12 +166,10 @@ search: true
     </div>
     <div class="row row-1">
       <section>
-          <img src="/assets/image/Nuvve.png" alt="Nuvve Logo"> 
         <div class="details">
-          <span class="title">Title of Section 1</span>
-          <span>1st Jan 2021</span>
+          <span class="title">Fall 2023</span>
         </div>
-        <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p>
+        <p>Probability<br>Elementry of Psychology</p>
         <div class="bottom">
           <a href="#">Read more</a>
           <i>- Someone famous</i>
