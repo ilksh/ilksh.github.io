@@ -24,9 +24,6 @@ search: true
         html{
         scroll-behavior: smooth;
         }
-        body{
-        background: #00ccff;
-        } 
         ::selection{
         color: #fff;
         background: #ff7979;
@@ -168,7 +165,6 @@ search: true
     </div>
     <div class="row row-1">
       <section>
-        <img src="/Users/sanghyunkim/Desktop/GithubIo/ilksh.github.io/assets/image/helloworld.png" alt="Home" class="icon">
         <div class="details">
           <span class="title">Title of Section 1</span>
           <span>1st Jan 2021</span>
