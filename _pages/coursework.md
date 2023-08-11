@@ -4,7 +4,7 @@ permalink: /course_work/
 search: true
 ---
 
-### new 3
+### new 4
 
 <html lang="en">
 <head>
@@ -88,7 +88,6 @@ search: true
         font-weight: 300;
         line-height: 22px;
     }
-
     /* responsive */
     @media(max-width: 767px){
         .timeline-items::before{
@@ -109,7 +108,6 @@ search: true
     <style>
 </head>
 <body>
-
 <section class="timeline-section">
 	<div class="timeline-items">
 		<div class="timeline-item">
