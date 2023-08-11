@@ -9,240 +9,167 @@ search: true
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Responsive Timeline Design | CodingNepal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Vertical Timeline </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        /* Paste your CSS code here */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-        *{
-        margin: 0;
-        padding: 0;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    *{
+        margin:0;
+        padding:0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-        }
-        html{
-        scroll-behavior: smooth;
-        }
-        ::selection{
-        color: #fff;
-        background: #ff7979;
-        }
-        .wrapper{
-        max-width: 1080px;
-        margin: 50px auto;
-        padding: 0 20px;
+    }
+    body{
+        font-family: 'Poppins', sans-serif;
+    }
+    .timeline-section{
+        background-color: #24292d;
+        min-height: 100vh;
+        padding: 100px 15px;
+    }
+    .timeline-items{
+        max-width: 1000px;
+        margin:auto;
+        display: flex;
+        flex-wrap: wrap;
         position: relative;
-        }
-        .wrapper .center-line{
+    }
+    .timeline-items::before{
+        content: '';
         position: absolute;
+        width: 2px;
         height: 100%;
-        width: 4px;
-        background: #fff;
-        left: 50%;
-        top: 20px;
-        transform: translateX(-50%);
-        }
-        .wrapper .row{
-        display: flex;
-        }
-        .wrapper .row-1{
-        justify-content: flex-start;
-        }
-        .wrapper .row-2{
-        justify-content: flex-end;
-        }
-        .wrapper .row section{
-        background: gray;
-        border-radius: 5px;
-        width: calc(50% - 40px);
-        padding: 20px;
+        background-color: #2f363e;
+        left: calc(50% - 1px);
+    }
+    .timeline-item{
+        margin-bottom: 40px;
+        width: 100%;
         position: relative;
-        }
-        .wrapper .row section::before{
+    }
+    .timeline-item:last-child{
+        margin-bottom: 0;
+    }
+    .timeline-item:nth-child(odd){
+        padding-right: calc(50% + 30px);
+        text-align: right;
+    }
+    .timeline-item:nth-child(even){
+        padding-left: calc(50% + 30px);
+    }
+    .timeline-dot{
+        height: 16px;
+        width: 16px;
+        background-color: #eaa023;
         position: absolute;
-        content: "";
-        height: 15px;
-        width: 15px;
-        background: #b3ecff; /* change */
-        top: 28px;
-        z-index: -1;
-        transform: rotate(45deg);
-        }
-        .row-1 section::before{
-        right: -7px;
-        }
-        .row-2 section::before{
-        left: -7px;
-        }
-        .row section .icon,
-        .center-line .scroll-icon{
-        position: absolute;
-        background: #b3ecff; /* change */
-        height: 40px;
-        width: 40px;
-        text-align: center;
-        line-height: 40px;
+        left: calc(50% - 8px);
         border-radius: 50%;
-        color: #ff7979;
-        font-size: 17px;
-        box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,0.08), 0 3px 0 4px rgba(0,0,0,0.05);
-        }
-        .center-line .scroll-icon{
-        bottom: 0px;
-        left: 50%;
-        font-size: 25px;
-        transform: translateX(-50%);
-        }
-        .row-1 section .icon{
-        top: 15px;
-        right: -60px;
-        }
-        .row-2 section .icon{
-        top: 15px;
-        left: -60px;
-        }
-        .row section .details,
-        .row section .bottom{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        }
-        .row section .details .title{
-        font-size: 22px;
-        font-weight: 600;
-        }
-        .row section p{
-        margin: 10px 0 17px 0;
-        }
-        .row section .bottom a{
-        text-decoration: none;
-        background: #ff7979;
-        color: white;
-        padding: 7px 15px;
+        top:10px;
+    }
+    .timeline-date{
+        font-size: 18px;
+        color: #eaa023;
+        margin:6px 0 15px;
+    }
+    .timeline-content{
+        background-color: #2f363e;
+        padding: 30px;
         border-radius: 5px;
-        /* font-size: 17px; */
-        font-weight: 400;
-        transition: all 0.3s ease;
+    }
+    .timeline-content h3{
+        font-size: 20px;
+        color: #ffffff;
+        margin:0 0 10px;
+        text-transform: capitalize;
+        font-weight: 500;
+    }
+    .timeline-content p{
+        color: #c8c8c8;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 22px;
+    }
+    /* responsive */
+    @media(max-width: 767px){
+        .timeline-items::before{
+            left: 7px;
         }
-        .row section .bottom a:hover{
-        transform: scale(0.97);
+        .timeline-item:nth-child(odd){
+            padding-right: 0;
+            text-align: left;
         }
-        @media(max-width: 790px){
-        .wrapper .center-line{
-            left: 40px;
+        .timeline-item:nth-child(odd),
+        .timeline-item:nth-child(even){
+            padding-left: 37px;
         }
-        .wrapper .row{
-            margin: 30px 0 3px 60px;
+        .timeline-dot{
+            left:0;
         }
-        .wrapper .row section{
-            width: 100%;
-        }
-        .row-1 section::before{
-            left: -7px;
-        }
-        .row-1 section .icon{
-            left: -60px;
-        }
-        }
-        @media(max-width: 440px){
-        .wrapper .center-line,
-        .row section::before,
-        .row section .icon{
-            display: none;
-        }
-        .wrapper .row{
-            margin: 10px 0;
-        }
-        }
-    </style>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    }
+  <style>  
 </head>
 <body>
-  <div class="wrapper">
-    <div class="center-line">
-      <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
-    </div>
-    <div class="row row-1">
-      <section>
-        <div class="details">
-          <span class="title">Title of Section 1</span>
-          <span>1st Jan 2021</span>
-        </div>
-        <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p>
-      </section>
-    </div>
-    <div class="row row-2">
-      <section>
-        <i class="icon fas fa-star"></i>
-        <div class="details">
-          <span class="title">Title of Section 2</span>
-          <span>2nd Jan 2021</span>
-        </div>
-        <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p>
-        <div class="bottom">
-          <a href="#">Read more</a>
-          <i>- Someone famous</i>
-        </div>
-      </section>
-    </div>
-    <div class="row row-1">
-      <section>
-        <i class="icon fas fa-rocket"></i>
-        <div class="details">
-          <span class="title">Title of Section 3</span>
-          <span>3rd Jan 2021</span>
-        </div>
-        <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p>
-        <div class="bottom">
-          <a href="#">Read more</a>
-          <i>- Someone famous</i>
-        </div>
-      </section>
-    </div>
-    <div class="row row-2">
-      <section>
-        <i class="icon fas fa-globe"></i>
-        <div class="details">
-          <span class="title">Title of Section 4</span>
-          <span>4th Jan 2021</span>
-        </div>
-        <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p>
-        <div class="bottom">
-          <a href="#">Read more</a>
-          <i>- Someone famous</i>
-        </div>
-      </section>
-    </div>
-    <div class="row row-1">
-      <section>
-        <i class="icon fas fa-paper-plane"></i>
-        <div class="details">
-          <span class="title">Title of Section 5</span>
-          <span>5th Jan 2021</span>
-        </div>
-        <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p>
-        <div class="bottom">
-          <a href="#">Read more</a>
-          <i>- Someone famous</i>
-        </div>
-      </section>
-    </div>
-    <div class="row row-2">
-      <section>
-        <i class="icon fas fa-map-marker-alt"></i>
-        <div class="details">
-          <span class="title">Title of Section 6</span>
-          <span>6th Jan 2021</span>
-        </div>
-        <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p>
-        <div class="bottom">
-          <a href="#">Read more</a>
-          <i>- Someone famous</i>
-        </div>
-      </section>
-    </div>
-  </div>
+
+<section class="timeline-section">
+	<div class="timeline-items">
+		<div class="timeline-item">
+			<div class="timeline-dot"></div>
+			<div class="timeline-date">2015</div>
+			<div class="timeline-content">
+				<h3>timeline item title</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+			</div>
+		</div>
+		<div class="timeline-item">
+			<div class="timeline-dot"></div>
+			<div class="timeline-date">2016</div>
+			<div class="timeline-content">
+				<h3>timeline item title</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+			</div>
+		</div>
+		<div class="timeline-item">
+			<div class="timeline-dot"></div>
+			<div class="timeline-date">2017</div>
+			<div class="timeline-content">
+				<h3>timeline item title</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+			</div>
+		</div>
+		<div class="timeline-item">
+			<div class="timeline-dot"></div>
+			<div class="timeline-date">2018</div>
+			<div class="timeline-content">
+				<h3>timeline item title</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+			</div>
+		</div>
+		<div class="timeline-item">
+			<div class="timeline-dot"></div>
+			<div class="timeline-date">2019</div>
+			<div class="timeline-content">
+				<h3>timeline item title</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+			</div>
+		</div>
+		<div class="timeline-item">
+			<div class="timeline-dot"></div>
+			<div class="timeline-date">2020</div>
+			<div class="timeline-content">
+				<h3>timeline item title</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+			</div>
+		</div>
+		<div class="timeline-item">
+			<div class="timeline-dot"></div>
+			<div class="timeline-date">2021</div>
+			<div class="timeline-content">
+				<h3>timeline item title</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+			</div>
+		</div>
+	</div>
+</section>
 
 </body>
 </html>

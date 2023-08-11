@@ -9,9 +9,8 @@ search: true
     <!--title -->
     <div class="row no-gutters bg-black mb-5 mb-lg-0">
       <div class="workpadding">
-        <h2 class="text-white featured-text"> Selected Work Experience</h2>   
+        <h2 class="text-white featured-text"> Experience</h2>   
         <br>
-          <p class="text-white-50">Please see my <a href="https://www.linkedin.com/in/madelinemzhang/">LinkedIn</a> for the complete list of my past work experiences.</p>   
       </div>
     </div>
     <!--title -->
