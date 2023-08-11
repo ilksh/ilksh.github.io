@@ -104,7 +104,7 @@ search: true
         content: "";
         position: absolute;
         top: 0;
-        left: 30%; /* change */
+        left: 50%;
         transform: translateX(-50%);
         width: 2px;
         height: 100%;
