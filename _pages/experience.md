@@ -17,7 +17,7 @@ search: true
     <!--title -->
     <div class="row justify-content-center no-gutters bg-black mb-5 mb-lg-0">
       <div class="col-lg-2 text-center">
-        <img class="circularlogo" src="ilksh.github.io/assets/image/Nuvve.png" alt="googlelogo.jpg" height="200">
+        <img class="circularlogo" src="/assets/image/Nuvve.png" alt="googlelogo.jpg" height="200">
       </div>
       <!--google-->
       <div class="col-lg-10">
@@ -132,6 +132,7 @@ search: true
           <div class="col-lg-2 text-center">
             <img class="circularlogo" src="public/img/mit.png" alt="mit.png" height="200">
           </div>
+
           <div class="col-lg-10">
             <div class="bg-black text-center h-100 project">
               <div class="d-flex h-100">
