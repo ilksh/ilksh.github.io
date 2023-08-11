@@ -154,6 +154,10 @@ search: true
             margin: 10px 0;
         }
     }
+     ul.sub-bullet {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -169,16 +173,23 @@ search: true
     </ul>
     <p><strong>Bachelor of Science in Data Science</strong></p>
     <p><strong>Bachelor of Science in Artificial Intelligence</strong></p>
-  <div class="wrapper">
+   <div class="wrapper" style="margin-left: 40px;"> <!-- Moved timeline to the right -->
     <div class="center-line">
       <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
     </div>
     <div class="row row-1">
       <section>
+       <img src="/assets/image/nuvve.jpeg" alt="Image Description" class="icon">
         <div class="details">
           <span class="title">Fall 2023</span>
         </div>
-        <p>Applied Regression Analysis<br>Data Structure and Algorithm<br>Statistical Theory<br>Computer Architecture<br>Data Mine Seminar III</p>
+         <ul class="sub-bullet">
+            <li>Applied Regression Analysis</li>
+            <li>Data Structure and Algorithm</li>
+            <li>Statistical Theory</li>
+            <li>Computer Architecture</li>
+            <li>Data Mine Seminar III</li>
+        </ul>
       </section>
     </div>
     <div class="row row-2">
@@ -206,35 +217,6 @@ search: true
         </div>
         <p>Object Oriented Programming (JAVA)<br>Multivariable Calculus<br>Data Mine Seminar I</p>
       </section>
-    </div>
-    <div class="row row-1">
-      <section>
-        <i class="icon fas fa-paper-plane"></i>
-        <div class="details">
-          <span class="title">Title of Section 5</span>
-          <span>5th Jan 2021</span>
-        </div>
-        <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p>
-        <div class="bottom">
-          <a href="#">Read more</a>
-          <i>- Someone famous</i>
-        </div>
-      </section>
-    </div>
-    <div class="row row-2">
-      <section>
-        <i class="icon fas fa-map-marker-alt"></i>
-        <div class="details">
-          <span class="title">Title of Section 6</span>
-          <span>6th Jan 2021</span>
-        </div>
-        <p>Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.</p>
-        <div class="bottom">
-          <a href="#">Read more</a>
-          <i>- Someone famous</i>
-        </div>
-      </section>
-    </div>
   </div>
 </body>
 </html>
