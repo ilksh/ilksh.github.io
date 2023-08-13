@@ -223,8 +223,8 @@ search: true
        <img src="/assets/image/mathTutor.png" alt="Image Description" class="icon">
         <div class="details">
           <span class="title">MATH & Coding TUTOR </span>
-          <span> <i> Jan 2022 ~ June 2022 </i> </span>
         </div>
+        <li> <i> Jan 2022 ~ June 2022 </i> </li>
         <ul class="sub-bullet">
         <li>Created lectures, tests, and homework assignments</li>
         <li>Tutored Algorithms for problem solving</li>
