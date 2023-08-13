@@ -209,13 +209,14 @@ search: true
       background: #ffff4d;
     }
     .timeline__event--type4 .timeline__event__icon {
-       background: url('/Users/sanghyunkim/Desktop/GitHubPage/ilksh.github.io/assets/image/Nuvve.png') no-repeat center center;
-       align-self: center;
-       position: relative;
-       background-size: 100% 100%;
-      /*background-size: cover;/*
-      /*background: #ff9900;
-      color: #ffff4d;*/
+        background: url('assets/image/Nuvve.png') no-repeat center center;
+        background-size: cover;
+        color: #9251ac;
+        padding: 20px;
+        align-self: center;
+        margin: 0 20px;
+        box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+        position: relative;
     }
     .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
       background: #ff9900;
