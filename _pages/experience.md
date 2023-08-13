@@ -4,152 +4,230 @@ permalink: /experience/
 search: true
 ---
 
- <div class="container" id = "work">
-    <div class="work-title bg-black">
-    <!--title -->
-    <div class="row no-gutters bg-black mb-5 mb-lg-0">
-      <div class="workpadding">
-        <h2 class="text-white featured-text"> Experience</h2>   
-        <br>
-      </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Timeline Design | CodingNepal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        }
+        html{
+        scroll-behavior: smooth;
+        }
+        body{
+        background:  #fff; /* Change background color to white */
+        }
+        ::selection{
+        color: #fff;
+        background: #ff7979;
+        }
+        .wrapper{
+        max-width: 1080px;
+        margin: 50px auto;
+        padding: 0 20px;
+        position: relative;
+        }
+        .wrapper .center-line{
+        position: absolute;
+        height: 100%;
+        width: 4px;
+        background:  #000066; /* Change timeline color to "#b3ecff" */
+        left: 50%;
+        top: 20px;
+        transform: translateX(-50%);
+        }
+        .wrapper .row{
+        display: flex;
+        }
+        .wrapper .row-1{
+        justify-content: flex-start;
+        }
+        .wrapper .row-2{
+        justify-content: flex-end;
+        }
+        .wrapper .row section{
+        background: #800000; /* Change box color */
+        color: white;
+        border-radius: 5px;
+        width: calc(50% - 40px);
+        padding: 20px;
+        position: relative;
+        }
+        .wrapper .row section::before{
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 15px;
+        background: #800000; /* Change box color to "#b3ecff" */
+        top: 28px;
+        z-index: -1;
+        transform: rotate(45deg);
+        }
+        .row-1 section::before{
+        right: -7px;
+        }
+        .row-2 section::before{
+        left: -7px;
+        }
+        .row section .icon,
+        .center-line .scroll-icon{
+        position: absolute;
+        background: #f2f2f2;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff; /* Change font color to white */
+        font-size: 17px;
+        box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,0.08), 0 3px 0 4px rgba(0,0,0,0.05);
+        }
+        .center-line .scroll-icon{
+        bottom: 0px;
+        left: 50%;
+        font-size: 25px;
+        transform: translateX(-50%);
+        }
+        .row-1 section .icon{
+        top: 15px;
+        right: -60px;
+        }
+        .row-2 section .icon{
+        top: 15px;
+        left: -60px;
+        }
+        .row section .details,
+        .row section .bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        }
+        .row section .details .title{
+        font-size: 22px;
+        font-weight: 600;
+        color: white; /* Change font color to white */
+        }
+        .row section p{
+        margin: 10px 0 17px 0;
+        }
+        .row section .bottom a{
+        text-decoration: none;
+        background: #ff7979;
+        color: #fff;
+        padding: 7px 15px;
+        border-radius: 5px;
+        /* font-size: 17px; */
+        font-weight: 400;
+        transition: all 0.3s ease;
+        }
+        .row section .bottom a:hover{
+        transform: scale(0.97);
+        }
+        @media(max-width: 790px){
+        .wrapper .center-line{
+            left: 40px;
+        }
+        .wrapper .row{
+            margin: 30px 0 3px 60px;
+        }
+        .wrapper .row section{
+            width: 100%;
+        }
+        .row-1 section::before{
+            left: -7px;
+        }
+        .row-1 section .icon{
+            left: -60px;
+        }
+        }
+        @media(max-width: 440px){
+        .wrapper .center-line,
+        .row section::before,
+        .row section .icon{
+            display: none;
+        }
+        .wrapper .row{
+            margin: 10px 0;
+        }
+        /* Change font color to white in the timeline */
+        .row section {
+            color: white;
+        }
+    }
+     ul.sub-bullet {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+     .content-container {
+    margin-left: 40px; /* Adjust this value as needed */
+  }
+    </style>
+</head>
+<body>
+   <div class="wrapper" style="margin-left: 40px;"> <!-- Moved timeline to the right -->
+    <div class="center-line">
+      <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
     </div>
-    <!--title -->
-    <div class="row justify-content-center no-gutters bg-black mb-5 mb-lg-0">
-      <div class="col-lg-2 text-center">
-        <img class="circularlogo" src="/assets/image/Nuvve.png" alt="googlelogo.jpg" height="200">
-      </div>
-      <!--google-->
-      <div class="col-lg-10">
-        <div class="bg-black text-center h-100 project">
-          <div class="d-flex h-100">
-            <div class="project-text w-100 my-auto text-center text-lg-left">
-              <div class="workpadding">
-              <h4 class="text-white">Google</h4>
-              <h4 class="text-white">Software Engineer</h4>
-              <p class="text-white">Fall 2020 - present</p>
-              <ul class="mb-0 text-white-50">
-                <li>Software Engineer on the Google Health (Consumer, Screeners & Actions) team</li>
-              </ul>
-              </div>
-            </div>
-          </div>
+    <div class="row row-1">
+      <section>
+       <i class="icon fas fa-rocket"></i>
+        <div class="details">
+          <span class="title">DATA SCIENCE RESEARCH ASSISTANT,</span>
         </div>
-      </div>
+         <ul class="sub-bullet">
+            <li>Applied Regression Analysis</li>
+            <li>Data Structure and Algorithm</li>
+            <li>Statistical Theory</li>
+            <li>Computer Architecture</li>
+            <li>Data Mine Seminar III</li>
+        </ul>
+      </section>
     </div>
-          <!--amazon -->
-    <div class="row justify-content-center no-gutters bg-black mb-5 mb-lg-0"> 
-      <div class="col-lg-2 text-center">
-        <img class="circularlogo" src="public/img/amazonlogo.png" alt="amazon.png" height="200">
-      </div>
-      <div class="col-lg-10">
-        <div class="bg-black text-center h-100 project">
-          <div class="d-flex h-100">
-            <div class="project-text w-100 my-auto text-center text-lg-left">
-              <div class="workpadding">
-              <h4 class="text-white">Amazon</h4>
-              <h4 class="text-white">Software Development Engineer Intern</h4>
-              <p class="text-white">Summer 2020</p>
-              <ul class="mb-0 text-white-50">
-                <li>Worked on clustering trending news for Alexa Search content recommendation using SpaCy and NLP </li>
-                <li>Implemented coverage calculation comparison between Google Trends and Alexa Web news</li>
-              </ul>
-              </div>
-            </div>
-          </div>
+    <div class="row row-2">
+      <section>
+      <i class="icon fas fa-rocket"></i>
+        <div class="details">
+          <span class="title">Summer 2023</span>
         </div>
-      </div> 
+        <ul class="sub-bullet">
+         <li>Probability</li>
+         <li>Elementary of Psychology</li>
+        </ul>
+      </section>
     </div>
-    <!--ibm -->
-    <div class="row justify-content-center no-gutters bg-black mb-5 mb-lg-0"> 
-      <div class="col-lg-2 text-center">
-        <img class="circularlogo" src="public/img/ibmlogo.png" alt="ibm.png" height="200">
-      </div>
-      <div class="col-lg-10">
-        <div class="bg-black text-center h-100 project">
-          <div class="d-flex h-100">
-            <div class="project-text w-100 my-auto text-center text-lg-left">
-              <div class="workpadding">
-              <h4 class="text-white">IBM</h4>
-              <h4 class="text-white">Software Developer Intern</h4>
-              <p class="text-white">Spring 2020</p>
-              <ul class="mb-0 text-white-50">
-                <li> Built Selenium and Javascript test framework for IBM Planning Analytics (TM1 Web) </li>
-              </ul>
-              </div>
-            </div>
-          </div>
+    <div class="row row-1">
+      <section>
+        <i class="icon fas fa-rocket"></i>
+        <div class="details">
+          <span class="title">Spring 2023</span>
         </div>
-      </div> 
+        <ul class="sub-bullet">
+        <li>Data Engineering in Python</li>
+        <li>C Programming</li>
+        <li>Discrete Mathematics</li>
+        <li>Statistics for Data Science</li>
+        <li>Linear Algebra</li>
+        <li>Python Programming</li>
+        <li>Data Mine Seminar II</li>
+        </ul>
+      </section>
     </div>
-        <!--microsoft -->
-        <div class="row justify-content-center no-gutters bg-black mb-5 mb-lg-0"> 
-          <div class="col-lg-2 text-center">
-            <img class="circularlogo" src="public/img/microsoftlogo.png" alt="microsoft.png" height="200">
-          </div>
-          <div class="col-lg-10">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-left">
-                  <div class="workpadding">
-                  <h4 class="text-white">Microsoft</h4>
-                  <h4 class="text-white">Software Engineering Intern</h4>
-                  <p class="text-white">Winter 2019 & Winter 2020</p>
-                  <ul class="mb-0 text-white-50">
-                    <li> Wrote Roslyn (.NET Compiler Platform) analyzers for C# and Visual Basic for Visual Studio </li>
-                  </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> 
+    <div class="row row-2">
+      <section>
+       <img src="/assets/image/mathTutor.png" alt="Image Description" class="icon">
+        <div class="details">
+          <span class="title">MATH & Coding TUTOR </span>
+          <span> <i> Jan 2022 ~ June 2022 </i> </span>
         </div>
-        <!--morgan stanley -->
-        <div class="row justify-content-center no-gutters bg-black mb-5 mb-lg-0"> 
-          <div class="col-lg-2 text-center">
-            <img class="circularlogo" src="public/img/morganstanley.jpg" alt="morganstanley.jpg" height="200">
-          </div>
-          <div class="col-lg-10">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-left">
-                  <div class="workpadding">
-                  <h4 class="text-white">Morgan Stanley</h4>
-                  <h4 class="text-white">Summer Technology Analyst</h4>
-                  <p class="text-white">Summer 2019</p>
-                  <ul class="mb-0 text-white-50">
-                    <li> Coded Qlikview dashboard and designed data model schema for trade liquidity calculations </li>
-                     <li> Programmed Python cursor tool to extract trade records from SQL database into Pandas </li>
-                  </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> 
-        </div>
-        <!--mit d-lab -->
-        <div class="row justify-content-center no-gutters bg-black mb-5 mb-lg-0"> 
-          <div class="col-lg-2 text-center">
-            <img class="circularlogo" src="public/img/mit.png" alt="mit.png" height="200">
-          </div>
-
-          <div class="col-lg-10">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-left">
-                  <div class="workpadding">
-                  <h4 class="text-white">MIT D-Lab</h4>
-                  <h4 class="text-white">Undergraduate Researcher</h4>
-                  <p class="text-white">Fall 2018 - Fall 2019</p>
-                  <ul class="mb-0 text-white-50">
-                    <li> Created Django server to interface with an Android app and Raspberry Pi to collect and analyze patient health statistics </li>
-                     <li> Implemented Bayesian modeling algorithms in the server’s backend to diagnose pulmonary disease </li>
-                  </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> 
-        </div>
+        <ul class="sub-bullet">
+        <li>Created lectures, tests, and homework assignments</li>
+        <li>Tutored Algorithms for problem solving</li>
+        </ul>
+      </section>
   </div>
-</div>
-  </section>
