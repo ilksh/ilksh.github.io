@@ -57,7 +57,7 @@ search: true
         background: #800000; /* Change box color */
         color: white;
         border-radius: 5px;
-        width: calc(55% - 40px); /*change the width from 50% to 60% */
+        width: calc(65% - 40px); /*change the width from 50% to 60% */
         padding: 20px;
         position: relative;
         }
@@ -172,7 +172,7 @@ search: true
     </style>
 </head>
 <body>
-   <div class="wrapper" style="margin-left: 125px;"> <!-- Moved timeline to the right -->
+   <div class="wrapper" style="margin-left: 150px;"> <!-- Moved timeline to the right -->
     <div class="center-line">
       <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
     </div>
