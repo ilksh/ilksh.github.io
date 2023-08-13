@@ -170,7 +170,7 @@ search: true
             <li><em>Machine Intelligence</em></li>
         </ul>
         </li>
-        <li><<p>Minor in Statistics </p></li>
+        <li><p>Minor in Statistics </p></li>
     </ul>
     <p><strong>Bachelor of Science in Data Science</strong></p>
     <p><strong>Bachelor of Science in Artificial Intelligence</strong></p>
@@ -219,5 +219,3 @@ search: true
         <p>Object Oriented Programming (JAVA)<br>Multivariable Calculus<br>Data Mine Seminar I</p>
       </section>
   </div>
-</body>
-</html>
