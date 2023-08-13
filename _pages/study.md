@@ -4,154 +4,679 @@ permalink: /study/
 excerpt: "About Me"
 search: true
 ---
-
 <html>
+<script src="https://kit.fontawesome.com/fc596df623.js" crossorigin="anonymous"></script>
 <style>
-    html,
+  * {
+  box-sizing: border-box;
+}
+html {
+  font-size: 14px;
+}
 body {
-  font: 100% "Lato", sans-serif;
-  font-weight: 300;
-  height: 100%;
-  background-color: #4D4545;
+  background: #f6f9fc;
+  font-family: "Open Sans", sans-serif;
+  color: #525f7f;
 }
-.blue-bg {
-  background-color: #4D4545;
-  color: #ED8D8D;
-  height: 100%;
+h2 {
+  margin: 5%;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 100;
 }
-.circle {
-  font-weight: bold;
-  padding: 15px 20px;
-  border-radius: 50%;
-  background-color: #ED8D8D;
-  color: #4D4545;
-  max-height: 50px;
-  z-index: 2;
-}
-.how-it-works.row {
-  display: flex;
-}
-.how-it-works.row .col-2 {
-  display: inline-flex;
-  align-self: stretch;
-  align-items: center;
-  justify-content: center;
-}
-.how-it-works.row .col-2::after {
-  content: "";
-  position: absolute;
-  border-left: 3px solid #ED8D8D;
-  z-index: 1;
-}
-.how-it-works.row .col-2.bottom::after {
-  height: 50%;
-  left: 50%;
-  top: 50%;
-}
-.how-it-works.row .col-2.full::after {
-  height: 100%;
-  left: calc(50% - 3px);
-}
-.how-it-works.row .col-2.top::after {
-  height: 50%;
-  left: 50%;
+h1 {
+  margin: 4%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 10;
   top: 0;
 }
-.timeline div {
-  padding: 0;
-  height: 40px;
-}
-.timeline hr {
-  border-top: 3px solid #ED8D8D;
-  margin: 0;
-  top: 17px;
-  position: relative;
-}
-.timeline .col-2 {
+.timeline {
   display: flex;
-  overflow: hidden;
-}
-.timeline .corner {
-  border: 3px solid #ED8D8D;
-  width: 100%;
+  flex-direction: column;
+  margin: 20px auto;
   position: relative;
-  border-radius: 15px;
 }
-.timeline .top-right {
+.timeline__event {
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  margin: 20px 0;
+  border-radius: 6px;
+  align-self: center;
+  width: 50vw;
+}
+.timeline__event:nth-child(2n+1) {
+  flex-direction: row-reverse;
+}
+.timeline__event:nth-child(2n+1) .timeline__event__date {
+  border-radius: 0 6px 6px 0;
+}
+.timeline__event:nth-child(2n+1) .timeline__event__content {
+  border-radius: 6px 0 0 6px;
+}
+.timeline__event:nth-child(2n+1) .timeline__event__icon:before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: #f6a4ec;
+  position: absolute;
+  top: 0%;
   left: 50%;
-  top: -50%;
+  right: auto;
+  z-index: -1;
+  transform: translateX(-50%);
+  -webkit-animation: fillTop 2s forwards 4s ease-in-out;
+          animation: fillTop 2s forwards 4s ease-in-out;
 }
-.timeline .left-bottom {
-  left: -50%;
-  top: calc(50% - 3px);
+.timeline__event:nth-child(2n+1) .timeline__event__icon:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #f6a4ec;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  top: 50%;
+  left: auto;
+  transform: translateY(-50%);
+  -webkit-animation: fillLeft 2s forwards 4s ease-in-out;
+          animation: fillLeft 2s forwards 4s ease-in-out;
 }
-.timeline .top-left {
-  left: -50%;
-  top: -50%;
+.timeline__event__title {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #9251ac;
+  letter-spacing: 1.5px;
 }
-.timeline .right-bottom {
+.timeline__event__content {
+  padding: 20px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  background: #fff;
+  width: calc(40vw - 84px);
+  border-radius: 0 6px 6px 0;
+}
+.timeline__event__date {
+  color: #f6a4ec;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: #9251ac;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 0 20px;
+  border-radius: 6px 0 0 6px;
+}
+.timeline__event__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9251ac;
+  padding: 20px;
+  align-self: center;
+  margin: 0 20px;
+  background: #f6a4ec;
+  border-radius: 100%;
+  width: 40px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  padding: 40px;
+  height: 40px;
+  position: relative;
+}
+.timeline__event__icon i {
+  font-size: 32px;
+}
+.timeline__event__icon:before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: #f6a4ec;
+  position: absolute;
+  top: 0%;
+  z-index: -1;
   left: 50%;
-  top: calc(50% - 3px);
+  transform: translateX(-50%);
+  -webkit-animation: fillTop 2s forwards 4s ease-in-out;
+          animation: fillTop 2s forwards 4s ease-in-out;
+}
+.timeline__event__icon:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #f6a4ec;
+  position: absolute;
+  left: 0%;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-animation: fillLeftOdd 2s forwards 4s ease-in-out;
+          animation: fillLeftOdd 2s forwards 4s ease-in-out;
+}
+.timeline__event__description {
+  flex-basis: 100%;
+}
+.timeline__event--type2:after {
+  background: #555ac0;
+}
+.timeline__event--type2 .timeline__event__date {
+  color: #87bbfe;
+  background: #555ac0;
+}
+.timeline__event--type2:nth-child(2n+1) .timeline__event__icon:before, .timeline__event--type2:nth-child(2n+1) .timeline__event__icon:after {
+  background: #87bbfe;
+}
+.timeline__event--type2 .timeline__event__icon {
+  background: #87bbfe;
+  color: #555ac0;
+}
+.timeline__event--type2 .timeline__event__icon:before, .timeline__event--type2 .timeline__event__icon:after {
+  background: #87bbfe;
+}
+.timeline__event--type2 .timeline__event__title {
+  color: #555ac0;
+}
+.timeline__event--type3:after {
+  background: #24b47e;
+}
+.timeline__event--type3 .timeline__event__date {
+  color: #aff1b6;
+  background-color: #24b47e;
+}
+.timeline__event--type3:nth-child(2n+1) .timeline__event__icon:before, .timeline__event--type3:nth-child(2n+1) .timeline__event__icon:after {
+  background: #aff1b6;
+}
+.timeline__event--type3 .timeline__event__icon {
+  background: #aff1b6;
+  color: #24b47e;
+}
+.timeline__event--type3 .timeline__event__icon:before, .timeline__event--type3 .timeline__event__icon:after {
+  background: #aff1b6;
+}
+.timeline__event--type3 .timeline__event__title {
+  color: #24b47e;
+}
+.timeline__event:last-child .timeline__event__icon:before {
+  content: none;
+}
+@media (max-width: 786px) {
+  .timeline__event {
+    flex-direction: column;
+    align-self: center;
+  }
+  .timeline__event__content {
+    width: 100%;
+  }
+  .timeline__event__icon {
+    border-radius: 6px 6px 0 0;
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+  }
+  .timeline__event__icon:before, .timeline__event__icon:after {
+    display: none;
+  }
+  .timeline__event__date {
+    border-radius: 0;
+    padding: 20px;
+  }
+  .timeline__event:nth-child(2n+1) {
+    flex-direction: column;
+    align-self: center;
+  }
+  .timeline__event:nth-child(2n+1) .timeline__event__date {
+    border-radius: 0;
+    padding: 20px;
+  }
+  .timeline__event:nth-child(2n+1) .timeline__event__icon {
+    border-radius: 6px 6px 0 0;
+    margin: 0;
+  }
+}
+@-webkit-keyframes fillLeft {
+  100% {
+    right: 100%;
+  }
+}
+@keyframes fillLeft {
+  100% {
+    right: 100%;
+  }
+}
+@-webkit-keyframes fillTop {
+  100% {
+    top: 100%;
+  }
+}
+@keyframes fillTop {
+  100% {
+    top: 100%;
+  }
+}
+@-webkit-keyframes fillLeftOdd {
+  100% {
+    left: 100%;
+  }
+}
+@keyframes fillLeftOdd {
+  100% {
+    left: 100%;
+  }
 }
 </style>
-<div class="container-fluid blue-bg">
-  <div class="container">
-    <h2 class="pb-3 pt-2">Vertical Left-Right Timeline</h2>
-    <!--first section-->
-    <div class="row align-items-center how-it-works">
-      <div class="col-2 text-center bottom">
-        <div class="circle">1</div>
-      </div>
-      <div class="col-6">
-        <h5>Fully Responsive</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
-      </div>
-    </div>
-    <!--path between 1-2-->
-    <div class="row timeline">
-      <div class="col-2">
-        <div class="corner top-right"></div>
-      </div>
-      <div class="col-8">
-        <hr/>
-      </div>
-      <div class="col-2">
-        <div class="corner left-bottom"></div>
-      </div>
-    </div>
-    <!--second section-->
-    <div class="row align-items-center justify-content-end how-it-works">
-      <div class="col-6 text-right">
-        <h5>Using Bootstrap</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
-      </div>
-      <div class="col-2 text-center full">
-        <div class="circle">2</div>
-      </div>
-    </div>
-    <!--path between 2-3-->
-    <div class="row timeline">
-      <div class="col-2">
-        <div class="corner right-bottom"></div>
-      </div>
-      <div class="col-8">
-        <hr/>
-      </div>
-      <div class="col-2">
-        <div class="corner top-left"></div>
-      </div>
-    </div>
-    <!--third section-->
-    <div class="row align-items-center how-it-works">
-      <div class="col-2 text-center top">
-        <div class="circle">3</div>
-      </div>
-      <div class="col-6">
-        <h5>Now with Pug and Sass</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
-      </div>
-    </div>
-  </div>
-</div>
+<h2>Super Mario Timeline</h2>
+<h1>Initial launch dates of games in the Super Mario series.</h1>
+<div class="timeline">
+	<!--first-->
+	<div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+		<div class="timeline__event__icon ">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			September 1985
+		</div>
+		<div class="timeline__event__content ">
+			<div class="timeline__event__title">
+				Super Mario Brothers
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--second-->
+	<div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			June 1986
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario Bros: The Lost Levels
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--third-->
+	<div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			October 1988
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario Bros. 2
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--forth-->
+	<div class="timeline__event animated fadeInUp timeline__event--type1">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			October 1988
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario Bros. 3
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--first-->
+	<div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+		<div class="timeline__event__icon ">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			April 1989
+		</div>
+		<div class="timeline__event__content ">
+			<div class="timeline__event__title">
+				Super Mario Land
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--second-->
+	<div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			November 1990
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario World
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--third-->
+	<div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			October 1992
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario Land: 6 Golden Coins
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--forth-->
+	<div class="timeline__event animated fadeInUp timeline__event--type1">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			August 1995
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario World 2: Yoshi's Island
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--first-->
+	<div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+		<div class="timeline__event__icon ">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			June 1996
+		</div>
+		<div class="timeline__event__content ">
+			<div class="timeline__event__title">
+				Super Mario 64
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--second-->
+	<div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			July 2002
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario Sunshine
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--third-->
+	<div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			May 2006
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				New Super Mario Bros
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--forth-->
+	<div class="timeline__event animated fadeInUp timeline__event--type1">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			November 2007
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario Galaxy
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--first-->
+	<div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+		<div class="timeline__event__icon ">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			November 2009
+		</div>
+		<div class="timeline__event__content ">
+			<div class="timeline__event__title">
+				New Super Mario Bros. Wii
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--second-->
+	<div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			May 2010
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario Galaxy 2
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--third-->
+	<div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			November 2011
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario 3D Land
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--forth-->
+	<div class="timeline__event animated fadeInUp timeline__event--type1">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			July 2012
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				New Super Mario Bros 2
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--first-->
+	<div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+		<div class="timeline__event__icon ">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			November 2012
+		</div>
+		<div class="timeline__event__content ">
+			<div class="timeline__event__title">
+				New Super Mario Bros. U
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--second-->
+	<div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			November 2013
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario 3D World
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--third-->
+	<div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			September 2015
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario Maker
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--forth-->
+	<div class="timeline__event animated fadeInUp timeline__event--type1">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			December 2016
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario Run
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--first-->
+	<div class="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+		<div class="timeline__event__icon ">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			October 2017
+		</div>
+		<div class="timeline__event__content ">
+			<div class="timeline__event__title">
+				Super Mario Odyssey
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--second-->
+	<div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			June 2019
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario Maker 2
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--third-->
+	<div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			February 2021
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario 3D World + Bowser's Fury
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
+	<!--forth-->
+	<div class="timeline__event animated fadeInUp timeline__event--type1">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			December 2016
+		</div>
+		<div class="timeline__event__content">
+			<div class="timeline__event__title">
+				Super Mario Run
+			</div>
+			<div class="timeline__event__description">
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!</p>
+			</div>
+		</div>
+	</div>
 
+</div>
 </html>
