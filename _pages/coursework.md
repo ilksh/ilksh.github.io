@@ -159,27 +159,29 @@ search: true
         .row section {
             color: white;
         }
-        .container {
-          margin-left: 100px; /* Adjust this value as needed */
-        }
     }
      ul.sub-bullet {
             list-style-type: disc;
             margin-left: 20px;
         }
+     .content-container {
+    margin-left: 40px; /* Adjust this value as needed */
+  }
     </style>
 </head>
 <body>
+<div class="content-container"> <!-- Add a wrapping div -->
  <p><strong>Purdue University - West Lafayette</strong></p> 
   <ul>
     <li> Bachelor of Computer Science </li>
     <ul class="sub-bullet">
-    <li> Concentrations in <i>Software Engineering</i>, <i>Machine Intelligence</i></li>
+    <li> Concentrations in <br> <i>Software Engineering</i> <br> <i>Machine Intelligence</i></li>
     <li> Minor in <i>Statistics</i> </li>
     </ul>
     <li>Bachelor of Science in Artificial Intelligence</li>
     <li>Bachelor of Science in Data Science</li>
   </ul>
+  </div>
    <div class="wrapper" style="margin-left: 40px;"> <!-- Moved timeline to the right -->
     <div class="center-line">
       <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
