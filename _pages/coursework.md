@@ -110,6 +110,7 @@ search: true
         .row section .details .title{
         font-size: 22px;
         font-weight: 600;
+         color: white; /* Change font color to white */
         }
         .row section p{
         margin: 10px 0 17px 0;
