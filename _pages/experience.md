@@ -209,7 +209,7 @@ search: true
       background: #ffff4d;
     }
     .timeline__event--type4 .timeline__event__icon {
-       background: url('/Users/sanghyunkim/Desktop/GitHubPage/ilksh.github.io/assets/image/Nuvve.png') no-repeat center center;
+       background: url('assets/image/Nuvve.png') no-repeat center center;
        align-self: center;
        position: relative;
        background-size: 100% 100%;
