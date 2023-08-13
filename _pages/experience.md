@@ -212,9 +212,9 @@ search: true
        background-image: url('/assets/image/Nuvve.png');
        background-repeat: no-repeat;
       background-position: center center;
+      background-size: contain;
       align-self: center;
       position: relative;
-      /*background-size: cover;/*
       /*background: #ff9900;
       color: #ffff4d;*/
     }
