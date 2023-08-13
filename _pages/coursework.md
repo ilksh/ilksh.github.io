@@ -63,7 +63,7 @@ search: true
         content: "";
         height: 15px;
         width: 15px;
-        background: #b3ecff; /* Change box color to "#b3ecff" */
+        background: #800000; /* Change box color to "#b3ecff" */
         top: 28px;
         z-index: -1;
         transform: rotate(45deg);
@@ -164,12 +164,13 @@ search: true
  <p><strong>Purdue University - West Lafayette</strong></p>
  <p><strong>Bachelor of Science in Computer Science</strong></p>
     <ul>
-        <li><p>Concentations in</p></li>
+        <li><p>Concentations in</p>
         <ul>
             <li><em>Software Engineering</em></li>
             <li><em>Machine Intelligence</em></li>
         </ul>
-        <li><p>Minor in Statistics </p></li>
+        </li>
+        <li><<p>Minor in Statistics </p></li>
     </ul>
     <p><strong>Bachelor of Science in Data Science</strong></p>
     <p><strong>Bachelor of Science in Artificial Intelligence</strong></p>
