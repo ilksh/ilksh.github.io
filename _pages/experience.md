@@ -27,24 +27,16 @@ search: true
         color: #fff;
         background: #ff7979;
         }
-        /* .wrapper{
-        max-width: 1080px;
+        .wrapper{
+        max-width: 1500px;
         margin: 50px auto;
         padding: 0 20px;
         position: relative;
-        } */
-        .wrapper {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
         }
         .wrapper .center-line{
         position: absolute;
         height: 100%;
-        width: 6px; /* change width */
+        width: 4px; /* change width */
         background:  #000066; /* Change timeline color to "#b3ecff" */
         left: 50%;
         top: 20px;
@@ -176,11 +168,10 @@ search: true
       margin-left: 40px; /* Adjust this value as needed */
      }
       .row {
-            width: 50%;
+            width: 30%;
             margin: 0 auto;
             padding: 10px;
         }
-     
     </style>
 </head>
 <body>
