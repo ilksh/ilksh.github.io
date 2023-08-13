@@ -83,7 +83,7 @@ search: true
         text-align: center;
         line-height: 40px;
         border-radius: 50%;
-        color: white; /* Change font color to white */
+        color: #ffffff; /* Change font color to white */
         font-size: 17px;
         box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,0.08), 0 3px 0 4px rgba(0,0,0,0.05);
         }
