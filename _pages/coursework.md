@@ -53,6 +53,7 @@ search: true
         }
         .wrapper .row section{
         background: #800000; /* Change box color to "#b3ecff" */
+        color: white;
         border-radius: 5px;
         width: calc(50% - 40px);
         padding: 20px;
@@ -110,7 +111,7 @@ search: true
         .row section .details .title{
         font-size: 22px;
         font-weight: 600;
-         color: white; /* Change font color to white */
+        color: white; /* Change font color to white */
         }
         .row section p{
         margin: 10px 0 17px 0;
