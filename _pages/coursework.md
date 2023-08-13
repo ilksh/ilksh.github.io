@@ -170,7 +170,7 @@ search: true
  <p><strong>Purdue University - West Lafayette</strong></p> 
   <ul>
     <li> Bachelor of Computer Science </li>
-    <ul>
+    <ul class="sub-bullet">
     <li> Concentrations in <i>Software Engineering</i>, <i>Machine Intelligence</i></li>
     <li> Minor in <i>Statistics</i> </li>
     </ul>
@@ -202,7 +202,10 @@ search: true
         <div class="details">
           <span class="title">Summer 2023</span>
         </div>
-        <p>Probability<br>Elementary of Psychology</p>
+        <ul class="sub-bullet">
+         <li>Probability</li>
+         <li>Elementary of Psychology</li>
+        </ul>
       </section>
     </div>
     <div class="row row-1">
@@ -211,7 +214,15 @@ search: true
         <div class="details">
           <span class="title">Spring 2023</span>
         </div>
-        <p>Data Engineering in Python<br>C Programming<br>Discrete Mathematics<br>Statistics for Data Science<br>Linear Algebra<br>Python Programming<br>Data Mine Seminar II</p>
+        <ul class="sub-bullet">
+        <li>Data Engineering in Python</li>
+        <li>C Programming</li>
+        <li>Discrete Mathematics</li>
+        <li>Statistics for Data Science</li>
+        <li>Linear Algebra</li>
+        <li>Python Programming</li>
+        <li>Data Mine Seminar II</li>
+        </ul>
       </section>
     </div>
     <div class="row row-2">
@@ -220,6 +231,10 @@ search: true
         <div class="details">
           <span class="title">Fall 2022</span>
         </div>
-        <p>Object Oriented Programming (JAVA)<br>Multivariable Calculus<br>Data Mine Seminar I</p>
+        <ul class="sub-bullet">
+        <li>Object Oriented Programming (JAVA)</li>
+        <li>Multivariable Calculus</li>
+        <li>Data Mine Seminar I</li>
+        </ul>
       </section>
   </div>
