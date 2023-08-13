@@ -209,8 +209,13 @@ search: true
       background: #ffff4d;
     }
     .timeline__event--type4 .timeline__event__icon {
-      background: #ff9900;
-      color: #ffff4d;
+       background: url('/Users/sanghyunkim/Desktop/GitHubPage/ilksh.github.io/assets/image/Nuvve.png') no-repeat center center;
+       align-self: center;
+       position: relative;
+       background-size: 100% 100%;
+      /*background-size: cover;/*
+      /*background: #ff9900;
+      color: #ffff4d;*/
     }
     .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
       background: #ff9900;
