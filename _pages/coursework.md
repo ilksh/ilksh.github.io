@@ -170,8 +170,8 @@ search: true
     </style>
 </head>
 <body>
-<div class="content-container"> <!-- Add a wrapping div -->
  <p><strong>Purdue University - West Lafayette</strong></p> 
+<div class="content-container"> <!-- Add a wrapping div -->
   <ul>
     <li> Bachelor of Computer Science </li>
     <ul class="sub-bullet">
