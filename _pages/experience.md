@@ -27,16 +27,24 @@ search: true
         color: #fff;
         background: #ff7979;
         }
-        .wrapper{
+        /* .wrapper{
         max-width: 1080px;
         margin: 50px auto;
         padding: 0 20px;
         position: relative;
+        } */
+        .wrapper {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
         .wrapper .center-line{
         position: absolute;
         height: 100%;
-        width: 4px;
+        width: 6px; /* change width */
         background:  #000066; /* Change timeline color to "#b3ecff" */
         left: 50%;
         top: 20px;
@@ -159,14 +167,23 @@ search: true
         .row section {
             color: white;
         }
-    }
-     ul.sub-bullet {
+      }
+      ul.sub-bullet {
             list-style-type: disc;
             margin-left: 20px;
         }
-     .content-container {
-    margin-left: 40px; /* Adjust this value as needed */
-  }
+      .content-container {
+      margin-left: 40px; /* Adjust this value as needed */
+     }
+      .row {
+            width: 50%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+      /* Update section width for better responsiveness */
+        .row section {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
