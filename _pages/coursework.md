@@ -171,12 +171,7 @@ search: true
   <ul>
     <li> Bachelor of Computer Science </li>
     <ul>
-    <li> Concentrations in 
-      <ul>
-        <li><i>Software Engineering</i></li>
-        <li><i>Machine Intelligence</i></li>
-      </ul>
-    </li>
+    <li> Concentrations in <i>Software Engineering</i>, <i>Machine Intelligence</i></li>
     <li> Minor in <i>Statistics</i> </li>
     </ul>
     <li>Bachelor of Science in Artificial Intelligence</li>
