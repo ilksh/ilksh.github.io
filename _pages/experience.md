@@ -212,7 +212,6 @@ search: true
        background-image: url('/assets/image/Nuvve.png');
        background-repeat: no-repeat;
       background-position: center center;
-      background-size: cover;
       align-self: center;
       position: relative;
       /*background-size: cover;/*
