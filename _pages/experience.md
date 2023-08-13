@@ -288,16 +288,6 @@ search: true
       }
     }
 </style>
-<p><strong>Purdue University - West Lafayette</strong></p> 
-  <ul>
-    <li> Bachelor of Computer Science </li>
-    <ul class="sub-bullet">
-    <li> Concentrations in <br> <i>Software Engineering</i> <br> <i>Machine Intelligence</i></li>
-    <li> Minor in <i>Statistics</i> </li>
-    </ul>
-    <li>Bachelor of Science in Artificial Intelligence</li>
-    <li>Bachelor of Science in Data Science</li>
-  </ul>
 <div class="timeline">
 	<!--first-->
 	<div class="timeline__event  animated fadeInUp delay-1.5s timeline__event--type4">
