@@ -300,7 +300,7 @@ search: true
   </ul>
 <div class="timeline">
 	<!--first-->
-	<div class="timeline__event  animated fadeInUp delay-3s timeline__event--type4">
+	<div class="timeline__event  animated fadeInUp delay-1.5s timeline__event--type4">
 		<div class="timeline__event__icon ">
 			<!-- <i class="lni-sport"></i>-->
        <img src="assets/image/Nuvve.png" alt="Icon Image">
