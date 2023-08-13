@@ -180,10 +180,7 @@ search: true
             margin: 0 auto;
             padding: 10px;
         }
-      /* Update section width for better responsiveness */
-        .row section {
-            width: 100%;
-        }
+     
     </style>
 </head>
 <body>
