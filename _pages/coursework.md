@@ -153,6 +153,10 @@ search: true
         .wrapper .row{
             margin: 10px 0;
         }
+        /* Change font color to white in the timeline */
+        .row section {
+            color: white;
+        }
     }
      ul.sub-bullet {
             list-style-type: disc;
