@@ -30,7 +30,7 @@ search: true
         background: #ff7979;
         }
         .wrapper{
-        max-width: 1300px; /* change width from 1080 to 1300*/
+        max-width: 1080px; /* change width from 1080 to 1300*/
         margin: 50px auto;
         padding: 0 20px;
         position: relative;
@@ -57,7 +57,7 @@ search: true
         background: #800000; /* Change box color */
         color: white;
         border-radius: 5px;
-        width: calc(60% - 40px); /*change the width from 50% to 60% */
+        width: calc(55% - 40px); /*change the width from 50% to 60% */
         padding: 20px;
         position: relative;
         }
