@@ -167,26 +167,28 @@ search: true
     </style>
 </head>
 <body>
- <p><strong>Purdue University - West Lafayette</strong></p>
- <p><strong>Bachelor of Science in Computer Science</strong></p>
+ <p><strong>Purdue University - West Lafayette</strong></p> 
+  <ul>
+    <li> Bachelor of Computer Science </li>
     <ul>
-        <li><p>Concentations in</p>
-        <ul>
-            <li><em>Software Engineering</em></li>
-            <li><em>Machine Intelligence</em></li>
-        </ul>
-        </li>
-        <li><p>Minor in Statistics </p></li>
+    <li> Concentrations in 
+      <ul>
+        <li><i>Software Engineering</i></li>
+        <li><i>Machine Intelligence</i></li>
+      </ul>
+    </li>
+    <li> Minor in <i>Statistics</i> </li>
     </ul>
-    <p><strong>Bachelor of Science in Data Science</strong></p>
-    <p><strong>Bachelor of Science in Artificial Intelligence</strong></p>
+    <li>Bachelor of Science in Artificial Intelligence</li>
+    <li>Bachelor of Science in Data Science</li>
+  </ul>
    <div class="wrapper" style="margin-left: 40px;"> <!-- Moved timeline to the right -->
     <div class="center-line">
       <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
     </div>
     <div class="row row-1">
       <section>
-       <img src="/assets/image/nuvve.jpeg" alt="Image Description" class="icon">
+       <i class="icon fas fa-rocket"></i>
         <div class="details">
           <span class="title">Fall 2023</span>
         </div>
@@ -201,6 +203,7 @@ search: true
     </div>
     <div class="row row-2">
       <section>
+      <i class="icon fas fa-rocket"></i>
         <div class="details">
           <span class="title">Summer 2023</span>
         </div>
@@ -212,13 +215,13 @@ search: true
         <i class="icon fas fa-rocket"></i>
         <div class="details">
           <span class="title">Spring 2023</span>
-          <span>3rd Jan 2021</span>
         </div>
         <p>Data Engineering in Python<br>C Programming<br>Discrete Mathematics<br>Statistics for Data Science<br>Linear Algebra<br>Python Programming<br>Data Mine Seminar II</p>
       </section>
     </div>
     <div class="row row-2">
       <section>
+      <i class="icon fas fa-rocket"></i>
         <div class="details">
           <span class="title">Fall 2022</span>
         </div>
