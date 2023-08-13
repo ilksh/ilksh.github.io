@@ -170,7 +170,7 @@ search: true
     </style>
 </head>
 <body>
-   <div class="wrapper" style="margin-left: 40px;"> <!-- Moved timeline to the right -->
+   <div class="wrapper" style="margin-left: 90px;"> <!-- Moved timeline to the right -->
     <div class="center-line">
       <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
     </div>
