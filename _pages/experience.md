@@ -4,7 +4,7 @@ permalink: /experience/
 search: true
 ---
 
-## Exp 1
+## Exp 2
 
 <html lang="en">
 <head>
@@ -49,11 +49,11 @@ search: true
         }
         .wrapper .row-1{
         justify-content: flex-start;
-         margin-left: 40px; /* Adjust the margin-left value */
+         margin-right: 40px; /* Adjust the margin-right value */
         }
         .wrapper .row-2{
         justify-content: flex-end;
-        margin-right: 40px; /* Adjust the margin-right value */
+        margin-left: 40px; /* Adjust the margin-left value */
         }
         .wrapper .row section{
         background: #800000; /* Change box color */
