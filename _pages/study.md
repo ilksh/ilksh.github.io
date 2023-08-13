@@ -7,81 +7,92 @@ search: true
 
 <html>
 <style>
-    $bg: #4D4545
-    $color: #ED8D8D
-    $font-stack: 'Lato', sans-serif
-    html, body
-    font: 100% $font-stack
-    font-weight: 300
-    height: 100%
-    background-color: $bg
-    .blue-bg
-    background-color: $bg
-    color: $color
-    height: 100%
-    .circle
-    font-weight: bold
-    padding: 15px 20px
-    border-radius: 50%
-    background-color: $color
-    color: $bg
-    max-height: 50px
-    z-index: 2
-    .how-it-works.row
-    display: flex
-    .col-2
-        display: inline-flex
-        align-self: stretch
-        align-items: center
-        justify-content: center
-        &::after
-            content: ''
-            position: absolute
-            border-left: 3px solid $color
-            z-index: 1
-    .col-2.bottom
-        &::after
-            height: 50%
-            left: 50%
-            top: 50%
-    .col-2.full
-        &::after
-            height: 100%
-            left: calc(50% - 3px)
-    .col-2.top
-        &::after
-            height: 50%
-            left: 50%
-            top: 0
-    .timeline
-    div
-        padding: 0
-        height: 40px
-    hr
-        border-top: 3px solid $color
-        margin: 0
-        top: 17px
-        position: relative
-    .col-2
-        display: flex
-        overflow: hidden
-    .corner
-        border: 3px solid $color
-        width: 100%
-        position: relative
-        border-radius: 15px
-    .top-right
-        left: 50%
-        top: -50%
-    .left-bottom
-        left: -50%
-        top: calc(50% - 3px)
-    .top-left
-        left: -50%
-        top: -50%
-    .right-bottom
-        left: 50%
-        top: calc(50% - 3px)
+    html,
+body {
+  font: 100% "Lato", sans-serif;
+  font-weight: 300;
+  height: 100%;
+  background-color: #4D4545;
+}
+.blue-bg {
+  background-color: #4D4545;
+  color: #ED8D8D;
+  height: 100%;
+}
+.circle {
+  font-weight: bold;
+  padding: 15px 20px;
+  border-radius: 50%;
+  background-color: #ED8D8D;
+  color: #4D4545;
+  max-height: 50px;
+  z-index: 2;
+}
+.how-it-works.row {
+  display: flex;
+}
+.how-it-works.row .col-2 {
+  display: inline-flex;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+}
+.how-it-works.row .col-2::after {
+  content: "";
+  position: absolute;
+  border-left: 3px solid #ED8D8D;
+  z-index: 1;
+}
+.how-it-works.row .col-2.bottom::after {
+  height: 50%;
+  left: 50%;
+  top: 50%;
+}
+.how-it-works.row .col-2.full::after {
+  height: 100%;
+  left: calc(50% - 3px);
+}
+.how-it-works.row .col-2.top::after {
+  height: 50%;
+  left: 50%;
+  top: 0;
+}
+.timeline div {
+  padding: 0;
+  height: 40px;
+}
+.timeline hr {
+  border-top: 3px solid #ED8D8D;
+  margin: 0;
+  top: 17px;
+  position: relative;
+}
+.timeline .col-2 {
+  display: flex;
+  overflow: hidden;
+}
+.timeline .corner {
+  border: 3px solid #ED8D8D;
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+.timeline .top-right {
+  left: 50%;
+  top: -50%;
+}
+.timeline .left-bottom {
+  left: -50%;
+  top: calc(50% - 3px);
+}
+.timeline .top-left {
+  left: -50%;
+  top: -50%;
+}
+.timeline .right-bottom {
+  left: 50%;
+  top: calc(50% - 3px);
+}
 </style>
 <div class="container-fluid blue-bg">
   <div class="container">
