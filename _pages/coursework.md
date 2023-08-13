@@ -37,7 +37,7 @@ search: true
         position: absolute;
         height: 100%;
         width: 4px;
-        background: #b3ecff; /* Change timeline color to "#b3ecff" */
+        background:  #b3ecff; /* Change timeline color to "#b3ecff" */
         left: 50%;
         top: 20px;
         transform: translateX(-50%);
@@ -52,7 +52,7 @@ search: true
         justify-content: flex-end;
         }
         .wrapper .row section{
-        background: #b3ecff; /* Change box color to "#b3ecff" */
+        background: #800000; /* Change box color to "#b3ecff" */
         border-radius: 5px;
         width: calc(50% - 40px);
         padding: 20px;
@@ -83,7 +83,7 @@ search: true
         text-align: center;
         line-height: 40px;
         border-radius: 50%;
-        color: #fff; /* Change font color to white */
+        color: white; /* Change font color to white */
         font-size: 17px;
         box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,0.08), 0 3px 0 4px rgba(0,0,0,0.05);
         }
@@ -162,14 +162,14 @@ search: true
 </head>
 <body>
  <p><strong>Purdue University - West Lafayette</strong></p>
-    <p><strong>Bachelor of Science in Computer Science</strong></p>
+ <p><strong>Bachelor of Science in Computer Science</strong></p>
     <ul>
-        <p>Concentations in</p>
+        <li><p>Concentations in</p></li>
         <ul>
             <li><em>Software Engineering</em></li>
             <li><em>Machine Intelligence</em></li>
         </ul>
-        <p>Minor in Statistics </p>
+        <li><p>Minor in Statistics </p></li>
     </ul>
     <p><strong>Bachelor of Science in Data Science</strong></p>
     <p><strong>Bachelor of Science in Artificial Intelligence</strong></p>
