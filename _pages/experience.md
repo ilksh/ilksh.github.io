@@ -49,11 +49,11 @@ search: true
         }
         .wrapper .row-1{
         justify-content: flex-start;
-         margin-right: 80px; /* Adjust the margin-right value */
+         margin-right: 200px; /* Adjust the margin-right value */
         }
         .wrapper .row-2{
         justify-content: flex-end;
-        margin-left: 80px; /* Adjust the margin-left value */
+        margin-left: 200px; /* Adjust the margin-left value */
         }
         .wrapper .row section{
         background: #800000; /* Change box color */
