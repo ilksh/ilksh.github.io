@@ -37,7 +37,7 @@ search: true
         position: absolute;
         height: 100%;
         width: 4px;
-        background:  #000066; /* Change timeline color */
+        background:  #000066; /* Change timeline color to "#b3ecff" */
         left: 50%;
         top: 20px;
         transform: translateX(-50%);
@@ -52,7 +52,7 @@ search: true
         justify-content: flex-end;
         }
         .wrapper .row section{
-        background: #000066; /* Change box color */
+        background: #800000; /* Change box color */
         color: white;
         border-radius: 5px;
         width: calc(50% - 40px);
