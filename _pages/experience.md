@@ -28,7 +28,7 @@ search: true
         background: #ff7979;
         }
         .wrapper{
-        max-width: 1500px;
+        max-width: 1080px;
         margin: 50px auto;
         padding: 0 20px;
         position: relative;
@@ -36,7 +36,7 @@ search: true
         .wrapper .center-line{
         position: absolute;
         height: 100%;
-        width: 4px; /* change width */
+        width: 4px;
         background:  #000066; /* Change timeline color to "#b3ecff" */
         left: 50%;
         top: 20px;
@@ -159,19 +159,14 @@ search: true
         .row section {
             color: white;
         }
-      }
-      ul.sub-bullet {
+    }
+     ul.sub-bullet {
             list-style-type: disc;
             margin-left: 20px;
         }
-      .content-container {
-      margin-left: 40px; /* Adjust this value as needed */
-     }
-      .row {
-            width: 30%;
-            margin: 0 auto;
-            padding: 10px;
-        }
+     .content-container {
+    margin-left: 40px; /* Adjust this value as needed */
+  }
     </style>
 </head>
 <body>
