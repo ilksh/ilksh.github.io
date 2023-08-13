@@ -176,45 +176,41 @@ search: true
     </div>
     <div class="row row-1">
       <section>
-       <i class="icon fas fa-rocket"></i>
+       <img src="/assets/image/helloworld.png" alt="Image Description" class="icon">
         <div class="details">
-          <span class="title">DATA SCIENCE RESEARCH ASSISTANT,</span>
+          <span class="title">Hackathon Mentor</span>
         </div>
+        Purdue HelloWorld <br>
+        <i> Sep 2023 </i>
          <ul class="sub-bullet">
-            <li>Applied Regression Analysis</li>
-            <li>Data Structure and Algorithm</li>
-            <li>Statistical Theory</li>
-            <li>Computer Architecture</li>
-            <li>Data Mine Seminar III</li>
+            <li> Mentored participants in Communication team </li>
         </ul>
       </section>
     </div>
     <div class="row row-2">
       <section>
-      <i class="icon fas fa-rocket"></i>
+     <img src="/assets/image/PurdueUSB.png" alt="Image Description" class="icon">
         <div class="details">
-          <span class="title">Summer 2023</span>
+          <span class="title">USB Tutor</span>
         </div>
+        <i> Jan 2023 ~ May 2023 </i>
         <ul class="sub-bullet">
-         <li>Probability</li>
-         <li>Elementary of Psychology</li>
+         <li>Tutored several Computer Science Courses</li>
+         <li>Explained hard concepts</li>
         </ul>
       </section>
     </div>
     <div class="row row-1">
       <section>
-        <i class="icon fas fa-rocket"></i>
+          <img src="/assets/image/Nuvve.png" alt="Image Description" class="icon">
         <div class="details">
-          <span class="title">Spring 2023</span>
+          <span class="title">DATA SCIENCE RESEARCH ASSISTANT</span>
         </div>
+        Nuvve Holding Corp <br>
+        <i> Aug 2022 ~ Dec 2022 </i>
         <ul class="sub-bullet">
-        <li>Data Engineering in Python</li>
-        <li>C Programming</li>
-        <li>Discrete Mathematics</li>
-        <li>Statistics for Data Science</li>
-        <li>Linear Algebra</li>
-        <li>Python Programming</li>
-        <li>Data Mine Seminar II</li>
+        <li> Performed data cleaning, regression model training, and data visualizing </li>
+        <li> Predicted driving patterns through clustering and Time-Series Analysis </li>
         </ul>
       </section>
     </div>
