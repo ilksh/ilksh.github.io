@@ -55,7 +55,7 @@ search: true
         background: #800000; /* Change box color */
         color: white;
         border-radius: 5px;
-        width: calc(60% - 40px); /* Change this value to increase the width */
+        width: calc(50% - 40px); /* Change this value to increase the width */
         padding: 30px; /* Increase the padding to adjust the box size */
         position: relative;
         }
