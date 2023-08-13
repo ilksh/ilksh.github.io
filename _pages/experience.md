@@ -49,15 +49,17 @@ search: true
         }
         .wrapper .row-1{
         justify-content: flex-start;
+         margin-left: 40px; /* Adjust the margin-left value */
         }
         .wrapper .row-2{
         justify-content: flex-end;
+        margin-right: 40px; /* Adjust the margin-right value */
         }
         .wrapper .row section{
         background: #800000; /* Change box color */
         color: white;
         border-radius: 5px;
-        width: calc(65% - 40px); /*change the width from 50% to 60% */
+        width: calc(80% - 40px); /*change the width from 50% to 60% */
         padding: 20px;
         position: relative;
         }
