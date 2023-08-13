@@ -209,7 +209,7 @@ search: true
       background: #ffff4d;
     }
     .timeline__event--type4 .timeline__event__icon {
-       background: url('assets/image/Nuvve.png') no-repeat center center;
+       background: url('/Users/sanghyunkim/Desktop/GitHubPage/ilksh.github.io/assets/image/Nuvve.png') no-repeat center center;
        align-self: center;
        position: relative;
        background-size: 100% 100%;
@@ -293,7 +293,7 @@ search: true
 	<div class="timeline__event  animated fadeInUp delay-1.5s timeline__event--type4">
 		<div class="timeline__event__icon ">
 			<!-- <i class="lni-sport"></i>-->
-       <img src="assets/image/Nuvve.png" alt="Icon Image">
+       <img src="/Users/sanghyunkim/Desktop/GitHubPage/ilksh.github.io/assets/image/Nuvve.png" alt="Icon Image">
 		</div>
 		<div class="timeline__event__date">
 			Fall 2023
