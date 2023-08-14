@@ -365,18 +365,16 @@ search: true
 			<!-- <i class="lni-sport"></i>-->
 		</div>
 		<div class="timeline__event__date">
-			Spring 2023
+			Jan 2022 ~ <br> Jun 2022
 		</div>
 		<div class="timeline__event__content">
+    <div class="timeline__event__title">
+			 Math & Coding Tutor
+			</div>
 			<div class="timeline__event__description">
 				<ul>
-        <li>Data Engineering in Python</li>
-        <li>C Programming</li>
-        <li>Discrete Mathematics</li>
-        <li>Statistics for Data Science</li>
-        <li>Linear Algebra</li>
-        <li>Python Programming</li>
-        <li>Data Mine Seminar II</li>
+        <li>Provided private math tutoring in SAT Math and AP Calculus with a comprehensive approach, including engaging lectures, challenging tests, and thought-provoking assignments. </li>
+        <li> Also served as a coding tutor, teaching fundamental algorithms in C++ and Python, covering data structures, graph theory, shortest path, and segment tree concepts. </li>
         </ul>
 			</div>
 		</div>
