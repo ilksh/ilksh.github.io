@@ -211,8 +211,8 @@ search: true
       background: none;
     }
     .timeline__event--type4 .timeline__event__icon {
+      background: white;
        background-image: url('/assets/image/helloworld.png');
-       background: white;
        background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;
