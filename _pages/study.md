@@ -206,6 +206,26 @@ search: true
     .timeline__event--type3 .timeline__event__title {
       color: #24b47e;
     }
+    .timeline__event--type4:after {
+      background: #ff9900;
+    }
+    .timeline__event--type4 .timeline__event__date {
+      color: #ffff4d;
+      background: #ff9900;
+    }
+    .timeline__event--type4:nth-child(2n+1) .timeline__event__icon:before, .timeline__event--type4:nth-child(2n+1) .timeline__event__icon:after {
+      background: #ffff4d;
+    }
+    .timeline__event--type4 .timeline__event__icon {
+      background: #ff9900;
+      color: #ffff4d;
+    }
+    .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
+      background: #ff9900;
+    }
+     .timeline__event--type4 .timeline__event__title {
+      color: #ffff4d;
+    }
     .timeline__event:last-child .timeline__event__icon:before {
       content: none;
     }

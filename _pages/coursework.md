@@ -215,6 +215,9 @@ search: true
     .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
       background: #ff9900;
     }
+     .timeline__event--type4 .timeline__event__title {
+      color: #ffff4d;
+    }
     .timeline__event:last-child .timeline__event__icon:before {
       content: none;
     }
