@@ -206,7 +206,7 @@ search: true
     .timeline__event--type3 .timeline__event__title {
       color: #24b47e;
     }
-    .timeline__event--type4:after {
+    "  .timeline__event--type4:after {
       background: #ff9900;
     }
     .timeline__event--type4 .timeline__event__date {
@@ -217,12 +217,16 @@ search: true
       background: #ffff4d;
     }
     .timeline__event--type4 .timeline__event__icon {
-      background: #ff9900;
-      color: #ffff4d;
+       background-image: url('/assets/image/Nuvve.png');
+       background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      align-self: center;
+      position: relative;
     }
     .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
       background: #ff9900;
-    }
+    }"
      .timeline__event--type4 .timeline__event__title {
       color: #ffff4d;
     }
