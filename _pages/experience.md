@@ -212,10 +212,9 @@ search: true
        background-image: url('/assets/image/Nuvve.png');
        background-repeat: no-repeat;
       background-position: center center;
-      background-size: contain;
+      background-size: cover;
       align-self: center;
       position: relative;
-      color: #ffff4d;
     }
     .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
       background: #ff9900;
