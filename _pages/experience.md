@@ -199,24 +199,22 @@ search: true
       color: #24b47e;
     }
      .timeline__event--type4:after {
-      background: none; /* Remove the background color */
+      background: #ff9900;
     }
     .timeline__event--type4 .timeline__event__date {
       color: #ffff4d;
-      /*background: #ff9900;*/
+      background: #ff9900;
     }
     .timeline__event--type4:nth-child(2n+1) .timeline__event__icon:before, .timeline__event--type4:nth-child(2n+1) .timeline__event__icon:after {
-      background: none; /* Remove the background color */
+      background: #ffff4d;
     }
     .timeline__event--type4 .timeline__event__icon {
-        background-image: url('/assets/image/Nuvve.png');
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        align-self: center;
-        position: relative;
-        border-radius: 100%; /* Make the icon circular */
-        overflow: hidden; /* Hide any overflow of the circular icon */
+       background-image: url('/assets/image/Nuvve.png');
+       background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      align-self: center;
+      position: relative;
     }
     .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
       background: #ff9900;
