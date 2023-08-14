@@ -209,7 +209,7 @@ search: true
       background: #ffff4d;
     }
     .timeline__event--type4 .timeline__event__icon {
-       background-image: url('/assets/image/Nuvve.png');
+       background-image: url('/assets/image/helloworld.png');
        background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;
