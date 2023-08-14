@@ -246,7 +246,7 @@ search: true
       /* background: #ff9900; */
     }
     .timeline__event--type4 .timeline__event__title {
-      color: #ffff4d;
+      color: #ff9900;
     }
     .timeline__event:last-child .timeline__event__icon:before {
       content: none;
@@ -332,8 +332,8 @@ search: true
 			</div>
 			<div class="timeline__event__description">
 				<ul>
-            <li>Served as a distinguished tutor for the USB, providing individualized instruction in complex CS courses and associated STAT disciplines, specializing in Object Oriented Programming (OOP) and Multivariable Calculus.</li>
-            <li> Elucidating intricate concepts while bolstering comprehension through illustrative examples, thereby facilitating a profound grasp of the subject matter. </li>
+            <li>Provided individualized instruction in complex CS and MATH courses, specializing in Object Oriented Programming (OOP) and Multivariable Calculus.</li>
+            <li> Elucidated intricate concepts while bolstering comprehension through illustrative examples, thereby facilitating a profound grasp of the subject matter. </li>
         </ul>
 			</div>
 		</div>
@@ -355,7 +355,6 @@ search: true
 				<ul>
         <li> Led regression analyses (linear and logistic) to reveal insights between variables while also applying k-means clustering to identify distinct driving patterns. </li>
         <li>Employed time series analysis to track evolving driving behaviors, informing data-driven decisions. </li> 
-        <li> Proficient in Python for complex data analysis, enhancing statistical and algorithmic expertise. </li>
         </ul>
 			</div>
 		</div>
