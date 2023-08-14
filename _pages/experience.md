@@ -215,6 +215,7 @@ search: true
       background-size: cover;
       align-self: center;
       position: relative;
+       border-radius: 100%; /* Make the icon circular */
     }
     .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
       background: #ff9900;
