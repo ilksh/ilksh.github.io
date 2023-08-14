@@ -199,7 +199,8 @@ search: true
       color: #24b47e;
     }
      .timeline__event--type4:after {
-      background: #ff9900;
+      /* background: #ff9900; */
+       background: none; /* Remove the background color */
     }
     .timeline__event--type4 .timeline__event__date {
       color: #ffff4d;
