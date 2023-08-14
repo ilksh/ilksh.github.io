@@ -220,6 +220,18 @@ search: true
     .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
       background: #ff9900;
     }
+    .timeline__event--type4 .timeline__event__icon::before {
+      content: ""; /* Create a circular background element */
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      background-color: white; /* Set the background color to white */
+      z-index: -1; /* Place the background element behind the image */
+  }
     .timeline__event:last-child .timeline__event__icon:before {
       content: none;
     }
