@@ -304,15 +304,13 @@ search: true
 		</div>
 		<div class="timeline__event__content ">
     <div class="timeline__event__title">
-				USB Tutor
+				USB Tutor <br>
+        Computer Science Undergraduate Board (USB)
 			</div>
 			<div class="timeline__event__description">
 				<ul>
-            <li>Applied Regression Analysis</li>
-            <li>Data Structure and Algorithm</li>
-            <li>Statistical Theory</li>
-            <li>Computer Architecture</li>
-            <li>Data Mine Seminar III</li>
+            <li>Served as a distinguished tutor for the USB, providing individualized instruction in complex CS courses and associated STAT disciplines, specializing in Object Oriented Programming (OOP) and Multivariable Calculus.</li>
+            <li> Elucidating intricate concepts while bolstering comprehension through illustrative examples, thereby facilitating a profound grasp of the subject matter. </li>
         </ul>
 			</div>
 		</div>
