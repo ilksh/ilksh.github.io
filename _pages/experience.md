@@ -211,7 +211,7 @@ search: true
     }
     .timeline__event--type4 .timeline__event__icon {
       background: white;
-       background-image: url('/assets/image/helloworld.png');
+       background-image: url('/assets/image/PurdueUSB.png');
        background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;
@@ -300,9 +300,12 @@ search: true
        <img src="/Users/sanghyunkim/Desktop/GitHubPage/ilksh.github.io/assets/image/Nuvve.png" alt="Icon Image">
 		</div>
 		<div class="timeline__event__date">
-			Fall 2023
+			Jan 2023 <br> ~ May 2023
 		</div>
 		<div class="timeline__event__content ">
+    <div class="timeline__event__title">
+				USB Tutor
+			</div>
 			<div class="timeline__event__description">
 				<ul>
             <li>Applied Regression Analysis</li>
