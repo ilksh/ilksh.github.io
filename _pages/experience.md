@@ -379,23 +379,5 @@ search: true
 			</div>
 		</div>
 	</div>
-	<!--forth-->
-	<div class="timeline__event animated fadeInUp timeline__event--type1">
-		<div class="timeline__event__icon">
-			<!-- <i class="lni-sport"></i>-->
-		</div>
-		<div class="timeline__event__date">
-			Fall 2022
-		</div>
-		<div class="timeline__event__content">
-			<div class="timeline__event__description">
-				<ul>
-        <li>Object Oriented Programming (JAVA)</li>
-        <li>Multivariable Calculus</li>
-        <li>Data Mine Seminar I</li>
-        </ul>
-			</div>
-		</div>
-	</div>
 </div>
 </html>
