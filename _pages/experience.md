@@ -212,7 +212,7 @@ search: true
        background-image: url('/assets/image/Nuvve.png');
        background-repeat: no-repeat;
       background-position: center center;
-      background-size: cover;
+      background-size: contain;
       align-self: center;
       position: relative;
        border-radius: 50%; /* Make the icon circular */
