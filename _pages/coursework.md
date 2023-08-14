@@ -295,7 +295,7 @@ search: true
   </ul>
 <div class="timeline">
 	<!--first-->
-	<div class="timeline__event  animated fadeInUp delay-3s timeline__event--type4">
+	<div class="timeline__event  animated fadeInUp delay-1s timeline__event--type4">
 		<div class="timeline__event__icon ">
 			<!-- <i class="lni-sport"></i>-->
 		</div>
@@ -315,7 +315,7 @@ search: true
 		</div>
 	</div>
 	<!--second-->
-	<div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+	<div class="timeline__event animated fadeInUp delay-1s timeline__event--type2">
 		<div class="timeline__event__icon">
 			<!-- <i class="lni-sport"></i>-->
 		</div>
