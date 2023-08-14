@@ -200,14 +200,15 @@ search: true
     }
      .timeline__event--type4:after {
       /* background: #ff9900; */
-       background: none; /* Remove the background color */
+       background: none;
     }
     .timeline__event--type4 .timeline__event__date {
       color: #ffff4d;
       background: #ff9900;
     }
     .timeline__event--type4:nth-child(2n+1) .timeline__event__icon:before, .timeline__event--type4:nth-child(2n+1) .timeline__event__icon:after {
-      background: #ffff4d;
+      /* background: #ffff4d; */
+      background: none;
     }
     .timeline__event--type4 .timeline__event__icon {
        background-image: url('/assets/image/helloworld.png');
@@ -217,22 +218,12 @@ search: true
       align-self: center;
       position: relative;
        border-radius: 100%; /* Make the icon circular */
+         border: 2px solid black; /* Add a black border */
     }
     .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
-      background: #ff9900;
+      content: "";
+      /* background: #ff9900; */
     }
-    .timeline__event--type4 .timeline__event__icon::before {
-      content: ""; /* Create a circular background element */
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 50%;
-      background-color: white; /* Set the background color to white */
-      z-index: -1; /* Place the background element behind the image */
-  }
     .timeline__event:last-child .timeline__event__icon:before {
       content: none;
     }
