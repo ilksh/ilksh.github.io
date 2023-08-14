@@ -158,8 +158,10 @@ search: true
     .timeline__event__description {
       flex-basis: 100%;
     }
+    /* Math and Coding Tutor */
     .timeline__event--type2:after {
-      background: #555ac0;
+     /* background: #555ac0; */
+      background: none;
     }
     .timeline__event--type2 .timeline__event__date {
       color: #87bbfe;
@@ -169,17 +171,27 @@ search: true
       background: #87bbfe;
     }
     .timeline__event--type2 .timeline__event__icon {
-      background: #87bbfe;
-      color: #555ac0;
+      background: white;
+      background-image: url('/assets/image/mathTutor.png');
+       background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      align-self: center;
+      position: relative;
+      border-radius: 100%; /* Make the icon circular */
+      border: 2px solid black; /* Add a black border */
     }
     .timeline__event--type2 .timeline__event__icon:before, .timeline__event--type2 .timeline__event__icon:after {
-      background: #87bbfe;
+      content: "";
+      /* background: #87bbfe; */
     }
     .timeline__event--type2 .timeline__event__title {
       color: #555ac0;
     }
+    /* Nuvve */
     .timeline__event--type3:after {
-      background: #24b47e;
+      /* background: #24b47e; */
+      background: none;
     }
     .timeline__event--type3 .timeline__event__date {
       color: #aff1b6;
@@ -189,15 +201,24 @@ search: true
       background: #aff1b6;
     }
     .timeline__event--type3 .timeline__event__icon {
-      background: #aff1b6;
-      color: #24b47e;
+      background: white;
+      background-image: url('/assets/image/Nuvve.png');
+       background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      align-self: center;
+      position: relative;
+      border-radius: 100%; /* Make the icon circular */
+      border: 2px solid black; /* Add a black border */
     }
     .timeline__event--type3 .timeline__event__icon:before, .timeline__event--type3 .timeline__event__icon:after {
-      background: #aff1b6;
+      content: "";
+      /* background: #aff1b6; */
     }
     .timeline__event--type3 .timeline__event__title {
       color: #24b47e;
     }
+    /* PURDUE USB */
      .timeline__event--type4:after {
       /* background: #ff9900; */
        background: none;
@@ -223,6 +244,9 @@ search: true
     .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
       content: "";
       /* background: #ff9900; */
+    }
+    .timeline__event--type4 .timeline__event__title {
+      color: #ffff4d;
     }
     .timeline__event:last-child .timeline__event__icon:before {
       content: none;
@@ -297,10 +321,9 @@ search: true
 	<div class="timeline__event  animated fadeInUp delay-1.5s timeline__event--type4">
 		<div class="timeline__event__icon ">
 			<!-- <i class="lni-sport"></i>-->
-       <img src="/Users/sanghyunkim/Desktop/GitHubPage/ilksh.github.io/assets/image/Nuvve.png" alt="Icon Image">
 		</div>
 		<div class="timeline__event__date">
-			Jan 2023 <br> ~ May 2023
+			Jan 2023 ~ <br> May 2023
 		</div>
 		<div class="timeline__event__content ">
     <div class="timeline__event__title">
@@ -316,24 +339,29 @@ search: true
 		</div>
 	</div>
 	<!--second-->
-	<div class="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+	<div class="timeline__event animated fadeInUp delay-2s timeline__event--type3">
 		<div class="timeline__event__icon">
 			<!-- <i class="lni-sport"></i>-->
 		</div>
 		<div class="timeline__event__date">
-			Summer 2023
+			Aug 2022 ~ <br> Dec 2022
 		</div>
 		<div class="timeline__event__content">
+    <div class="timeline__event__title">
+				Data Science Research Assistant <br>
+        Nuvve Holding Corp - Purdue Data Mine 
+			</div>
 			<div class="timeline__event__description">
 				<ul>
-         <li>Probability</li>
-         <li>Elementary of Psychology</li>
+        <li> Led regression analyses (linear and logistic) to reveal insights between variables while also applying k-means clustering to identify distinct driving patterns. </li>
+        <li>Employed time series analysis to track evolving driving behaviors, informing data-driven decisions. </li> 
+        <li> Proficient in Python for complex data analysis, enhancing statistical and algorithmic expertise. </li>
         </ul>
 			</div>
 		</div>
 	</div>
 	<!--third-->
-	<div class="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+	<div class="timeline__event animated fadeInUp delay-1s timeline__event--type2">
 		<div class="timeline__event__icon">
 			<!-- <i class="lni-sport"></i>-->
 		</div>
