@@ -212,13 +212,14 @@ search: true
     }
     .timeline__event--type4 .timeline__event__icon {
        background-image: url('/assets/image/helloworld.png');
+       background: white;
        background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;
       align-self: center;
       position: relative;
-       border-radius: 100%; /* Make the icon circular */
-         border: 2px solid black; /* Add a black border */
+      border-radius: 100%; /* Make the icon circular */
+      border: 2px solid black; /* Add a black border */
     }
     .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
       content: "";
