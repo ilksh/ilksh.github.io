@@ -207,8 +207,7 @@ search: true
       background: #ff9900;
     }
     .timeline__event--type4:nth-child(2n+1) .timeline__event__icon:before, .timeline__event--type4:nth-child(2n+1) .timeline__event__icon:after {
-      /* background: #ffff4d; */
-      background: none;
+      background: #ffff4d; 
     }
     .timeline__event--type4 .timeline__event__icon {
       background: white;
