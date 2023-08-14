@@ -215,8 +215,8 @@ search: true
       background-size: contain;
       align-self: center;
       position: relative;
-      /*background: #ff9900;
-      color: #ffff4d;*/
+      background: #ff9900;
+      /*color: #ffff4d;*/
     }
     .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
       background: #ff9900;
