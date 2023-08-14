@@ -213,7 +213,7 @@ search: true
     }
     .timeline__event--type3 .timeline__event__icon:before, .timeline__event--type3 .timeline__event__icon:after {
       content: "";
-      /* background: #aff1b6; */
+      background: #aff1b6; 
     }
     .timeline__event--type3 .timeline__event__title {
       color: #24b47e;
