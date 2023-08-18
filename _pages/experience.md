@@ -347,6 +347,25 @@ search: true
     }
 </style>
 <div class="timeline">
+  <!--fourth-->
+  <div class="timeline__event animated fadeInUp delay-1s timeline__event--type5">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			Aug 2023 ~ <br> Current
+		</div>
+		<div class="timeline__event__content">
+    <div class="timeline__event__title">
+			 Hackathon Mentor <br> Purdue Hello World
+			</div>
+			<div class="timeline__event__description">
+				<ul>
+        <li> Serving as a mentor for freshman participants at a Purdue University hackathon, where I provided guidance and support to help them excel in their innovative projects. </li>
+        </ul>
+			</div>
+		</div>
+	</div>
 	<!--first-->
 	<div class="timeline__event  animated fadeInUp delay-1.5s timeline__event--type4">
 		<div class="timeline__event__icon ">
@@ -405,25 +424,6 @@ search: true
 				<ul>
         <li>Provided private math tutoring in SAT Math and AP Calculus with a comprehensive approach, including engaging lectures, challenging tests, and thought-provoking assignments. </li>
         <li> Also served as a coding tutor, teaching fundamental algorithms in C++ and Python, covering data structures, graph theory, shortest path, and segment tree concepts. </li>
-        </ul>
-			</div>
-		</div>
-	</div>
-  <!--fourth-->
-  <div class="timeline__event animated fadeInUp delay-1s timeline__event--type5">
-		<div class="timeline__event__icon">
-			<!-- <i class="lni-sport"></i>-->
-		</div>
-		<div class="timeline__event__date">
-			Aug 2023 ~ <br> Current
-		</div>
-		<div class="timeline__event__content">
-    <div class="timeline__event__title">
-			 Hackathon Mentor <br> Purdue Hello World
-			</div>
-			<div class="timeline__event__description">
-				<ul>
-        <li> Serving as a mentor for freshman participants at a Purdue University hackathon, where I provided guidance and support to help them excel in their innovative projects. </li>
         </ul>
 			</div>
 		</div>
