@@ -183,7 +183,7 @@ search: true
     }
     .timeline__event--type2 .timeline__event__icon:before, .timeline__event--type2 .timeline__event__icon:after {
       content: "";
-      /* background: #87bbfe; */
+      background: #87bbfe;
     }
     .timeline__event--type2 .timeline__event__title {
       color: #555ac0;
@@ -243,7 +243,7 @@ search: true
     }
     .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
       content: "";
-      /* background: #ff9900; */
+      background: #ff9900;
     }
     .timeline__event--type4 .timeline__event__title {
       color: #ff9900;
