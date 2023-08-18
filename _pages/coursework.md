@@ -303,7 +303,7 @@ search: true
 			<!-- <i class="lni-sport"></i>-->
 		</div>
 		<div class="timeline__event__date">
-			Fall 2023
+			Fall 2023 (Current)
 		</div>
 		<div class="timeline__event__content ">
 			<div class="timeline__event__description">

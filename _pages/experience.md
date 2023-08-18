@@ -194,7 +194,7 @@ search: true
       background: none;
     }
     .timeline__event--type3 .timeline__event__date {
-      color: #aff1b6;
+      color: #aff1b6; /* dark yellow */
       background-color: #24b47e;
     }
     .timeline__event--type3:nth-child(2n+1) .timeline__event__icon:before, .timeline__event--type3:nth-child(2n+1) .timeline__event__icon:after {
@@ -247,6 +247,36 @@ search: true
     }
     .timeline__event--type4 .timeline__event__title {
       color: #ff9900;
+    }
+    /* hello world */ 
+    .timeline__event--type5:after {
+      /* background: #24b47e; */
+      background: none;
+    }
+    .timeline__event--type5 .timeline__event__date {
+      color: #9251ac;
+      background-color: #f6a4ec;
+    }
+    .timeline__event--type5:nth-child(2n+1) .timeline__event__icon:before, .timeline__event--type5:nth-child(2n+1) .timeline__event__icon:after {
+      background:#9251ac;
+    }
+    .timeline__event--type5 .timeline__event__icon {
+      background: white;
+      background-image: url('/assets/image/helloworld.png');
+       background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      align-self: center;
+      position: relative;
+      border-radius: 100%; /* Make the icon circular */
+      border: 2px solid black; /* Add a black border */
+    }
+    .timeline__event--type5 .timeline__event__icon:before, .timeline__event--type5 .timeline__event__icon:after {
+      content: "";
+      background: #9251ac; 
+    }
+    .timeline__event--type5 .timeline__event__title {
+      color: #f6a4ec;
     }
     .timeline__event:last-child .timeline__event__icon:before {
       content: none;
@@ -375,6 +405,25 @@ search: true
 				<ul>
         <li>Provided private math tutoring in SAT Math and AP Calculus with a comprehensive approach, including engaging lectures, challenging tests, and thought-provoking assignments. </li>
         <li> Also served as a coding tutor, teaching fundamental algorithms in C++ and Python, covering data structures, graph theory, shortest path, and segment tree concepts. </li>
+        </ul>
+			</div>
+		</div>
+	</div>
+  <!--fourth-->
+  <div class="timeline__event animated fadeInUp delay-1s timeline__event--type5">
+		<div class="timeline__event__icon">
+			<!-- <i class="lni-sport"></i>-->
+		</div>
+		<div class="timeline__event__date">
+			Aug 2023 ~ <br> Current
+		</div>
+		<div class="timeline__event__content">
+    <div class="timeline__event__title">
+			 Hackathon Mentor <br> Purdue Hello World
+			</div>
+			<div class="timeline__event__description">
+				<ul>
+        <li> Serving as a mentor for freshman participants at a Purdue University hackathon, where I provided guidance and support to help them excel in their innovative projects. </li>
         </ul>
 			</div>
 		</div>
