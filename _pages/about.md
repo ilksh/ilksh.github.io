@@ -355,11 +355,37 @@ search: true
     text-align: right;
     margin-top: 100px;
 }
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px; /* Adjust margin as needed */
+}
+#profile-picture {
+    width: 40%; /* Adjust image width */
+    border-radius: 50%; /* Make the image circular */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+.introduction {
+    flex: 1;
+    padding: 20px;
+}
+.introduction h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+.introduction p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+#capability {
+    font-weight: bold;
+}
+/* Rest of your existing styles... */
 </style>
-## Name
   <div class="profile-section">
-    <img id="profile-picture" src="/assets/image/profile.jpeg">
       <div class="introduction">
+          <img id="profile-picture" src="/assets/image/profile.jpeg">
         <h2>ABOUT ME</h2>
           <p>"기획, 디자인, 개발 다 하는 인간 스타트업이 되도록 노력 중"<br>산업공학과 출신, UX 관점에서 제대로 된 서비스 기획을 하기 위해 Front-End를 공부 중입니다. Adobe Tool들은 아직 잘 못 다루지만 디자인 감각은 있어요. :) 정보의 평등과 지식 공유의 중요성에 공감하고 있습니다. 무엇이든 시작하면 제대로 하는 성격! 같이 즐겁게, 열정적으로 진짜 뭔가를 만들어봐요! </p>
           <h2>CAPABILITY</h2>
