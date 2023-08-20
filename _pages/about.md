@@ -296,13 +296,7 @@ a[title="Flaticon"]:hover{
 </head>
 <body>
     <div class="frame">
-        <nav class="navigator">
             <h3 class="site-name">ZOZELAND</h3>
-            <ul>
-                <li><a class="nav-menu" href="index.html">WORK</a></li>
-                <li><a class="nav-menu" href="info.html">INFO</a></li>
-            </ul>
-        </nav>
         <div class="profile-section">
             <img id="profile-picture" src="/assets/image/profile.jpeg">
             <div class="introduction">
@@ -315,35 +309,27 @@ a[title="Flaticon"]:hover{
         <h5 class="value-menu">MY VALUES</h5>
         <div class="value-section">
             <div class="value">
-                <img class="value-icon" src="assets/image/MarketPlace.png">
+                <img class="value-icon" src="assets/image/MarkMemoAppImgetPlace.png">
                 <div class="value-intro">
                     <h4 class="value-name">GO TOGETHER</h4>
                     <p class="value-exp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sunt veritatis ea placeat. Iure, quam laudantium pariatur eligendi error eos voluptatum eaque maxime. Necessitatibus, nihil. Deleniti vitae perspiciatis est vel.</p>
                 </div>
             </div>
             <div class="value">
-                <img class="value-icon" src="assets/image/MarketPlace.png">
+                <img class="value-icon" src="assets/image/MemoAppImg.png">
                 <div class="value-intro">
                     <h4 class="value-name">RESPONSIBILITY</h4>
                     <p class="value-exp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga labore ad, perspiciatis ipsa veritatis neque et nostrum porro iste magnam dolorum similique laborum doloribus in possimus eveniet dicta voluptatum est!</p>
                 </div>
             </div>
             <div class="value">
-                <img class="value-icon" src="dove.png">
+                <img class="value-icon" src="assets/image/MemoAppImg.png">
                 <div class="value-intro">
                     <h4 class="value-name">COMMUNICATION</h4>
                     <p class="value-exp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsa iste blanditiis enim. Vel minus perferendis praesentium architecto deserunt, ipsam dolore hic, ullam nulla aut magnam eveniet facilis explicabo odio.</p>
                 </div>
             </div>
         </div>
-        <footer class="footer">
-            <h3 class="contact">CONTACT ME</h3>
-            <div class="links">
-                <a class="blog" href="zozeland.tistory.com">BLOG</a>
-                <a class="instagram" href="instagram.com/a_i_siteru">INSTAGRAM</a>
-            </div>
-            <p class="footer-comment"><br>Feel free to contact me!<br>Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
-        </footer>
     </div>
 </body>
 </html>
