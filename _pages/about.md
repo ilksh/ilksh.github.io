@@ -5,331 +5,349 @@ excerpt: "About Me"
 search: true
 ---
 
-## Start 
-
-<html lang="en">
+<html>
+<script src="https://kit.fontawesome.com/fc596df623.js" crossorigin="anonymous"></script>
 <style>
-body{
-    background-color: #EFE7E3;
-}
-.frame{
-    margin: 30px 150px;
-    display: flex;
-    flex-direction: column;
-}
-/*navigator*/
-.navigator{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-li{
-    display: inline;
-    align-self: center;
-    margin:0;
-    margin-left: 15px;
-}
-ul{
-    margin:0;
-}
-.site-name{
-    margin:0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    color: #C2B4AB;
-}
-.nav-menu{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-}
-a{
-    color: black;
-    text-decoration: none;
-}
-a:hover{
-    color: white;
-    transition: 0.3s;
-}
-/*dashboard*/
-.dashboard{
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
-    margin-bottom: 70px;
-}
-.korean-comment{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 500;
-    font-size: 50px;
-}
-.sample{
-    background-color: pink;
-    -webkit-text-stroke: 1px black;
-}
-.sample:hover{
-    background-color: transparent;
-    color: white;
-    -webkit-text-stroke: 1px black;
-    transition: none;
-}
-.highlight{
-    color: white;
-    -webkit-text-stroke: 1px black;
-}
-.highlight:hover{
-    background-color: pink;
-    color: black;
-    transition: none;
-}
-.type1:hover{
-    background-color: yellowgreen;
-}
-.type2:hover{
-    background-color: skyblue;
-}
-.type3:hover{
-    background-color: orange;
-}
-.english-comment{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 100;
-    font-size: 15px;
-    font-style: italic;
-    letter-spacing: -0.3px;
-}
-/*recent works*/
-.recent-menu{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: #C2B4AB;
-    text-align: right;
-    margin-top: 100px;
-}
-/*footer*/
-.footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 200px;
-}
-.contact{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 50px;
-    font-weight: 700;
-    color: black;
-    margin-bottom: 40px;
-    border-bottom: 2px solid black;
-}
-.links>a{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
-    font-weight: 400;
-    margin-left: 15px;
-}
-.footer>p{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 100;
-    font-size: 15px;
-    font-style: italic;
-    margin: 0;
-    margin-top: 5px;
-}
-/* INFO Section*/
-/*profile-section*/
-.profile-section{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 100px 100px;
-}
-#profile-picture{
-    width: 400px;
-    margin-right: 60px;
-}
-.introduction>h2{
-    margin: 0px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 35px;
-}
-.introduction>p{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    margin-bottom: 40px;
-}
-#capability{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    font-style: italic;
-    line-height: 30px;
-}
-/*value section*/
-.value-menu{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 35px;
-    margin: 30px 100px;
-}
-.value-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
-    margin: 100px 150px;
-    margin-top: 20px;
-}
-.value{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 40px;
-    align-items: center;
-}
-.value-icon{
-    width: 100px;
-    height: 100px;
-    border: 2px solid #C2B4AB;
-    border-radius: 100px;
-    padding: 15px;
-}
-.value-intro{
-    margin-left: 30px;
-}
-.value-name{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700px;
-    margin-top: 0px;
-    margin-bottom: 10px;
-}
-.value-exp{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    margin: 0px;
-}
-/*footer section*/
-.footer-comment{
-    text-align: center;
-}
-a[title="Freepik"]:hover{
-    color: black;
-    text-decoration: underline;
-}
-a[title="Flaticon"]:hover{
-    color: black;
-    text-decoration: underline;
-}
-/* RECENT WORKS */
-.recent-works{
-    display: flex;
-    flex-direction: column;
-}
-.article{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 120px;
-    align-items: center;
-}
-.thumbnail{
-    width: 600px;
-}
-.article-info{
-    margin: 0px 20px;
-}
-.article-name{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 50px;
-    margin-top: 0px;
-    margin-bottom: 30px;
-}
-.article-name:hover{
-    color: pink;
-    -webkit-text-stroke: 1px black;
-    transition: 0.3s;
-}
-.article-comment{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 16px;
-    font-weight: 100;
-}
-.more{
-    width: content;
-    height: content;
-    float: right;
-    margin-right: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 0px;
-}
-#name1{
-    position: relative;
-    right: 70px;
-}
-#name1:hover{
-    color: skyblue;
-}
-#name2-1{
-    text-align: right;
-    position: relative;
-    left: 0px;
-    margin-bottom: 0px;
-}
-#name2-2{
-    text-align: right;
-    position: relative;
-    left: 100px;
-}
-#name2-2:hover{
-    color: orange;
-}
+  * {
+    box-sizing: border-box;
+    }
+    html {
+      font-size: 14px;
+    }
+    body {
+      background: #f6f9fc;
+      font-family: "Open Sans", sans-serif;
+      color: #525f7f;
+    }
+    h2 {
+      margin: 5%;
+      text-align: center;
+      font-size: 4rem;
+      font-weight: 100;
+    }
+    h1 {
+      margin: 4%;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 10;
+      top: 0;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      margin: 20px auto;
+      position: relative;
+    }
+    .timeline__event {
+      margin-bottom: 20px;
+      position: relative;
+      display: flex;
+      margin: 20px 0;
+      border-radius: 6px;
+      align-self: flex-end; /* Change this line to align the events to the right | Change from center */
+      width: 50vw;
+      margin-left: auto; /* Add this line to adjust the left margin */
+    }
+    .timeline__event:nth-child(2n+1) {
+      flex-direction: row-reverse;
+    }
+    .timeline__event:nth-child(2n+1) .timeline__event__date {
+      border-radius: 0 6px 6px 0;
+    }
+    .timeline__event:nth-child(2n+1) .timeline__event__content {
+      border-radius: 6px 0 0 6px;
+    }
+    .timeline__event:nth-child(2n+1) .timeline__event__icon:before {
+      content: "";
+      width: 2px;
+      height: 100%;
+      background: #f6a4ec;
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      right: auto;
+      z-index: -1;
+      transform: translateX(-50%);
+      -webkit-animation: fillTop 2s forwards 4s ease-in-out;
+              animation: fillTop 2s forwards 4s ease-in-out;
+    }
+    .timeline__event:nth-child(2n+1) .timeline__event__icon:after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background: #f6a4ec;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      top: 50%;
+      left: auto;
+      transform: translateY(-50%);
+      -webkit-animation: fillLeft 2s forwards 4s ease-in-out;
+              animation: fillLeft 2s forwards 4s ease-in-out;
+    }
+    .timeline__event__title {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #9251ac; /* purple */
+      letter-spacing: 1.5px;
+    }
+    .timeline__event__content {
+      padding: 20px;
+      box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+      background: #fff;
+      width: calc(40vw - 84px);
+      border-radius: 0 6px 6px 0;
+    }
+    .timeline__event__date {
+      color: #f6a4ec;
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: #9251ac;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      padding: 0 20px;
+      border-radius: 6px 0 0 6px;
+    }
+    .timeline__event__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9251ac;
+      padding: 20px;
+      align-self: center;
+      margin: 0 20px;
+      background: #f6a4ec;
+      border-radius: 100%;
+      width: 40px;
+      box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+      padding: 40px;
+      height: 40px;
+      position: relative;
+    }
+    .timeline__event__icon i {
+      font-size: 32px;
+    }
+    .timeline__event__icon:before {
+      content: "";
+      width: 2px;
+      height: 100%;
+      background: #f6a4ec;
+      position: absolute;
+      top: 0%;
+      z-index: -1;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-animation: fillTop 2s forwards 4s ease-in-out;
+              animation: fillTop 2s forwards 4s ease-in-out;
+    }
+    .timeline__event__icon:after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background: #f6a4ec;
+      position: absolute;
+      left: 0%;
+      z-index: -1;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-animation: fillLeftOdd 2s forwards 4s ease-in-out;
+              animation: fillLeftOdd 2s forwards 4s ease-in-out;
+    }
+    .timeline__event__description {
+      flex-basis: 100%;
+    }
+    /* Math and Coding Tutor */
+    .timeline__event--type2:after {
+     /* background: #555ac0; */
+      background: none;
+    }
+    .timeline__event--type2 .timeline__event__date {
+      color: #87bbfe;
+      background: #555ac0;
+    }
+    .timeline__event--type2:nth-child(2n+1) .timeline__event__icon:before, .timeline__event--type2:nth-child(2n+1) .timeline__event__icon:after {
+      background: #87bbfe;
+    }
+    .timeline__event--type2 .timeline__event__icon {
+      background: white;
+      background-image: url('/assets/image/mathTutor.png');
+       background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      align-self: center;
+      position: relative;
+      border-radius: 100%; /* Make the icon circular */
+      border: 2px solid black; /* Add a black border */
+    }
+    .timeline__event--type2 .timeline__event__icon:before, .timeline__event--type2 .timeline__event__icon:after {
+      content: "";
+      background: #87bbfe;
+    }
+    .timeline__event--type2 .timeline__event__title {
+      color: #555ac0;
+    }
+    /* Nuvve */
+    .timeline__event--type3:after {
+      /* background: #24b47e; */
+      background: none;
+    }
+    .timeline__event--type3 .timeline__event__date {
+      color: #aff1b6; /* dark yellow */
+      background-color: #24b47e;
+    }
+    .timeline__event--type3:nth-child(2n+1) .timeline__event__icon:before, .timeline__event--type3:nth-child(2n+1) .timeline__event__icon:after {
+      background: #aff1b6;
+    }
+    .timeline__event--type3 .timeline__event__icon {
+      background: white;
+      background-image: url('/assets/image/Nuvve.png');
+       background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      align-self: center;
+      position: relative;
+      border-radius: 100%; /* Make the icon circular */
+      border: 2px solid black; /* Add a black border */
+    }
+    .timeline__event--type3 .timeline__event__icon:before, .timeline__event--type3 .timeline__event__icon:after {
+      content: "";
+      background: #aff1b6; 
+    }
+    .timeline__event--type3 .timeline__event__title {
+      color: #24b47e;
+    }
+    /* PURDUE USB */
+     .timeline__event--type4:after {
+      /* background: #ff9900; */
+       background: none;
+    }
+    .timeline__event--type4 .timeline__event__date {
+      color: #ffff4d;
+      background: #ff9900;
+    }
+    .timeline__event--type4:nth-child(2n+1) .timeline__event__icon:before, .timeline__event--type4:nth-child(2n+1) .timeline__event__icon:after {
+      background: #ffff4d; 
+    }
+    .timeline__event--type4 .timeline__event__icon {
+      background: white;
+       background-image: url('/assets/image/PurdueUSB.png');
+       background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      align-self: center;
+      position: relative;
+      border-radius: 100%; /* Make the icon circular */
+      border: 2px solid black; /* Add a black border */
+    }
+    .timeline__event--type4 .timeline__event__icon:before, .timeline__event--type4 .timeline__event__icon:after {
+      content: "";
+      background: #ff9900;
+    }
+    .timeline__event--type4 .timeline__event__title {
+      color: #ff9900;
+    }
+    /* hello world */ 
+    .timeline__event--type5:after {
+      /* background: #24b47e; */
+      background: none;
+    }
+    .timeline__event--type5 .timeline__event__date {
+      color: #9251ac;
+      background-color: #f6a4ec;
+    }
+    .timeline__event--type5:nth-child(2n+1) .timeline__event__icon:before, .timeline__event--type5:nth-child(2n+1) .timeline__event__icon:after {
+      background:#9251ac;
+    }
+    .timeline__event--type5 .timeline__event__icon {
+      background: white;
+      background-image: url('/assets/image/helloworld.png');
+       background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      align-self: center;
+      position: relative;
+      border-radius: 100%; /* Make the icon circular */
+      border: 2px solid black; /* Add a black border */
+    }
+    .timeline__event--type5 .timeline__event__icon:before, .timeline__event--type5 .timeline__event__icon:after {
+      content: "";
+      background: #9251ac; 
+    }
+    .timeline__event--type5 .timeline__event__title {
+      color: #f6a4ec;
+    }
+    .timeline__event:last-child .timeline__event__icon:before {
+      content: none;
+    }
+    @media (max-width: 786px) {
+      .timeline__event {
+        flex-direction: column;
+        align-self: center;
+      }
+      .timeline__event__content {
+        width: 100%;
+      }
+      .timeline__event__icon {
+        border-radius: 6px 6px 0 0;
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+      }
+      .timeline__event__icon:before, .timeline__event__icon:after {
+        display: none;
+      }
+      .timeline__event__date {
+        border-radius: 0;
+        padding: 20px;
+      }
+      .timeline__event:nth-child(2n+1) {
+        flex-direction: column;
+        align-self: center;
+      }
+      .timeline__event:nth-child(2n+1) .timeline__event__date {
+        border-radius: 0;
+        padding: 20px;
+      }
+      .timeline__event:nth-child(2n+1) .timeline__event__icon {
+        border-radius: 6px 6px 0 0;
+        margin: 0;
+      }
+    }
+    @-webkit-keyframes fillLeft {
+      100% {
+        right: 100%;
+      }
+    }
+    @keyframes fillLeft {
+      100% {
+        right: 100%;
+      }
+    }
+    @-webkit-keyframes fillTop {
+      100% {
+        top: 100%;
+      }
+    }
+    @keyframes fillTop {
+      100% {
+        top: 100%;
+      }
+    }
+    @-webkit-keyframes fillLeftOdd {
+      100% {
+        left: 100%;
+      }
+    }
+    @keyframes fillLeftOdd {
+      100% {
+        left: 100%;
+      }
+    }
 </style>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INFO</title>
+## Name
 
-</head>
-<body>
-    <div class="frame">
-            <h3 class="site-name">ZOZELAND</h3>
-        <div class="profile-section">
-            <img id="profile-picture" src="/assets/image/profile.jpeg">
-            <div class="introduction">
-                <h2>ABOUT ME</h2>
-                <p>"기획, 디자인, 개발 다 하는 인간 스타트업이 되도록 노력 중"<br>산업공학과 출신, UX 관점에서 제대로 된 서비스 기획을 하기 위해 Front-End를 공부 중입니다. Adobe Tool들은 아직 잘 못 다루지만 디자인 감각은 있어요. :) 정보의 평등과 지식 공유의 중요성에 공감하고 있습니다. 무엇이든 시작하면 제대로 하는 성격! 같이 즐겁게, 열정적으로 진짜 뭔가를 만들어봐요! </p>
-                <h2>CAPABILITY</h2>
-                <p  id="capability">UX Research<br>UI Prototyping<br>Publishing with html/css</p>
-            </div>
-        </div>
-        <h5 class="value-menu">MY VALUES</h5>
-        <div class="value-section">
-            <div class="value">
-                <img class="value-icon" src="assets/image/MarkMemoAppImgetPlace.png">
-                <div class="value-intro">
-                    <h4 class="value-name">GO TOGETHER</h4>
-                    <p class="value-exp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sunt veritatis ea placeat. Iure, quam laudantium pariatur eligendi error eos voluptatum eaque maxime. Necessitatibus, nihil. Deleniti vitae perspiciatis est vel.</p>
-                </div>
-            </div>
-            <div class="value">
-                <img class="value-icon" src="assets/image/MemoAppImg.png">
-                <div class="value-intro">
-                    <h4 class="value-name">RESPONSIBILITY</h4>
-                    <p class="value-exp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga labore ad, perspiciatis ipsa veritatis neque et nostrum porro iste magnam dolorum similique laborum doloribus in possimus eveniet dicta voluptatum est!</p>
-                </div>
-            </div>
-            <div class="value">
-                <img class="value-icon" src="assets/image/MemoAppImg.png">
-                <div class="value-intro">
-                    <h4 class="value-name">COMMUNICATION</h4>
-                    <p class="value-exp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ipsa iste blanditiis enim. Vel minus perferendis praesentium architecto deserunt, ipsam dolore hic, ullam nulla aut magnam eveniet facilis explicabo odio.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
 </html>
