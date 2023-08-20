@@ -358,17 +358,20 @@ search: true
 .profile-section {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-top: 50px; /* Adjust margin as needed */
+    justify-content: flex-end; /* Align content to the right */
+    margin-top: 50px;
 }
 #profile-picture {
-    width: 40%; /* Adjust image width */
-    border-radius: 50%; /* Make the image circular */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    width: 150px; /* Adjust the width to make it square */
+    height: 150px; /* Set the same height as width */
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
 }
 .introduction {
     flex: 1;
     padding: 20px;
+    text-align: left; /* Align text to the left */
 }
 .introduction h2 {
     margin-top: 0;
@@ -381,7 +384,6 @@ search: true
 #capability {
     font-weight: bold;
 }
-/* Rest of your existing styles... */
 </style>
   <div class="profile-section">
       <div class="introduction">
