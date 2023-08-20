@@ -349,5 +349,13 @@ search: true
     }
 </style>
 ## Name
-
+  <div class="profile-section">
+            <img id="profile-picture" src="profile.jpeg">
+            <div class="introduction">
+                <h2>ABOUT ME</h2>
+                <p>"기획, 디자인, 개발 다 하는 인간 스타트업이 되도록 노력 중"<br>산업공학과 출신, UX 관점에서 제대로 된 서비스 기획을 하기 위해 Front-End를 공부 중입니다. Adobe Tool들은 아직 잘 못 다루지만 디자인 감각은 있어요. :) 정보의 평등과 지식 공유의 중요성에 공감하고 있습니다. 무엇이든 시작하면 제대로 하는 성격! 같이 즐겁게, 열정적으로 진짜 뭔가를 만들어봐요! </p>
+                <h2>CAPABILITY</h2>
+                <p  id="capability">UX Research<br>UI Prototyping<br>Publishing with html/css</p>
+            </div>
+        </div>
 </html>
