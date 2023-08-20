@@ -350,12 +350,40 @@ search: true
 </style>
 ## Name
   <div class="profile-section">
-            <img id="profile-picture" src="/assets/image/profile.jpeg">
-            <div class="introduction">
-                <h2>ABOUT ME</h2>
-                <p>"기획, 디자인, 개발 다 하는 인간 스타트업이 되도록 노력 중"<br>산업공학과 출신, UX 관점에서 제대로 된 서비스 기획을 하기 위해 Front-End를 공부 중입니다. Adobe Tool들은 아직 잘 못 다루지만 디자인 감각은 있어요. :) 정보의 평등과 지식 공유의 중요성에 공감하고 있습니다. 무엇이든 시작하면 제대로 하는 성격! 같이 즐겁게, 열정적으로 진짜 뭔가를 만들어봐요! </p>
-                <h2>CAPABILITY</h2>
-                <p  id="capability">UX Research<br>UI Prototyping<br>Publishing with html/css</p>
+    <img id="profile-picture" src="/assets/image/profile.jpeg">
+      <div class="introduction">
+        <h2>ABOUT ME</h2>
+          <p>"기획, 디자인, 개발 다 하는 인간 스타트업이 되도록 노력 중"<br>산업공학과 출신, UX 관점에서 제대로 된 서비스 기획을 하기 위해 Front-End를 공부 중입니다. Adobe Tool들은 아직 잘 못 다루지만 디자인 감각은 있어요. :) 정보의 평등과 지식 공유의 중요성에 공감하고 있습니다. 무엇이든 시작하면 제대로 하는 성격! 같이 즐겁게, 열정적으로 진짜 뭔가를 만들어봐요! </p>
+          <h2>CAPABILITY</h2>
+           <p  id="capability">UX Research<br>UI Prototyping<br>Publishing with html/css</p>
+        </div>
+    </div>
+        <div class="dashboard">
+            <h1 class="korean-comment">안녕하세요! 제 이름은 <a class="sample">조제</a> <br> 
+                <a class="highlight type1">진짜 문제</a>를 <a class="highlight type2">제대로</a> 해결하는 <a class="highlight type3">프로덕트 매니저</a><br>를 꿈꿉니다.</h1>
+            <p class="english-comment">Based in Seoul, South Korea, but willing to travel around the world to find any exciting and field-changing works.<br>Also, always feel free to call for fun side projects: Let's make our lives even better and better!</p>
+        </div>
+        <h5 class="recent-menu">RECENT WORKS</h5>
+        <div class="recent-works">
+            <div class="article" id="arti1">
+                <img class="thumbnail" id="thumb1" src="/assets/image/AlgotemplateIMG.png">
+                <div class="article-info">
+                    <h3 class="article-name" id="name1">Emart24 리브랜딩</h3>
+                    <p class="article-comment">2018년 1학기 ‘융합캡스톤디자인’ 수업에서 이마트24와의 협력으로 미래형 무인점포를 설계하는 과제를 수행했다. 중간, 최종 2번의 발표에서 이마트 현 직원들의 피드백을 받았다. 관계자들의 심사를 통해 설계/디자인 분반 총 6개 팀 중에서 1위에 선정되어 이마트 연구소에서 PT를 진행했다.
+                    </p>
+                    <a class="more" href="https://developer.mozilla.org/ko/docs/Web/CSS/float" target="_blank">MORE ></a>
+                </div>
+            </div>
+            <div class="article" id="arti2">
+            <img class="thumbnail" id="thumb1" src="/assets/image/AlgotemplateIMG.png">
+                <div class="article-info">
+                    <h3 class="article-name" id="name2-1">미래형 무인편의점</h3>
+                    <h3 class="article-name" id="name2-2">MOOD BOUTIQUE</h3>
+                    <p class="article-comment" id="comment2">2018년 1학기 ‘융합캡스톤디자인’ 수업에서 이마트24와의 협력으로 미래형 무인점포를 설계하는 과제를 수행했다. 중간, 최종 2번의 발표에서 이마트 현 직원들의 피드백을 받았다. 관계자들의 심사를 통해 설계/디자인 분반 총 6개 팀 중에서 1위에 선정되어 이마트 연구소에서 PT를 진행했다.
+                    </p>
+                    <a class="more" href="https://developer.mozilla.org/ko/docs/Web/CSS/float">MORE ></a>
+                </div>
+                <img class="thumbnail" id="thumb2" src="thumbnail1.png">
             </div>
         </div>
 </html>
