@@ -347,6 +347,14 @@ search: true
         left: 100%;
       }
     }
+    .recent-menu{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #C2B4AB;   
+    text-align: right;
+    margin-top: 100px;
+}
 </style>
 ## Name
   <div class="profile-section">
