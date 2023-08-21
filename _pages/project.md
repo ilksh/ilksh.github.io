@@ -400,7 +400,6 @@ search: true
       background: #fff;
       border-radius: 6px;
     }
-
     .thumbnail {
       flex: 1;
       max-width: 40%;
@@ -408,7 +407,6 @@ search: true
       border-radius: 6px;
       object-fit: cover;
     }
-
     .article-info {
       flex: 2;
       padding: 20px;
@@ -416,7 +414,6 @@ search: true
       flex-direction: column;
       justify-content: center;
     }
-
     /* Other styles remain unchanged */
   </style>
 </head>
