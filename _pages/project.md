@@ -389,20 +389,22 @@ search: true
     align-items: center;
     margin-top: 50px;
 }
+<style>
+/* ... (other styles) ... */
 .article {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     margin: 20px;
-    width: 80%;
+    width: 100%; /* Change to 100% to fully fit the page */
     max-width: 800px; /* Adjust the maximum width as needed */
     padding: 20px;
-    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    box-shadow: /* ... (box shadow styles) ... */;
     background: #fff;
     border-radius: 6px;
 }
 .thumbnail {
-    max-width: 40%;
+    max-width: 100%; /* Adjust the image width to fit the box */
     height: auto;
     border-radius: 6px;
     object-fit: cover;
@@ -412,7 +414,7 @@ search: true
     padding: 20px;
 }
 .article-name {
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Adjust the font size as needed */
     line-height: 1.4;
     text-transform: uppercase;
     font-weight: 600;
@@ -420,7 +422,7 @@ search: true
     letter-spacing: 1.5px;
 }
 .article-comment {
-    font-size: 1rem;
+    font-size: 1rem; /* Adjust the font size as needed */
     line-height: 1.5;
 }
 .more {
@@ -428,6 +430,8 @@ search: true
     font-weight: bold;
     text-decoration: none;
 }
+</style>
+
 </style>
     <div class="recent-works">
       <div class="article" id="arti1">
