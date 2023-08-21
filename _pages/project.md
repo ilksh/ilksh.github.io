@@ -389,7 +389,6 @@ search: true
     align-items: center;
     margin-top: 50px;
 }
-<style>
 .article {
     display: flex;
     align-items: center;
@@ -402,14 +401,18 @@ search: true
     border-radius: 6px;
 }
 .thumbnail {
-    width: 40%; /* Adjust the image width to fit the box */
+    flex: 1;
+    max-width: 40%; /* Adjust the image width to fit the box */
     max-height: 100%; /* Adjust the image height to fit the box */
     border-radius: 6px;
     object-fit: cover;
 }
 .article-info {
-    flex: 1;
+    flex: 2; /* Adjust the flex value for the text content */
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the text content */
 }
 .article-name {
     font-size: 1.5rem; /* Adjust the font size as needed */
@@ -422,17 +425,13 @@ search: true
 .article-comment {
     font-size: 1rem; /* Adjust the font size as needed */
     line-height: 1.5;
+    margin-top: 10px; /* Add some spacing between title and comment */
 }
 .more {
     color: #9251ac;
     font-weight: bold;
     text-decoration: none;
 }
-/* ... (other styles) ... */
-</style>
-
-</style>
-
 </style>
     <div class="recent-works">
       <div class="article" id="arti1">
