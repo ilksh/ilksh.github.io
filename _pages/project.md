@@ -393,7 +393,7 @@ search: true
     display: flex;
     align-items: center;
     margin: 20px;
-    width: 100%; /* Change to 100% to fully fit the page */
+    width: 80%; /* Change to 100% to fully fit the page */
     max-width: 100%; /* Adjust the maximum width as needed */
     padding: 20px;
     box-shadow: /* ... (box shadow styles) ... */;
