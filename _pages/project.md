@@ -388,72 +388,61 @@ search: true
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
-}
-.article {
-    display: flex;
-    align-items: center;
-    margin: 20px;
-    width: 100%; /* Change to 100% to fully fit the page */
-    max-width: 100%; /* Adjust the maximum width as needed */
-    padding: 20px;
-    box-shadow: /* ... (box shadow styles) ... */;
-    background: #fff;
-    border-radius: 6px;
-}
-.thumbnail {
-    flex: 1;
-    max-width: 40%; /* Adjust the image width to fit the box */
-    max-height: 100%; /* Adjust the image height to fit the box */
-    border-radius: 6px;
-    object-fit: cover;
-}
-.article-info {
-    flex: 2; /* Adjust the flex value for the text content */
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertically center the text content */
-}
-.article-name {
-    font-size: 1.5rem; /* Adjust the font size as needed */
-    line-height: 1.4;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: #9251ac;
-    letter-spacing: 1.5px;
-}
-.article-comment {
-    font-size: 1rem; /* Adjust the font size as needed */
-    line-height: 1.5;
-    margin-top: 10px; /* Add some spacing between title and comment */
-}
-.more {
-    color: #9251ac;
-    font-weight: bold;
-    text-decoration: none;
-}
-</style>
-    <div class="recent-works">
-      <div class="article" id="arti1">
-        <div class="article-info">
-            <h3 class="article-name" id="name1">Emart24 리브랜딩</h3>
-            <p class="article-comment">2018년 1학기 ‘융합캡스톤디자인’ 수업에서 이마트24와의 협력으로 미래형 무인점포를 설계하는 과제를 수행했다. 중간, 최종 2번의 발표에서 이마트 현 직원들의 피드백을 받았다. 관계자들의 심사를 통해 설계/디자인 분반 총 6개 팀 중에서 1위에 선정되어 이마트 연구소에서 PT를 진행했다.
-            </p>
-            <a class="more" href="https://developer.mozilla.org/ko/docs/Web/CSS/float" target="_blank">MORE ></a>
-        </div>
-        <img class="thumbnail" id="thumb1" src="/assets/image/AlgotemplateIMG.png">
+}    /* Adjustments for the image and text layout */
+    .article {
+      display: flex; /* Use flexbox to align items */
+      align-items: center; /* Align items vertically */
+      margin: 20px;
+      width: 100%;
+      max-width: 100%;
+      padding: 20px;
+      box-shadow: /* ... (box shadow styles) ... */;
+      background: #fff;
+      border-radius: 6px;
+    }
+
+    .thumbnail {
+      flex: 1;
+      max-width: 40%;
+      max-height: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .article-info {
+      flex: 2;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Other styles remain unchanged */
+  </style>
+</head>
+<body>
+  <div class="recent-works">
+    <div class="article" id="arti1">
+      <img class="thumbnail" id="thumb1" src="/assets/image/AlgotemplateIMG.png">
+      <div class="article-info">
+        <h3 class="article-name" id="name1">Emart24 리브랜딩</h3>
+        <p class="article-comment">
+          2018년 1학기 ‘융합캡스톤디자인’ 수업에서 이마트24와의 협력으로 미래형 무인점포를 설계하는 과제를 수행했다. 중간, 최종 2번의 발표에서 이마트 현 직원들의 피드백을 받았다. 관계자들의 심사를 통해 설계/디자인 분반 총 6개 팀 중에서 1위에 선정되어 이마트 연구소에서 PT를 진행했다.
+        </p>
+        <a class="more" href="https://developer.mozilla.org/ko/docs/Web/CSS/float" target="_blank">MORE ></a>
+      </div>
+    </div>
+    <div class="article" id="arti2">
+      <img class="thumbnail" id="thumb2" src="thumbnail1.png">
+      <div class="article-info">
+        <h3 class="article-name" id="name2-1">미래형 무인편의점</h3>
+        <h3 class="article-name" id="name2-2">MOOD BOUTIQUE</h3>
+        <p class="article-comment" id="comment2">
+          2018년 1학기 ‘융합캡스톤디자인’ 수업에서 이마트24와의 협력으로 미래형 무인점포를 설계하는 과제를 수행했다. 중간, 최종 2번의 발표에서 이마트 현 직원들의 피드백을 받았다. 관계자들의 심사를 통해 설계/디자인 분반 총 6개 팀 중에서 1위에 선정되어 이마트 연구소에서 PT를 진행했다.
+        </p>
+        <a class="more" href="https://developer.mozilla.org/ko/docs/Web/CSS/float">MORE ></a>
+      </div>
     </div>
   </div>
-            <div class="article" id="arti2">
-            <img class="thumbnail" id="thumb1" src="/assets/image/AlgotemplateIMG.png">
-                <div class="article-info">
-                    <h3 class="article-name" id="name2-1">미래형 무인편의점</h3>
-                    <h3 class="article-name" id="name2-2">MOOD BOUTIQUE</h3>
-                    <p class="article-comment" id="comment2">2018년 1학기 ‘융합캡스톤디자인’ 수업에서 이마트24와의 협력으로 미래형 무인점포를 설계하는 과제를 수행했다. 중간, 최종 2번의 발표에서 이마트 현 직원들의 피드백을 받았다. 관계자들의 심사를 통해 설계/디자인 분반 총 6개 팀 중에서 1위에 선정되어 이마트 연구소에서 PT를 진행했다.
-                    </p>
-                    <a class="more" href="https://developer.mozilla.org/ko/docs/Web/CSS/float">MORE ></a>
-                </div>
-                <img class="thumbnail" id="thumb2" src="thumbnail1.png">
-            </div>
-        </div>
+</body>
 </html>
