@@ -390,22 +390,20 @@ search: true
     margin-top: 50px;
 }
 <style>
-/* ... (other styles) ... */
 .article {
     display: flex;
-    flex-direction: column;
     align-items: center;
     margin: 20px;
     width: 100%; /* Change to 100% to fully fit the page */
-    max-width: 800px; /* Adjust the maximum width as needed */
+    max-width: 100%; /* Adjust the maximum width as needed */
     padding: 20px;
     box-shadow: /* ... (box shadow styles) ... */;
     background: #fff;
     border-radius: 6px;
 }
 .thumbnail {
-    max-width: 100%; /* Adjust the image width to fit the box */
-    height: auto;
+    width: 40%; /* Adjust the image width to fit the box */
+    max-height: 100%; /* Adjust the image height to fit the box */
     border-radius: 6px;
     object-fit: cover;
 }
@@ -430,6 +428,9 @@ search: true
     font-weight: bold;
     text-decoration: none;
 }
+/* ... (other styles) ... */
+</style>
+
 </style>
 
 </style>
