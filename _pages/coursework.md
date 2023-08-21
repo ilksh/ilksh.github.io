@@ -308,7 +308,7 @@ search: true
 		<div class="timeline__event__content ">
 			<div class="timeline__event__description">
 				<ul>
-            <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=STAT&term=CURRENT&cnbr=51200"> Applied Regression Analysis </a> </li>
+            <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=STAT&term=CURRENT&cnbr=51200" target="_blank"> Applied Regression Analysis </a> </li>
             <li>Data Structure and Algorithm</li>
             <li>Statistical Theory</li>
             <li>Computer Architecture</li>
