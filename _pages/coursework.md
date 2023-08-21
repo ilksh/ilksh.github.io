@@ -309,10 +309,10 @@ search: true
 			<div class="timeline__event__description">
 				<ul>
             <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=STAT&term=CURRENT&cnbr=51200" target="_blank"> Applied Regression Analysis </a> </li>
-            <li>Data Structure and Algorithm</li>
-            <li>Statistical Theory</li>
-            <li>Computer Architecture</li>
-            <li>Data Mine Seminar III</li>
+            <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202410&subject=CS&cnbr=25100&enhanced=Y" target = "_blank"> Data Structure and Algorithm </a> </li>
+            <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=STAT&term=CURRENT&cnbr=41700" target = "_blank"> Statistical Theory </a> </li>
+            <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202410&subject=CS&cnbr=25000&enhanced=Y" target = "_blank"> Computer Architecture </a> </li>
+            <li> <a href = "https://catalog.purdue.edu/preview_course_nopop.php?catoid=15&coid=162495" target = "_blank"> Data Mine Seminar III </a> </li>
         </ul>
 			</div>
 		</div>
@@ -328,7 +328,7 @@ search: true
 		<div class="timeline__event__content">
 			<div class="timeline__event__description">
 				<ul>
-         <li>Probability</li>
+         <li><a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=STAT&term=CURRENT&cnbr=41600" target = "_blank"> Probability </a> </li>
          <li>Elementary of Psychology</li>
         </ul>
 			</div>
@@ -345,13 +345,13 @@ search: true
 		<div class="timeline__event__content">
 			<div class="timeline__event__description">
 				<ul>
-        <li>Data Engineering in Python</li>
-        <li>C Programming</li>
-        <li>Discrete Mathematics</li>
-        <li>Statistics for Data Science</li>
-        <li>Linear Algebra</li>
-        <li>Python Programming</li>
-        <li>Data Mine Seminar II</li>
+        <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202410&subject=CS&cnbr=17600&enhanced=Y" target = "_blank"> Data Engineering in Python</a> </li>
+        <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202410&subject=CS&cnbr=24000&enhanced=Y" target = "_blank"> C Programming </a> </li>
+        <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202410&subject=CS&cnbr=18200&enhanced=Y" target = "_blank"> Discrete Mathematics </a> </li>
+        <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=STAT&term=CURRENT&cnbr=35500" target = "_blank"> Statistics for Data Science </a> </li>
+        <li><a href = "https://selfservice.mypurdue.purdue.edu/prod/bwckctlg.p_disp_course_detail?cat_term_in=201530&subj_code_in=MA&crse_numb_in=35100" target = "_blank"> Linear Algebra </a> </li>
+        <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202410&subject=CS&cnbr=38003&enhanced=Y" target = "_blank"> Python Programming </a> </li>
+        <li> <a href = "https://catalog.purdue.edu/preview_course_nopop.php?catoid=15&coid=162498" target = "_blank"> Data Mine Seminar II </a> </li>
         </ul>
 			</div>
 		</div>
@@ -367,9 +367,10 @@ search: true
 		<div class="timeline__event__content">
 			<div class="timeline__event__description">
 				<ul>
-        <li>Object Oriented Programming (JAVA)</li>
-        <li>Multivariable Calculus</li>
-        <li>Data Mine Seminar I</li>
+        <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202410&subject=CS&cnbr=18000&enhanced=Y" target = "_black"> Object Oriented Programming (JAVA) </a></li>
+        <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bwckctlg.p_disp_course_detail?cat_term_in=201510&subj_code_in=MA&crse_numb_in=26100" target = "_blank"> Multivariable Calculus </a> </li>
+        <li> <a href = "https://catalog.purdue.edu/preview_course_nopop.php?catoid=15&coid=162494" target = "_blank"> Data Mine Seminar I </a> </li>
+        <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202410&subject=CS&cnbr=19300&enhanced=Y" target = "_blank"> Tools </a> </li>
         </ul>
 			</div>
 		</div>
