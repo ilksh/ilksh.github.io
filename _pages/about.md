@@ -1,5 +1,8 @@
-
-
+---
+title: "About me"
+permalink: /about/
+search: true
+---
 <html>
 <script src="https://kit.fontawesome.com/fc596df623.js" crossorigin="anonymous"></script>
 <style>
