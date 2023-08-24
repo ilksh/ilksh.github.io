@@ -1,9 +1,4 @@
----
-title: "Aaron Kim"
-permalink: /about/
-excerpt: "About Me"
-search: true
----
+
 
 <html>
 <script src="https://kit.fontawesome.com/fc596df623.js" crossorigin="anonymous"></script>
@@ -431,16 +426,15 @@ search: true
 </style>
   <div class="profile-section">
       <div class="introduction">
-          <img id="profile-picture" src="/assets/image/profile.jpeg">
         <h2>ABOUT ME</h2>
-          <p>"기획, 디자인, 개발 다 하는 인간 스타트업이 되도록 노력 중"<br>산업공학과 출신, UX 관점에서 제대로 된 서비스 기획을 하기 위해 Front-End를 공부 중입니다. Adobe Tool들은 아직 잘 못 다루지만 디자인 감각은 있어요. :) 정보의 평등과 지식 공유의 중요성에 공감하고 있습니다. 무엇이든 시작하면 제대로 하는 성격! 같이 즐겁게, 열정적으로 진짜 뭔가를 만들어봐요! </p>
-          <h2>CAPABILITY</h2>
-           <p  id="capability">UX Research<br>UI Prototyping<br>Publishing with html/css</p>
+          <p>"Hi, I'm <a class="sample">Aaron Kim </a>, an undergraduate pursuing a triple major in Computer Science with a focus on Machine Intelligence and Software Engineering, Data Science, and Artificial Intelligence. <br>
+          I'm deeply passionate about AI, especially in Computer Vision and Natural Language Processing. I'm driven by curiosity about cutting-edge tech and its real-world use. <br>
+          With a versatile skill set, I'm proficient in languages like C++, Python, Java, and more. I love coding and exploring innovative solutions through algorithms. <br>
+          Currently, I'm expanding my knowledge in algorithms, machine learning, and AI. I excel in teamwork and seek chances to contribute to impactful projects with fellow professionals. </p>
+          <h2> Language </h2>
+          <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white"> <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=white"> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=Rust&logoColor=white"> <img src="https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white"> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white">  <img src="https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"> <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=SQL&logoColor=white"> <img src="https://img.shields.io/badge/Ruby-CC342D?style=flat-square&logo=Ruby&logoColor=white"> 
+          <h2>Tools</h2>
+           <p  id="capability"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/Xcode-147EFB?style=flat-square&logo=xcode&logoColor=white"> <img src="https://img.shields.io/badge/PyCharm-000000?style=flat-square&logo=pycharm&logoColor=white">  <img src="https://img.shields.io/badge/IntelliJ IDEA-000000?style=flat-square&logo=intellijidea&logoColor="> <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flat-square&logo=visual studio code&logoColor=white"> <img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white"> <img src="https://img.shields.io/badge/RStudio-75AADB?style=flat-square&logo=rstudio&logoColor=black"></p>
         </div>
     </div>
-        <div class="dashboard">
-            <h1 class="korean-comment">안녕하세요! 제 이름은 <a class="sample">조제</a> <br> 
-                <a class="highlight type1">진짜 문제</a>를 <a class="highlight type2">제대로</a> 해결하는 <a class="highlight type3">프로덕트 매니저</a><br>를 꿈꿉니다.</h1>
-            <p class="english-comment">Based in Seoul, South Korea, but willing to travel around the world to find any exciting and field-changing works.<br>Also, always feel free to call for fun side projects: Let's make our lives even better and better!</p>
-        </div>
 </html>
