@@ -1,5 +1,4 @@
 ---
-title: "Aaron Kim"
 permalink: /project/
 excerpt: "Project"
 search: true
@@ -760,9 +759,9 @@ textarea {
     top: 27px; } }
   /* Increase the maximum width of the main container */
 .main-container {
-  max-width: 200rem; /* Adjust this value as needed */
+  max-width: 400rem; /* Adjust this value as needed */
   margin: auto;
-  width: 92%;
+  width: 100%;
 }
 </style>
   <body>
