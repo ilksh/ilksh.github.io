@@ -6,60 +6,6 @@ search: true
 <html>
  <!-- <script src="https://kit.fontawesome.com/fc596df623.js" crossorigin="anonymous"></script> -->
 <style>
-  * {
-    box-sizing: border-box;
-    }
-    html {
-      font-size: 14px;
-    }
-    body {
-      background: #f6f9fc;
-      font-family: "Open Sans", sans-serif;
-      color: #525f7f;
-    }
-    h2 {
-      margin: 5%;
-      text-align: center;
-      font-size: 4rem;
-      font-weight: 100;
-    }
-    h1 {
-      margin: 4%;
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 10;
-      top: 0;
-    }
-    @-webkit-keyframes fillLeft {
-      100% {
-        right: 100%;
-      }
-    }
-    @keyframes fillLeft {
-      100% {
-        right: 100%;
-      }
-    }
-    @-webkit-keyframes fillTop {
-      100% {
-        top: 100%;
-      }
-    }
-    @keyframes fillTop {
-      100% {
-        top: 100%;
-      }
-    }
-    @-webkit-keyframes fillLeftOdd {
-      100% {
-        left: 100%;
-      }
-    }
-    @keyframes fillLeftOdd {
-      100% {
-        left: 100%;
-      }
-    }
   /* new style */ 
 *,
 *::after,
