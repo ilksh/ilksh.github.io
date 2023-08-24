@@ -346,6 +346,7 @@ search: true
         left: 100%;
       }
     }
+  /* new style */ 
 *,
 *::after,
 *::before {
@@ -717,170 +718,6 @@ textarea {
       @media only screen and (max-width: 37.5em) {
         .project-details__links-btn:last-child {
           margin: 0; } }
-.header {
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  background: #000;
-  background: #fff;
-  box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1); }
-  .header__content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 5rem; }
-    @media only screen and (max-width: 56.25em) {
-      .header__content {
-        padding: 0 2rem; } }
-  .header__logo-container {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    color: #333;
-    transition: color .3s; }
-    .header__logo-container:hover {
-      color: #0062b9; }
-  .header__logo-img-cont {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50px;
-    overflow: hidden;
-    margin-right: 1.5rem;
-    background: #0062b9; }
-    @media only screen and (max-width: 56.25em) {
-      .header__logo-img-cont {
-        width: 4.5rem;
-        height: 4.5rem;
-        margin-right: 1.2rem; } }
-  .header__logo-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block; }
-  .header__logo-sub {
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1px; }
-  .header__links {
-    display: flex; }
-    @media only screen and (max-width: 37.5em) {
-      .header__links {
-        display: none; } }
-  .header__link {
-    padding: 2.2rem 3rem;
-    display: inline-block;
-    font-size: 1.6rem;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    transition: color .3s; }
-    .header__link:hover {
-      color: #0062b9; }
-    @media only screen and (max-width: 56.25em) {
-      .header__link {
-        padding: 3rem 1.8rem;
-        font-size: 1.5rem; } }
-  .header__main-ham-menu-cont {
-    display: none;
-    width: 3rem;
-    padding: 2.2rem 0; }
-    @media only screen and (max-width: 37.5em) {
-      .header__main-ham-menu-cont {
-        display: block; } }
-  .header__main-ham-menu {
-    width: 100%; }
-  .header__main-ham-menu-close {
-    width: 100%; }
-  .header__sm-menu {
-    background: #fff;
-    position: absolute;
-    width: 100%;
-    top: 100%;
-    visibility: hidden;
-    opacity: 0;
-    transition: all .3s;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1); }
-    .header__sm-menu--active {
-      visibility: hidden;
-      opacity: 0; }
-      @media only screen and (max-width: 37.5em) {
-        .header__sm-menu--active {
-          visibility: visible;
-          opacity: 1; } }
-  .header__sm-menu-link a {
-    display: block;
-    text-decoration: none;
-    padding: 2.5rem 3rem;
-    font-size: 1.6rem;
-    color: #333;
-    text-align: right;
-    border-bottom: 1px solid #eee;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: color .3s; }
-    .header__sm-menu-link a:hover {
-      color: #0062b9; }
-  .header__sm-menu-link:first-child a {
-    border-top: 1px solid #eee; }
-  .header__sm-menu-link-last {
-    border-bottom: 0; }
-.main-footer {
-  background: #000;
-  color: #fff; }
-  .main-footer__upper {
-    display: flex;
-    justify-content: space-between;
-    padding: 8rem 0; }
-    @media only screen and (max-width: 56.25em) {
-      .main-footer__upper {
-        padding: 6rem 0; } }
-    @media only screen and (max-width: 37.5em) {
-      .main-footer__upper {
-        display: block; } }
-  .main-footer__row-1 {
-    order: 2; }
-    @media only screen and (max-width: 56.25em) {
-      .main-footer__row-1 {
-        margin-bottom: 5rem; } }
-  .main-footer__row-2 {
-    width: 40%;
-    order: 1;
-    max-width: 50rem; }
-    @media only screen and (max-width: 56.25em) {
-      .main-footer__row-2 {
-        width: 100%; } }
-  .main-footer__short-desc {
-    margin-top: 2rem;
-    color: #eee;
-    font-size: 1.5rem;
-    line-height: 1.7; }
-  .main-footer__social-cont {
-    margin-top: 2rem; }
-  .main-footer__icon {
-    margin-right: 1rem;
-    width: 2.5rem; }
-    .main-footer__icon--mr-none {
-      margin-right: 0; }
-  .main-footer__lower {
-    padding: 4rem 0;
-    border-top: 1px solid #444;
-    color: #eee;
-    font-size: 1.2rem;
-    text-align: left;
-    text-align: center; }
-    .main-footer__lower a {
-      text-decoration: underline;
-      font-weight: bold;
-      margin-left: 2px; }
-    @media only screen and (max-width: 56.25em) {
-      .main-footer__lower {
-        padding: 3.5rem 0; } }
 .skills {
   display: flex;
   flex-wrap: wrap; }
@@ -921,20 +758,13 @@ textarea {
   to {
     opacity: 0;
     top: 27px; } }
+  /* Increase the maximum width of the main container */
+.main-container {
+  max-width: 140rem; /* Adjust this value as needed */
+  margin: auto;
+  width: 92%;
+}
 </style>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Dopefolio</title>
-    <meta name="description" content="Portfolio Template for Developer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
   <body>
     <section id="about" class="about sec-pad">
       <div class="main-container">
