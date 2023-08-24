@@ -515,7 +515,7 @@ textarea {
           <div class="projects__row">
             <div class="projects__row-img-cont">
               <img
-                src="ilksh.github.io/assets/image/sudoku.webp"
+                src="ilksh.github.io/assets/image/sudoku.png"
                 alt="Software Screenshot"
                 class="projects__row-img"
                 loading="lazy"
@@ -598,6 +598,30 @@ The inclusion of concurrency ensures the concurrent engagement of multiple users
               <p class="projects__row-content-desc">
               Language Used: Swift | SQL <br>
                  Make basic memo app with swift
+              </p>
+              <a
+                href="./project-3.html"
+                class="btn btn--med btn--theme dynamicBgClr"
+                target="_blank"
+                >Source Code</a
+              >
+            </div>
+          </div>
+               </div>
+             <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="/assets/image/AlgotemplateIMG.png"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">Algorithm Template</h3>
+              <p class="projects__row-content-desc">
+             This project is a thorough exploration of algorithms, covering diverse categories from data structures to graph algorithms. <br>
+It offers meticulous implementations and analysis, serving as a versatile resource for algorithm understanding and practical problem-solving.
               </p>
               <a
                 href="./project-3.html"
