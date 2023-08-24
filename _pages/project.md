@@ -458,6 +458,20 @@ search: true
     border-radius: 5px;
     font-weight: 600;
     color: #777; }
+.heading-sec__mb-med {
+  margin-bottom: 9rem; }
+  @media only screen and (max-width: 56.25em) {
+    .heading-sec__mb-med {
+      margin-bottom: 8rem; } }
+.heading-sec__main {
+  display: block;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  position: relative; }
 </style>
   <head>
     <meta charset="UTF-8" />
