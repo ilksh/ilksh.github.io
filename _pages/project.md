@@ -491,24 +491,24 @@ textarea {
           <div class="projects__row">
             <div class="projects__row-img-cont">
               <img
-                src="/assets/image/MemoAppImg.png"
+                src="/assets/image/pynerf.png"
                 alt="Software Screenshot"
                 class="projects__row-img"
                 loading="lazy"
               />
             </div>
             <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Project 1</h3>
+              <h3 class="projects__row-content-title">Pynerf3D</h3>
               <p class="projects__row-content-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                facilis tempora, explicabo quae quod deserunt eius sapiente
-                praesentium.
+             Skills: Computer Vision · Artificial Intelligence (AI) · Machine Learning · PyTorch <br>
+            PyNerf3D leverages Neural Radiance Fields (NERF) to effortlessly convert 2D images into captivating 3D representations. <br>
+            This project invites users to explore enhanced visual experiences, uniting cutting-edge algorithms to redefine computer vision.
               </p>
               <a
                 href="./project-1.html"
                 class="btn btn--med btn--theme dynamicBgClr"
                 target="_blank"
-                >Case Study</a
+                >Source Code</a
               >
             </div>
           </div>
@@ -524,15 +524,13 @@ textarea {
             <div class="projects__row-content">
               <h3 class="projects__row-content-title">Project 2</h3>
               <p class="projects__row-content-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                facilis tempora, explicabo quae quod deserunt eius sapiente
-                praesentium.
+              Test lines
               </p>
               <a
                 href="./project-2.html"
                 class="btn btn--med btn--theme dynamicBgClr"
                 target="_blank"
-                >Case Study</a
+                >Source Code</a
               >
             </div>
           </div>
@@ -548,15 +546,13 @@ textarea {
             <div class="projects__row-content">
               <h3 class="projects__row-content-title">Project 3</h3>
               <p class="projects__row-content-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                facilis tempora, explicabo quae quod deserunt eius sapiente
-                praesentium.
+                 Test lines
               </p>
               <a
                 href="./project-3.html"
                 class="btn btn--med btn--theme dynamicBgClr"
                 target="_blank"
-                >Case Study</a
+                >Source Code</a
               >
             </div>
           </div>
