@@ -4,7 +4,7 @@ excerpt: "Project"
 search: true
 ---
 <html>
-<script src="https://kit.fontawesome.com/fc596df623.js" crossorigin="anonymous"></script>
+ <!-- <script src="https://kit.fontawesome.com/fc596df623.js" crossorigin="anonymous"></script> -->
 <style>
   * {
     box-sizing: border-box;
