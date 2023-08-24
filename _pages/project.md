@@ -507,24 +507,6 @@ search: true
           </div>
         </div>
       </div>
-      <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-          <ul class="header__sm-menu-links">
-            <li class="header__sm-menu-link">
-              <a href="./index.html"> Home </a>
-            </li>
-            <li class="header__sm-menu-link">
-              <a href="./index.html#about"> About </a>
-            </li>
-            <li class="header__sm-menu-link">
-              <a href="./index.html#projects"> Projects </a>
-            </li>
-            <li class="header__sm-menu-link">
-              <a href="./index.html#contact"> Contact </a>
-            </li>
-          </ul>
-        </div>
-      </div>
     </header>
     <section class="project-cs-hero">
       <div class="project-cs-hero__content">
@@ -546,7 +528,7 @@ search: true
         <div class="project-details__content">
           <div class="project-details__showcase-img-cont">
             <img
-              src="./assets/jpeg/project-mockup-example.jpeg"
+              src="/assets/image/MemoappDES.png"
               alt="Project Image"
               class="project-details__showcase-img"
             />
