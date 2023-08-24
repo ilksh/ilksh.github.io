@@ -515,16 +515,19 @@ textarea {
           <div class="projects__row">
             <div class="projects__row-img-cont">
               <img
-                src="/assets/image/MemoAppImg.png"
+                src="ilksh.github.io/assets/image/sudoku.webp"
                 alt="Software Screenshot"
                 class="projects__row-img"
                 loading="lazy"
               />
             </div>
             <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Project 2</h3>
+              <h3 class="projects__row-content-title">
+Sudoku Solver with Machine Intelligence</h3>
               <p class="projects__row-content-desc">
-              Test lines
+              Language Used: C++ | Python | Java | JavaScript | HTML <br>
+Our team created an image recognition AI using dynamic programming and backtracking algorithm to scan and solve sudoku puzzles. <br>
+We showcased efficient puzzle solving through a visually appealing web app, highlighting AI's potential <br>
               </p>
               <a
                 href="./project-2.html"
@@ -537,6 +540,53 @@ textarea {
           <div class="projects__row">
             <div class="projects__row-img-cont">
               <img
+                src="/assets/image/TictactoeIMG.png"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">TIC-TAC-TOE AI </h3>
+              <p class="projects__row-content-desc">
+              Language Used: Python <br>
+                 Python-based AI for TIC-TAC-TOE employs heuristics and Min-Max for optimal moves, adapting to grid sizes for strategic play. <br> Enhances decision-making with quick analysis, empowering players to excel in the game <br>
+              </p>
+              <a
+                href="./project-3.html"
+                class="btn btn--med btn--theme dynamicBgClr"
+                target="_blank"
+                >Source Code</a
+              >
+            </div>
+          </div>
+             <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="/assets/image/MarketPlace.png"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">MarketPlace</h3>
+              <p class="projects__row-content-desc">
+         Language Used: Java | Java Swing <br>
+MarketPlace is a comprehensive platform facilitating seamless transactions between customer and sellers . <br>
+The inclusion of concurrency ensures the concurrent engagement of multiple users, enhancing the program's usability and responsiveness. <br>
+              </p>
+              <a
+                href="./project-3.html"
+                class="btn btn--med btn--theme dynamicBgClr"
+                target="_blank"
+                >Source Code</a
+              >
+            </div>
+          </div>
+             <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
                 src="/assets/image/MemoAppImg.png"
                 alt="Software Screenshot"
                 class="projects__row-img"
@@ -544,9 +594,10 @@ textarea {
               />
             </div>
             <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Project 3</h3>
+              <h3 class="projects__row-content-title">Personal Memo App</h3>
               <p class="projects__row-content-desc">
-                 Test lines
+              Language Used: Swift | SQL <br>
+                 Make basic memo app with swift
               </p>
               <a
                 href="./project-3.html"
