@@ -760,7 +760,7 @@ textarea {
     top: 27px; } }
   /* Increase the maximum width of the main container */
 .main-container {
-  max-width: 140rem; /* Adjust this value as needed */
+  max-width: 200rem; /* Adjust this value as needed */
   margin: auto;
   width: 92%;
 }
@@ -769,7 +769,7 @@ textarea {
     <section id="about" class="about sec-pad">
       <div class="main-container">
         <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main">About Me</span>
+          <span class="heading-sec__main">About Me1</span>
           <span class="heading-sec__sub">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
             tempora explicabo quae quod deserunt eius sapiente
