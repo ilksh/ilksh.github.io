@@ -515,7 +515,7 @@ textarea {
           <div class="projects__row">
             <div class="projects__row-img-cont">
               <img
-                src="ilksh.github.io/assets/image/sudoku.png"
+                src="/assets/image/sudoku.png"
                 alt="Software Screenshot"
                 class="projects__row-img"
                 loading="lazy"
