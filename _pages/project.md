@@ -530,6 +530,7 @@ textarea {
               <div class="skills__skill">Facebook Ads</div>
               <div class="skills__skill">Android</div>
               <div class="skills__skill">IOS</div>
+              <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"> 
             </div>
           </div>
         </div>
