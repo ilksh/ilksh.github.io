@@ -418,7 +418,7 @@ search: true
 		</div>
 		<div class="timeline__event__content">
     <div class="timeline__event__title">
-			 Math & Coding Tutor
+			 SAT Math & Coding Tutor
 			</div>
 			<div class="timeline__event__description">
 				<ul>
