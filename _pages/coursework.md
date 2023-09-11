@@ -290,7 +290,7 @@ search: true
   <ul>
     <li> Bachelor of Computer Science </li>
     <ul class="sub-bullet">
-    <li> Concentrations in <br> <i>Software Engineering</i> <br> <i>Machine Intelligence</i></li>
+    <li> Concentrations in  <br> <i>Machine Intelligence</i> <br> <i>Algorithmic Foundations</i></li>
     <li> Minor in <i>Statistics</i> </li>
     </ul>
     <li>Bachelor of Science in Artificial Intelligence</li>
