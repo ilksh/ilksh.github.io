@@ -286,7 +286,7 @@ search: true
       }
     }
 </style>
-<p><strong>Purdue University - West Lafayette</strong></p> 
+<h1><strong>Purdue University - West Lafayette</strong></h1> 
   <ul>
     <li> Bachelor of Computer Science </li>
     <ul class="sub-bullet">
