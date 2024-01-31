@@ -297,7 +297,7 @@ search: true
     <li>Bachelor of Science in Data Science</li>
   </ul>
 <div class="timeline">
-	<div class="timeline__event  animated fadeInUp delay-1s timeline__event--type4">
+	<div class="timeline__event  animated fadeInUp delay-1s timeline__event--type2">
 		<div class="timeline__event__icon ">
 			<!-- <i class="lni-sport"></i>-->
 		</div>
@@ -307,11 +307,8 @@ search: true
 		<div class="timeline__event__content ">
 			<div class="timeline__event__description">
 				<ul>
-            <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=STAT&term=CURRENT&cnbr=51200" target="_blank"> Applied Regression Analysis </a> </li>
-            <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202410&subject=CS&cnbr=25100&enhanced=Y" target = "_blank"> Data Structure and Algorithm </a> </li>
-            <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=STAT&term=CURRENT&cnbr=41700" target = "_blank"> Statistical Theory </a> </li>
-            <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202410&subject=CS&cnbr=25000&enhanced=Y" target = "_blank"> Computer Architecture </a> </li>
-            <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=TDM&term=CURRENT&cnbr=20100" target = "_blank"> Data Mine Seminar III </a> </li>
+            <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=MA&term=CURRENT&cnbr=36200" target="_blank"> Vector Calculus </a> </li>
+            <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=TDM&term=CURRENT&cnbr=20200" target = "_blank"> Data Mine Seminar IV </a> </li>
         </ul>
 			</div>
 		</div>
@@ -389,7 +386,7 @@ search: true
         <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202410&subject=CS&cnbr=18000&enhanced=Y" target = "_black"> Object Oriented Programming (JAVA) </a></li>
         <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bwckctlg.p_disp_course_detail?cat_term_in=201510&subj_code_in=MA&crse_numb_in=26100" target = "_blank"> Multivariable Calculus </a> </li>
         <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=TDM&term=CURRENT&cnbr=11100"> 
-            Corporate Partners I</li>
+            Corporate Partners I </a> </li>
         <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=TDM&term=CURRENT&cnbr=10100" target = "_blank"> Data Mine Seminar I </a> </li>
         <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202410&subject=CS&cnbr=19300&enhanced=Y" target = "_blank"> Tools </a> </li>
         </ul>
