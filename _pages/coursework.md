@@ -297,17 +297,19 @@ search: true
     <li>Bachelor of Science in Data Science</li>
   </ul>
 <div class="timeline">
-	<div class="timeline__event  animated fadeInUp delay-1s timeline__event--type2">
+	<div class="timeline__event  animated fadeInUp delay-1s timeline__event--type1">
 		<div class="timeline__event__icon ">
 			<!-- <i class="lni-sport"></i>-->
 		</div>
 		<div class="timeline__event__date">
-			Fall 2023 
+			Spring 2024
 		</div>
 		<div class="timeline__event__content ">
 			<div class="timeline__event__description">
 				<ul>
             <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=MA&term=CURRENT&cnbr=36200" target="_blank"> Vector Calculus </a> </li>
+            <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=TDM&term=CURRENT&cnbr=11200"> 
+            Corporate Partners II </a> </li>
             <li> <a href = "https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?subject=TDM&term=CURRENT&cnbr=20200" target = "_blank"> Data Mine Seminar IV </a> </li>
         </ul>
 			</div>
