@@ -119,7 +119,7 @@ nav.navbar.bootsnav {
 /*.navbar-brand*/
 .navbar-header a.navbar-brand,.navbar-header a.navbar-brand:hover,.navbar-header a.navbar-brand:focus {
     display: inline-block;
-    color: #d92cf9;
+    color: #40E0D0;
     font-size: 20px;
     font-weight: 600;
     padding: 33px 0px 57px;
@@ -190,7 +190,9 @@ nav.navbar.bootsnav .navbar-toggle i{color: #d92cf9;}
     align-items: center;
     justify-content: center;
     position:relative; 
+    /*background:url(../images/about/candidate5.jpeg)no-repeat;*/
     background:url(../images/about/candidate5.jpeg)no-repeat;
+    
     background-size:cover;
     background-position: center;
     height:890px;
