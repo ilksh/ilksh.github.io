@@ -779,28 +779,27 @@
 		</section><!--/.portfolio-->
 		<!--portfolio end -->
 		
+		<a href="javascript:void(0)" onclick="loadMarkdown('assets/markdown/project1.md')">프로젝트 1</a>
+
 		<script>
-			function loadMarkdown(file) {
-			  fetch(file)
-				.then(response => response.text())
-				.then(data => {
-				  document.getElementById('projectDetails').innerHTML = marked(data);
-				  document.getElementById('projectModal').style.display = 'block';
-				});
-			}
-		  
-			document.querySelector('.close').onclick = function() {
-			  document.getElementById('projectModal').style.display = 'none';
-			};
-		  
-			window.onclick = function(event) {
-			  if (event.target == document.getElementById('projectModal')) {
-				document.getElementById('projectModal').style.display = 'none';
-			  }
-			};
-		  </script>
-		  
-		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+		  function loadMarkdown(file) {
+			fetch(file)
+			  .then(response => {
+				if (!response.ok) {
+				  throw new Error('Network response was not ok');
+				}
+				return response.text();
+			  })
+			  .then(data => {
+				document.getElementById('projectDetails').innerHTML = marked(data);
+				document.getElementById('projectModal').style.display = 'block';
+			  })
+			  .catch(error => {
+				console.error('There was a problem with the fetch operation:', error);
+			  });
+		  }
+		</script>
+		
 		
 		<!-- Include all js compiled plugins (below), or include individual files as needed -->
 
