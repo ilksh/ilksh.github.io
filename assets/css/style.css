@@ -149,7 +149,7 @@ nav.navbar.bootsnav ul.nav > li.dropdown span {
     margin-left: 15px;
 }
 .sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a {color:#6a708e;}
-.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a:hover,.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a:focus,.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li.active>a{color: #d92cf9;}
+.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a:hover,.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a:focus,.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li.active>a{color: #40E0D0;}
 /*.nav li*/
 
 
@@ -190,7 +190,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #40E0D0;}
     align-items: center;
     justify-content: center;
     position:relative; 
-    background:url(../images/about/candidate7.jpeg)no-repeat;
+    background:url(../images/about/pp.jpg)no-repeat;
     background-size:cover;
     background-position: center;
     height:890px;
@@ -213,7 +213,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #40E0D0;}
     text-transform: uppercase;
     line-height: 1.5;
 }
-.header-text h2 span {color: #d92cf9;}
+.header-text h2 span {color: #40E0D0;}
 .header-text p {
     color: #fff;
     font-size: 20px;
@@ -270,22 +270,19 @@ nav.navbar.bootsnav .navbar-toggle i{color: #40E0D0;}
 .single-about-add-info p {font-weight:  300;border:  0;padding: 0;margin-top: 3px;}
 /*.single-about-txt*/
 
-/*.single-about-img */
-.single-about-img{position: relative;box-shadow: 0 5px 20px rgba(14,25,80,.30);}
-.single-about-img:before {
-    position:  absolute;
-    content: " ";
-    top: 0;
-    left:  0;
-    width: 109%;
-    height:  100%;
-    background: rgba(31,44,108,.3);
+
+.single-about-img {
+    position: relative;
+    box-shadow: none; /* 그림자 제거 */
 }
+
 .single-about-img img {
-    max-width: 500px;
-    height: 468px;
+    width: 100%; /* 부모 요소에 맞게 이미지 조정 */
+    height: auto; /* 이미지 비율 유지 */
+    object-fit: cover; /* 부모 요소에 맞게 이미지 잘리더라도 꽉 차도록 설정 */
 }
-.about-list-icon{
+
+con{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,7 +291,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #40E0D0;}
     left: 0;
     width: 109%;
     height: 90px;
-    background: #1f2c6c;
+    background: #40E0D0 ;
 }
 /*.ab-list-icon */
 .about-list-icon ul {
@@ -352,7 +349,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #40E0D0;}
 }
 .timeline-horizontal-border i {
     font-size:  10px;
-    color: #d92cf9;
+    color: #40E0D0;
     margin-right:  5px;
 }
 span.single-timeline-horizontal {
@@ -386,7 +383,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }
 .single-progress-txt h3 {
     width: 10%;
-    color: #a606c3;
+    color: #40E0D0;
     position: relative;
     top: 6px;
     left: 20px;
@@ -406,7 +403,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     margin-bottom: 37px;
 }
 .progress-bar {
-   background: #b636ff;
+   background: #40E0D0;
     border-radius: 3px;
    -webkit-transition: width 1.5s ease-in-out;
    -ms-transition: width 1.5s ease-in-out;
@@ -434,6 +431,30 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
    transform: translateX(-50%);
    margin-left: 0;
 }
+/* 기존 CSS 유지 */
+
+/* Languages 섹션의 progress bar 색상 */
+.languages-section .progress-bar {
+    background: #40E0D0; /* 기존 색상 */
+}
+
+/* Tools 섹션의 progress bar 색상 */
+.tools-section .progress-bar {
+    background: #20B2AA; /* 새로운 색상 */
+}
+
+/* Languages section text color */
+.languages-section .progressText,
+.languages-section h3 {
+    color: #40E0D0; /* 텍스트 색상을 progress bar 색과 동일하게 */
+}
+
+/* Tools section text color */
+.tools-section .progressText,
+.tools-section h3 {
+    color: #20B2AA; /* 텍스트 색상을 progress bar 색과 동일하게 */
+}
+
 
 /*-------------------------------------
         7. Experience
@@ -451,9 +472,10 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }
 .experience-time h2 {
     font-weight: 400;
+    font-size: 22px; /* Increased */
 }
 .experience-time h3 {
-    font-size: 16px;
+    font-size: 18px; /* Increased from 16px */
     font-weight: 300;
     color: #636a82;
     margin-top: 14px;
@@ -468,7 +490,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 .main-timeline:before{
     content: "";
     width: 2px;
-    height: 84%;
+    height: 100%;
     background: #b2c1ce;
     position: absolute;
     top: 1.5%;
@@ -480,25 +502,26 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }
 
 .timeline-content span>i, .experience-time span>i {
-    color: #d92cf9;
+    color: #40E0D0;
     position: absolute;
-    font-size: 10px;
+    font-size: 12px; /* Increased from 10px */
     left: -14.5%;
     z-index: 1;
 }
 .timeline-content h4.title {
-    font-size: 16px;
+    font-size: 16px; /* Increased from 16px */
     font-weight: 400;
     text-transform: uppercase;
 }
+
 .timeline-content h5 {
     color: #636a82;
-    font-size: 14px;
+    font-size: 18px; /* Increased from 14px */
     font-weight: 300;
     margin: 18px 0 20px;
 }
 .main-timeline .description {
-    font-size: 14px;
+    font-size: 16px; /* Increased from 14px */
     color: #999fb3;
 }
 .main-timeline .timeline-content.right{
@@ -516,6 +539,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }
 
 .experience-time-responsive{display: none;}
+
 /*-------------------------------------
         8. Profiles
 --------------------------------------*/
@@ -848,8 +872,11 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     animation-iteration-count: infinite;
     animation-duration:1s;
 }
+
 @keyframes example {
     0%   {bottom:0px;}
     100%  {bottom:7px;}
 }
+
+
 /*========================Thank you=================
