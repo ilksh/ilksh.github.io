@@ -703,6 +703,13 @@
     </section><!--/.experience-->
     <!--experience end -->
 
+	<!-- Modal Structure -->
+	<div id="projectModal" class="modal">
+	<div class="modal-content">
+		<span class="close">&times;</span>
+		<div id="projectDetails"></div>
+	</div>
+	</div>
 
 		<!--portfolio start -->
 		<section id="portfolio" class="portfolio">
@@ -719,7 +726,7 @@
 									<div class="item">
 										<img src="assets/images/portfolio/p1.jpg" alt="portfolio image"/>
 										<div class="isotope-overlay">
-											<a href="#" onclick="loadMarkdown('project1.md')">
+											<a href="javascript:void(0)" onclick="loadMarkdown('project1.md')">
 												A
 											</a>
 										</div><!-- /.isotope-overlay -->
@@ -771,21 +778,29 @@
 
 		</section><!--/.portfolio-->
 		<!--portfolio end -->
-
-		<script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+		
 		<script>
-			// 마크다운 파일을 불러와서 HTML로 변환하는 함수
-			function loadMarkdown(filename) {
-				fetch(filename)
-					.then(response => response.text())
-					.then(text => {
-						var converter = new showdown.Converter();
-						var html = converter.makeHtml(text);
-						document.getElementById('markdown-content').innerHTML = html;
-					})
-					.catch(error => console.error('마크다운 파일을 불러오는 중 오류 발생:', error));
+			function loadMarkdown(file) {
+			  fetch(file)
+				.then(response => response.text())
+				.then(data => {
+				  document.getElementById('projectDetails').innerHTML = marked(data);
+				  document.getElementById('projectModal').style.display = 'block';
+				});
 			}
-		</script>
+		  
+			document.querySelector('.close').onclick = function() {
+			  document.getElementById('projectModal').style.display = 'none';
+			};
+		  
+			window.onclick = function(event) {
+			  if (event.target == document.getElementById('projectModal')) {
+				document.getElementById('projectModal').style.display = 'none';
+			  }
+			};
+		  </script>
+		  
+		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 		
 		<!-- Include all js compiled plugins (below), or include individual files as needed -->
 
