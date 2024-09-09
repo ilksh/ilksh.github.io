@@ -679,7 +679,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 .isotope-overlay a {
     display: inline-block;
     color: #fff;
-    font-size: 14px;
+    font-size: 18px;
     text-align: center;
 }
 .isotope .item:hover .isotope-overlay{
@@ -690,6 +690,27 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     transform:scale(1);
     top:0;
 }/*.isotope-overlay*/
+
+.tall-item {
+    height: 435px; /* Sum */
+}
+
+.tall-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.larger-item {
+    height: 193px; 
+    width: 100%; 
+}
+
+.larger-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
 
 /*-------------------------------------
         10. Clients
