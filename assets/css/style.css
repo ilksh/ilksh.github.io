@@ -679,7 +679,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 .isotope-overlay a {
     display: inline-block;
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
 }
 .isotope .item:hover .isotope-overlay{
@@ -692,7 +692,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }/*.isotope-overlay*/
 
 .tall-item {
-    height: 435px; /* Sum */
+    height: 415px; /* Sum */
 }
 
 .tall-item img {
@@ -702,7 +702,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }
 
 .larger-item {
-    height: 193px; 
+    height: 190px; 
     width: 100%; 
 }
 
