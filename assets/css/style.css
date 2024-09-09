@@ -978,5 +978,91 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }
 
 
+.friends-list {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 16px;
+    color: #43485c;
+}
+
+.friends-list a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.friends-list a:hover {
+    text-decoration: underline;
+    color: #40E0D0;
+}
+
+
+
+/* */
+.card {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+    height: 150px; /* height */
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .friend-name {
+    text-decoration: underline; /* 밑줄 추가 */
+    color: #3498db;
+    font-weight: bold;
+  }
+  
+  .friend-name:hover {
+    text-decoration: none; /* 호버 시 밑줄 제거 */
+    color: #40E0D0;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    color: #636a82;
+  }
+  
+  .section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .col-md-3 {
+    flex: 0 0 23%;
+    max-width: 23%;
+    margin-bottom: 20px;
+  }
+  
+
 
 /*========================Thank you=================
