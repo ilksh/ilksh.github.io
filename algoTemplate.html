@@ -40,6 +40,11 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
 
+        /* Intro iframe height adjustment */
+        #intro-frame {
+            height: 400px; /* Adjusted height */
+        }
+
         .back-button {
             display: flex;
             justify-content: center;
@@ -68,19 +73,15 @@
         <h1>Algorithm Template</h1>
     </div>
 
-    <div class="header">
-        <h1>1. Introduction</h1>
-        <p>As part of my continuous exploration of algorithms and machine learning, I have created two detailed templates:</p>
-        <ul>
-            <li><strong>Algorithm Template</strong>: Contains fundamental data structures and algorithms implemented in C++, Python, and Java.</li>
-            <li><strong>Machine Learning Template</strong>: Implements core supervised and unsupervised learning techniques from scratch in Python.</li>
-        </ul>
-        <p>My motivation for these projects was to deepen my understanding of each algorithm and learning model by building them manually without relying on libraries.</p>
+    <!-- Adjusted iframe for intro.html -->
+    <div class="iframe-container">
+        <iframe id="intro-frame" src="algoTemplate/intro.html"></iframe>
     </div>
-    
+
     <div class="iframe-container">
         <iframe src="algoTemplate/cs algoT.html"></iframe>
     </div>
+
     <div class="iframe-container">
         <iframe src="algoTemplate/ml algoT.html"></iframe>
     </div>
