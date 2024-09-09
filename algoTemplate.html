@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algorithm Template</title>
-    <link rel="stylesheet" href="assets/css/style.css"> <!-- Link to the main style -->
     <style>
-        /* Applying key styles from the existing CSS */
-
+        /* Main body styling */
         body {
             font-family: 'Poppins', sans-serif;
             font-size: 16px;
@@ -25,11 +23,38 @@
             color: #43485c;
         }
 
-        .iframe-container {
+        .toggle-section {
+            margin: 30px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 50px 0;
+            flex-direction: column;
+        }
+
+        .toggle-title {
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #40E0D0;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.2);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .toggle-title:hover {
+            background-color: #9f00ff;
+        }
+
+        .toggle-content {
+            display: none;
+            margin-top: 10px;
+            text-align: center;
+            width: 100%; /* Ensure it looks good on different screens */
         }
 
         iframe {
@@ -38,11 +63,6 @@
             height: 600px;
             border: none;
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
-
-        /* Intro iframe height adjustment */
-        #intro-frame {
-            height: 400px; /* Adjusted height */
         }
 
         .back-button {
@@ -73,21 +93,44 @@
         <h1>Algorithm Template</h1>
     </div>
 
-    <!-- Adjusted iframe for intro.html -->
-    <div class="iframe-container">
-        <iframe id="intro-frame" src="algoTemplate/intro.html"></iframe>
+    <!-- Intro Section -->
+    <div class="toggle-section">
+        <div class="toggle-title" onclick="toggleContent('intro-content')">Intro</div>
+        <div id="intro-content" class="toggle-content">
+            <iframe src="algoTemplate/intro.html"></iframe>
+        </div>
     </div>
 
-    <div class="iframe-container">
-        <iframe src="algoTemplate/cs algoT.html"></iframe>
+    <!-- CS Algorithm Section -->
+    <div class="toggle-section">
+        <div class="toggle-title" onclick="toggleContent('cs-content')">CS Algorithm Template</div>
+        <div id="cs-content" class="toggle-content">
+            <iframe src="algoTemplate/cs algoT.html"></iframe>
+        </div>
     </div>
 
-    <div class="iframe-container">
-        <iframe src="algoTemplate/ml algoT.html"></iframe>
+    <!-- ML Algorithm Section -->
+    <div class="toggle-section">
+        <div class="toggle-title" onclick="toggleContent('ml-content')">ML Algorithm Template</div>
+        <div id="ml-content" class="toggle-content">
+            <iframe src="algoTemplate/ml algoT.html"></iframe>
+        </div>
     </div>
 
+    <!-- Back to Portfolio Button -->
     <div class="back-button">
         <a href="index.html#portfolio">Back to Portfolio</a>
     </div>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
