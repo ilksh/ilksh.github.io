@@ -483,7 +483,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     font-weight: 300;
     color: #636a82;
     margin-top: 14px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 /*main-timeline*/
@@ -1068,26 +1068,22 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     max-width: 23%;
     margin-bottom: 20px;
   }
-  /* 친구 섹션의 제목과 하단 border 간격 조정 */
+
 .section-heading {
-    margin-bottom: 50px; /* 기존 간격 */
-    padding-bottom: 20px; /* 제목 아래 패딩을 추가하여 간격 증가 */
-    border-bottom: 1px solid #e5ebf2; /* 제목 하단에 border 추가 */
+    margin-bottom: 50px; 
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5ebf2; /* add border */
 }
 
-/* subtitle 줄바꿈 시 들여쓰기 적용 */
 .subtitle.text-indent {
-    text-indent: 20px; /* 줄이 넘어가면 들여쓰기 20px 적용 */
+    text-indent: 20px;
 }
 
-/* 전체적인 카드를 위한 기본 설정 */
 .card-body {
     padding: 20px;
     font-size: 16px;
 }
 
-
-  /* Footer Area */
 .footer-area {
     background-color: #f9fbfd;
     padding: 20px 0;
@@ -1133,7 +1129,6 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     }
 }
 
-  
 
 
 /*========================Thank you=================
