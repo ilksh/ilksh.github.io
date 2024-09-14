@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm</title>
+
+    <!-- Include necessary styles -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&subset=devanagari,latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+
+    <style>
+        /* Toggle Button Styling */
+        .toggle-button {
+            background: none;
+            border: none;
+            font-size: 20px; /* Adjusted size */
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+            outline: none;
+            padding: 10px 20px;
+            display: block;
+            text-align: left;
+            width: 100%;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .toggle-button:hover {
+            color: #3498db;
+        }
+
+        .toggle-content {
+            display: none;
+            margin-top: 10px;
+            padding: 20px;
+            border: 1px solid #e5ebf2;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .toggle-content.active {
+            display: block;
+        }
+
+        /* Back to Portfolio Button */
+        .back-to-portfolio {
+            margin-top: 50px;
+            background-color: #40E0D0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            color: white;
+            text-decoration: none;
+        }
+
+        .back-to-portfolio:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* Code Snippet Styling */
+        .code-wrapper {
+            position: relative;
+            width: 100%; /* Increase code snippet width */
+        }
+
+        .code-wrapper pre {
+            background-color: #071e3d;
+            color: white;
+            padding: 20px; /* Adjust padding */
+            border-radius: 5px;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+
+        .code-wrapper button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 3px 8px; /* Reduced size */
+            background-color: #1f4287;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            font-size: 12px; /* Reduced font size */
+            cursor: pointer;
+            display: none;
+        }
+
+        .code-wrapper:hover button {
+            display: block;
+        }
+
+        #copy-success {
+            display: none;
+            color: #1f4287;
+            margin-top: 10px;
+        }
+
+        #copy-success.show {
+            display: inline-block;
+        }
+        
+        /* Description Text Styling */
+        .single-about-txt p {
+            font-size: 16px; /* Increase font size */
+            line-height: 1.6;
+        }
+
+        /* Stack Visualization */
+        .stack-visualization {
+            margin-top: 20px;
+        }
+
+        .stack-element {
+            background-color: #1f4287;
+            color: white;
+            padding: 10px;
+            margin-bottom: 5px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        /* Styling for enqueue steps */
+        .enqueue-visualization {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .queue-step {
+            margin: 5px 0;
+        }
+
+        /* Styling for queue visualization */
+        .queue-visualization {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .queue-element {
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Styling for enqueue steps */
+        .enqueue-visualization {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .queue-step {
+            margin: 5px 0;
+        }
+
+        /* Styling for circular queue visualization */
+        .circular-queue-visualization {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .queue-element {
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            width: 50px;
+            text-align: center;
+        }
+        
+        /* Styling for circular queue visualization */
+        .circular-queue-visualization {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .queue-circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 120px; /* Adjust size for visualization */
+            height: 120px;
+            border: 2px solid #3498db;
+            border-radius: 50%;
+            position: relative;
+            padding: 10px;
+        }
+
+        .queue-element {
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+        }
+
+        /* Styling for deque visualization */
+        .deque-visualization {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .deque-circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 150px; /* Adjust size for visualization */
+            height: 150px;
+            border: 2px solid #3498db;
+            border-radius: 50%;
+            position: relative;
+            padding: 10px;
+        }
+
+        .deque-element {
+            width: 40px;
+            height: 40px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        /* Styling for doubly linked list visualization */
+        .doubly-linked-list-visualization {
+            margin-top: 15px;
+        }
+
+        .linked-list-linear {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .node {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            position: relative;
+        }
+
+        .node-content {
+            width: 100%;
+            height: 100%;
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 16px;
+        }
+
+        .node:before, .node:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 2px;
+            background-color: #3498db;
+        }
+
+        .node:before {
+            left: -20px;
+        }
+
+        .node:after {
+            right: -20px;
+        }
+
+        /* Styling for priority queue visualization */
+        .priority-queue-visualization {
+            margin-top: 15px;
+        }
+
+        .tree-visualization {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .tree-level {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .tree-node {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            margin: 0 40px; /* Increased margin for more spacing */
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            font-size: 16px;
+            position: relative;
+        }
+
+        /* Connector lines */
+        .line {
+            position: absolute;
+            width: 60px; /* Increased width for longer lines */
+            height: 2px;
+            background-color: #3498db;
+        }
+
+        .line.left {
+            top: 50%;
+            left: -30px; /* Adjust to align with the node */
+            transform: rotate(-45deg);
+            transform-origin: right top;
+        }
+
+        .line.right {
+            top: 50%;
+            right: -30px; /* Adjust to align with the node */
+            transform: rotate(45deg);
+            transform-origin: left top;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="top-area" style="margin-bottom: 50px;">
+    <div class="header-area">
+        <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Aaron Kim</a>
+                </div>
+                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="smooth-menu"><a href="#about">About</a></li>
+                        <li class="smooth-menu"><a href="#education">CourseWork</a></li>
+                        <li class="smooth-menu"><a href="#skills">Languages</a></li>
+                        <li class="smooth-menu"><a href="#tools">Tools</a></li>
+                        <li class="smooth-menu"><a href="#experience">Experience</a></li>
+                        <li class="smooth-menu"><a href="#portfolio">Portfolio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Introduction Section -->
+<div class="container">
+    <div class="section-heading text-center">
+        <h2>Journey of Algorithm</h2>
+        <p class="text-center" style="font-size: 16px;">
+            Explore the <strong>CS Algorithm</strong> and <strong>Machine Learning Algorithm</strong> sections, where I showcase my algorithm implementations in computer science and machine learning. The <strong><a href="https://leetcode.com/problemset/" target="_blank"><u>LeetCode</u></a></strong> and <strong><a href="https://www.acmicpc.net/" target="_blank"><u>BOJ</u></a></strong> sections highlight my preparation for competitive programming, including the <strong><a href="https://icpc.global/" target="_blank"><u>ICPC</u></a></strong>. Here, I've organized my problem-solving journey by difficulty and programming languages, reflecting my commitment to tackling complex challenges.
+        </p>        
+    </div>
+</div>
+
+<!-- Main Toggle Sections -->
+<div class="container">
+    <!-- CS Algorithm Template -->
+    <h3 class="toggle-button" onclick="toggleSection('cs-algorithms')">1. CS Algorithm Template</h3>
+    <div class="toggle-content" id="cs-algorithms">
+        <!-- Nested Toggle for CS Algorithm Template -->
+        <h4 class="toggle-button" onclick="toggleSection('data-structure')">Data Structure</h4>
+        <div class="toggle-content" id="data-structure">
+
+<!-- Stack Section -->
+<h5 class="toggle-button" onclick="toggleSection('stack')">Stack</h5>
+<div class="toggle-content" id="stack">
+    <!-- Code Snippet and Description -->
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="single-about-code">
+                <div class="code-container">
+                    <p class="language" id="language-copy">C++</p>
+                    <div class="code-wrapper">
+                        <pre><code class="cpp">
+void init(Stack *s) { s->top = -1;}
+
+bool empty(Stack *s) {
+    if (s->top == -1) return true;
+    return false;
+}
+
+bool full(Stack *s) { 
+    if (s->top == MAX_SIZE -1) return true;
+    return false;
+}
+
+void push(Stack *s, element item) {
+    if (full(s)) {
+        cout << "Stack is saturated";
+        return;
+    }
+    s->top += 1;
+    s->array[s->top] = item;
+}
+
+void pop(Stack *s) {
+    if (empty(s)) {
+        cout << "Stack is empty";
+        return;
+    }
+    s->top -= 1;
+}
+                        </code></pre>
+                        <button id="copy-button">Copy</button>
+                    </div>
+                    <span id="copy-success">Code copied! :)</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="single-about-txt">
+                <h3>
+                    Stack Implementation in C++ <br>
+                    <span>Basic LIFO Data Structure</span> <br>
+                </h3>
+                <p>
+                    A stack is a data structure that allows adding and removing elements only from one end, known as the top of the stack. The last element added is the first one to be removed, following the Last In, First Out (LIFO) principle.
+                    The time complexity for both push and pop operations is O(1).
+                </p>
+                <div class="enqueue-visualization">
+                    <h4>Push Process</h4>
+                    <div class="queue-step">1. Push "Element 1"</div>
+                    <div class="queue-step">2. Push "Element 2"</div>
+                    <div class="queue-step">3. Push "Element 3"</div>
+                </div>
+                <!-- Stack Visualization -->
+                <div class="stack-visualization">
+                    <div class="stack-element">Element 3</div>
+                    <div class="stack-element">Element 2</div>
+                    <div class="stack-element">Element 1</div>
+                </div>
+            </div>
+        </div> <!-- col-sm 5-->
+    </div> <!-- row -->
+</div> <!-- Stack Toggle Content -->
+
+<!-- Queue Section -->
+<h5 class="toggle-button" onclick="toggleSection('queue')">Queue</h5>
+<div class="toggle-content" id="queue">
+    <!-- Code Snippet and Description -->
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="single-about-code">
+                <div class="code-container">
+                    <p class="language" id="language-copy">C++</p>
+                    <div class="code-wrapper">
+                        <pre><code class="cpp">
+typedef int element;
+typedef struct {
+    int front;
+    int rear;
+    element array[MAX_SIZE];
+} Queue;
+
+void init(Queue *q) {
+    q->front = -1;
+    q->rear = -1;
+}
+
+bool empty(Queue *q) {
+    if (q->front == q->rear) return true;
+    return false;
+}
+
+bool full(Queue *q) { 
+    if (q->rear == MAX_SIZE - 1) return true;
+    return false;
+}
+
+void enqueue(Queue *q, element item) {
+    if (full(q)) {
+        cout << "Queue is saturated\n";
+        return;
+    }
+    q->array[++q->rear] = item;
+}
+
+void dequeue(Queue *q) {
+    if (empty(q)) {
+        cout << "Queue is empty";
+        return;
+    }
+    int result = q->array[++q->front];
+    cout << result << " was removed\n";
+}
+                        </code></pre>
+                        <button id="copy-button">Copy</button>
+                    </div>
+                    <span id="copy-success">Code copied! :)</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="single-about-txt">
+                <h3>
+                    Queue Implementation in C++ <br>
+                    <span>FIFO Data Structure</span> <br>
+                </h3>
+                <p style="font-size: 16px;">
+                    A queue is a data structure that allows elements to be added at the rear and removed from the front. It follows the First In, First Out (FIFO) principle, ensuring the order of elements as they were inserted.
+                    The time complexity for both enqueue and dequeue operations is O(1).
+                </p>
+                <!-- Enqueue Visualization -->
+                <div class="enqueue-visualization">
+                    <h4>Enqueue Process</h4>
+                    <div class="queue-step">1. Enqueue "Element 1"</div>
+                    <div class="queue-step">2. Enqueue "Element 2"</div>
+                    <div class="queue-step">3. Enqueue "Element 3"</div>
+                </div>
+                <!-- Queue Visualization -->
+                <div class="queue-visualization">
+                    <div class="queue-element">Element 1</div>
+                    <div class="queue-element">Element 2</div>
+                    <div class="queue-element">Element 3</div>
+                </div>
+            </div>
+        </div> <!-- col-sm 5-->
+    </div> <!-- row -->
+</div> <!-- Queue Toggle Content -->
+
+
+<!-- Circular Queue Section -->
+<h5 class="toggle-button" onclick="toggleSection('circular-queue')">Circular Queue</h5>
+<div class="toggle-content" id="circular-queue">
+    <!-- Code Snippet and Description -->
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="single-about-code">
+                <div class="code-container">
+                    <p class="language" id="language-copy">C++</p>
+                    <div class="code-wrapper">
+                        <pre><code class="cpp">
+void init(Queue *q) { 
+    q->front = q->rear = 0;
+}
+
+bool empty(Queue *q) {
+    if(q->front == q->rear) return true;
+    return false;
+}
+
+bool full(Queue *q) {
+    if ((q->rear + 1) % MAX_SIZE == q->front) return true;
+    return false;
+}
+
+void enqueue(Queue *q, element item) {
+    if (full(q)) {
+        cout <<"Queue is saturated \n";
+        return;
+    }
+    // maintaining the shape of a circular queue
+    q->rear = (q->rear + 1) % MAX_SIZE;
+    q->array[q->rear] = item;
+}
+
+void dequeue(Queue *q) {
+    if(empty(q)) {
+        cout << "Queue is empty";
+        return;
+    }
+    
+    q->front = (q->front + 1) % MAX_SIZE;
+    int result = q->array[q->front];
+    cout<< result<< " was removed\n";
+}
+                        </code></pre>
+                        <button id="copy-button">Copy</button>
+                    </div>
+                    <span id="copy-success">Code copied! :)</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="single-about-txt">
+                <h3>
+                    Circular Queue Implementation in C++ <br>
+                    <span>FIFO with Wrap Around</span> <br>
+                </h3>
+                <p style="font-size: 16px;">
+                    A circular queue is an advanced version of a regular queue where the end of the queue wraps around to the beginning, forming a circle. This C++ implementation ensures efficient use of space, allowing the queue to be reused without shifting elements.
+                    The time complexity for both enqueue and dequeue operations is O(1).
+                </p>
+                <!-- Enqueue and Dequeue Visualization -->
+                <div class="enqueue-visualization">
+                    <h4>Enqueue and Dequeue Process</h4>
+                    <div class="queue-step">1. Enqueue "A", "B", "C"</div>
+                        <div class="circular-queue-visualization">
+                            <div class="queue-circle">
+                                <div class="queue-element">A</div>
+                                <div class="queue-element">B</div>
+                                <div class="queue-element">C</div>
+                            </div>
+                        </div>
+                    <div class="queue-step">2. Dequeue (Remove "A")</div>
+                        <div class="circular-queue-visualization">
+                            <div class="queue-circle">
+                                <div class="queue-element">B</div>
+                                <div class="queue-element">C</div>
+                            </div>
+                        </div>
+                    <div class="queue-step">3. Enqueue "D"</div>
+                    <div class="circular-queue-visualization">
+                        <div class="queue-circle">
+                            <div class="queue-element">B</div>
+                            <div class="queue-element">C</div>
+                            <div class="queue-element">D</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- col-sm 5-->
+    </div> <!-- row -->
+</div> <!-- Circular Queue Toggle Content -->
+
+<!-- Deque Section -->
+<h5 class="toggle-button" onclick="toggleSection('deque')">Deque</h5>
+<div class="toggle-content" id="deque">
+    <!-- Code Snippet and Description -->
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="single-about-code">
+                <div class="code-container">
+                    <p class="language" id="language-copy">C++</p>
+                    <div class="code-wrapper">
+                        <pre><code class="cpp">
+void init(Deque *dq) { dq->front = dq->rear = 0; }
+
+bool empty(Deque *dq) {
+    if (dq->front == dq->rear) return true;
+    return false;
+}
+
+bool full(Deque *dq) {
+    if( (dq->rear + 1) % MAX_SIZE == dq->front) return true;
+    return false;
+}
+
+// append-rear
+void append(Deque *dq, element item) {
+    if(full(dq)) return;
+    dq->rear = (dq->rear + 1) % MAX_SIZE;
+    dq->array[dq->rear] = item;
+}
+
+// append-front
+void appendleft(Deque *dq, element item) {
+    if(full(dq)) return ;
+    
+    dq->array[dq->front] = item;
+    dq->front = ((dq->front - 1)+ MAX_SIZE) % MAX_SIZE;
+}
+
+// pop-rear
+void pop(Deque *dq) {
+    if(empty(dq)) return;
+    
+    cout << dq->array[dq->rear]<<" was removed\n";
+    
+    dq->rear = (dq->rear - 1 + MAX_SIZE) % MAX_SIZE;
+}
+
+// pop-front
+void popleft(Deque *dq) {
+    if(empty(dq)) return;
+
+    dq->front = (dq->front + 1) % MAX_SIZE;
+    int result = dq->array[dq->front];
+    cout << result << " was removed\n";
+}
+                        </code></pre>
+                        <button id="copy-button">Copy</button>
+                    </div>
+                    <span id="copy-success">Code copied! :)</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="single-about-txt">
+                <h3>
+                    Deque Implementation in C++ <br>
+                    <span>Double-Ended Queue</span> <br>
+                </h3>
+                <p style="font-size: 16px;">
+                    A deque (double-ended queue) allows insertion and removal of elements from both the front and rear ends,
+                    providing a flexible data structure. <br>
+                    The time complexity for all operations (append, append left, pop, and pop left) is O(1).
+                <!-- Enqueue and Dequeue Visualization -->
+                <div class="enqueue-visualization">
+                    <h4>Deque Operations</h4>
+                    <div class="queue-step">1. Append to Rear "A"</div>
+                        <!-- Queue Visualization -->
+                        <div class="queue-visualization">
+                            <div class="queue-element">A</div>
+                        </div>
+                    <div class="queue-step">2. Append to Front "B"</div>
+                        <!-- Queue Visualization -->
+                        <div class="queue-visualization">
+                            <div class="queue-element">B</div>
+                            <div class="queue-element">A</div>
+                        </div>
+                    <div class="queue-step">3. Append to Rear "C"</div>
+                        <!-- Queue Visualization -->
+                        <div class="queue-visualization">
+                            <div class="queue-element">B</div>
+                            <div class="queue-element">A</div>
+                            <div class="queue-element">C</div>
+                        </div>
+                    <div class="queue-step">4. Pop from Front (Remove "B")</div>
+                        <!-- Queue Visualization -->
+                        <div class="queue-visualization">
+                            <div class="queue-element">A</div>
+                            <div class="queue-element">C</div>
+                        </div>
+                    <div class="queue-step">5. Pop from Rear (Remove "C")</div>
+                        <!-- Queue Visualization -->
+                        <div class="queue-visualization">
+                            <div class="queue-element">A</div>
+                        </div>
+                </div>
+            </div>
+        </div> <!-- col-sm 5-->
+    </div> <!-- row -->
+</div> <!-- Deque Toggle Content -->
+<!-- Doubly Linked List Section -->
+<h5 class="toggle-button" onclick="toggleSection('doubly-linked-list')">Doubly Linked List</h5>
+<div class="toggle-content" id="doubly-linked-list">
+    <!-- Code Snippet and Description -->
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="single-about-code">
+                <div class="code-container">
+                    <p class="language" id="language-copy">C++</p>
+                    <div class="code-wrapper">
+                        <pre><code class="cpp">
+typedef int element;
+
+typedef struct Node {
+    element data;
+    struct Node *next, *prev;
+} Node;
+
+Node* makeNode(element item) {
+    Node* newNode = (Node *)malloc(sizeof(Node));
+    newNode->data = item;
+    newNode->next = NULL;
+    newNode->prev = NULL;
+    return newNode;
+}
+
+void insert_left(Node* head, element item) {
+    Node* p = makeNode(item);
+    p->next = head->next;
+    head->next = p;
+    p->prev = head;
+}
+
+void insert_right(Node* head, element item) {
+    Node *newNode = makeNode(item);
+    Node *cur = head;
+    while (cur->next) cur = cur->next;
+    cur->next = newNode;
+    newNode->prev = cur;
+}
+
+void pop_left(Node* cur) {
+    Node* temp = cur;
+    cur->prev->next = cur->next;
+    if (cur->next) cur->next->prev = cur->prev;
+    free(temp);
+}
+
+void pop_right(Node *head) {
+    Node *cur = head, *temp;
+    while (cur->next) cur = cur->next;
+    temp = cur;
+    if (cur->prev) cur->prev->next = NULL;
+    free(temp);
+}
+                        </code></pre>
+                        <button id="copy-button">Copy</button>
+                    </div>
+                    <span id="copy-success">Code copied! :)</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="single-about-txt">
+                <h3>
+                    Doubly Linked List Implementation in C++ <br>
+                    <span>Linear Data Structure with Two Pointers</span> <br>
+                </h3>
+                <p style="font-size: 16px;">
+                    A doubly linked list is a linear data structure where each element, or node, points to both 
+                    its previous and next node, allowing bidirectional traversal. <br>
+                    Time Complexity: <br>
+                    - Insertion at the beginning (insert_left): O(1) <br>
+                    - Insertion at the end (insert_right): O(n) <br>
+                    - Removal from the beginning (pop_left): O(1) <br>
+                    - Removal from the end (pop_right): O(n) <br>
+                </p>
+                <!-- Enqueue and Dequeue Visualization -->
+                <div class="enqueue-visualization">
+                    <h4>Doubly Linked List Operations</h4>
+                    <div class="queue-step">1. insert_left "A"</div>
+                        <!-- Doubly Linked List Visualization -->
+                        <div class="doubly-linked-list-visualization">
+                            <div class="linked-list-linear">
+                                <div class="node">
+                                    <div class="node-content">A</div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="queue-step">2. insert_right "B"</div>
+                        <!-- Doubly Linked List Visualization -->
+                        <div class="doubly-linked-list-visualization">
+                            <div class="linked-list-linear">
+                                <div class="node">
+                                    <div class="node-content">A</div>
+                                    <div class="node-content">B</div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="queue-step">3. insert_left "C"</div>
+                        <!-- Doubly Linked List Visualization -->
+                        <div class="doubly-linked-list-visualization">
+                            <div class="linked-list-linear">
+                                <div class="node">
+                                    <div class="node-content">C</div>
+                                    <div class="node-content">A</div>
+                                    <div class="node-content">B</div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="queue-step">4. pop_left (Remove "C")</div>
+                        <!-- Doubly Linked List Visualization -->
+                        <div class="doubly-linked-list-visualization">
+                            <div class="linked-list-linear">
+                                <div class="node">
+                                    <div class="node-content">A</div>
+                                    <div class="node-content">B</div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="queue-step">5. pop_right (Remove "B")</div>
+                        <!-- Doubly Linked List Visualization -->
+                        <div class="doubly-linked-list-visualization">
+                            <div class="linked-list-linear">
+                                <div class="node">
+                                    <div class="node-content">A</div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div> <!-- col-sm 5-->
+    </div> <!-- row -->
+</div> <!-- Doubly Linked List Toggle Content -->
+
+<!-- Priority Queue Section -->
+<h5 class="toggle-button" onclick="toggleSection('priority-queue')">Priority Queue</h5>
+<div class="toggle-content" id="priority-queue">
+    <!-- Code Snippet and Description -->
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="single-about-code">
+                <div class="code-container">
+                    <p class="language" id="language-copy">C++</p>
+                    <div class="code-wrapper">
+                        <pre><code class="cpp">
+template <typename T>
+    class priority_queue {
+    private:
+        int cnt; // number of elements in priority_queue
+        T heap[MAX_N];
+    
+    public:
+        int size() { return cnt; }
+        
+        priority_queue() { cnt = 0; } // init
+        
+        void swap(int aIdx, int bIdx) {
+            int temp = heap[aIdx];
+            heap[aIdx] = heap[bIdx];
+            heap[bIdx] = temp;
+        }
+        
+        void push(T item) {
+            heap[++cnt] = item;
+            int cur = cnt;
+    
+            while (cur > 1) {
+                int par = cur >> 1;
+                if (heap[cur] < heap[par]) break;
+                swap(cur, par);
+                cur = par;
+            }
+        }
+        
+        void pop() { // move the lowest data and delete
+            heap[1] = heap[cnt--];
+            int cur = 1;
+    
+            while (cur <= cnt) {
+                int left = (cur << 1) <= cnt ? 
+                            (cur << 1) : -1;
+                int right = (cur << 1 | 1) <= cnt ?
+                            (cur << 1 | 1) : -1;
+                int child = cur; 
+    
+                // cur node is leaf node
+                if (left == -1) break;
+                if (heap[cur] < heap[left]) child = left;
+                if (right != -1 && heap[child] < heap[right])
+                    child = right;
+    
+                if (child == left) {
+                    swap(cur, left);
+                    cur = left;
+                } else if (child == right) {
+                    swap(cur, right);
+                    cur = right;
+                } else break;
+            }
+        }
+        
+        T top() { return heap[1]; }
+        
+        bool empty() { return cnt == 0; }
+    };
+                        </code></pre>
+                        <button id="copy-button">Copy</button>
+                    </div>
+                    <span id="copy-success">Code copied! :)</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="single-about-txt">
+                <h3>
+                    Priority Queue Implementation in C++ <br>
+                    <span>Heap-Based Data Structure</span> <br>
+                </h3>
+                <p style="font-size: 16px;">
+                    This implementation of a priority queue uses a binary heap to efficiently manage elements...
+                </p>
+                <p style="font-size: 16px;">
+                    <strong>Time Complexity:</strong> 
+                    - Insertion (`push`): O(log n)
+                    - Removal (`pop`): O(log n)
+                    - Access (`top`): O(1)
+                </p>
+         <!-- Priority Queue Visualization -->
+         <div class="priority-queue-visualization">
+            <h4>Visualization</h4>
+            <div class="tree-visualization">
+    
+                <!-- Step 3 -->
+                <div class="tree-level">
+                    <div class="tree-node">
+                        <div class="line left"></div>
+                        <div>15</div>
+                        <div class="line right"></div>
+                    </div>
+                    <div class="tree-node">10</div>
+                    <div class="tree-node">8</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- col-sm 5-->
+    </div> <!-- row -->
+</div> <!-- Priority Queue Toggle Content -->
+
+
+
+
+            <!-- Add more toggles and code snippets as needed for Circular Queue, Deque, etc. -->
+             
+        </div>
+        <!-- Add more nested toggle sections for Tree, Graph, etc. -->
+    </div>
+
+    <!-- Machine Learning Algorithm Template -->
+    <h3 class="toggle-button" onclick="toggleSection('ml-algorithms')">2. Machine Learning Algorithm Template</h3>
+    <div class="toggle-content" id="ml-algorithms">
+        <!-- Further details for ML algorithms can be added here -->
+    </div>
+
+    <!-- LeetCode -->
+    <h3 class="toggle-button" onclick="toggleSection('leetcode')">3. LeetCode</h3>
+    <div class="toggle-content" id="leetcode">
+        <!-- Further details for LeetCode problems can be added here -->
+    </div>
+
+    <!-- BOJ -->
+    <h3 class="toggle-button" onclick="toggleSection('boj')">4. BOJ</h3>
+    <div class="toggle-content" id="boj">
+        <!-- Further details for BOJ problems can be added here -->
+    </div>
+
+    <!-- Back to Portfolio Link Start -->
+    <div class="text-center" style="margin-top: 50px;">
+        <a href="index.html#portfolio" class="back-to-portfolio">Back to Portfolio</a>
+    </div>
+    <!-- Back to Portfolio Link End -->
+</div>
+
+<!-- Include necessary scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script>
+    function toggleSection(sectionId) {
+        const content = document.getElementById(sectionId);
+        content.classList.toggle("active");
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.highlightAll(); // Apply syntax highlighting
+
+        const copyButtons = document.querySelectorAll('#copy-button');
+        copyButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const codeBlock = this.previousElementSibling.querySelector('code').innerText;
+                navigator.clipboard.writeText(codeBlock).then(function () {
+                    const copySuccess = document.getElementById('copy-success');
+                    copySuccess.classList.add('show');
+                    setTimeout(function () {
+                        copySuccess.classList.remove('show');
+                    }, 2500);
+                }, function () {
+                    console.log('Error copying text.');
+                });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
