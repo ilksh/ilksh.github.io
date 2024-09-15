@@ -348,7 +348,104 @@
             transform-origin: left top;
         }
 
+        /* Styling for MST Section */
+        .mst-title {
+            color: #3498db; /* Adjust the color as needed */
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .mst-subtitle {
+            color: #2c3e50; /* Adjust the color as needed */
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .mst-content p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0 0 15px;
+        }
+
+        .mst-steps {
+            list-style-type: none; /* Remove default list styling */
+            padding-left: 15px;
+            margin: 0;
+        }
+
+        .mst-steps li {
+            margin-bottom: 10px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .mst-steps li:before {
+            content: '•'; /* Custom bullet */
+            position: absolute;
+            left: 0;
+            color: #3498db; /* Adjust the color as needed */
+            font-weight: bold;
+        }
+
+        .u {
+            text-decoration: underline;
+            color: #e74c3c; /* Highlight color */
+        }
+
+/* Styling for Kruskal MST Section */
+.kruskal-subtitle {
+    color: #2c3e50;
+    font-size: 20px;
+    margin-top: 15px; /* Reduce top margin */
+    margin-bottom: 5px; /* Reduce bottom margin */
+    font-weight: bold;
+}
+
+.kruskal-content p,
+.kruskal-content ul,
+.kruskal-content h5 {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px; /* Adjust bottom margin for closer spacing */
+}
+
+.kruskal-steps {
+    list-style-type: none;
+    padding-left: 15px;
+    margin: 0;
+}
+
+.kruskal-steps li {
+    margin-bottom: 5px; /* Adjust for closer spacing */
+    padding-left: 15px;
+    position: relative;
+}
+
+.kruskal-steps li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #3498db;
+    font-weight: bold;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #d3d3d3;
+    margin: 15px 0; /* Space around the horizontal line */
+}
+
+
+        
+
     </style>
+
+
 </head>
 <body>
 
@@ -393,6 +490,7 @@
     <!-- CS Algorithm Template -->
     <h3 class="toggle-button" onclick="toggleSection('cs-algorithms')">1. CS Algorithm Template</h3>
     <div class="toggle-content" id="cs-algorithms">
+
         <!-- Nested Toggle for CS Algorithm Template -->
         <h4 class="toggle-button" onclick="toggleSection('data-structure')">Data Structure</h4>
         <div class="toggle-content" id="data-structure">
@@ -1008,13 +1106,234 @@ template <typename T>
     </div> <!-- row -->
 </div> <!-- Priority Queue Toggle Content -->
 
-
-
-
             <!-- Add more toggles and code snippets as needed for Circular Queue, Deque, etc. -->
              
         </div>
+
         <!-- Add more nested toggle sections for Tree, Graph, etc. -->
+         <!-- Tree Section -->
+<h3 class="toggle-button" onclick="toggleSection('tree')">Tree</h3>
+<div class="toggle-content" id="tree">
+
+    <!-- Prim MST Section -->
+    <h4 class="toggle-button" onclick="toggleSection('prim-mst')">Prim MST</h4>
+    <div class="toggle-content" id="prim-mst">
+        <div class="row">
+
+            <!-- Prim's Algorithm Code Snippet -->
+            <div class="col-sm-7">
+                <div class="single-about-code">
+                    <div class="code-container">
+                        <p class="language" id="language-copy">C++</p>
+                        <div class="code-wrapper">
+                            <pre><code class="cpp">
+vector<pii> adj[MAX_V];
+
+int prim(vector<pii>& selected) {
+    selected.clear();
+    vector<bool> added(V, false);
+
+    vector<int> minWeight(V, INF), parent(V, -1);
+
+    int ret = 0; // sum of weight
+
+    minWeight[0] = 0; // Starting Node
+    parent[0] = 0;
+
+    for (int iter = 0; iter < V; ++iter) {
+        int u = -1;
+        for (int v = 0; v < V; ++v) {
+            if ((!added[v]) && 
+                (u == -1 || minWeight[v] < minWeight[u])) 
+                u = v;
+        }   
+        printf("iter: %d | u: %d\n", iter, u);
+
+        if (u == -1) break; 
+
+        if (parent[u] != u) 
+            selected.push_back({parent[u], u});
+        
+        ret += minWeight[u];
+        added[u] = true;
+
+        // check all adjacent edges
+        for (int i = 0; i < adj[u].size(); ++i) {
+            int v = adj[u][i].first;
+            int weight = adj[u][i].second;
+            if (!added[v] && minWeight[v] > weight) {
+                parent[v] = u;
+                minWeight[v] = weight;
+            }
+        }
+    }
+    return ret;
+}
+                            </code></pre>
+                            <button id="copy-button">Copy</button>
+                        </div>
+                        <span id="copy-success">Code copied! :)</span>
+                    </div>
+                </div>
+            </div> <!-- col-sm-7 -->
+
+            <!-- Explanation for Prim's Algorithm -->
+            <div class="col-sm-5">
+                <div class="single-about-txt">
+                    <!-- <h3 class="mst-title">Minimum Spanning Tree (MST)</h3> -->
+                    <div class="mst-content">
+                        <h4 class="mst-subtitle">1. Prim Algorithm</h4>
+                        <p>
+                            This algorithm starts from the starting vertex and expands the spanning tree set step by step. <br>
+                            The frame is expanded by selecting the vertex connected to the <u>lowest edge</u> among adjacent vertices.
+                        </p>
+                    </div>
+                    <div class="mst-content">
+                        <h4 class="mst-subtitle">2. Difference between Kruskal</h4>
+                        <p>
+                            Kruskal's algorithm is an <u>edge-based</u> algorithm, while Prim's algorithm is a <u>vertex-based</u> algorithm.
+                        </p>
+                    </div>
+                    <div class="mst-content">
+                        <h4 class="mst-subtitle">3. Logic</h4>
+                        <ul class="mst-steps">
+                            <li>Step 1) Algorithm selects the vertex u that <br>
+                                        <u>has not yet been included</u> in MST and has the <u>smallest edge weight</u> connecting it to the MST.</li>
+                            <li>Step 2) Once u is chosen, it is <u>marked as added</u> to the MST by setting added[u] to true, and the minimum weight minWeight[u] is accumulated into the total cost ret.</li>
+                            <li>Step 3) The algorithm then inspects <u>all adjacent vertices</u> v of the chosen vertex u.</li>
+                            <li>Step 4) If an adjacent vertex v is <u>not part of the MST</u> and the edge's (u-v) <u>weight is smaller</u> than the current recorded minimum weight minWeight[v], the algorithm updates minWeight[v].</li>
+                        </ul>
+                    </div>
+                    <div class="mst-content">
+                        <h4 class="mst-subtitle">4. Time Complexity</h4>
+                        <p>
+                            - O(n²) with an array <br>
+                            - O(m log n) with a binary heap
+                        </p>
+                    </div>
+                </div>
+            </div> <!-- col-sm-5 -->
+            
+
+        </div> <!-- row -->
+    </div> <!-- Prim MST Toggle Content -->
+   <!-- Kruskal MST Section -->
+<h4 class="toggle-button" onclick="toggleSection('kruskal-mst')">Kruskal MST</h4>
+<div class="toggle-content" id="kruskal-mst">
+    <div class="row">
+
+        <!-- Kruskal's Algorithm Code Snippet -->
+        <div class="col-sm-7">
+            <div class="single-about-code">
+                <div class="code-container">
+                    <p class="language" id="language-copy">C++</p>
+                    <div class="code-wrapper">
+                        <pre><code class="cpp">
+typedef pair&lt;int, int&gt; pii;
+typedef pair&lt;int, pii&gt; ippi;
+
+// Find function for union-find
+int find(int x) {
+    if (par[x] < 0) return x;
+    return par[x] = find(par[x]);
+}
+
+// Union function for union-find
+void merge(int a, int b) {
+    a = find(a);
+    b = find(b);
+    if (a == b) return;
+    if (arr[a] < arr[b]) par[b] = a;
+    else par[a] = b;
+}
+
+// Kruskal's algorithm to find MST
+int kruskal(vector<ippi> &edges, int n) {
+    // Sort edges by weight
+    sort(edges.begin(), edges.end());
+    
+    memset(par, -1, sizeof(par));
+
+    int mst_cost = 0;
+
+    for (auto &edge : edges) {
+        int weight = edge.first;
+        int u = edge.second.first;
+        int v = edge.second.second;
+
+        // If u and v are not connected
+        if (find(u) != find(v)) {
+            merge(u, v); // Merge u and v
+            // Add edge weight to MST cost
+            mst_cost += weight; 
+        }
+    }
+
+    return mst_cost;
+}
+                        </code></pre>
+                        <button id="copy-button">Copy</button>
+                    </div>
+                    <span id="copy-success">Code copied! :)</span>
+                </div>
+            </div>
+        </div> <!-- col-sm-7 -->
+
+        <!-- Explanation for Kruskal's Algorithm -->
+        <div class="col-sm-5">
+            <div class="single-about-txt">
+                <h3 class="kruskal-title">Kruskal's Minimum Spanning Tree (MST)</h3>
+                
+                <div class="kruskal-content">
+                    <h4 class="kruskal-subtitle">1. Greedy Method</h4>
+                    <p>- Always need to verify that it provides the optimal answer.</p>
+                </div>
+                
+                <div class="kruskal-content">
+                    <h4 class="kruskal-subtitle">2. Logic</h4>
+                    <ul class="kruskal-steps">
+                        <li>Step 1) <u>Sort graph edges</u> in ascending order of weight.</li>
+                        <li>Step 2) Find edges that <u>do not form a cycle</u> in the sorted list of edges and add them to the current MST set.</li>
+                        <li>Step 3) If it forms a cycle, the edge is excluded.</li>
+                    </ul>
+                    <h5>Example - Important Part</h5>
+                    <p>
+                        <u>Edge dg</u>: This edge won't be added because this edge makes a cycle. <br>
+                        <u>Termination</u>: After selecting edge (e, f), <br>
+                        the number of edges will be 6, which is equal to <br> 
+                        (# of nodes - 1), thus the algorithm will terminate.
+                    </p>
+                </div>
+                <hr>
+                
+               
+    
+                <hr>
+                <div class="kruskal-content">
+                    <h4 class="kruskal-subtitle">3. How to Find a Cycle: <span style="color: red;">Union Find</span></h4>
+                </div>
+
+                <hr>
+                
+                <div class="kruskal-content">
+                    <h4 class="kruskal-subtitle">4. Complexity</h4>
+                    <p>
+                        <strong>Space:</strong> |E| <br>
+                        <strong>Time:</strong> |E|log(|E|)
+                    </p>
+                </div>
+             
+                
+                
+            </div>
+        </div> <!-- col-sm-5 -->
+
+    </div> <!-- row -->
+</div> <!-- Kruskal MST Toggle Content -->
+
+
+</div> <!-- Tree Toggle Content -->
+
     </div>
 
     <!-- Machine Learning Algorithm Template -->
@@ -1044,6 +1363,7 @@ template <typename T>
 
 <!-- Include necessary scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
 <script>
     function toggleSection(sectionId) {
         const content = document.getElementById(sectionId);
@@ -1071,5 +1391,14 @@ template <typename T>
     });
 </script>
 
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    document.addEventListener("DOMContentLoaded", () => {
+        mermaid.initialize({ startOnLoad: true });
+    });
+</script>
+
+
+ 
 </body>
 </html>
