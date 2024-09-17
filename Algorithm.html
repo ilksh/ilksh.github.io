@@ -440,6 +440,91 @@ hr {
     margin: 15px 0; /* Space around the horizontal line */
 }
 
+/* Simulation/Demo Section Styles */
+.hashmap-simulation {
+    margin-top: 20px;
+}
+
+.simulation-step {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #40E0D0;
+}
+
+.hashmap-visualization {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+.hash-bucket {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.hash-index {
+    font-weight: bold;
+    color: #3498db;
+}
+
+.hash-value {
+    color: #b636ff;
+}
+
+/* Simulation/Demo Section Styles */
+.hashmap-simulation {
+    margin-top: 20px;
+}
+
+.simulation-step {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #40E0D0;
+}
+
+.hashmap-visualization {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+.hash-bucket {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.hash-index {
+    font-weight: bold;
+    color: #3498db;
+}
+
+.hash-value {
+    color: #b636ff;
+}
+
+.memory-pool {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.memory-block {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+}
+
+.memory-block.used {
+    background-color: #3498db;
+    color: white;
+}
 
         
 
@@ -653,100 +738,6 @@ void dequeue(Queue *q) {
 </div> <!-- Queue Toggle Content -->
 
 
-<!-- Circular Queue Section -->
-<h5 class="toggle-button" onclick="toggleSection('circular-queue')">Circular Queue</h5>
-<div class="toggle-content" id="circular-queue">
-    <!-- Code Snippet and Description -->
-    <div class="row">
-        <div class="col-sm-7">
-            <div class="single-about-code">
-                <div class="code-container">
-                    <p class="language" id="language-copy">C++</p>
-                    <div class="code-wrapper">
-                        <pre><code class="cpp">
-void init(Queue *q) { 
-    q->front = q->rear = 0;
-}
-
-bool empty(Queue *q) {
-    if(q->front == q->rear) return true;
-    return false;
-}
-
-bool full(Queue *q) {
-    if ((q->rear + 1) % MAX_SIZE == q->front) return true;
-    return false;
-}
-
-void enqueue(Queue *q, element item) {
-    if (full(q)) {
-        cout <<"Queue is saturated \n";
-        return;
-    }
-    // maintaining the shape of a circular queue
-    q->rear = (q->rear + 1) % MAX_SIZE;
-    q->array[q->rear] = item;
-}
-
-void dequeue(Queue *q) {
-    if(empty(q)) {
-        cout << "Queue is empty";
-        return;
-    }
-    
-    q->front = (q->front + 1) % MAX_SIZE;
-    int result = q->array[q->front];
-    cout<< result<< " was removed\n";
-}
-                        </code></pre>
-                        <button id="copy-button">Copy</button>
-                    </div>
-                    <span id="copy-success">Code copied! :)</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-            <div class="single-about-txt">
-                <h3>
-                    Circular Queue Implementation in C++ <br>
-                    <span>FIFO with Wrap Around</span> <br>
-                </h3>
-                <p style="font-size: 16px;">
-                    A circular queue is an advanced version of a regular queue where the end of the queue wraps around to the beginning, forming a circle. This C++ implementation ensures efficient use of space, allowing the queue to be reused without shifting elements.
-                    The time complexity for both enqueue and dequeue operations is O(1).
-                </p>
-                <!-- Enqueue and Dequeue Visualization -->
-                <div class="enqueue-visualization">
-                    <h4>Enqueue and Dequeue Process</h4>
-                    <div class="queue-step">1. Enqueue "A", "B", "C"</div>
-                        <div class="circular-queue-visualization">
-                            <div class="queue-circle">
-                                <div class="queue-element">A</div>
-                                <div class="queue-element">B</div>
-                                <div class="queue-element">C</div>
-                            </div>
-                        </div>
-                    <div class="queue-step">2. Dequeue (Remove "A")</div>
-                        <div class="circular-queue-visualization">
-                            <div class="queue-circle">
-                                <div class="queue-element">B</div>
-                                <div class="queue-element">C</div>
-                            </div>
-                        </div>
-                    <div class="queue-step">3. Enqueue "D"</div>
-                    <div class="circular-queue-visualization">
-                        <div class="queue-circle">
-                            <div class="queue-element">B</div>
-                            <div class="queue-element">C</div>
-                            <div class="queue-element">D</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- col-sm 5-->
-    </div> <!-- row -->
-</div> <!-- Circular Queue Toggle Content -->
-
 <!-- Deque Section -->
 <h5 class="toggle-button" onclick="toggleSection('deque')">Deque</h5>
 <div class="toggle-content" id="deque">
@@ -856,6 +847,201 @@ void popleft(Deque *dq) {
         </div> <!-- col-sm 5-->
     </div> <!-- row -->
 </div> <!-- Deque Toggle Content -->
+
+
+<!-- Priority Queue Section -->
+<h5 class="toggle-button" onclick="toggleSection('priority-queue')">Priority Queue</h5>
+<div class="toggle-content" id="priority-queue">
+    <!-- Code Snippet and Description -->
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="single-about-code">
+                <div class="code-container">
+                    <p class="language" id="language-copy">C++</p>
+                    <div class="code-wrapper">
+                        <pre><code class="cpp">
+template <typename T>
+    class priority_queue {
+    private:
+        int cnt; // number of elements in priority_queue
+        T heap[MAX_N];
+    
+    public:
+        int size() { return cnt; }
+        
+        priority_queue() { cnt = 0; } // init
+        
+        void swap(int aIdx, int bIdx) {
+            int temp = heap[aIdx];
+            heap[aIdx] = heap[bIdx];
+            heap[bIdx] = temp;
+        }
+        
+        void push(T item) {
+            heap[++cnt] = item;
+            int cur = cnt;
+    
+            while (cur > 1) {
+                int par = cur >> 1;
+                if (heap[cur] < heap[par]) break;
+                swap(cur, par);
+                cur = par;
+            }
+        }
+        
+        void pop() { // move the lowest data and delete
+            heap[1] = heap[cnt--];
+            int cur = 1;
+    
+            while (cur <= cnt) {
+                int left = (cur << 1) <= cnt ? 
+                            (cur << 1) : -1;
+                int right = (cur << 1 | 1) <= cnt ?
+                            (cur << 1 | 1) : -1;
+                int child = cur; 
+    
+                // cur node is leaf node
+                if (left == -1) break;
+                if (heap[cur] < heap[left]) child = left;
+                if (right != -1 && heap[child] < heap[right])
+                    child = right;
+    
+                if (child == left) {
+                    swap(cur, left);
+                    cur = left;
+                } else if (child == right) {
+                    swap(cur, right);
+                    cur = right;
+                } else break;
+            }
+        }
+        
+        T top() { return heap[1]; }
+        
+        bool empty() { return cnt == 0; }
+    };
+                        </code></pre>
+                        <button id="copy-button">Copy</button>
+                    </div>
+                    <span id="copy-success">Code copied! :)</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="single-about-txt">
+                <h3>
+                    Priority Queue Implementation in C++ <br>
+                    <span>Heap-Based Data Structure</span> <br>
+                </h3>
+                <p style="font-size: 16px;">
+                    This implementation of a priority queue uses a binary heap to efficiently manage elements...
+                </p>
+                <p style="font-size: 16px;">
+                    <strong>Time Complexity:</strong> 
+                    - Insertion (`push`): O(log n)
+                    - Removal (`pop`): O(log n)
+                    - Access (`top`): O(1)
+                </p>
+    </div>
+</div> <!-- col-sm 5-->
+    </div> <!-- row -->
+</div> <!-- Priority Queue Toggle Content -->
+
+
+<!-- Circular Queue Section -->
+<h5 class="toggle-button" onclick="toggleSection('circular-queue')">Circular Queue</h5>
+<div class="toggle-content" id="circular-queue">
+    <!-- Code Snippet and Description -->
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="single-about-code">
+                <div class="code-container">
+                    <p class="language" id="language-copy">C++</p>
+                    <div class="code-wrapper">
+                        <pre><code class="cpp">
+void init(Queue *q) { 
+    q->front = q->rear = 0;
+}
+
+bool empty(Queue *q) {
+    if(q->front == q->rear) return true;
+    return false;
+}
+
+bool full(Queue *q) {
+    if ((q->rear + 1) % MAX_SIZE == q->front) return true;
+    return false;
+}
+
+void enqueue(Queue *q, element item) {
+    if (full(q)) {
+        cout <<"Queue is saturated \n";
+        return;
+    }
+    // maintaining the shape of a circular queue
+    q->rear = (q->rear + 1) % MAX_SIZE;
+    q->array[q->rear] = item;
+}
+
+void dequeue(Queue *q) {
+    if(empty(q)) {
+        cout << "Queue is empty";
+        return;
+    }
+    
+    q->front = (q->front + 1) % MAX_SIZE;
+    int result = q->array[q->front];
+    cout<< result<< " was removed\n";
+}
+                        </code></pre>
+                        <button id="copy-button">Copy</button>
+                    </div>
+                    <span id="copy-success">Code copied! :)</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="single-about-txt">
+                <h3>
+                    Circular Queue Implementation in C++ <br>
+                    <span>FIFO with Wrap Around</span> <br>
+                </h3>
+                <p style="font-size: 16px;">
+                    A circular queue is an advanced version of a regular queue where the end of the queue wraps around to the beginning, forming a circle. This C++ implementation ensures efficient use of space, allowing the queue to be reused without shifting elements.
+                    The time complexity for both enqueue and dequeue operations is O(1).
+                </p>
+                <!-- Enqueue and Dequeue Visualization -->
+                <div class="enqueue-visualization">
+                    <h4>Enqueue and Dequeue Process</h4>
+                    <div class="queue-step">1. Enqueue "A", "B", "C"</div>
+                        <div class="circular-queue-visualization">
+                            <div class="queue-circle">
+                                <div class="queue-element">A</div>
+                                <div class="queue-element">B</div>
+                                <div class="queue-element">C</div>
+                            </div>
+                        </div>
+                    <div class="queue-step">2. Dequeue (Remove "A")</div>
+                        <div class="circular-queue-visualization">
+                            <div class="queue-circle">
+                                <div class="queue-element">B</div>
+                                <div class="queue-element">C</div>
+                            </div>
+                        </div>
+                    <div class="queue-step">3. Enqueue "D"</div>
+                    <div class="circular-queue-visualization">
+                        <div class="queue-circle">
+                            <div class="queue-element">B</div>
+                            <div class="queue-element">C</div>
+                            <div class="queue-element">D</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- col-sm 5-->
+    </div> <!-- row -->
+</div> <!-- Circular Queue Toggle Content -->
+
 <!-- Doubly Linked List Section -->
 <h5 class="toggle-button" onclick="toggleSection('doubly-linked-list')">Doubly Linked List</h5>
 <div class="toggle-content" id="doubly-linked-list">
@@ -991,9 +1177,9 @@ void pop_right(Node *head) {
     </div> <!-- row -->
 </div> <!-- Doubly Linked List Toggle Content -->
 
-<!-- Priority Queue Section -->
-<h5 class="toggle-button" onclick="toggleSection('priority-queue')">Priority Queue</h5>
-<div class="toggle-content" id="priority-queue">
+<!-- HashMap Section -->
+<h5 class="toggle-button" onclick="toggleSection('hash-map')">HashMap</h5>
+<div class="toggle-content" id="hash-map">
     <!-- Code Snippet and Description -->
     <div class="row">
         <div class="col-sm-7">
@@ -1002,66 +1188,82 @@ void pop_right(Node *head) {
                     <p class="language" id="language-copy">C++</p>
                     <div class="code-wrapper">
                         <pre><code class="cpp">
-template <typename T>
-    class priority_queue {
-    private:
-        int cnt; // number of elements in priority_queue
-        T heap[MAX_N];
-    
-    public:
-        int size() { return cnt; }
-        
-        priority_queue() { cnt = 0; } // init
-        
-        void swap(int aIdx, int bIdx) {
-            int temp = heap[aIdx];
-            heap[aIdx] = heap[bIdx];
-            heap[bIdx] = temp;
+size_t djb2(const char* str) {
+    // str = "blue"
+    size_t hash = 5381;
+
+    for(; *str; ++str) {
+        hash = ((hash << 5) + hash) + *str;
+    }
+
+    return hash;
+}
+
+const int MAX_N = 1e4 + 4;
+const int MAX_LEN = 5e2 + 5;
+
+typedef struct Node {
+    char str[MAX_LEN]; // key
+    Node* next;
+} Node;
+
+// Memory Pool Technique
+int node_count;
+Node nodes[MAX_N];
+
+Node* new_node(const char str[MAX_LEN]) {
+    strcpy(nodes[node_count].str, str);
+    nodes[node_count].next = NULL;
+
+    return &nodes[node_count++];
+}
+
+class HashMap {
+    static constexpr size_t TABLE_SIZE = 1 << 12;
+    static constexpr size_t DIV = TABLE_SIZE - 1;
+
+    Node hash_table[TABLE_SIZE];
+
+public:
+    HashMap() {}
+
+    void init() {
+        memset(hash_table, 0, sizeof(hash_table));
+        node_count = 0;
+    }
+
+    void insert(const char str[MAX_LEN]) {
+        Node* prev_node = get_prev_node(str);
+
+        if(prev_node->next == NULL) {
+            prev_node->next = new_node(str);
         }
-        
-        void push(T item) {
-            heap[++cnt] = item;
-            int cur = cnt;
-    
-            while (cur > 1) {
-                int par = cur >> 1;
-                if (heap[cur] < heap[par]) break;
-                swap(cur, par);
-                cur = par;
-            }
+    }
+
+    void remove(const char str[MAX_LEN]) {
+        Node* prev_node = get_prev_node(str);
+
+        if(prev_node->next != NULL) {
+            prev_node->next = prev_node->next->next;
         }
-        
-        void pop() { // move the lowest data and delete
-            heap[1] = heap[cnt--];
-            int cur = 1;
-    
-            while (cur <= cnt) {
-                int left = (cur << 1) <= cnt ? 
-                            (cur << 1) : -1;
-                int right = (cur << 1 | 1) <= cnt ?
-                            (cur << 1 | 1) : -1;
-                int child = cur; 
-    
-                // cur node is leaf node
-                if (left == -1) break;
-                if (heap[cur] < heap[left]) child = left;
-                if (right != -1 && heap[child] < heap[right])
-                    child = right;
-    
-                if (child == left) {
-                    swap(cur, left);
-                    cur = left;
-                } else if (child == right) {
-                    swap(cur, right);
-                    cur = right;
-                } else break;
-            }
+    }
+
+    Node* get(const char str[MAX_LEN]) {
+        return get_prev_node(str)->next;
+    }
+
+private:
+    Node* get_prev_node(const char str[MAX_LEN]) {
+        Node* prev_ptr = &hash_table[djb2(str) & DIV];
+
+        while(prev_ptr->next != NULL &&
+              strcmp(prev_ptr->next->str, str) != 0) {
+            prev_ptr = prev_ptr->next;
         }
-        
-        T top() { return heap[1]; }
-        
-        bool empty() { return cnt == 0; }
-    };
+
+        return prev_ptr;
+    }
+};
                         </code></pre>
                         <button id="copy-button">Copy</button>
                     </div>
@@ -1072,39 +1274,68 @@ template <typename T>
         <div class="col-sm-5">
             <div class="single-about-txt">
                 <h3>
-                    Priority Queue Implementation in C++ <br>
-                    <span>Heap-Based Data Structure</span> <br>
+                    HashMap Implementation in C++ <br>
+                    <span>Using djb2 Hash Function and Memory Pool Technique</span> <br>
                 </h3>
                 <p style="font-size: 16px;">
-                    This implementation of a priority queue uses a binary heap to efficiently manage elements...
+                    This HashMap uses the djb2 hash function to hash strings to integer values, 
+                    which are then used to store and retrieve values from a hash table. <br><br>
+                    <strong>djb2 Hash Function</strong><br>
+                    The djb2 hash function calculates the hash value by iterating over each 
+                    character of the string and performing the calculation: <br>
+                    <code>hash = hash * 33 + c;</code> <br>
+                    Where <code>hash * 33</code> is computed as <code>(hash << 5) + hash</code>. 
+                    This allows the hash value to be updated efficiently by using bit-shifting operations. 
+                    This method is efficient and provides a good distribution of hash values for strings.
+                    <br><br>
+                    <strong>Memory Pool Technique</strong><br>
+                    To optimize memory allocation, we use a memory pool technique. Instead of dynamically 
+                    allocating memory for each node, a fixed array of nodes is allocated at the start. This 
+                    allows us to quickly allocate new nodes from this pre-allocated pool, reducing the overhead 
+                    of frequent memory allocations.
                 </p>
-                <p style="font-size: 16px;">
-                    <strong>Time Complexity:</strong> 
-                    - Insertion (`push`): O(log n)
-                    - Removal (`pop`): O(log n)
-                    - Access (`top`): O(1)
-                </p>
-         <!-- Priority Queue Visualization -->
-         <div class="priority-queue-visualization">
-            <h4>Visualization</h4>
-            <div class="tree-visualization">
-    
-                <!-- Step 3 -->
-                <div class="tree-level">
-                    <div class="tree-node">
-                        <div class="line left"></div>
-                        <div>15</div>
-                        <div class="line right"></div>
+                <!-- Simulation/Demo Section -->
+                <div class="hashmap-simulation">
+                    <h4>HashMap Simulation</h4>
+                    <div class="simulation-step">1. Insert "blue" using Memory Pool</div>
+                    <div class="hashmap-visualization">
+                        <div class="hash-bucket">
+                            <div class="hash-index">Index 7</div>
+                            <div class="hash-value">"blue" → djb2("blue") = 5381</div>
+                        </div>
+                        <div class="memory-pool">
+                            <div class="memory-block used">Node 0: "blue"</div>
+                            <div class="memory-block">Node 1: (free)</div>
+                            <div class="memory-block">Node 2: (free)</div>
+                        </div>
                     </div>
-                    <div class="tree-node">10</div>
-                    <div class="tree-node">8</div>
+                    <div class="simulation-step">2. Insert "green"</div>
+                    <div class="hashmap-visualization">
+                        <div class="hash-bucket">
+                            <div class="hash-index">Index 3</div>
+                            <div class="hash-value">"green" → djb2("green") = 6349</div>
+                        </div>
+                        <div class="memory-pool">
+                            <div class="memory-block used">Node 0: "blue"</div>
+                            <div class="memory-block used">Node 1: "green"</div>
+                            <div class="memory-block">Node 2: (free)</div>
+                        </div>
+                    </div>
+                    <div class="simulation-step">3. Retrieve "blue"</div>
+                    <div class="hashmap-visualization">
+                        <div class="hash-bucket">
+                            <div class="hash-index">Index 7</div>
+                            <div class="hash-value">Found "blue"</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div> <!-- col-sm 5-->
+        </div> <!-- col-sm 5-->
     </div> <!-- row -->
-</div> <!-- Priority Queue Toggle Content -->
+</div> <!-- HashMap Toggle Content -->
+
+
+
 
             <!-- Add more toggles and code snippets as needed for Circular Queue, Deque, etc. -->
              
@@ -1297,18 +1528,14 @@ int kruskal(vector<ippi> &edges, int n) {
                         <li>Step 3) If it forms a cycle, the edge is excluded.</li>
                     </ul>
                     <h5>Example - Important Part</h5>
-                    <p>
-                        <u>Edge dg</u>: This edge won't be added because this edge makes a cycle. <br>
-                        <u>Termination</u>: After selecting edge (e, f), <br>
-                        the number of edges will be 6, which is equal to <br> 
-                        (# of nodes - 1), thus the algorithm will terminate.
-                    </p>
+                    <u>Edge dg</u>: This edge won't be added because this edge makes a cycle. <br>
+                    <u>Termination</u>: After selecting edge (e, f), <br>
+                    the number of edges will be 6, which is equal to <br> 
+                    (# of nodes - 1), thus the algorithm will terminate.
+            
                 </div>
                 <hr>
                 
-               
-    
-                <hr>
                 <div class="kruskal-content">
                     <h4 class="kruskal-subtitle">3. How to Find a Cycle: <span style="color: red;">Union Find</span></h4>
                 </div>
