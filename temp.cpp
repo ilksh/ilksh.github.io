@@ -1,110 +1,121 @@
 #include<bits/stdc++.h>
-
 using namespace std;
 
-// djb2 hash
-size_t djb2(const char* str) {
-   // str = "blue"
-   size_t hash = 5381;
+const int MAX_N = 5e4 + 4;
+const int MAX_B = 16;       // 2^x + 2^(x-1) + 2^(x-2) >= 50000
 
-   for(; *str; ++str) {
-      hash = ((hash << 5) + hash) + *str;
-   }
+vector<int> adj[MAX_N];
+int n, m, ST[MAX_N][MAX_B], dep[MAX_N];
 
-   return hash;
+void makeTree(int cur, int par) {
+    
+    for(int child : adj[cur]) {
+        // don't search node that is adjacent but parent-related
+        if(child == par) continue;
+        
+        ST[child][0] = cur;
+        dep[child] = dep[cur] + 1;
+        
+        // Configure trees with adjacent nodes in dfs manner
+        makeTree(child, cur);
+    }
 }
 
-const int MAX_N = 1e4 + 4;
-const int MAX_LEN = 5e2 + 5;
+int lca(int u, int v) {
+    // desired situation: dep[u] > dep[v]
+    // control of situation as desired
+    if(dep[u] < dep[v]) return lca(v, u);
 
-typedef struct Node{
-   char str[MAX_LEN]; // key
-   Node* next;
-} Node;
+    int diff = dep[u] - dep[v];
 
-// Memory Pool Technique
-int node_count;
-Node nodes[MAX_N];
+    // move node as high as possible
+    for(int i=MAX_B-1; diff && i>=0; --i) {
+        if((1 << i) <= diff) {
+            u = ST[u][i];
+            diff -= (1 << i);
+        }
+    }
+    
+    if(u == v) return u;
 
-Node* new_node(const char str[MAX_LEN]) {
-   strcpy(nodes[node_count].str, str);
-   nodes[node_count].next = NULL;
+    // the height of vertext u and that of vertex v are same
+    for(int i = MAX_B - 1; i >= 0; --i) {
+        // two nodes belong to different component
+        if(ST[u][i] != ST[v][i]) {
+            u = ST[u][i];
+            v = ST[v][i];
+        }
+    }
 
-   return &nodes[node_count++];
+    return ST[u][0];
 }
 
-class HashMap {
-   static constexpr size_t TABLE_SIZE = 1 << 12;
-   static constexpr size_t DIV = TABLE_SIZE - 1;
-   // hash % DIV
-   // hash & (TABLE_SIZE -1)
+void adj_check(int node1, int node2)
+{
+    adj[node1].push_back(node2);
+    adj[node2].push_back(node1);
+}
 
-   Node hash_table[TABLE_SIZE];
-
-public:
-   HashMap() {}
-
-   void init() {
-      memset(hash_table, 0, sizeof(hash_table));
-      node_count = 0;
-   }
-
-   void insert(const char str[MAX_LEN]) {
-      Node* prev_node = get_prev_node(str);
-
-      if(prev_node->next == NULL) {
-         prev_node->next = new_node(str);
-      }
-   }
-
-   void remove(const char str[MAX_LEN]) {
-      Node* prev_node = get_prev_node(str);
-
-      if(prev_node->next != NULL) {
-         prev_node->next = prev_node->next->next;
-      }
-   }
-
-   Node* get(const char str[MAX_LEN]) {
-      return get_prev_node(str)->next;
-   }
-
-private:
-   Node* get_prev_node(const char str[MAX_LEN]) {
-      // Node* prev_ptr = &hash_table[djb2(str) % TABLE_SIZE];
-      Node* prev_ptr = &hash_table[djb2(str) & DIV];
-
-      while(prev_ptr->next != NULL && strcmp(prev_ptr->next->str, str) != 0) {
-         prev_ptr = prev_ptr->next;
-      }
-
-      return prev_ptr;
-   }
-};
+void fill_adj()
+{
+    adj_check(1, 2); adj_check(1 , 3);
+    
+    adj_check(2, 4); adj_check(2, 5);
+    
+    adj_check(3, 6); adj_check(3, 7);
+    
+    adj_check(4, 8); adj_check(4, 9);
+    
+    adj_check(5 ,10); adj_check(5, 11); adj_check(5, 12);
+    
+    adj_check(7, 13); adj_check(7, 14);
+    
+    adj_check(8, 15);
+    
+    adj_check(9, 16); adj_check(9, 17);
+    
+    adj_check(12, 18);
+    
+    adj_check(18, 19);
+    
+    adj_check(19, 20);
+    
+    adj_check(14, 21);
+}
 
 int main()
 {
-   ios_base::sync_with_stdio(0), cin.tie(0); 
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
 
-   HashMap hash_map;
-   int n, m, cnt = 0;
-   char s[MAX_LEN];
+    fill_adj();
+    dep[1] = 0;
+    makeTree(1, -1);
 
-   hash_map.init();
-
-   cin >> n >> m;
-   for(int i=0; i<n; ++i) {
-      cin >> s;
-      hash_map.insert(s);
-   }
-
-   for(int i=0; i<m; ++i) {
-      cin >> s;
-      if(hash_map.get(s) != NULL) {
-         cnt++;
-      }
-   }
-
-   cout << cnt << '\n';
-   return 0;
+    for(int idx = 1; idx < MAX_B; ++idx) {
+        for(int cur = 1; cur <= 21; ++cur)
+        {
+            // (2^idx)th parent of node 'cur'
+            // = (2^idx-1)th parent of ( node cur's (2^idx-1)th parent)
+            ST[cur][idx] = ST[ST[cur][idx-1]][idx-1];
+        }
+    }
+    
+    // lca(node1, node2) = find the lowest common ancestor of node1 and node2
+    
+    printf("Lowest Common Ancestor of %d and %d is %d\n", 4, 19, lca(4,19));
+    printf("Lowest Common Ancestor of %d and %d is %d\n", 15, 7, lca(15,7));
+    printf("Lowest Common Ancestor of %d and %d is %d\n", 10, 5, lca(10,5));
+    printf("Lowest Common Ancestor of %d and %d is %d\n", 19, 21,lca(19,21));
+    printf("Lowest Common Ancestor of %d and %d is %d\n", 15, 17,lca(15,17));
+    
+    return 0;
 }
+
+/*
+ Lowest Common Ancestor of 4 and 19 is 2
+ Lowest Common Ancestor of 15 and 7 is 1
+ Lowest Common Ancestor of 10 and 5 is 5
+ Lowest Common Ancestor of 19 and 21 is 1
+ Lowest Common Ancestor of 15 and 17 is 4
+ */

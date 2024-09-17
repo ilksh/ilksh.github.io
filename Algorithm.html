@@ -525,8 +525,187 @@ hr {
     background-color: #3498db;
     color: white;
 }
+/* Visualization/Demo Section Styles */
+.binary-tree-visualization {
+    margin-top: 20px;
+    position: relative;
+}
 
-        
+.tree-container {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tree-structure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.tree-level {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Reduced gap between nodes */
+    margin: 10px 0;
+}
+
+.tree-node {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.tree-edges {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.tree-edges line {
+    stroke: #dd368a;
+    stroke-width: 2;
+}
+
+.traversal-result {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #40E0D0;
+}
+
+/* Visualization/Demo Section Styles */
+.lca-visualization {
+    margin-top: 20px;
+    position: relative;
+}
+
+.tree-container {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tree-structure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.tree-level {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Reduced gap between nodes */
+    margin: 10px 0;
+}
+
+.tree-node {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.tree-edges {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.tree-edges line {
+    stroke: #3498db;
+    stroke-width: 2;
+}
+
+.traversal-result {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #40E0D0;
+}
+
+/* Visualization/Demo Section Styles */
+.trie-visualization {
+    margin-top: 20px;
+    position: relative;
+}
+
+.tree-container {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tree-structure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.tree-level {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Reduced gap between nodes */
+    margin: 10px 0;
+}
+
+.tree-node {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.tree-node.end {
+    background-color: #40E0D0; /* Different color to indicate end of a word */
+}
+
+.tree-edges {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.tree-edges line {
+    stroke: #c81515;
+    stroke-width: 2;
+}
+
+.traversal-result {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #40E0D0;
+}
+
 
     </style>
 
@@ -1346,6 +1525,127 @@ private:
 <h3 class="toggle-button" onclick="toggleSection('tree')">Tree</h3>
 <div class="toggle-content" id="tree">
 
+    <!-- Binary Tree Section -->
+<h5 class="toggle-button" onclick="toggleSection('binary-tree')">Binary Tree</h5>
+<div class="toggle-content" id="binary-tree">
+    <!-- Code Snippet and Description -->
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="single-about-code">
+                <div class="code-container">
+                    <p class="language" id="language-copy">C++</p>
+                    <div class="code-wrapper">
+                        <pre><code class="cpp">
+typedef int element;
+
+typedef struct Node {
+    element data;
+    struct Node *left, *right;
+} Node;
+
+Node* makeNode(element item) {
+    Node* newNode = (Node *)malloc(sizeof(Node));
+    newNode->data = item;
+    
+    return newNode;
+}
+
+void fillTree(Node* root, Node* l, Node* r) {
+    root->left = l;
+    root->right = r;
+}
+
+void preorder(Node *root) {
+    if(root != NULL) {
+        printf("%d ", root->data);
+        preorder(root->left);
+        preorder(root->right);
+    }
+}
+
+void inorder(Node *root) {
+    if(root != NULL) {
+        inorder(root->left);
+        printf("%d ", root->data);
+        inorder(root->right);
+    }
+}
+
+void postorder(Node *root) {
+    if(root != NULL) {
+        postorder(root->left);
+        postorder(root->right);
+        printf("%d ", root->data);
+    }
+}
+                        </code></pre>
+                        <button id="copy-button">Copy</button>
+                    </div>
+                    <span id="copy-success">Code copied! :)</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="single-about-txt">
+                <h3>
+                    Binary Tree Implementation in C++ <br>
+                    <span>Tree Data Structure with Recursive Traversal</span> <br>
+                </h3>
+                <p style="font-size: 16px;">
+                    A binary tree is a tree data structure where each node has at most two children, 
+                    referred to as the left and right child. In this implementation, we define a binary tree 
+                    node and three types of tree traversal methods: <br><br>
+                    <strong>Preorder Traversal</strong>: Visit the root node first, then traverse the left 
+                    subtree, followed by the right subtree. <br>
+                    <strong>Inorder Traversal</strong>: Traverse the left subtree first, visit the root node, 
+                    and then traverse the right subtree. <br>
+                    <strong>Postorder Traversal</strong>: Traverse the left subtree, then the right subtree, 
+                    and visit the root node last.
+                </p>
+                <!-- Visualization Section -->
+                <div class="binary-tree-visualization">
+                    <h4>Binary Tree Traversal Visualization</h4>
+                    <div class="tree-container">
+                        <!-- Tree Nodes -->
+                        <div class="tree-structure">
+                            <div class="tree-level">
+                                <div class="tree-node">1</div>
+                            </div>
+                            <div class="tree-level">
+                                <div class="tree-node">2</div>
+                                <div class="tree-node">3</div>
+                            </div>
+                            <div class="tree-level">
+                                <div class="tree-node">4</div>
+                                <div class="tree-node">5</div>
+                                <div class="tree-node">6</div>
+                                <div class="tree-node">7</div>
+                            </div>
+                        </div>
+                        <!-- Tree Edges -->
+                        <svg class="tree-edges">
+                            <!-- Edges from node 1 -->
+                            <line x1="50%" y1="10%" x2="25%" y2="40%" />
+                            <line x1="50%" y1="10%" x2="75%" y2="40%" />
+                            <!-- Edges from node 2 -->
+                            <line x1="25%" y1="40%" x2="15%" y2="70%" />
+                            <line x1="25%" y1="40%" x2="35%" y2="70%" />
+                            <!-- Edges from node 3 -->
+                            <line x1="75%" y1="40%" x2="65%" y2="70%" />
+                            <line x1="75%" y1="40%" x2="85%" y2="70%" />
+                        </svg>
+                    </div>
+                    <div class="traversal-result">
+                        <strong>Preorder:</strong> 1, 2, 4, 5, 3, 6, 7<br>
+                        <strong>Inorder:</strong> 4, 2, 5, 1, 6, 3, 7<br>
+                        <strong>Postorder:</strong> 4, 5, 2, 6, 7, 3, 1
+                    </div>
+                </div>
+            </div>
+        </div> <!-- col-sm 5-->
+    </div> <!-- row -->
+</div> <!-- Binary Tree Toggle Content -->
+
     <!-- Prim MST Section -->
     <h4 class="toggle-button" onclick="toggleSection('prim-mst')">Prim MST</h4>
     <div class="toggle-content" id="prim-mst">
@@ -1557,6 +1857,251 @@ int kruskal(vector<ippi> &edges, int n) {
 
     </div> <!-- row -->
 </div> <!-- Kruskal MST Toggle Content -->
+<!-- LCA Section -->
+<h5 class="toggle-button" onclick="toggleSection('lca')">Lowest Common Ancestor (LCA)</h5>
+<div class="toggle-content" id="lca">
+    <!-- Code Snippet and Description -->
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="single-about-code">
+                <div class="code-container">
+                    <p class="language" id="language-copy">C++</p>
+                    <div class="code-wrapper">
+                        <pre><code class="cpp">
+const int MAX_N = 5e4 + 4;
+// 2^x + 2^(x-1) + 2^(x-2) >= 50000
+const int MAX_B = 16;       
+
+vector<int> adj[MAX_N];
+int n, m, ST[MAX_N][MAX_B], dep[MAX_N];
+
+void makeTree(int cur, int par) {
+    for(int child : adj[cur]) {
+        // Don't search node that
+        // is adjacent but parent-related
+        if(child == par) continue;
+        
+        ST[child][0] = cur;
+        dep[child] = dep[cur] + 1;
+        
+        // Configure trees with adjacent nodes
+        makeTree(child, cur);
+    }
+}
+
+int lca(int u, int v) {
+    // Desired situation: dep[u] > dep[v]
+    // Control of situation as desired
+    if(dep[u] < dep[v]) return lca(v, u);
+
+    int diff = dep[u] - dep[v];
+
+    // Move node as high as possible
+    for(int i=MAX_B-1; diff && i>=0; --i) {
+        if((1 << i) <= diff) {
+            u = ST[u][i];
+            diff -= (1 << i);
+        }
+    }
+    
+    if(u == v) return u;
+
+    // The height of vertex u and
+    //that of vertex v are the same
+    for(int i = MAX_B - 1; i >= 0; --i) {
+        // Two nodes belong to different component
+        if(ST[u][i] != ST[v][i]) {
+            u = ST[u][i];
+            v = ST[v][i];
+        }
+    }
+
+    return ST[u][0];
+}
+                        </code></pre>
+                        <button id="copy-button">Copy</button>
+                    </div>
+                    <span id="copy-success">Code copied! :)</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="single-about-txt">
+                <h3>
+                    Lowest Common Ancestor (LCA) in C++ <br>
+                    <span>Using Binary Lifting and Sparse Table</span> <br>
+                </h3>
+                <p style="font-size: 16px;">
+                    The LCA algorithm finds the lowest common ancestor of two nodes in a tree. 
+                    This implementation uses the binary lifting method to preprocess the tree, allowing 
+                    for efficient LCA queries in O(log n) time. <br><br>
+                    - <strong>makeTree:</strong> Constructs the tree and initializes the sparse table for binary lifting. <br>
+                    - <strong>lca:</strong> Finds the LCA of two nodes u and v by moving them up to the same level and then 
+                    to their common ancestor.
+                </p>
+                <!-- Visualization Section -->
+                <div class="lca-visualization">
+                    <h4>LCA Visualization</h4>
+                    <div class="tree-container">
+                        <!-- Tree Nodes -->
+                        <div class="tree-structure">
+                            <div class="tree-level">
+                                <div class="tree-node">1</div>
+                            </div>
+                            <div class="tree-level">
+                                <div class="tree-node">2</div>
+                                <div class="tree-node">3</div>
+                            </div>
+                            <div class="tree-level">
+                                <div class="tree-node">4</div>
+                                <div class="tree-node">5</div>
+                                <div class="tree-node">6</div>
+                                <div class="tree-node">7</div>
+                            </div>
+                        </div>
+                        <!-- Tree Edges -->
+                        <svg class="tree-edges">
+                            <!-- Edges from node 1 -->
+                            <line x1="50%" y1="10%" x2="25%" y2="40%" />
+                            <line x1="50%" y1="10%" x2="75%" y2="40%" />
+                            <!-- Edges from node 2 -->
+                            <line x1="25%" y1="40%" x2="15%" y2="70%" />
+                            <line x1="25%" y1="40%" x2="35%" y2="70%" />
+                            <!-- Edges from node 3 -->
+                            <line x1="75%" y1="40%" x2="65%" y2="70%" />
+                            <line x1="75%" y1="40%" x2="85%" y2="70%" />
+                        </svg>
+                    </div>
+                    <div class="traversal-result">
+                        <strong>LCA(4, 5):</strong> 2<br>
+                        <strong>LCA(4, 6):</strong> 1<br>
+                        <strong>LCA(3, 4):</strong> 1
+                    </div>
+                </div>
+            </div>
+        </div> <!-- col-sm 5-->
+    </div> <!-- row -->
+</div> <!-- LCA Toggle Content -->
+
+<!-- Trie Section -->
+<h5 class="toggle-button" onclick="toggleSection('trie')">Trie</h5>
+<div class="toggle-content" id="trie">
+    <!-- Code Snippet and Description -->
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="single-about-code">
+                <div class="code-container">
+                    <p class="language" id="language-copy">Python</p>
+                    <div class="code-wrapper">
+                        <pre><code class="python">
+class Trie:
+    def __init__(self):
+        # Key: number, Value: Trie
+        self.child = {} 
+        self.finished = False
+
+    def insert(self, phone):
+        node = self
+        for digit in phone:
+            # Operate when there's no targeted number
+            if digit not in node.child:         
+                node.child[digit] = Trie()     
+
+             # Move to next dictionary (Trie)
+            node = node.child[digit]           
+
+        # Inform the end of trie
+        node.finished = True                    
+
+    def search(self):
+        rst = True
+        for cur_node in self.child.values():
+            if cur_node.finished:
+                if len(cur_node.child):
+                    return False
+                else:
+                    return True
+
+            # If anyone is false, the result is false
+            temp = cur_node.search()
+            if temp is False:
+                rst = False
+
+        # Check for all cases
+        # Prevent one trie from being a subset of another trie
+        # Trie 1) 1-2-3-4: 4(end)
+        # Trie 2) 1-2-3-4-5-6-7: 7(end)
+        # Trie 2 passes Trie 1's end
+        return rst
+                        </code></pre>
+                        <button id="copy-button">Copy</button>
+                    </div>
+                    <span id="copy-success">Code copied! :)</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="single-about-txt">
+                <h3>
+                    Trie Implementation in Python <br>
+                    <span>Preventing Subset Prefix Issue</span> <br>
+                </h3>
+                <p style="font-size: 16px;">
+                    A Trie is a tree-like data structure used to efficiently store and search a dynamic set of strings. 
+                    In this implementation, we use a Trie to store phone numbers and ensure that no number is a prefix of 
+                    another. <br><br>
+                    - <strong>insert:</strong> Inserts a phone number into the Trie. <br>
+                    - <strong>search:</strong> Checks if any phone number is a prefix of another number, ensuring no 
+                    subset relationship exists.
+                </p>
+                <!-- Visualization Section -->
+                <div class="trie-visualization">
+                    <h4>Trie Subset Prefix Visualization</h4>
+                    <div class="tree-container">
+                        <!-- Tree Nodes -->
+                        <div class="tree-structure">
+                            <div class="tree-level">
+                                <div class="tree-node">1</div>
+                            </div>
+                            <div class="tree-level">
+                                <div class="tree-node">2</div>
+                            </div>
+                            <div class="tree-level">
+                                <div class="tree-node">3</div>
+                            </div>
+                            <div class="tree-level">
+                                <div class="tree-node end">4</div>
+                                <div class="tree-node">5</div>
+                            </div>
+                            <div class="tree-level">
+                                <div class="tree-node">6</div>
+                            </div>
+                            <div class="tree-level">
+                                <div class="tree-node end">7</div>
+                            </div>
+                        </div>
+                        <!-- Tree Edges -->
+                        <svg class="tree-edges">
+                            <!-- Edges for Trie 1 and Trie 2 -->
+                            <line x1="50%" y1="10%" x2="50%" y2="25%" />
+                            <line x1="50%" y1="25%" x2="50%" y2="40%" />
+                            <line x1="50%" y1="40%" x2="50%" y2="55%" />
+                            <line x1="50%" y1="55%" x2="45%" y2="70%" />
+                            <line x1="45%" y1="70%" x2="45%" y2="85%" />
+                            <line x1="50%" y1="55%" x2="55%" y2="70%" />
+                            <line x1="55%" y1="70%" x2="55%" y2="85%" />
+                        </svg>
+                    </div>
+                    <div class="traversal-result">
+                        <strong>Inserted Numbers:</strong> 1234, 1234567<br>
+                        <strong>Is Prefix Found?:</strong> Yes, "1234" is a prefix of "1234567"<br>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- col-sm 5-->
+    </div> <!-- row -->
+</div> <!-- Trie Toggle Content -->
+
 
 
 </div> <!-- Tree Toggle Content -->
