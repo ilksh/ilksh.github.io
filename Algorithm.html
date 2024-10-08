@@ -109,6 +109,13 @@
         .single-about-txt p {
             font-size: 16px; /* Increase font size */
             line-height: 1.6;
+            margin-bottom: 10px; /* Increase gap after <p> */
+            margin-top: 5px; /* Reduce gap before <p> */
+        }
+        
+        .single-about-txt h4 {
+            margin-top: 1px; /* Increase gap above <h4> */
+            margin-bottom: 1px; /* Reduce gap below <h4> */
         }
 
         /* Stack Visualization */
@@ -706,6 +713,57 @@ hr {
     color: #40E0D0;
 }
 
+/* =============== 
+   =============== 
+   =============== 
+   */ 
+   .binary-tree {
+    width: fit-content;
+    margin-left: 100px; /* Move the tree further to the right */
+  }
+  
+  .binary-tree div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 1.5rem; /* Further increased gap for larger nodes */
+    margin-top: 2rem; /* More space between rows */
+    position: relative;
+  }
+  
+  .binary-tree span {
+    grid-column: 1 / 3;
+    border: 1px solid;
+    width: 5rem; /* Increased size for much larger tree nodes */
+    height: 5rem; /* Increased size for much larger tree nodes */
+    font-size: 2rem; /* Larger font size inside the nodes */
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: auto auto;
+  }
+  
+  .binary-tree span::before {
+    content: "";
+    position: absolute;
+    width: 100%; /* Increase the width of the connecting lines */
+    height: 3rem; /* Increased height for larger tree */
+    left: 50%;
+    top: 0;
+    transform: translateY(-100%);
+    background: linear-gradient(to bottom right, #0000 49%, #000 0 51%, #0000 0);
+  }
+  
+  .binary-tree :nth-child(3) > span::before {
+    left: auto;
+    right: 50%;
+    background: linear-gradient(to bottom left, #0000 49%, #000 0 51%, #0000 0);
+  }
+  
+  .binary-tree > div > span::before {
+    content: none;
+  }
+  
 
     </style>
 
@@ -732,6 +790,7 @@ hr {
                         <li class="smooth-menu"><a href="https://ilksh.github.io/#tools">Tools</a></li>
                         <li class="smooth-menu"><a href="https://ilksh.github.io/#experience">Experience</a></li>
                         <li class="smooth-menu"><a href="https://ilksh.github.io/#portfolio">Portfolio</a></li>
+                        <li class="smooth-menu"><a href="https://ilksh.github.io/#mentors">Mentor</a></li>
                     </ul>
                 </div>
             </div>
@@ -1040,65 +1099,65 @@ void popleft(Deque *dq) {
                     <div class="code-wrapper">
                         <pre><code class="cpp">
 template <typename T>
-    class priority_queue {
-    private:
-        int cnt; // number of elements in priority_queue
-        T heap[MAX_N];
-    
-    public:
-        int size() { return cnt; }
-        
-        priority_queue() { cnt = 0; } // init
-        
-        void swap(int aIdx, int bIdx) {
-            int temp = heap[aIdx];
-            heap[aIdx] = heap[bIdx];
-            heap[bIdx] = temp;
+class priority_queue {
+private:
+    int cnt; // number of elements in priority_queue
+    T heap[MAX_N];
+
+public:
+    int size() { return cnt; }
+
+    priority_queue() { cnt = 0; } // init
+
+    void swap(int aIdx, int bIdx) {
+        int temp = heap[aIdx];
+        heap[aIdx] = heap[bIdx];
+        heap[bIdx] = temp;
+    }
+
+    void push(T item) {
+        heap[++cnt] = item;
+        int cur = cnt;
+
+        while (cur > 1) {
+            int par = cur >> 1;
+            if (heap[cur] < heap[par]) break;
+            swap(cur, par);
+            cur = par;
         }
-        
-        void push(T item) {
-            heap[++cnt] = item;
-            int cur = cnt;
-    
-            while (cur > 1) {
-                int par = cur >> 1;
-                if (heap[cur] < heap[par]) break;
-                swap(cur, par);
-                cur = par;
-            }
+    }
+
+    void pop() { 
+        heap[1] = heap[cnt--];
+        int cur = 1;
+
+        while (cur <= cnt) {
+            int left = (cur << 1) <= cnt ? 
+                       (cur << 1) : -1;
+            int right = (cur << 1 | 1) <= cnt ?
+                        (cur << 1 | 1) : -1;
+            int child = cur;
+
+            if (left == -1) break;
+            if (heap[cur] < heap[left]) child = left;
+            if (right != -1 && heap[child] < heap[right]) 
+                child = right;
+
+            if (child == left) {
+                swap(cur, left);
+                cur = left;
+            } 
+            else if (child == right) {
+                swap(cur, right);
+                cur = right;
+            } else break;
         }
-        
-        void pop() { // move the lowest data and delete
-            heap[1] = heap[cnt--];
-            int cur = 1;
-    
-            while (cur <= cnt) {
-                int left = (cur << 1) <= cnt ? 
-                            (cur << 1) : -1;
-                int right = (cur << 1 | 1) <= cnt ?
-                            (cur << 1 | 1) : -1;
-                int child = cur; 
-    
-                // cur node is leaf node
-                if (left == -1) break;
-                if (heap[cur] < heap[left]) child = left;
-                if (right != -1 && heap[child] < heap[right])
-                    child = right;
-    
-                if (child == left) {
-                    swap(cur, left);
-                    cur = left;
-                } else if (child == right) {
-                    swap(cur, right);
-                    cur = right;
-                } else break;
-            }
-        }
-        
-        T top() { return heap[1]; }
-        
-        bool empty() { return cnt == 0; }
-    };
+    }
+
+    T top() { return heap[1]; }
+
+    bool empty() { return cnt == 0; }
+};
                         </code></pre>
                         <button id="copy-button">Copy</button>
                     </div>
@@ -1108,23 +1167,23 @@ template <typename T>
         </div>
         <div class="col-sm-5">
             <div class="single-about-txt">
-                <h3>
-                    Priority Queue Implementation in C++ <br>
-                    <span>Heap-Based Data Structure</span> <br>
-                </h3>
-                <p style="font-size: 16px;">
-                    This implementation of a priority queue uses a binary heap to efficiently manage elements...
+                <h3>Priority Queue Implementation in C++ </h3>
+                <p>This implementation of a priority queue uses a binary heap to efficiently manage elements.</p>
+                <p><strong>Time Complexity:</strong> 
+                    - Insertion (<code>push</code>): O(log n) <br>
+                    - Removal (<code>pop</code>): O(log n) <br>
+                    - Access (<code>top</code>): O(1)
                 </p>
-                <p style="font-size: 16px;">
-                    <strong>Time Complexity:</strong> 
-                    - Insertion (`push`): O(log n)
-                    - Removal (`pop`): O(log n)
-                    - Access (`top`): O(1)
-                </p>
+                <h3>Priority Queue Implementation</h3>
+                <p>This Priority Queue implementation is based on a <strong>Binary Heap</strong>. A heap is a complete binary tree structure where each parent node is always greater than its child nodes (in the case of a max-heap). </p>
+                <h4>push Function</h4>
+                <p>When a new element is inserted, it is added to the last position of the heap. Then, it is compared with its parent node, and the <em>upheap</em> process is performed to maintain the heap property.</p>
+                <h4>pop Function</h4>
+                <p>The top element of the heap is removed, and the last element is moved to the top. Then, it is compared with its child nodes, and the <em>downheap</em> process is performed to maintain the heap property.</p>
+            </div>
+        </div>
     </div>
-</div> <!-- col-sm 5-->
-    </div> <!-- row -->
-</div> <!-- Priority Queue Toggle Content -->
+</div>
 
 
 <!-- Circular Queue Section -->
@@ -1605,36 +1664,38 @@ void postorder(Node *root) {
                 <!-- Visualization Section -->
                 <div class="binary-tree-visualization">
                     <h4>Binary Tree Traversal Visualization</h4>
-                    <div class="tree-container">
-                        <!-- Tree Nodes -->
-                        <div class="tree-structure">
-                            <div class="tree-level">
-                                <div class="tree-node">1</div>
+                    <article class="binary-tree">
+                        <div>
+                          <span>1</span>
+                          <div>
+                            <span>2</span>
+                            <div>
+                              <span>4</span>
+                              <div></div>
+                              <div></div>
                             </div>
-                            <div class="tree-level">
-                                <div class="tree-node">2</div>
-                                <div class="tree-node">3</div>
+                            <div>
+                              <span>5</span>
+                              <div></div>
+                              <div></div>
                             </div>
-                            <div class="tree-level">
-                                <div class="tree-node">4</div>
-                                <div class="tree-node">5</div>
-                                <div class="tree-node">6</div>
-                                <div class="tree-node">7</div>
+                          </div>
+                          <div>
+                            <span>3</span>
+                            <div>
+                              <span>6</span>
+                              <div></div>
+                              <div></div>
                             </div>
+                            <div>
+                              <span>7</span>
+                              <div></div>
+                              <div></div>
+                            </div>
+                          </div>
                         </div>
-                        <!-- Tree Edges -->
-                        <svg class="tree-edges">
-                            <!-- Edges from node 1 -->
-                            <line x1="50%" y1="10%" x2="25%" y2="40%" />
-                            <line x1="50%" y1="10%" x2="75%" y2="40%" />
-                            <!-- Edges from node 2 -->
-                            <line x1="25%" y1="40%" x2="15%" y2="70%" />
-                            <line x1="25%" y1="40%" x2="35%" y2="70%" />
-                            <!-- Edges from node 3 -->
-                            <line x1="75%" y1="40%" x2="65%" y2="70%" />
-                            <line x1="75%" y1="40%" x2="85%" y2="70%" />
-                        </svg>
-                    </div>
+                      </article>
+                      
                     <div class="traversal-result">
                         <strong>Preorder:</strong> 1, 2, 4, 5, 3, 6, 7<br>
                         <strong>Inorder:</strong> 4, 2, 5, 1, 6, 3, 7<br>
