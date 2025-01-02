@@ -24,7 +24,7 @@ urls:
 
 # Edit Author details (For multi authors check _data/authors.yml)
 
-author_logo: assets/myimg/reco.jpeg
+author_logo: reco.jpeg
 author: Aaron Kim
 author_bio: Hi, my name is Aaron Kim.
 author_email: "ksh727301@gmail.com"
