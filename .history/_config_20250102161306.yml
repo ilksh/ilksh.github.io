@@ -24,14 +24,14 @@ urls:
 
 # Edit Author details (For multi authors check _data/authors.yml)
 
-author_logo: reco.jpeg
+author_logo: profile.png
 author: Aaron Kim
-author_bio: Hi, my name is Aaron Kim.
+author_bio: Hi, my name is John Doe. I built this site using devlopr-jekyll :D
 author_email: "ksh727301@gmail.com"
 author_location: US / Korea
 author_website_url: "https://ilksh.github.io"
-typewrite-text: Hi 
-hero_cover_img: pmu.jpg # replace this for changing homepage cover (eg. try cover.jpeg). Image should be in /assets/img
+typewrite-text: 1234567
+hero_cover_img: sample_cover.jpg # replace this for changing homepage cover (eg. try cover.jpeg). Image should be in /assets/img
 
 # Experiences
 author_work_experiences:
@@ -57,25 +57,25 @@ author_education_details:
                 description: Bachelor of Technology
                 visibility: true
 
-# # Projects
-# author_project_details:
-#               - project_thumbnail: gamershub.png
-#                 project_title: Gamers Hub
-#                 project_description: A Platform built for Gamers and Game Devs
-#                 project_url: https://gamershub.in
-#                 visibility: true
-#               - project_thumbnail: hack4r.PNG
-#                 project_title: Hack4r
-#                 project_description: A Platform built for Hackers and Penetration Testers
-#                 project_url: https://hack4r.com
-#                 visibility: true
+# Projects
+author_project_details:
+              - project_thumbnail: gamershub.png
+                project_title: Gamers Hub
+                project_description: A Platform built for Gamers and Game Devs
+                project_url: https://gamershub.in
+                visibility: true
+              - project_thumbnail: hack4r.PNG
+                project_title: Hack4r
+                project_description: A Platform built for Hackers and Penetration Testers
+                project_url: https://hack4r.com
+                visibility: true
 
 # social links
-# twitter_username: xplor4r
-github_username: ilksh
-instagram_username: kimsang0210
+twitter_username: xplor4r
+github_username:  sujaykundu777
+instagram_username: xplor4r
 # facebook_username: johndoe
-linkedin_username:  kimsang0210
+# linkedin_username: johndoe
 # behance_username: johndoe
 # medium_username: johndoe
 # telegram_username: johndoe
@@ -88,14 +88,14 @@ linkedin_username:  kimsang0210
 # hyvor_talk_website_id: 476
 
 # wakatime username (coding activity)
-# wakatime_username: sujaykundu777
+wakatime_username: sujaykundu777
 
 # mailchimp embedded form url (newsletter):
-# mailchimp_form_url: https://sujaykundu.us10.list-manage.com/subscribe/post?u=50bab1c85eae24ecfb0f68361&amp;id=3a2dd721d0
+mailchimp_form_url: https://sujaykundu.us10.list-manage.com/subscribe/post?u=50bab1c85eae24ecfb0f68361&amp;id=3a2dd721d0
 
 # contact form - (choose formspress or getform)
 # getform_endpoint: 83b703c3-9e47-4df4-ac55-e24d7eb02abc
-formspree_email: ksh727301@gmail.com
+formspree_email: johndoe@gmail.com
 
 # releases - widget can be (sidebar, modal or embed)
 olvy_organization: devlopr
