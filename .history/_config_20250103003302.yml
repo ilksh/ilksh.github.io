@@ -39,13 +39,13 @@ author_work_experiences:
               company_logo: FlavourIQ.png
               company_url: https://flavouriq.com/
               designation: Data Science Intern (May 2024 ~ Aug 2024)
-              description: Developed a GNN-based system to analyze sensory attributes of organic compounds and recommend personalized food pairings
+              description: Developed a GNN-based system to analyze sensory attributes of organic compounds and recommend personalized food pairings.
               visibility: true
             - company_name: Professor Kihara Lab (West Lafayette, IN)
               company_logo: khiara.png
               company_url: https://kiharalab.org/
               designation: Undergraduate Researcher (Mar 2024 ~ Oct 2024)
-              description: Engineered deep learning models for Protein Function Prediction, achieving top 10% in CAPRI and CASP assessments
+              description: Engineered deep learning models for Protein Function Prediction, achieving top 10% in CAPRI and CASP assessments.
               visibility: true
             - company_name: Purdue CS (West Lafayette, IN)
               company_logo: PUCS.jpg
@@ -53,17 +53,11 @@ author_work_experiences:
               designation: Teaching Assistant (Jan 2024 ~ Present)
               description: Served as a Teaching Assistant for Data Engineering and C Programming courses
               visibility: true
-            - company_name: Procter & Gamble (Remote)
-              company_logo: ProcterNGamble.jpeg
-              company_url: https://us.pg.com/
-              designation: Meta Analysis Research Assistant (Jan 2024 ~ May 2024)
-              description: Developed an R Shiny app for automated Network Meta-Analysis, streamlining product comparisons and prototype predictions
-              visibility: true
-            - company_name: Nuvve Holding Corp (Remote)
-              company_logo: Nuvve.jpeg
-              company_url: https://nuvve.com/
-              designation: Data Science Research Assistant
-              description: Designed LSTM models to predict driving patterns and optimized energy price bidding
+            - company_name: Microsoft
+              company_logo: microsoft.png
+              company_url: https://microsoft.com
+              designation: Azure Developer
+              description: Worked on various Azure Cloud Products
               visibility: true
 
 
