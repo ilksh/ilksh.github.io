@@ -1,0 +1,150 @@
+
+
+
+<!doctype html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="/index.css" />
+  <title>Alexiy Buynitsky | AirQ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <main
+    class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 leading-5 dark:bg-black dark:text-white font-sans"
+  >
+    <div class="flex justify-between flex-wrap">
+      <a href="/">
+        <h1 class="font-mono text-2xl font-bold">Alexiy Buynitsky</h1>
+      </a>
+      <div
+        class="flex flex-col sm:flex-row justify-between gap-2 align-middle items-center my-1"
+      >
+        
+  <a
+    href="https://linkedin.com/in/alexiybuynitsky"
+    class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-32 bg-[#0077b5] text-white"
+  >
+    
+          <div style="mask-image: url('/assets/linkedin.svg');" class="icon"></div>
+          <span class="ms-1">LinkedIn</span>
+        
+  </a>
+
+        
+  <a
+    href="https://github.com/abuynits"
+    class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-32"
+  >
+    
+          <div style="mask-image: url('/assets/github.svg');" class="icon"></div>
+          <span class="ms-1">GitHub</span>
+        
+  </a>
+
+        
+  <a
+    href="/assets/alexiy_buynitsky_resume.pdf"
+    class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-32"
+  >
+    
+          <span class="ms-1">Resume</span>
+        
+  </a>
+
+      </div>
+    </div>
+    <hr class="my-2 border-black" />
+    
+  
+  <fieldset
+    class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
+  >
+    <legend>
+      <h6 class="text-lg mx-2 font-mono italic">cat ~/projects/airq</h6>
+    </legend>
+    
+    <article>
+      <h2 class="m-0 mb-1 text-4xl">AirQ</h2>
+      <h3 class="italic text-xl m-0 font-normal">LSTM / seq2seq model for air quality prediction</h3>
+      <div class="h-4" />
+    </article>
+    <img src="/assets/projects/airq_overview.png" class="mb-4" />
+    <article>
+      <p><strong>Output from a seq2seq model for predicting 10 time steps</strong></p>
+<h2>Background</h2>
+<p>This was a Hackathon project for BoilerMake X.</p>
+<p>I wanted to do a hackathon and I really didn't want to do web dev... so I decided to find a fun dataset and mess around with it for 48 hours. I had a blast and won <strong>first place</strong> for <a href="https://dagshub.com/">Dagshub</a>!</p>
+<h2>What it does</h2>
+<p>This is a LSTM and seq2seq model (transformer-like model) that predicts specified air quality metrics using input and output features (data columns). One can select the input feature(s), desired output feature(s), loookback range, and prediction range to see which input features have the most weight in determining the output features. One can also experiment with adjusting the models, their architecture, and other hyper parameters without worry about the the implementation. It is built using Pytorch, with DVC and MLflow to allow for easy testing and augmentation through the constant.py file.</p>
+<h2>How it works</h2>
+<h3>Preparing the data</h3>
+<p>We started by finding a data set on air quality, which we found in UC Irvine’s data archive. We then preprocessed this data. To do this we first interpolated missing/malformed data points, and then normalized the data between 0 and 1 to make it ready for training. After preparing the data, we split it into training and validation sets and batched it. We then created custom datasets and loaded them into dataloaders to be used by our model.</p>
+<h3>Designing the model:</h3>
+<p>For our model design, we initially started with an LSTM, but after training it, we noticed that even with any combination of hidden layers or lstm cells, the model would struggle with predicting two or more time steps ahead which is why we switched to using a seq2seq model, commonly used in NLP techniques. Such models are based on an encoder-decoder architecture:</p>
+<p>Data is fed to the encoder, and we store the hidden state for the last timestep in the encoder
+we take the last input, and the last hidden state, and feed it into the decoder which produce the required hidden states
+We pass this through a linear layer to decrease the output dimensions from the hidden size to the desired amount of outputs and a new input state to the model.
+This process continues until we generate the required amount of time steps</p>
+<h3>Training the model:</h3>
+<h4>Learning Rate:</h4>
+<p>We selected a learning rate of 0.001 and a ExponentialLR scheduler from pytorch with Gamma = 0.99 to exponentially decay the learning rate by gamma as we move through the epochs.</p>
+<p>(see more in main.ipynb)</p>
+<h4>Epochs:</h4>
+<p>We train for 1000 epochs, saving a model whenever we reach a new best validation loss.</p>
+<h4>Optimizer:</h4>
+<p>We use a MSEloss to calculate the loss between our quantitative outputs.</p>
+<h3>Version Control</h3>
+<p>We use DagsHub with DVC for our data, git for our code, and MLflow to analyze the training results.</p>
+<p>Learn more <a href="https://devpost.com/software/airq">here</a></p>
+
+    </article>
+  
+  </fieldset>
+
+
+    <div class="h-3"></div>
+    
+  <fieldset
+    class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
+  >
+    <legend>
+      <h6 class="text-lg mx-2 font-mono italic">cat README.md</h6>
+    </legend>
+    
+      <div class="flex flex-row justify-between">
+        <span class="prose dark:prose-invert">
+          Source code on
+          <a href="https://github.com/sagarreddypatil/portfolio-website">
+            GitHub
+          </a>
+           thanks to  <a href="https://sagarpatil.me/">Sagar Patil</a> 
+        </span>
+      </div>
+    
+  </fieldset>
+
+  </main>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+</body>
