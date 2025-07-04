@@ -1,0 +1,165 @@
+
+
+
+<!doctype html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="/index.css" />
+  <title>Alexiy Buynitsky | Wave</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <main
+    class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 leading-5 dark:bg-black dark:text-white font-sans"
+  >
+    <div class="flex justify-between flex-wrap">
+      <a href="/">
+        <h1 class="font-mono text-2xl font-bold">Alexiy Buynitsky</h1>
+      </a>
+      <div
+        class="flex flex-col sm:flex-row justify-between gap-2 align-middle items-center my-1"
+      >
+        
+  <a
+    href="https://linkedin.com/in/alexiybuynitsky"
+    class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-32 bg-[#0077b5] text-white"
+  >
+    
+          <div style="mask-image: url('/assets/linkedin.svg');" class="icon"></div>
+          <span class="ms-1">LinkedIn</span>
+        
+  </a>
+
+        
+  <a
+    href="https://github.com/abuynits"
+    class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-32"
+  >
+    
+          <div style="mask-image: url('/assets/github.svg');" class="icon"></div>
+          <span class="ms-1">GitHub</span>
+        
+  </a>
+
+        
+  <a
+    href="/assets/alexiy_buynitsky_resume.pdf"
+    class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-32"
+  >
+    
+          <span class="ms-1">Resume</span>
+        
+  </a>
+
+      </div>
+    </div>
+    <hr class="my-2 border-black" />
+    
+  
+  <fieldset
+    class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
+  >
+    <legend>
+      <h6 class="text-lg mx-2 font-mono italic">cat ~/projects/wave</h6>
+    </legend>
+    
+    <article>
+      <h2 class="m-0 mb-1 text-4xl">Wave</h2>
+      <h3 class="italic text-xl m-0 font-normal">A Gesture-Controlled Human-Computer Interface (HCI)</h3>
+      <div class="h-4" />
+    </article>
+    <img src="/assets/projects/wave_overview.png" class="mb-4" />
+    <article>
+      <p><strong>Example of WAVE detecting a swipe right gesture to switch desktops</strong></p>
+<h2>Background</h2>
+<p>For Boilermake XI, my friends and I decided to create a different way of interacting with computers: through gestures. Our inspiration came from the info touch screen kiosk in LSWN which requires ~20N of force to register a 'touch'.</p>
+<p>So we created Wave. A gesture HCI which allows users to interact with their displays through personalized gestures.</p>
+<h2>How does it work:</h2>
+<h3>Another Example:</h3>
+<img src="/assets/projects/wave_ex_2.png" width="600" height="600">
+
+<h3>Pose Detection</h3>
+<p>We choose to build on top of Google’s MediaPipe with a lightweight continual learnign model through a MLP. This enabled us to have continual learning and the flexibility to generate data, modify the model architecture, train + evaluate the model, and prepare the weights for new inference in &lt; 5 sec. With this approach we can run inference at <strong>30fps</strong>, and expand the model architecture to <strong>32 custom hand poses</strong>.</p>
+<h3>Gesture detection:</h3>
+<p>For a new user, the model starts out with no data, and when the user wants to append a new pose, Wave will record ~25 examples of 42 datapoints (x,y coordinates for the hand), normalize them + scale them to perform inference on any depth distance, quickly retrain the model, update the inference weights and then start evaluating again with the new model.</p>
+<p>The model consists of 2 blocks of Linear, Relu, and dropout. The first block upscales the 42 x,y coordinates to a dimension of 64, then the next block’s output dimension is 32, and the last final linear layer is variable dependent on the number of output classes specified by the user. We finish with a softmax function and ignore outputs from models with 0 and 1 output classes. Additionally, we mark poses as n/a if they do not pass a 99% threshold in the softmax that is scaled down with the number of datapoints in the dataset.</p>
+<p>Additionally we use analytical approaches through a weighted loss, applying more weights to the top of the fingers then to the palm in the rare cases the model fails and when the user starts using the model.</p>
+<p>With only ~1k parameters, we can train for ~200 epoch with early stopping in 5 seconds on a M1 Mac.</p>
+<h3>Motion tracking:</h3>
+<p>Once we have the poses of the hand (ie thumbs up, pointing left / right), we need to extract the motion of the hand.</p>
+<p>Our pipeline is able to detect motion in the z-axis, rotations (cw / ccw), translation (left, right, down, up), and idle (stationary).</p>
+<p>To accomplish this, we track the last 6-10 points and extract the index finger. We then track the (x,y,z) points of the index finger and the side radios + area of the bounding box that encloses these points.</p>
+<p>If the bounding box is a rectangle (using the side ratios), we have translational motion (horizontal = x, vertical = y). If we have a square (using side ratios), we have a square and therefore either rotational or an idle pose.</p>
+<p>We now look at the ratio of the square with respect to the whole scene captured by the camera. If the points are clustered, this implies that the hand is stationary, else if the points are not clustered, and in a square shape, this means that we have rotation. To detect rotation, we use the shoelace algorithm ( more <a href="https://www.101computing.net/the-shoelace-algorithm/">here</a> ).</p>
+<h3>Motion smoothing:</h3>
+<p>At 30 fps frame detection, the output poses have high granularity. For example, when a user moves to the left, and stops, they might jerk to the right, cause the sytem to detect a [left translation, idle, right translation, idle sequence] instead of simply a [left translation, idle sequence].</p>
+<p>To account for this, we smooth the output data through d-bouncing. D-bounce limits the number of times a function can query from a source. Going back to our example, because the jerky motion from left → right translation happens in a short amount of time, d-bouncing will fetch the left translation, have a delay, miss fetching the right translation, and then when the delay is over, the function will then fetch the new updated state which be idle, effectively reducing jitteriness and allowing for smoother motion.</p>
+<h3>Gesture Sequence Mapping:</h3>
+<p>Now comes the question of matching a raw data stream to a action that a user wants. First lest define a gesture as an ordered collection of pose, direction pairs. As an example, consider panning from the left side of the screen to the right side. We start in a stationary pose (lets say pointing up), then start moving in the right direction and end in another stationary pose, at the right side of the screen (lets say pointing down).</p>
+<p>This creates a sequence defined as: point up → right motion → point down. And this is how a user defines gesture.</p>
+<p>Now because there might be errors (lets say the user pauses and the sequence becomes point up → right motion → idle → right_motion → point down), we still want to match to this sequence. If the sequence matches the stream, we spawn a Matcher which looks for matches in the stream. If the Matcher doesnt match the whole sequence within a certain error window, it will destroy. When a Matcher matches, we remove all match objects because the User has inputted a gesture.</p>
+<h3>Vision-Langauge Models:</h3>
+<p>To account for the cases when a gesture might be to complicated, we use a video language model, Video-LLaVA. Now instead of matching poses, we instead use a vector database created on the Bert Encoder that encodes descriptions of gestures and matches them based on cosine similarity.</p>
+<p>Users will now describe a complicated motion that will be stored in a database. Then when the motion is performed and detected by our gesture sequencer mapper (start and end poses are both idle), we save those frames, send them to Llava along with a few multi-shot examples to tune the models responses and receive a description of the hand in 3-5 seconds. Finally we perform a cosine similarity match with this hand against the database of existing poses, performing the associated action.</p>
+<h3>Frontend:</h3>
+<p>For the frontend, we chose to create a desktop app so that we could execute child processes for important tasks such as running a local flask server and writing to local files. Since we’re most familiar with web development, we ended up porting a Next.js web app through Electron.js, allowing us access to the local system with all the familiarity and benefits of a web app. In terms of the design, the entire UI, animations and transitions included, was developed only with TailwindCSS, JSX, and JavaScript (no external component libraries included).</p>
+<p>We also built a fully functioning profile/account system into the application. When a user signs into our platform, we interface a MongoDB cluster stored on the cloud through Mongoose (a Node.js module) to verify user information, utilizing the bcrypt libary to store and compare encrypted passwords for maximum security. We also leveraged jsonwebtoken to insert cookies into the user’s system so they can stay logged in even after closing the app.</p>
+<h3>Flask server:</h3>
+<p>For the Flask server, we wanted to make sure that we could interface our gesture recognition model with the frontend seamlessly. Our flask server runs multiple threads at once for camera video processing, model inference, and voice commands, without blocking the main server process.</p>
+<h3>Open-interpreter:</h3>
+<p>We used a technology called open-interpreter to allow us to take a natural language input like “set my system to dark mode” and output the apple script necessary to make that happen.</p>
+<h3>Voice interaction:</h3>
+<p>For this part of the project, we wanted to allow users to initiate a voice command through a waving gesture and through stating “Alright Wave” (which would serve as the wake function). We used PyAudio to record audio, whisper.cpp to transcribe audio, and open-interpreter to use that natural language for some computer function. Some voice commands include initiating gesture training, starting Wave (recording), and stopping Wave. The idea here was to give users a more convenient “hands-free” way to interact with our app. Additionally, we prototyped a way to interact with open-interpreter, which utilizes LLMs like GPT-4 to allow you to interact with your computer by generating and running code through your terminal. Unfortunately, this “enhanced Siri” idea did not make it into the finished product, as we felt implementing gesture commands was more important.</p>
+<p>devpost + more documentation can be found <a href="https://devpost.com/software/wave-9cr4ni">here</a>.</p>
+
+    </article>
+  
+  </fieldset>
+
+
+    <div class="h-3"></div>
+    
+  <fieldset
+    class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
+  >
+    <legend>
+      <h6 class="text-lg mx-2 font-mono italic">cat README.md</h6>
+    </legend>
+    
+      <div class="flex flex-row justify-between">
+        <span class="prose dark:prose-invert">
+          Source code on
+          <a href="https://github.com/sagarreddypatil/portfolio-website">
+            GitHub
+          </a>
+           thanks to  <a href="https://sagarpatil.me/">Sagar Patil</a> 
+        </span>
+      </div>
+    
+  </fieldset>
+
+  </main>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+</body>

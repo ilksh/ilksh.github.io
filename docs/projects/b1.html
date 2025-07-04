@@ -1,0 +1,140 @@
+
+
+
+<!doctype html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="/index.css" />
+  <title>Alexiy Buynitsky | Unitree B1 Simulator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <main
+    class="flex min-h-screen flex-col max-w-5xl mx-auto px-4 py-4 sm:py-8 leading-5 dark:bg-black dark:text-white font-sans"
+  >
+    <div class="flex justify-between flex-wrap">
+      <a href="/">
+        <h1 class="font-mono text-2xl font-bold">Alexiy Buynitsky</h1>
+      </a>
+      <div
+        class="flex flex-col sm:flex-row justify-between gap-2 align-middle items-center my-1"
+      >
+        
+  <a
+    href="https://linkedin.com/in/alexiybuynitsky"
+    class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-32 bg-[#0077b5] text-white"
+  >
+    
+          <div style="mask-image: url('/assets/linkedin.svg');" class="icon"></div>
+          <span class="ms-1">LinkedIn</span>
+        
+  </a>
+
+        
+  <a
+    href="https://github.com/abuynits"
+    class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-32"
+  >
+    
+          <div style="mask-image: url('/assets/github.svg');" class="icon"></div>
+          <span class="ms-1">GitHub</span>
+        
+  </a>
+
+        
+  <a
+    href="/assets/alexiy_buynitsky_resume.pdf"
+    class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-32"
+  >
+    
+          <span class="ms-1">Resume</span>
+        
+  </a>
+
+      </div>
+    </div>
+    <hr class="my-2 border-black" />
+    
+  
+  <fieldset
+    class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
+  >
+    <legend>
+      <h6 class="text-lg mx-2 font-mono italic">cat ~/projects/b1</h6>
+    </legend>
+    
+    <article>
+      <h2 class="m-0 mb-1 text-4xl">Unitree B1 Simulator</h2>
+      <h3 class="italic text-xl m-0 font-normal">Extended unitree_ros to support B1 in Gazebo / PyBullet</h3>
+      <div class="h-4" />
+    </article>
+    <img src="/assets/projects/b1.png" class="mb-4" />
+    <article>
+      <p><strong>Fully Functional B1 Sumulator</strong></p>
+<h2>Background</h2>
+<p>Out of the box, Unitree provides a high-level controller, <a href="https://github.com/unitreerobotics/unitree_guide">unitree_guide</a> for the Aliengo, GO1/2 and A1 in gazebo and pybullet, but when trying with the B1 model...</p>
+<p><img src="/assets/projects/b1_broken.png" alt="B1 Model" /></p>
+<p>...it doesnt work.</p>
+<p>And it doesn't help that the Unitree Dev team has no plan for updating the B1 controller in the future (<a href="https://github.com/unitreerobotics/unitree_ros/issues/80">github issue #80</a>)</p>
+<p>This simulator issues came after weeks of suffering to even communicate with the B1, solving problems like configuring the DNS and Default Gateways, communicating with Realsense Cameras, and performing surgery to replace a broken jetson NX module (taking out 216 screws with a allen wrench).</p>
+<p><img src="/assets/projects/b1_jetson.png" alt="B1 Jeston" /></p>
+<h2>Major Simulator Changes:</h2>
+<ul>
+<li>Tune PID controllers, torques, and robot geometry to match B1 Specs</li>
+<li>Modify B1 URDF, adding support for Velodyne 3D Lidar</li>
+<li>Extend unitree_guide high-level controller to take arbitrary high-level commands over ROS</li>
+<li>Modify CMake Files to support compilation of all unitree robots on Ubuntu 18.04 and 20.04</li>
+<li>Read and publish data from D430i RealSense cameras</li>
+</ul>
+
+    </article>
+  
+  </fieldset>
+
+
+    <div class="h-3"></div>
+    
+  <fieldset
+    class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
+  >
+    <legend>
+      <h6 class="text-lg mx-2 font-mono italic">cat README.md</h6>
+    </legend>
+    
+      <div class="flex flex-row justify-between">
+        <span class="prose dark:prose-invert">
+          Source code on
+          <a href="https://github.com/sagarreddypatil/portfolio-website">
+            GitHub
+          </a>
+           thanks to  <a href="https://sagarpatil.me/">Sagar Patil</a> 
+        </span>
+      </div>
+    
+  </fieldset>
+
+  </main>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+</body>
