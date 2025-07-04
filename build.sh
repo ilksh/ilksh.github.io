@@ -18,14 +18,14 @@ html() {
 # }
 
 static() {
-    echo "Copying static files to dist"
-    cp -r public/* dist/
+    echo "Copying all static files recursively"
+    cp -a public/. dist/
 }
 
 
-opt_imgs() {
-    ./src/optimize-images.sh
-}
+# opt_imgs() {
+#     ./src/optimize-images.sh
+# }
 
 html_static() {
     html &
