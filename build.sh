@@ -23,9 +23,9 @@ static() {
 }
 
 
-# opt_imgs() {
-#     ./src/optimize-images.sh
-# }
+opt_imgs() {
+    ./src/optimize-images.sh
+}
 
 html_static() {
     html &
