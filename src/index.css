@@ -57,3 +57,8 @@ article {
 
   background-color: currentColor;
 }
+@layer components {
+  .prose {
+    @apply prose;
+  }
+}
