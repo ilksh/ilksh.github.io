@@ -1,3 +1,6 @@
+
+
+
 <!doctype html>
 <head>
   <meta charset="UTF-8" />
@@ -5,6 +8,23 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="/index.css" />
   <title>Aaron Kim</title>
+
+  <!-- MathJax LaTeX support -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+  </script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  
+
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,7 +53,7 @@
       >
         
   <a
-    href="https://linkedin.com/in/alexiybuynitsky"
+    href="https://www.linkedin.com/in/kimsang0210/"
     class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-32 bg-[#0077b5] text-white"
   >
     
@@ -42,24 +62,15 @@
         
   </a>
 
+
         
   <a
-    href="https://github.com/abuynits"
+    href="https://github.com/ilksh"
     class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-32"
   >
     
           <div style="mask-image: url('/assets/github.svg');" class="icon"></div>
           <span class="ms-1">GitHub</span>
-        
-  </a>
-
-        
-  <a
-    href="/assets/alexiy_buynitsky_resume.pdf"
-    class="flex flex-row items-center justify-center align-middle rounded-none outline outline-1 outline-black dark:outline-white dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white text-normal px-4 h-6 me-[4px] shadow-[3px_3px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[3px_3px_0px_1px_rgba(255,255,255,0.6)] w-32"
-  >
-    
-          <span class="ms-1">Resume</span>
         
   </a>
 
@@ -74,42 +85,98 @@
     class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
   >
     <legend>
-      <h6 class="text-lg mx-2 font-mono italic">678</h6>
+      <h6 class="text-lg mx-2 font-mono italic">whoami</h6>
     </legend>
     
       <div class="flex flex-col gap-3 text-lg">
         <p>
-          
-          <br>
-          <br>
-
-          I love learning anything new and learn best by getting my hands dirty.
-          For me, the best feeling in the world is when something works/clicks after bashing my head against a problem for hours or even days.
-          <br>
-          <br>
-
-          In my free time, I love hiking / mountain biking, and finding excuses to visit coffee shops.
-
-          <!-- Hi there! I am a <span id="age"></span> y/o student at Purdue
-          University majoring in Computer Science. I like rockets and computers.
-          Some of my hobbies include photography, reading sci-fi, 3d printing,
-          software defined radio, and climbing -->
+        Welcome to my personal website — a space where I share my education, experience, awards, and projects!
+        <br>
+        <br>
+        
+        I'm passionate about solving real-world problems through algorithms, machine learning, and quantum computing, especially in the context of finance.
+        <br>
+        <p style="font-size: 1rem;">
+          Currently pursuing my Master’s in Artificial Intelligence at UPenn, with a B.S. in Computer Science & Applied Statistics from Purdue.
+          I’m also ranked top 0.08% on LeetCode&nbsp;
+          <a href="https://leetcode.com/ksh727301/" target="_blank" rel="noopener noreferrer" style="display: inline;">
+            <img 
+              src="https://img.shields.io/badge/dynamic/json?style=flat-square&labelColor=black&color=%23ffa116&label=RANKING&query=ranking&url=https%3A%2F%2Fleetcode-badge.vercel.app%2Fapi%2Fusers%2Fksh727301&logo=leetcode&logoColor=yellow" 
+              alt="LeetCode Ranking" 
+              style="height: 18px; vertical-align: middle; display: inline;"
+            />
+          </a>,
+          and love exploring the edge of AI x Finance.
         </p>
-        <script>
-          const bday = new Date("2003-10-22");
-          const ageInMs = Date.now() - bday.getTime();
-          const age = Math.floor(ageInMs / 31556952000);
-          document.getElementById("age").innerText = age;
-        </script>
+        <br>
+        I’m someone who loves traveling, watching orchestra performances, and enjoying a good musical. <br>
+        Here are some of the amazing places I’ve visited so far:
+        🇺🇸 🇨🇦 🇦🇺 🇻🇳 🇮🇩 🇸🇬 🇨🇳 🇯🇵 🇭🇰 🇰🇷 🇹🇼 🇹🇭 <br> <br>
+        Out of them all, my favorite city is Chicago — there’s just something magical about its towering skyline, sparkling night views, famous Ferris wheel by the lake, and of course, the incredible food scene (except for the freezing cold!).
+        <br>
+        If anything here resonates with you, I’d love to connect!
         <p>
-          <!-- Here's a photo of me in front of an SR-71 (and Space Shuttle
-          Discovery) -->
+          You can reach me at 
+          <a href="mailto:ksh727301@gmail.com" style="text-decoration: underline;">ksh727301@gmail.com</a> 
+          or via 
+          <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" style="color: #0077b5;">LinkedIn</a>.
         </p>
-        <img
-          src="/assets/me.png"
-          alt="me @ Garibaldi Lake"
-          class="h-[450px] object-cover"
-        />
+
+        Thanks for stopping by — and enjoy exploring the site!
+
+      <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+  <!-- Graduation Photo -->
+  <div style="text-align: center;">
+    <img 
+      src=  "assets/chicago.png"
+      alt="Chicago" 
+      style="width: 280px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);" 
+    />
+    <p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;">
+      Me in Chicago!
+    </p>
+  </div>
+
+  <!-- New Photo 1 -->
+  <div style="text-align: center;">
+    <img 
+      src= "assets/myIMG.png"
+      alt="Graduation" 
+      style="width: 280px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);" 
+    />
+    <p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;">
+      Me at my graduation ceremony 
+    </p>
+  </div>
+
+  <!-- New Photo 2 -->
+  <div style="text-align: center;">
+    <img 
+      src="assets/aquarium.JPG" 
+      alt="Travel memory 2" 
+      style="width: 280px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);" 
+    />
+    <p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;">
+      Me at the aquarium in Korea
+    </p>
+  </div>
+</div>
+
+
+        </p>
+
+
+
+
+      </div>
+
+
+
+
+      </div>
+
+
+
       </div>
     
   </fieldset>
@@ -120,41 +187,24 @@
     class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
   >
     <legend>
-      <h6 class="text-lg mx-2 font-mono italic">~/random_facts.md</h6>
+      <h6 class="text-lg mx-2 font-mono italic">Education</h6>
     </legend>
     
       <article>
-        <h4>Favorite Quotes</h4>
+        <h4>University of Pennsylvania (Aug 2025 ~ )</h4>
         <ul>
-          <li>"If you are not in pain, you are not learning.", "FAFO",  "FIFI" - ppl @ SpaceX</li>
-          <li>"[Insert Algo Question]. Provide a brief but precise explanation" - CS 251/381 exams</li>
-          <li> "Oooooh yea I don't like this problem. It came off a graduate qualifying exam. I put it on there just to torment people, even I don't know how to do it" - MA 453 Prof</li>
+          <li>Master of Engineering in Artificial Intelligence (Incoming Student)</li>
         </ul>
-        <h4>Favorite Coffee Shops</h4>
+        <h4>Purdue University (Aug 2022 ~ May 2025)</h4>
         <ul>
-          <li> Mount Currie Coffee Co in Whistler B.C.</li>
-          <li>Philz Coffee in Sunnyvale</li>
-          <li>Clyde's Coffee in South Lake Tahoe</li>
-        </ul>
-        <h4>Favorite Hikes</h4>
-        <ul>
-          <li>Sahale Arm / Cascade Pass in Northern Washington</li>
-          <li>Garibaldi Lake in B.C</li>
-          <li>Lake Ediza - Iceberg Lake - Thousand Island Lake loop in Eastern Sierra</li>
-        </ul>
-        <h4>Foreign Languages</h4>
-        <ul>
-          <li>Ukrainian</li>
-          <li>Russian</li>
-          <li>a bit of Spanish</li>
-        </ul>
-        <h4>Favorite Book</h4>
-        <ul>
-          <li>The Martian by Andy Weir</li>
+          <li>Bachelor of Science in Computer Science</li>
+          <li>Bachelor of Science in Applied Statistics</li>
+          <li>Application in Data Science</li>
         </ul>
       </article>
     
   </fieldset>
+
 
     <!-- <Experience/> -->
     
@@ -162,199 +212,180 @@
     class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
   >
     <legend>
-      <h6 class="text-lg mx-2 font-mono italic">~/Experience.md</h6>
+      <h6 class="text-lg mx-2 font-mono italic">Experience</h6>
     </legend>
     
-      <article>
-        <p style="text-align:left;font-weight:bold">
-          AI Engineering Intern <span>&#64;</span> <a href="https://www.armada.ai/"> <b>Armada AI</b></a>
-          <span style="float:right;">
-          Remote | Oct 2023 - Present
-               
-          </span>
-      </p>
-     <ul>
-          <li>First Intern at Armada AI building Edge AI Applications for remote compute hardware</li>
-          <li>Developing spatially aware CV and LLM robotic control methods by generating synthetic data and finetuning models using SFT and DPO</li>
-          <li>Building VideoQA assistant for realtime video Q\&A for security camera footage</li>
-          <li>Build prompting library with support for customizable prompting formats, single / multi-shot prompting from variable datasets, open/closed source LLMs / custom checkpoint</li>
-      </ul>
+    <article>
 
-      <p style="text-align:left;font-weight:bold">
-        Undegraduate Researcher <span>&#64;</span> <a href="https://corallab.net/"> <b>CoRAL Lab</b></a>
-        <span style="float:right;font-weight:bold;">
-        Purdue | Aug 2023 - Present
-        </span>
-      </p>
-     <ul>
-      <li>Conducting research on robotic learning under the supervision of Professor Ahmed Qureshi</li>
-      <li>Extended Unitree simulator to support Unitree B1 Quadruped Robot in Gazebo and PyBullet</li>
-      <li>Researching Motion Planning in dynamic environments via Active NT Fields and Sign Distance Fields</li>
-      <li>Teaching robots to navigate through Purdue with custom knowledge using LLMs, RAG, and vector databases</li>
-      </ul>
+    <p style="text-align:left;font-weight:bold">
+      AI Intern <span>&#64;</span> <a href="https://www.nextsecurities.com/" target="_blank"> <b>Next Securities</b></a>
+      <span style="float:right;font-weight:bold;">
+      Seoul, Korea | June 2025 ~                
+      </span>
+    </p>
 
-      <p style="text-align:left;font-weight:bold">
-        Engineering Intern <span>&#64;</span> <a href="https://www.spacex.com/"> <b>SpaceX</b></a>
-        <span style="float:right;font-weight:bold;">
-        Redmond | May 2023 - Aug 2023 
-        </span>
-      </p>
-     <ul>
-          <li>Develop robotic solutions for quicker manufacturing and assembly of Starlink satellites</li>
-          <li>Prototype satellite assembly cells, working with 6-axis robotics arms, CV, actuators, sensors, & safety hardware</li>
-          <li>Achieve 80x speedup between PLC & CV software by developing an IP-style communication library</li>
-      </ul>
-      <p style="text-align:left;font-weight:bold">
-        TensorFlow Model Developer <span>&#64;</span> <a href="https://github.com/PurdueDualityLab/tf-maskformer"> <b>Google x Duality Lab</b></a>
-        <span style="float:right;">
-        Purdue | Jan 2023 - May 2023 
-        </span>
-      </p>
-     <ul>
-          <li>Building data pipeline for Maskformer and Mask2former using Google Deeplab2 and Tensorflow</li>
-          <li>Generate, decode, and load TFRecords for panoptic segmentation from COCO dataset with Bash and Python</li>
-          <li>Apply random-cropping and color jitter to images/masks, create project config and data loaders</li>
-          <li>Achieving &lt 0.01% difference between PyTorch and Tensorflow implementations through differential testing</li>
-      </ul>
-      <p style="text-align:left;font-weight:bold">
-        Rocket League Software Developer <span>&#64;</span> <a href="https://rktl.purduearc.com/"> <b>Autonomous Robotics Club</b></a>
-       <span style="float:right;">
-        Purdue | Apr 2022 - Dec 2022 
-        </span>
-      </p>
-     <ul>
-          <li>Refactor sim to better reflect real-world conditions by randomizing physics dynamics, tuning car properties</li>
-          <li>Simulating latency with Rospy and ROS</li>
-      </ul>
-      <p style="text-align:left;font-weight:bold">
-        Signal Processing Intern <span>&#64;</span> <a href="https://sunscool.org/"> <b>SunScool</b></a> 
-        <span style="float:right;">
-        Sunnyvale | Apr 2022 - Aug 2022 
-        </span>
-      </p>
-     <ul>
-          <li>Trim, normalize, and denoise voiceovers from 80+ chapters with noise profiles, High and Low Pass filters</li>
-          <li>Adjusted audio volume and determined parameters for audio voice overs with FFmpeg and SOX</li>
-      </ul>
-      </article>
+       <ul>
+    <li> Contributing to the design of <Strong>Market Lens</Strong>, a stock-focused SNS platform, implementing <Strong>quantitative analysis algorithms </Strong> to generate customized trading signals based on real-time <Strong>Nasdaq </Strong>data, deploying them via FastAPI, and integrating into the platform’s interactive chatbot interface </li>
+    <div style="margin-top: 7px;"></div>
+    <li> Leading the development of a QA pipeline using <strong> SEAL (Self-Adaptive LLM) </strong> to extract insights from corporate disclosures, leveraging Pinecone-based <strong> Vector Database </strong> to enable explainable, context-aware analysis and support downstream generative AI workflows for content automation</li>
+       </ul>
+    <p style="text-align:left;font-weight:bold">
+      AI & Data Science Intern  <span>&#64;</span> <a href="https://www.flavouriq.com/" target="_blank"> <b> FlavourIQ </b></a>
+      <span style="float:right;font-weight:bold;">
+        Sydney, Australia | May ~ Aug 2024
+      </span>
+    </p>
+   <ul>
+    <li>Engineered Graph Neural Networks (GNNs) to link <Strong>over 70</Strong> volatile compounds with <Strong>31 sensory traits</Strong>, accurately identifying key molecular drivers of taste preference</li>
+    <div style="margin-top: 7px;"></div>
+    <li>Developed a <Strong>personalized recommendation system</Strong> that linked organic compounds in favorite foods with new items, offering tailored suggestions based on chemical profiles</li>
+  </ul>
+
+    <p style="text-align:left;font-weight:bold">
+      Undegraduate Researcher <span>&#64;</span> <a href="https://kiharalab.org/" target="_blank"> <b>Kihara’s Lab </b></a>
+      <span style="float:right;font-weight:bold;">
+      Purdue | Mar ~ Oct 2024                
+      </span>
+    </p>
+  <ul>
+    <li>Designed computational methods for Protein Function Prediction (PFP), utilizing deep learning, and achieved <strong>top 10%</strong> in major scientific assessments like CAPRI and CASP</li>
+  </ul>
+
+  <p style="text-align:left;font-weight:bold">
+    Undegraduate Teaching Assistant <span>&#64;</span> <a href="https://www.cs.purdue.edu/" target="_blank"> <b>Purdue Computer Science</b></a>
+    <span style="float:right;font-weight:bold;">
+    Jan 2024 - May 2025
+    </span>
+  </p>
+ <ul>
+  <li>Provided comprehensive support to over 200 students in <Strong>Data Engineering (CS 176)</Strong> labs, focusing on practical applications of data engineering and data science</li>
+  <div style="margin-top: 7px;"></div>
+  <li>Assisted students in the CS Student Board Help Room for <Strong>Discrete Mathematics (CS 182)</Strong> and <Strong>C Programming (CS 240)</Strong>, with a focus on algorithm design and proofs</li>
+</ul>
+
+
+    <p style="text-align:left;font-weight:bold">
+      Meta Analysis Research Assistant  <span>&#64;</span> <a href="https://us.pg.com/" target="_blank"> <b> Procter & Gamble</b></a>
+      <span style="float:right;font-weight:bold;">
+      Remote | Jan ~ May 2024
+      </span>
+    </p>
+   <ul>
+    <li>Developed and implemented a <strong>Network Meta-Analysis (NMA) automation application</strong> using R and R Shiny, enabling the prediction of prototype effectiveness across various product categories</li>
+    <div style="margin-top: 7px;"></div>
+    <li>Automated the comparison and analysis of <strong>over 1000 </strong>product studies, significantly streamlining product testing workflows and enhancing overall research efficiency</li>
+  </ul>
+
+    <p style="text-align:left;font-weight:bold">
+      Quantum Computing Research Assistant  <span>&#64;</span> <a href="https://engineering.purdue.edu/ECE" target="_blank"> <b>Electrical Engineering Dept</b></a>
+      <span style="float:right;font-weight:bold;">
+      Oct 2023 ~ Feb 2024                                                                      
+      </span>
+    </p>
+  <ul>
+    <li>Engaged in research, focusing on transforming current machine learning models and neural network models (Multilayer Perceptron, etc) to on Quantum Neural Networks models</li>
+  </ul>
+
+    <p style="text-align:left;font-weight:bold">
+      Data Science Research Assistant <span>&#64;</span> <a href="https://nuvve.com/" > <b>Nuvve Holding Corp</b></a>
+      <span style="float:right;font-weight:bold;">
+        Aug 2022 ~ Dec 2022
+      </span>
+    </p>
+    <ul>
+      <li>Predicted customer driving patterns using <strong>Long Short-Term Memory (LSTM)</strong> models with an 8-hour prediction window, enabling proactive energy management for Vehicle-to-Grid (V2G) services</li>
+      <div style="margin-top: 7px;"></div>
+      <li>Optimized energy price bidding by analyzing <strong>4000+</strong> data points, achieving a <strong>34%</strong> improvement in accuracy for more cost-effective energy transactions</li>
+    </ul>
+      
+
+
+
+    </article>
     
   </fieldset>
 
-    <!-- <Coursework /> -->
+
+
+    <!-- Awards -->
     
   <fieldset
     class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
   >
     <legend>
-      <h6 class="text-lg mx-2 font-mono italic">ls ~/projects</h6>
+      <h6 class="text-lg mx-2 font-mono italic">Awards</h6>
     </legend>
     
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
   
-    <a href="/projects/b1">
+    <a href="/Awards/Yquantum2025">
       <div
         class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
       >
         <div class="w-full">
           <img
             class="object-cover object-left-top w-full aspect-[3/2]"
-            src="/assets/projects/b1.png"
-            alt="Image for Unitree B1 Simulator"
+            src="assets/projects/Award/YQuanTum copy.png"
+            alt="Image for Yale YQuantum 2025"
           />
         </div>
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2 leading-6">Unitree B1 Simulator</div>
-          <p>Extended unitree_ros to support B1 in Gazebo / PyBullet</p>
+          <div class="font-bold text-xl mb-2 leading-6">Yale YQuantum 2025</div>
+          <p>Winner - Alice &amp; Bob Challenge</p>
         </div>
       </div>
     </a>
   
-    <a href="/projects/558">
+    <a href="/Awards/iQuHack2025">
       <div
         class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
       >
         <div class="w-full">
           <img
             class="object-cover object-left-top w-full aspect-[3/2]"
-            src="/assets/projects/558_overview.png"
-            alt="Image for CS558 Projects"
+            src="assets/projects/Award/MIT.png"
+            alt="Image for MIT iQuHack 2025"
           />
         </div>
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2 leading-6">CS558 Projects</div>
-          <p>Classical + Learning Based Motion Planning / Control projects </p>
+          <div class="font-bold text-xl mb-2 leading-6">MIT iQuHack 2025</div>
+          <p>2nd Place - Moody&#39;s Challenge</p>
         </div>
       </div>
     </a>
   
-    <a href="/projects/wave">
+    <a href="/Awards/DataFest2025">
       <div
         class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
       >
         <div class="w-full">
           <img
             class="object-cover object-left-top w-full aspect-[3/2]"
-            src="/assets/projects/wave_overview.png"
-            alt="Image for Wave"
+            src="assets/projects/Award/PU.png"
+            alt="Image for Purdue DataFest 2025"
           />
         </div>
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2 leading-6">Wave</div>
-          <p>A Gesture-Controlled Human-Computer Interface (HCI)</p>
+          <div class="font-bold text-xl mb-2 leading-6">Purdue DataFest 2025</div>
+          <p>Best in Show</p>
         </div>
       </div>
     </a>
   
-    <a href="/projects/airq">
+    <a href="/Awards/DataFest2024">
       <div
         class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
       >
         <div class="w-full">
           <img
             class="object-cover object-left-top w-full aspect-[3/2]"
-            src="/assets/projects/airq_overview.png"
-            alt="Image for AirQ"
+            src="assets/projects/Award/PU.png"
+            alt="Image for Purdue DataFest 2024"
           />
         </div>
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2 leading-6">AirQ</div>
-          <p>LSTM / seq2seq model for air quality prediction</p>
-        </div>
-      </div>
-    </a>
-  
-    <a href="/projects/image_processing">
-      <div
-        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
-      >
-        <div class="w-full">
-          <img
-            class="object-cover object-left-top w-full aspect-[3/2]"
-            src="/assets/projects/processing_overview.png"
-            alt="Image for Image Proccessing"
-          />
-        </div>
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2 leading-6">Image Proccessing</div>
-          <p>Compilation of random CV + image processing projects</p>
-        </div>
-      </div>
-    </a>
-  
-    <a href="/projects/frc_ftc">
-      <div
-        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
-      >
-        <div class="w-full">
-          <img
-            class="object-cover object-left-top w-full aspect-[3/2]"
-            src="/assets/projects/FRC_overview.png"
-            alt="Image for FRC 3501 / FTC 16533"
-          />
-        </div>
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2 leading-6">FRC 3501 / FTC 16533</div>
-          <p>Mechanical Design and Manufacturing</p>
+          <div class="font-bold text-xl mb-2 leading-6">Purdue DataFest 2024</div>
+          <p>Best in Show &amp; Use of Outside Data</p>
         </div>
       </div>
     </a>
@@ -363,59 +394,289 @@
     
   </fieldset>
 
-    <!-- <Education/> -->
+
+    <!-- Hackathons & Competitions -->
     
   <fieldset
     class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
   >
     <legend>
-      <h6 class="text-lg mx-2 font-mono italic">~/education.md</h6>
+      <h6 class="text-lg mx-2 font-mono italic">Hackathons &amp; Competitions</h6>
     </legend>
     
-      <article>
-        <h4>MS in CS @ Purdue</h4>
-        <ul>
-          <li>GPA: 4.00</li>
-          <li>Fall 2024 - Spring 2026</li>
-        </ul>
-        <h4>BS in CS, BS in Math @ Purdue</h4>
-        <ul>
-          <li>GPA: 4.00</li>
-          <li>Fall 2022 - Spring 2025</li>
-        </ul>
-        <h4>Dual Enrolling HS Student @ De Anza College </h4>
-        <ul>
-          <li>GPA: 4.00</li>
-          <li>Fall 2021 - Spring 2022 </li>
-        </ul>
-      </article>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+  
+    <a href="/Hackathons &amp; Competitions/fliq">
+      <div
+        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
+      >
+        <div class="w-full">
+          <img
+            class="object-cover object-left-top w-full aspect-[3/2]"
+            src="assets/projects/Hackathons/FLIQ2025/cat.png"
+            alt="Image for FLIQ Hackathon "
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 leading-6">FLIQ Hackathon </div>
+          <p>Challenge Co-Designer</p>
+        </div>
+      </div>
+    </a>
+  
+    <a href="/Hackathons &amp; Competitions/ImcPros3">
+      <div
+        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
+      >
+        <div class="w-full">
+          <img
+            class="object-cover object-left-top w-full aspect-[3/2]"
+            src="assets/projects/Hackathons/imc3/overviewIMC.png"
+            alt="Image for IMC - Prosperity 3"
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 leading-6">IMC - Prosperity 3</div>
+          <p>Team: Smart Short</p>
+        </div>
+      </div>
+    </a>
+  
+    <a href="/Hackathons &amp; Competitions/TreeHack2025">
+      <div
+        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
+      >
+        <div class="w-full">
+          <img
+            class="object-cover object-left-top w-full aspect-[3/2]"
+            src="assets/projects/Hackathons/TreeHack2025.jpeg"
+            alt="Image for TradeLingo"
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 leading-6">TradeLingo</div>
+          <p>Stanford TreeHack 2025</p>
+        </div>
+      </div>
+    </a>
+  
+    <a href="/Hackathons &amp; Competitions/BoilerMake_XI">
+      <div
+        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
+      >
+        <div class="w-full">
+          <img
+            class="object-cover object-left-top w-full aspect-[3/2]"
+            src="assets/projects/Hackathons/BMK11/vr.png"
+            alt="Image for RescueVR"
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 leading-6">RescueVR</div>
+          <p>BoilerMake XI</p>
+        </div>
+      </div>
+    </a>
+  
+    <a href="/Hackathons &amp; Competitions/BoilerMake_X">
+      <div
+        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
+      >
+        <div class="w-full">
+          <img
+            class="object-cover object-left-top w-full aspect-[3/2]"
+            src="assets/projects/Hackathons/BMK10/sudoku.png"
+            alt="Image for Sudoku Intelligence"
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 leading-6">Sudoku Intelligence</div>
+          <p>BoilerMake X</p>
+        </div>
+      </div>
+    </a>
+  
+</div>
+    
+  </fieldset>
+
+
+    <!-- School Project-->
+    
+  <fieldset
+    class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
+  >
+    <legend>
+      <h6 class="text-lg mx-2 font-mono italic">Academic Projects</h6>
+    </legend>
+    
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+  
+    <a href="/Academic Project/CS573">
+      <div
+        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
+      >
+        <div class="w-full">
+          <img
+            class="object-cover object-left-top w-full aspect-[3/2]"
+            src="assets/projects/Academic/573.png"
+            alt="Image for Predicting Students’ Academic Success"
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 leading-6">Predicting Students’ Academic Success</div>
+          <p>CS 573 - Data Mining</p>
+        </div>
+      </div>
+    </a>
+  
+    <a href="/Academic Project/CS571">
+      <div
+        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
+      >
+        <div class="w-full">
+          <img
+            class="object-cover object-left-top w-full aspect-[3/2]"
+            src="assets/projects/Academic/571.png"
+            alt="Image for MCTS Enhancements in m,n,k Games"
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 leading-6">MCTS Enhancements in m,n,k Games</div>
+          <p>CS 571 - Artificial Intelligence</p>
+        </div>
+      </div>
+    </a>
+  
+    <a href="/Academic Project/STAT512">
+      <div
+        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
+      >
+        <div class="w-full">
+          <img
+            class="object-cover object-left-top w-full aspect-[3/2]"
+            src="assets/projects/Academic/512.png"
+            alt="Image for MPG Forecast Based on Vehicle Specs"
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 leading-6">MPG Forecast Based on Vehicle Specs</div>
+          <p>STAT 512 - Regression Analysis</p>
+        </div>
+      </div>
+    </a>
+  
+</div>
     
   </fieldset>
 
     
+    <!-- Selected Projects -->
+    
   <fieldset
     class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
   >
     <legend>
-      <h6 class="text-lg mx-2 font-mono italic">~/friends.md</h6>
+      <h6 class="text-lg mx-2 font-mono italic">Selected Projects</h6>
     </legend>
     
-      <article>
-        Cool friends working on cool stuff
-        <ul>
-          <li><a href="https://arefmalek.com/">Aref Malek</a></li>
-          <li><a href="https://sagarpatil.me/">Sagar Patil </a> [massive shoutout for this website template] </li>
-          <li><a href="https://coleroberts.dev/index">Cole Roberts</a></li>
-          <li><a href="https://harmya.me/">Harmya Bhatt</a></li>
-          <li><a href="https://bhavesh.dev/about">Bhavesh</a></li>
-          <li><a href="https://www.zietek.dev/">Jacob Zietek</a></li>
-          <li><a href="https://jinen.setpal.net/">Jinen Setpal</a></li>
-          <li><a href="https://mikail-khan.com/">Mikail Khan</a></li>
-          <li><a href="https://wade.dev/">Nicholas Wade</a></li>
-        </ul>
-      </article>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+  
+    <a href="/Selected Projects/AlgorithmTemplate">
+      <div
+        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
+      >
+        <div class="w-full">
+          <img
+            class="object-cover object-left-top w-full aspect-[3/2]"
+            src="assets/projects/Personal/AlgoTemplate/image.png"
+            alt="Image for Algorithm Template"
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 leading-6">Algorithm Template</div>
+          <p></p>
+        </div>
+      </div>
+    </a>
+  
+    <a href="/Selected Projects/MRI_Morph">
+      <div
+        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
+      >
+        <div class="w-full">
+          <img
+            class="object-cover object-left-top w-full aspect-[3/2]"
+            src="assets/projects/Personal/MRIMorph/MRI_IMG.png"
+            alt="Image for MRI Morph"
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 leading-6">MRI Morph</div>
+          <p></p>
+        </div>
+      </div>
+    </a>
+  
+    <a href="/Selected Projects/DRP">
+      <div
+        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
+      >
+        <div class="w-full">
+          <img
+            class="object-cover object-left-top w-full aspect-[3/2]"
+            src="assets/projects/Personal/DRP/mapperGraph.png"
+            alt="Image for Direct Reading Program"
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 leading-6">Direct Reading Program</div>
+          <p></p>
+        </div>
+      </div>
+    </a>
+  
+    <a href="/Selected Projects/MuDalle">
+      <div
+        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
+      >
+        <div class="w-full">
+          <img
+            class="object-cover object-left-top w-full aspect-[3/2]"
+            src="assets/projects/Personal/MyDalle/myDalle_output.png"
+            alt="Image for MyDalle"
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 leading-6">MyDalle</div>
+          <p></p>
+        </div>
+      </div>
+    </a>
+  
+    <a href="/Selected Projects/MemoApp">
+      <div
+        class="rounded-none outline outline-1 outline-black dark:outline-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black overflow-hidden me-[6px] mb-[6px] shadow-[5px_5px_0px_1px_rgba(0,0,0,0.5)] dark:shadow-[5px_5px_0px_1px_rgba(255,255,255,0.25)]"
+      >
+        <div class="w-full">
+          <img
+            class="object-cover object-left-top w-full aspect-[3/2]"
+            src="assets/projects/Personal/MemoApp/Screenshot 2025-06-06 at 4.23.16 PM.png"
+            alt="Image for MemoApp"
+          />
+        </div>
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 leading-6">MemoApp</div>
+          <p></p>
+        </div>
+      </div>
+    </a>
+  
+</div>
     
   </fieldset>
+
+    
 
     <!-- <Coursework /> -->
     
@@ -423,59 +684,85 @@
     class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
   >
     <legend>
-      <h6 class="text-lg mx-2 font-mono italic">~/courses.md</h6>
+      <h6 class="text-lg mx-2 font-mono italic">Coursework</h6>
     </legend>
     
-      <article>
-        <h4>Fall 2024 @ Purdue</h4>
-        <ul>
-          <li>CS 57300 - Machine Learning</li>
-          <li>MA 42500 - Complex Analysis</li>
-          <li>CS 47100 - Artificial Intelligence</li>
-          <li>MA 41600 - Probability</li>
-        </ul>
-        <h4>Spring 2024 @ Purdue</h4>
-        <ul>
-          <li>CS 55800 - Robotic Learning</li>
-          <li>CS 38100 - Analysis of Algorithms</li>
-          <li>CS 25200 - Systems Programming</li>
-        </ul>
-        <h4>Fall 2023 @ Purdue</h4>
-        <ul>
-          <li>MA 45300 - Abstract Algebra </li>
-          <li>PHYS 27200 - Physics E&M</li>
-          <li>CS 25100 - Data Structures and Algorithms</li>
-          <li>CS 25000 - Computer Architecture</li>
-        </ul>
-        <h4>Spring 2023 @ Purdue</h4>
-        <ul>
-          <li>MA 34100 - Real Analysis</li>
-          <li>MA 35301 - Lenear Algebra II</li>
-          <li>CS 18200 - Discrete Math</li>
-          <li>CS 24000 - C Programming</li>
-        </ul>
-        <h4>Fall 2022 @ Purdue</h4>
-        <ul>
-          <li>MA 35100 - Elementary Linear Algebra</li>
-          <li>STAT 35000 - Statistics</li>
-          <li>MA 18000 - Object-Oriented Programming</li>
-        </ul>
-        <h4>Winter 2022 @ De Anza </h4>
-        <ul>
-          <li>MATH 2A - Differential Equations</li>
-          <li>CIS 21JA - x86 Programming and Computer Architecture</li>
-          <li>CIS 41A - Python Programming</li>
-        </ul>
-        <h4>Fall 2021 @ De Anza </h4>
-        <ul>
-          <li>MATH 1D - Multivariable Calculus</li>
-          <li>CIS 22B - Programming Methodologies in C++</li>
-          <li>Chem 1A - General Chemistry</li>
-        </ul>
-      </article>
+    <article>
+      <h4>2025 Fall - 2026 Spring</h4>
+      <ul>
+        <li>Machine Learning for Data Science</li>
+        <li>Statistics for Data Science</li>
+      </ul>
+
+      <h4>2024 Fall - 2025 Spring</h4>
+      <ul>
+       <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=CS&cnbr=58000&enhanced=Y" target="_blank" style="text-decoration: none;">CS 58000 - Algorithm Design, Analysis, And Implementation</a></li>
+       <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=CS&cnbr=57800&enhanced=Y" target="_blank" style="text-decoration: none;">CS 57800 - Statistical Machine Learning</a></li>
+       <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=CS&cnbr=57300&enhanced=Y" target="_blank" style="text-decoration: none;">CS 57300 - Data Mining</a></li>
+       <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=CS&cnbr=57100&enhanced=Y" target="_blank" style="text-decoration: none;">CS 57100 - Artificial Intelligence</a></li>
+       <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=CS&cnbr=44000&enhanced=Y" target="_blank" style="text-decoration: none;">CS 44000 - Large Scale Data Analytics</a></li>
+       <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=CS&cnbr=25200&enhanced=Y" target="_blank" style="text-decoration: none;">CS 25200 - Systems Programming</a></li>
+       <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=MA&cnbr=59500&enhanced=Y" target="_blank" style="text-decoration: none;">MA 59500 - Mathematics of Quantum Computing</a></li>
+      </ul>
+  
+      <h4>2023 Fall - 2024 Spring</h4>
+      <ul>
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=CS&cnbr=25100&enhanced=Y" target="_blank" style="text-decoration: none;">CS 25100 - Data Structures And Algorithms</a></li>
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=CS&cnbr=25000&enhanced=Y" target="_blank" style="text-decoration: none;">CS 25000 - Computer Architecture</a></li>
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=STAT&cnbr=51200&enhanced=Y" target="_blank" style="text-decoration: none;">STAT 51200 - Applied Regression Analysis</a></li>
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=MA&cnbr=36200&enhanced=Y" target="_blank" style="text-decoration: none;">MA 36200 - Topics In Vector Calculus</a></li>
+      </ul>
+      <h4>2022 Fall - 2023 Spring</h4>
+      <ul>
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=CS&cnbr=38003&enhanced=Y" target="_blank" style="text-decoration: none;">CS 38003 - Python Programming</a></li>
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=CS&cnbr=24000&enhanced=Y" target="_blank" style="text-decoration: none;">CS 24000 - Programming In C</a></li>
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=CS&cnbr=18200&enhanced=Y" target="_blank" style="text-decoration: none;">CS 18200 - Discrete Mathematics</a></li>
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=CS&cnbr=18000&enhanced=Y" target="_blank" style="text-decoration: none;">CS 18000 - Problem Solving And Object-Oriented Programming</a></li>
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=CS&cnbr=17600&enhanced=Y" target="_blank" style="text-decoration: none;">CS 17600 - Data Engineering</a></li>
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=STAT&cnbr=41700&enhanced=Y" target="_blank" style="text-decoration: none;">STAT 41700 - Statistical Theory</a></li>
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=STAT&cnbr=41600&enhanced=Y" target="_blank" style="text-decoration: none;">STAT 41600 - Probability</a></li>
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=STAT&cnbr=35500&enhanced=Y" target="_blank" style="text-decoration: none;">STAT 35500 - Statistics For Data Science</a></li>  
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=MA&cnbr=35100&enhanced=Y" target="_blank" style="text-decoration: none;">MA 35100 - Elementary Linear Algebra</a></li>
+        <li> <a href="https://selfservice.mypurdue.purdue.edu/prod/bzwsrch.p_catalog_detail?term=202510&subject=MA&cnbr=26100&enhanced=Y" target="_blank" style="text-decoration: none;">MA 26100 - Multivariate Calculus</a></li>
+      </ul>
+    </article>
+  
+  </fieldset>
+
+  
+
+    
+  <fieldset
+    class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
+  >
+    <legend>
+      <h6 class="text-lg mx-2 font-mono italic">Friends &amp; Mentors</h6>
+    </legend>
+    
+    <article>
+      <h4>These are the friends and mentors who have brought joy, inspiration, and motivation to my journey!</h4>
+      <ul>
+        <li><a href="https://abuynits.github.io/" target="_blank">Alexiy Buynitsky</a> - Incoming MS student in CSE <span>&#64;</span> UCSD</li>
+        <li><a href="https://www.linkedin.com/in/dayoonsuh/" target="_blank">Dayoon Suh</a> - Incoming MSE Student <span>&#64;</span> University of Pennsylvania</li>
+        <li><a href="https://www.linkedin.com/in/helena-brittain/" target="_blank">Helena Brittain</a> - Physics <span>&#64;</span> Harvard</li>
+        <li><a href="https://www.linkedin.com/in/jisoo-kim-1891991a9/" target="_blank">Jisoo Kim</a> - SWE <span>&#64;</span> Lockheed Martin Space</li>
+        <li><a href="https://people.csail.mit.edu/koosaga/" target="_blank">Jaehyun Koo</a> - PhD student <span>&#64;</span> MIT</li>
+        <li><a href="https://shy-plants.tistory.com/" target="_blank">Jinu Chae</a> - Researcher <span>&#64;</span> WHATs LAB</li>
+        <li><a href="https://www.linkedin.com/in/juyeon-cho/" target="_blank">Juyeon Cho</a> - Improvement Engineer | Duke Fuqua MQM 23'</li>
+        <li><a href="https://www.linkedin.com/in/lukas-rapp/" target="_blank">Lukas Rapp</a> - PhD student <span>&#64;</span> MIT</li>
+        <li><a href="https://www.linkedin.com/in/quynhanhnguyen24/" target="_blank">Quynh Anh Nguyen</a> - Mathematics & Computer Science <span>&#64;</span> Stanford</li>
+        <li><a href="https://rkhera04.github.io/" target="_blank">Raj Khera</a> - Computer Science & Data Science <span>&#64;</span> Purdue</li>
+        <li><a href="https://www.linkedin.com/in/russell-yang1/" target="_blank">Russell Yang</a> - Master Student in CSE <span>&#64;</span> Harvard</li>
+        <li><a href="https://www.linkedin.com/in/sammy1song/" target="_blank">Sammy (Saekyul) Song</a> - Software Engineer <span>&#64;</span> Meta </li>
+        <li><a href="https://www.linkedin.com/in/lopez-santiago/" target="_blank">Santiago Lopez</a> - Incoming Physics PhD student <span>&#64;</span> Harvard</li>
+        <li><a href="https://www.linkedin.com/in/thetnsoe/" target="_blank">Thet Naing Soe</a> - Computer Science & Electrical Engineering <span>&#64;</span> Purdue</li>
+      </ul>
+    </article>
     
   </fieldset>
 
+    
+    
   </div>
 
     <div class="h-3"></div>
@@ -484,16 +771,12 @@
     class="border border-solid border-black dark:border-white min-w-0 p-4 pt-2"
   >
     <legend>
-      <h6 class="text-lg mx-2 font-mono italic">cat README.md</h6>
+      <h6 class="text-lg mx-2 font-mono italic">Note</h6>
     </legend>
     
       <div class="flex flex-row justify-between">
         <span class="prose dark:prose-invert">
-          Source code on
-          <a href="https://github.com/sagarreddypatil/portfolio-website">
-            GitHub
-          </a>
-           thanks to  <a href="https://sagarpatil.me/">Sagar Patil</a> 
+           Thanks to  <a href="https://sagarpatil.me/" target="_blank" >Sagar Patil</a> and  <a href = "https://abuynits.github.io/" target="_blank">Alexiy Buynitsky</a>
         </span>
       </div>
     

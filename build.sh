@@ -10,12 +10,6 @@ html() {
     python src/build.py --output dist --no-clean
 }
 
-# static() {
-#     for ent in public/*; do
-#         echo "Copying $ent to dist/${ent##*/}"
-#         cp -r $ent dist/${ent##*/}
-#     done
-# }
 
 static() {
     echo "Copying all static files recursively"
