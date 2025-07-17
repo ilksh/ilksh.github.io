@@ -13,7 +13,7 @@ html() {
 
 static() {
     echo "Copying all static files recursively"
-    cp -a public/. dist/
+    cp -a public/. docs/
 }
 
 
