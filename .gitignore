@@ -195,7 +195,6 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
 
 node_modules/
-dist/
-node_modules/
+# dist/
 .DS_Store
-dist/
+# dist/
