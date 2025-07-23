@@ -38,3 +38,6 @@ tw &
 html_static &
 
 wait
+
+echo "Copying built files from dist to docs"
+cp -a dist/. docs/
