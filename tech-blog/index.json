@@ -13,6 +13,19 @@
           }
         ]
       },
+      "DOCKER": {
+        "icon": "+",
+        "posts": [
+          {
+            "slug": "test",
+            "title": "A",
+            "category": "DOCKER",
+            "date": "2024.05.10",
+            "readtime": "10 min",
+            "color": 8
+          }
+        ]
+      },
       "DevOps": {
         "icon": "🐳",
         "posts": [

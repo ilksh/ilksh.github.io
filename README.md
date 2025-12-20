@@ -73,6 +73,7 @@ cp _template.html [slug].html
     }
   }
 }
+```
 
 # Local Server Run
 
