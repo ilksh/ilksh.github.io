@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library of Thoughts</title>
-    <meta name="description" content="A personal library of tech writings and book notes">
+    <meta name="description" content="A personal library of tech writings, courses, and book notes">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -17,9 +17,8 @@
             <h1 class="hero-title">Library</h1>
             <p class="hero-subtitle">of Thoughts & Code</p>
             <p class="hero-description">
-                A personal collection of knowledge across two shelves.
-                One holds stories of technology and code,
-                the other preserves wisdom discovered in books.
+                A personal collection of knowledge across three shelves.
+                Tech writings, academic courses, and book notes.
                 Which shelf would you like to explore?
             </p>
 
@@ -34,19 +33,33 @@
                                 <div class="mini-book-front" style="background: linear-gradient(160deg, #5c1e1e, #2d0f0f);">Node</div>
                                 <div class="mini-book-front" style="background: linear-gradient(160deg, #4a3520, #251a0f);">Docker</div>
                             </div>
-                            <div class="mini-shelf-row">
-                                <div class="mini-book-front" style="background: linear-gradient(160deg, #1e4a4a, #0f2525);">TS</div>
-                                <div class="mini-book-front" style="background: linear-gradient(160deg, #4a1e4a, #250f25);">API</div>
-                                <div class="mini-book-front" style="background: linear-gradient(160deg, #1e3a5f, #0d1f35);">Next</div>
-                            </div>
                         </div>
                         <h3 class="shelf-label">Tech Blog</h3>
                         <p class="shelf-description">
-                            Development experiences,<br>
-                            technical explorations,<br>
-                            and stories in code
+                            Development experiences<br>
+                            and technical explorations
                         </p>
                         <span class="shelf-count" id="tech-count">EXPLORE →</span>
+                    </div>
+                </a>
+
+                <!-- Courses Card -->
+                <a href="courses/" class="shelf-card">
+                    <div class="shelf-card-inner">
+                        <div class="mini-shelf">
+                            <div class="mini-shelf-row">
+                                <div class="mini-book-front" style="background: linear-gradient(160deg, #1e4a4a, #0f2525);">ML</div>
+                                <div class="mini-book-front" style="background: linear-gradient(160deg, #4a1e4a, #250f25);">Math</div>
+                                <div class="mini-book-front" style="background: linear-gradient(160deg, #1e3a5f, #0d1f35);">CS</div>
+                                <div class="mini-book-front" style="background: linear-gradient(160deg, #5c1e1e, #2d0f0f);">Stats</div>
+                            </div>
+                        </div>
+                        <h3 class="shelf-label">Courses</h3>
+                        <p class="shelf-description">
+                            Academic journey<br>
+                            and course notes
+                        </p>
+                        <span class="shelf-count" id="course-count">EXPLORE →</span>
                     </div>
                 </a>
 
@@ -60,17 +73,11 @@
                                 <div class="mini-book" style="height: 52px; width: 36px; background: linear-gradient(135deg, #4a1c1c, #2d1111);"></div>
                                 <div class="mini-book" style="height: 56px; width: 34px; background: linear-gradient(135deg, #1c2a4a, #0f1a2d);"></div>
                             </div>
-                            <div class="mini-shelf-row">
-                                <div class="mini-book" style="height: 54px; width: 37px; background: linear-gradient(135deg, #4a3f1c, #2d2711);"></div>
-                                <div class="mini-book" style="height: 50px; width: 35px; background: linear-gradient(135deg, #1c4a2a, #112d1a);"></div>
-                                <div class="mini-book" style="height: 57px; width: 36px; background: linear-gradient(135deg, #4a1c4a, #2d112d);"></div>
-                            </div>
                         </div>
                         <h3 class="shelf-label">Book Notes</h3>
                         <p class="shelf-description">
-                            Records of books read,<br>
-                            and insights discovered<br>
-                            within their pages
+                            Insights discovered<br>
+                            within pages
                         </p>
                         <span class="shelf-count" id="book-count">EXPLORE →</span>
                     </div>
@@ -87,41 +94,37 @@
     </section>
 
     <script>
-        // Load counts from index files
         async function loadCounts() {
             try {
                 const techResponse = await fetch('tech-blog/index.json');
                 if (techResponse.ok) {
                     const techData = await techResponse.json();
-                    let techCount = 0;
-                    let techCategories = Object.keys(techData.categories || {}).length;
-                    Object.values(techData.categories || {}).forEach(cat => {
-                        techCount += (cat.posts || []).length;
-                    });
-                    document.getElementById('tech-count').textContent = 
-                        `${techCategories} CATEGORIES · ${techCount} ARTICLES`;
+                    let count = 0;
+                    Object.values(techData.categories || {}).forEach(cat => count += (cat.posts || []).length);
+                    document.getElementById('tech-count').textContent = `${count} ARTICLES`;
                 }
-            } catch (e) {
-                document.getElementById('tech-count').textContent = 'EXPLORE →';
-            }
+            } catch (e) {}
+
+            try {
+                const courseResponse = await fetch('courses/index.json');
+                if (courseResponse.ok) {
+                    const courseData = await courseResponse.json();
+                    let count = 0;
+                    Object.values(courseData.categories || {}).forEach(cat => count += (cat.courses || []).length);
+                    document.getElementById('course-count').textContent = `${count} COURSES`;
+                }
+            } catch (e) {}
 
             try {
                 const bookResponse = await fetch('book-notes/index.json');
                 if (bookResponse.ok) {
                     const bookData = await bookResponse.json();
-                    let bookCount = 0;
-                    let bookCategories = Object.keys(bookData.categories || {}).length;
-                    Object.values(bookData.categories || {}).forEach(cat => {
-                        bookCount += (cat.books || []).length;
-                    });
-                    document.getElementById('book-count').textContent = 
-                        `${bookCategories} CATEGORIES · ${bookCount} BOOKS`;
+                    let count = 0;
+                    Object.values(bookData.categories || {}).forEach(cat => count += (cat.books || []).length);
+                    document.getElementById('book-count').textContent = `${count} BOOKS`;
                 }
-            } catch (e) {
-                document.getElementById('book-count').textContent = 'EXPLORE →';
-            }
+            } catch (e) {}
         }
-
         loadCounts();
     </script>
 </body>

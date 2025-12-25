@@ -140,6 +140,49 @@ function renderBookShelves(data, container) {
     });
 }
 
+// ==================== RENDER COURSE SHELVES ====================
+function renderCourseShelves(data, container) {
+    container.innerHTML = '';
+    
+    Object.entries(data.categories).forEach(([category, categoryData]) => {
+        const section = document.createElement('div');
+        section.className = 'category-section';
+        section.dataset.category = category;
+        
+        const coursesHTML = categoryData.courses.map(course => `
+            <a href="${course.slug}.html" 
+               class="book-front book-tech-${course.color || 1}" 
+               data-title="${course.title.toLowerCase()}" 
+               data-id="${course.slug}">
+                <div class="book-front-cover">
+                    <span class="book-front-category">${course.category}</span>
+                    <h3 class="book-front-title">${course.title}</h3>
+                    <div class="book-front-meta">
+                        <span class="book-front-date">${course.semester}</span>
+                    </div>
+                </div>
+            </a>
+        `).join('');
+
+        section.innerHTML = `
+            <div class="category-header">
+                <div class="category-icon">${categoryData.icon || '📚'}</div>
+                <h3 class="category-title">${category}</h3>
+                <span class="category-count">${categoryData.courses.length} COURSES</span>
+            </div>
+            <div class="bookshelf">
+                <div class="shelf-top-frame"></div>
+                <div class="shelf-row">
+                    ${coursesHTML}
+                    <div class="shelf-plank"></div>
+                </div>
+                <div class="shelf-bottom-frame"></div>
+            </div>
+        `;
+        container.appendChild(section);
+    });
+}
+
 // ==================== SEARCH FUNCTIONALITY ====================
 function setupSearch(inputId, clearId, containerId, resultsId, noResultsId, itemSelector) {
     const input = document.getElementById(inputId);
@@ -248,6 +291,16 @@ async function initBookNotesList() {
     setupSearch('book-search', 'book-search-clear', 'book-shelves', 'book-results-count', 'book-no-results', '.book-with-cover');
 }
 
+// Courses List Page
+async function initCoursesList() {
+    const container = document.getElementById('course-shelves');
+    if (!container) return;
+    
+    const data = await loadIndex('index.json');
+    renderCourseShelves(data, container);
+    setupSearch('course-search', 'course-search-clear', 'course-shelves', 'course-results-count', 'course-no-results', '.book-front');
+}
+
 // Article Page (Tech Blog)
 async function initTechArticle(slug) {
     const contentElement = document.getElementById('article-content');
@@ -319,13 +372,41 @@ async function initBookArticle(slug) {
     }
 }
 
+// Article Page (Courses)
+async function initCourseArticle(slug) {
+    const contentElement = document.getElementById('article-content');
+    if (!contentElement) return;
+    
+    const data = await loadArticle(slug, 'posts');
+    
+    if (data) {
+        if (data.frontmatter.title) {
+            document.getElementById('article-title').textContent = data.frontmatter.title;
+            document.title = `${data.frontmatter.title} | Courses`;
+        }
+        if (data.frontmatter.category) {
+            document.getElementById('article-category').textContent = data.frontmatter.category;
+        }
+        if (data.frontmatter.semester) {
+            document.getElementById('article-date').textContent = data.frontmatter.semester;
+        }
+        
+        renderArticle(data, contentElement);
+    } else {
+        contentElement.innerHTML = '<p>Course not found.</p>';
+    }
+}
+
 // Export for global use
 window.LibraryBlog = {
     initTechBlogList,
     initBookNotesList,
+    initCoursesList,
     initTechArticle,
     initBookArticle,
+    initCourseArticle,
     loadIndex,
     renderTechShelves,
-    renderBookShelves
+    renderBookShelves,
+    renderCourseShelves
 };

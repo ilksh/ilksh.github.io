@@ -178,19 +178,20 @@ body::after {
 /* ==================== SHELF CARDS ==================== */
 .bookshelf-selection {
     display: flex;
-    gap: 5rem;
+    gap: 3rem;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     animation: fadeInUp 1.2s ease-out 0.6s both;
 }
 
 .shelf-card {
-    width: 340px;
-    height: 450px;
+    width: 300px;
+    height: 400px;
     position: relative;
     cursor: pointer;
     transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     text-decoration: none;
+    flex-shrink: 0;
 }
 
 .shelf-card:hover {

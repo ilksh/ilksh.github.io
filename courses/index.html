@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <section class="library">
+        <div class="library-header">
+            <a href="../" class="back-button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Library
+            </a>
+            <h1 class="library-title">Courses</h1>
+            <p class="library-subtitle">Academic Journey</p>
+        </div>
+
+        <div class="search-container">
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                </svg>
+                <input type="text" class="search-input" id="course-search" placeholder="Search by course name...">
+                <button class="search-clear" id="course-search-clear">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="search-results-count" id="course-results-count"></div>
+        </div>
+
+        <div class="bookshelf-container" id="course-shelves">
+            <div style="text-align: center; padding: 4rem; color: var(--text-muted);">Loading...</div>
+        </div>
+
+        <div class="no-results" id="course-no-results">
+            <div class="no-results-icon">🔍</div>
+            <div class="no-results-text">No results found</div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-ornament"></div>
+            <p class="footer-text">Crafted with curiosity and caffeine</p>
+        </footer>
+    </section>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            LibraryBlog.initCoursesList();
+        });
+    </script>
+</body>
+</html>
