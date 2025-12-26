@@ -4,6 +4,10 @@
  */
 
 // ==================== MARKDOWN PARSER ====================
+marked.setOptions({
+    langPrefix: 'language-' // ```cpp → <code class="language-cpp">
+});
+
 function parseMarkdownWithFrontmatter(text) {
     const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
     const match = text.match(frontmatterRegex);
@@ -252,8 +256,13 @@ async function loadArticle(slug, postsPath) {
 function renderArticle(data, contentElement) {
     const html = marked.parse(data.content);
     contentElement.innerHTML = html;
-    
-    // Render KaTeX math if available
+
+    // 🔥 반드시 추가 (핵심)
+    if (window.Prism) {
+        Prism.highlightAllUnder(contentElement);
+    }
+
+    // KaTeX (기존 코드 유지)
     if (typeof renderMathInElement !== 'undefined') {
         setTimeout(() => {
             renderMathInElement(contentElement, {
@@ -268,6 +277,7 @@ function renderArticle(data, contentElement) {
         }, 50);
     }
 }
+
 
 // ==================== INIT FUNCTIONS ====================
 

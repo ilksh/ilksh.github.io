@@ -80,3 +80,12 @@ cp _template.html [slug].html
 ``` bash
 python3 -m http.server 8000
 ```
+
+# copy all
+
+```bash
+for f in *.html; do
+  [ "$f" = "_template.html" ] && continue
+  cp _template.html "$f"
+done
+```

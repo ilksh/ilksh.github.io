@@ -919,3 +919,71 @@ body::after {
     .article-container { padding: 0 1rem; }
     .category-header { padding-left: 1rem; }
 }
+
+/* ================= Prism.js Fix ================= */
+/* Prism 토큰 색상이 전역 code 스타일에 의해 덮어쓰이지 않도록 */
+pre[class*="language-"] code {
+    color: inherit;
+  }
+  
+  /* 토큰별 색상을 Prism이 결정하도록 허용 */
+  pre[class*="language-"] .token {
+    color: unset;
+  }
+  
+  /* 혹시 전역 code 스타일이 background를 덮는 경우 방지 */
+  pre[class*="language-"] code {
+    background: none;
+  }
+
+/* ===== Prism force colors (only inside article) ===== */
+#article-content pre[class*="language-"] .token.comment { color: #6a9955 !important; }
+#article-content pre[class*="language-"] .token.prolog,
+#article-content pre[class*="language-"] .token.doctype,
+#article-content pre[class*="language-"] .token.cdata { color: #6a9955 !important; }
+
+#article-content pre[class*="language-"] .token.punctuation { color: #d4d4d4 !important; }
+#article-content pre[class*="language-"] .token.property,
+#article-content pre[class*="language-"] .token.tag,
+#article-content pre[class*="language-"] .token.constant,
+#article-content pre[class*="language-"] .token.symbol,
+#article-content pre[class*="language-"] .token.deleted { color: #9cdcfe !important; }
+
+#article-content pre[class*="language-"] .token.boolean,
+#article-content pre[class*="language-"] .token.number { color: #b5cea8 !important; }
+
+#article-content pre[class*="language-"] .token.selector,
+#article-content pre[class*="language-"] .token.attr-name,
+#article-content pre[class*="language-"] .token.string,
+#article-content pre[class*="language-"] .token.char,
+#article-content pre[class*="language-"] .token.builtin,
+#article-content pre[class*="language-"] .token.inserted { color: #ce9178 !important; }
+
+#article-content pre[class*="language-"] .token.operator,
+#article-content pre[class*="language-"] .token.entity,
+#article-content pre[class*="language-"] .token.url { color: #d4d4d4 !important; }
+
+#article-content pre[class*="language-"] .token.atrule,
+#article-content pre[class*="language-"] .token.attr-value,
+#article-content pre[class*="language-"] .token.keyword { color: #c586c0 !important; }
+
+#article-content pre[class*="language-"] .token.function,
+#article-content pre[class*="language-"] .token.class-name { color: #dcdcaa !important; }
+
+#article-content pre[class*="language-"] .token.regex,
+#article-content pre[class*="language-"] .token.important,
+#article-content pre[class*="language-"] .token.variable { color: #d16969 !important; }
+
+/* === Library page width constraint (fix) === */
+.library-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* === Courses page header alignment === */
+.library-hero {
+    text-align: center;
+  }
+  
+
+  
