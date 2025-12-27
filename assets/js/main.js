@@ -242,15 +242,20 @@ function setupSearch(inputId, clearId, containerId, resultsId, noResultsId, item
 // ==================== LOAD ARTICLE ====================
 async function loadArticle(slug, postsPath) {
     try {
-        const response = await fetch(`${postsPath}/${slug}.md`);
-        if (!response.ok) throw new Error('Article not found');
-        const text = await response.text();
-        return parseMarkdownWithFrontmatter(text);
+      // slug가 "html/xxx" 형태일 수 있으므로 마지막 조각만 사용
+      const mdSlug = slug.split('/').pop();
+  
+      const response = await fetch(`${postsPath}/${mdSlug}.md`);
+      if (!response.ok) throw new Error('Article not found');
+  
+      const text = await response.text();
+      return parseMarkdownWithFrontmatter(text);
     } catch (error) {
-        console.error('Error loading article:', error);
-        return null;
+      console.error('Error loading article:', error);
+      return null;
     }
-}
+  }
+  
 
 // ==================== RENDER ARTICLE ====================
 function renderArticle(data, contentElement) {
@@ -316,7 +321,7 @@ async function initTechArticle(slug) {
     const contentElement = document.getElementById('article-content');
     if (!contentElement) return;
     
-    const data = await loadArticle(slug, 'posts');
+    const data = await loadArticle(slug, '../posts');
     
     if (data) {
         if (data.frontmatter.title) {
@@ -344,7 +349,7 @@ async function initBookArticle(slug) {
     const contentElement = document.getElementById('article-content');
     if (!contentElement) return;
     
-    const data = await loadArticle(slug, 'posts');
+    const data = await loadArticle(slug, '../posts');
     
     if (data) {
         if (data.frontmatter.title) {
@@ -387,8 +392,8 @@ async function initCourseArticle(slug) {
     const contentElement = document.getElementById('article-content');
     if (!contentElement) return;
     
-    const data = await loadArticle(slug, 'posts');
-    
+    const data = await loadArticle(slug, '../posts');
+
     if (data) {
         if (data.frontmatter.title) {
             document.getElementById('article-title').textContent = data.frontmatter.title;

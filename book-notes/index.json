@@ -4,7 +4,7 @@
         "icon": "🎯",
         "books": [
           {
-            "slug": "atomic-habits",
+            "slug": "html/atomic-habits",
             "title": "Atomic Habits",
             "author": "James Clear",
             "cover": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop",
@@ -17,7 +17,7 @@
         "icon": "💼",
         "books": [
           {
-            "slug": "zero-to-one",
+            "slug": "html/zero-to-one",
             "title": "Zero to One",
             "author": "Peter Thiel",
             "cover": "https://images.unsplash.com/photo-1589998059171-988d887df646?w=300&h=400&fit=crop",
@@ -30,7 +30,7 @@
         "icon": "🏛️",
         "books": [
           {
-            "slug": "meditations",
+            "slug": "html/meditations",
             "title": "Meditations",
             "author": "Marcus Aurelius",
             "cover": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=400&fit=crop",

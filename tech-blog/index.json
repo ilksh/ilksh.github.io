@@ -4,7 +4,7 @@
         "icon": "🎨",
         "posts": [
           {
-            "slug": "example-post",
+            "slug": "html/example-post",
             "title": "Example Post Title",
             "category": "REACT",
             "date": "2024.01.15",
@@ -17,7 +17,7 @@
         "icon": "+",
         "posts": [
           {
-            "slug": "test",
+            "slug": "html/test",
             "title": "A",
             "category": "DOCKER",
             "date": "2024.05.10",
@@ -30,7 +30,7 @@
         "icon": "🐳",
         "posts": [
           {
-            "slug": "docker-basics",
+            "slug": "html/docker-basics",
             "title": "Docker Getting Started",
             "category": "DOCKER",
             "date": "2024.03.20",
@@ -38,7 +38,7 @@
             "color": 5
           },
           {
-            "slug": "kubernetes-intro",
+            "slug": "html/kubernetes-intro",
             "title": "Kubernetes Introduction",
             "category": "K8S",
             "date": "2024.03.25",
