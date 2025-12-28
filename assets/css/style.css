@@ -986,4 +986,100 @@ pre[class*="language-"] code {
   }
   
 
+  /* ===== Code block copy button ===== */
+pre {
+    position: relative;
+  }
+  
+  .copy-code-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+  
+    padding: 4px 8px;
+    border-radius: 6px;
+  
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .copy-code-button:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: var(--text-main);
+  }
+  
+  .copy-code-button.copied {
+    color: #9fe870;
+    border-color: #9fe870;
+  }
+  
+  /* ===== Code Block Base ===== */
+pre {
+    position: relative; /* 🔥 copy 버튼 기준점 */
+    background: #1e1e1e; /* Prism tomorrow 안정 배경 */
+    border-radius: 10px;
+    padding: 1.5rem 1.5rem 1.25rem 1.5rem;
+    overflow: auto;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+  }
+  
+  pre code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  /* ===== Copy Code Button ===== */
+.copy-code-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  
+    background: rgba(255, 255, 255, 0.08);
+    color: #eaeaea;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+  
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+  
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease, background 0.15s ease;
+  }
+  
+  /* hover 시 나타나게 */
+  pre:hover .copy-code-button {
+    opacity: 1;
+  }
+  
+  .copy-code-button:hover {
+    background: rgba(255,255,255,0.18);
+  }
+  
+  /* 복사 완료 상태 */
+  .copy-code-button.copied {
+    color: #111;
+    background: #d4af37; /* gold */
+    border-color: #d4af37;
+  }
+  
+  /* Prism token override 안정화 */
+pre[class*="language-"] {
+    background: #1e1e1e !important;
+  }
+  
+  .token.comment { color: #6a9955; }
+  .token.keyword { color: #569cd6; }
+  .token.string  { color: #ce9178; }
+  .token.function{ color: #dcdcaa; }
+  .token.number  { color: #b5cea8; }
   

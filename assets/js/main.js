@@ -257,6 +257,33 @@ async function loadArticle(slug, postsPath) {
   }
   
 
+function addCopyButtons() {
+    document.querySelectorAll('pre code').forEach(codeBlock => {
+      const pre = codeBlock.parentElement;
+  
+      // 이미 버튼 있으면 중복 생성 방지
+      if (pre.querySelector('.copy-code-button')) return;
+  
+      const button = document.createElement('button');
+      button.className = 'copy-code-button';
+      button.textContent = 'Copy';
+  
+      button.addEventListener('click', () => {
+        navigator.clipboard.writeText(codeBlock.innerText);
+  
+        button.textContent = 'Copied!';
+        button.classList.add('copied');
+  
+        setTimeout(() => {
+          button.textContent = 'Copy';
+          button.classList.remove('copied');
+        }, 1200);
+      });
+  
+      pre.appendChild(button);
+    });
+  }
+
 // ==================== RENDER ARTICLE ====================
 function renderArticle(data, contentElement) {
     const html = marked.parse(data.content);
@@ -266,7 +293,9 @@ function renderArticle(data, contentElement) {
     if (window.Prism) {
         Prism.highlightAllUnder(contentElement);
     }
-
+    setTimeout(() => {
+        addCopyButtons();
+    }, 0);
     // KaTeX (기존 코드 유지)
     if (typeof renderMathInElement !== 'undefined') {
         setTimeout(() => {
@@ -281,6 +310,7 @@ function renderArticle(data, contentElement) {
             });
         }, 50);
     }
+    
 }
 
 
@@ -425,3 +455,5 @@ window.LibraryBlog = {
     renderBookShelves,
     renderCourseShelves
 };
+
+  
