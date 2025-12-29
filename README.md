@@ -88,3 +88,8 @@ for f in *.html; do
   cp ../_template.html "$f"
 done
 ```
+
+# copy specifically
+```bash
+cp courses/_template.html courses/html/bayesian-inference.html
+```
