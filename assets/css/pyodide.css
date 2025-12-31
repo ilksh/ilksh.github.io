@@ -1,0 +1,244 @@
+/* ===== Executable Python Code Block ===== */
+/* Matches the elegant dark aesthetic of the blog */
+
+.executable-code {
+    margin: 2.5rem 0;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.875rem 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.code-header .lang-label {
+    font-family: 'JetBrains Mono', 'Crimson Pro', monospace;
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Buttons */
+.code-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.code-buttons button {
+    padding: 0.5rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    background: transparent;
+}
+
+.code-buttons button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn-toggle {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-toggle:hover:not(:disabled) {
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-run {
+    color: #c9a961;
+    border-color: rgba(201, 169, 97, 0.3);
+}
+
+.btn-run:hover:not(:disabled) {
+    background: rgba(201, 169, 97, 0.1);
+    border-color: rgba(201, 169, 97, 0.5);
+    color: #d4b976;
+}
+
+/* Code Area */
+.code-wrapper {
+    max-height: 500px;
+    overflow: auto;
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+    opacity: 1;
+}
+
+.code-wrapper.collapsed {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.code-wrapper pre {
+    margin: 0;
+    padding: 1.5rem;
+    background: #0d0d0d;
+    overflow-x: auto;
+}
+
+.code-wrapper code {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    white-space: pre;
+}
+
+/* Scrollbar */
+.code-wrapper::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.code-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.code-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.code-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Output Area */
+.code-output {
+    display: none;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, 0.015);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    max-height: 280px;
+    overflow: auto;
+    transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+}
+
+/* 출력 접힘 상태 */
+.code-output.collapsed {
+    max-height: 0 !important;
+    padding: 0 1.5rem;
+    overflow: hidden;
+    opacity: 0;
+}
+
+/* 그래프가 있을 때 자동 확장 */
+.code-output.has-plot {
+    max-height: none;
+    padding: 1rem;
+}
+
+.code-output.has-plot.collapsed {
+    max-height: 0 !important;
+    padding: 0 1rem;
+}
+
+.code-output.has-plot img {
+    max-width: 100%;
+    display: block;
+    margin: 0.5rem auto 0;
+    border-radius: 4px;
+}
+
+.code-output pre {
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.code-output.success {
+    border-left: 2px solid rgba(201, 169, 97, 0.5);
+}
+
+.code-output.success pre {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.code-output.error {
+    border-left: 2px solid rgba(180, 80, 80, 0.6);
+}
+
+.code-output .error-text {
+    color: #c47070;
+}
+
+.code-output .loading {
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    font-family: 'Crimson Pro', serif;
+}
+
+/* Output scrollbar */
+.code-output::-webkit-scrollbar {
+    width: 4px;
+}
+
+.code-output::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.code-output::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+}
+
+/* Status Indicator */
+#pyodide-status {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.75rem 1.25rem;
+    background: #1a1a1a;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.85rem;
+    z-index: 9999;
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .executable-code {
+        margin: 2rem -1rem;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+    
+    .code-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .code-buttons button {
+        padding: 0.4rem 0.9rem;
+        font-size: 0.75rem;
+    }
+    
+    .code-wrapper pre {
+        padding: 1.25rem 1rem;
+    }
+}

@@ -3,10 +3,67 @@
  * Handles loading posts, rendering shelves, search, and article display
  */
 
+// ==================== EXECUTABLE CODE COUNTER ====================
+let executableCodeCounter = 0;
+
 // ==================== MARKDOWN PARSER ====================
 marked.setOptions({
     langPrefix: 'language-' // ```cpp → <code class="language-cpp">
 });
+
+// Custom renderer for {run} tag support
+const renderer = new marked.Renderer();
+
+renderer.code = function(codeObj, language) {
+    // marked.js 버전 호환: 객체 또는 문자열 처리
+    let code, lang;
+    if (typeof codeObj === 'object' && codeObj !== null) {
+        // 최신 marked.js (v5+)
+        code = codeObj.text || codeObj.raw || '';
+        lang = codeObj.lang || '';
+    } else {
+        // 구버전 marked.js
+        code = codeObj;
+        lang = language || '';
+    }
+    
+    // ```python {run} 형식 감지
+    const isExecutable = lang && lang.includes('{run}');
+    const actualLang = lang ? lang.replace('{run}', '').replace('{RUN}', '').trim() : '';
+    
+    if (isExecutable && actualLang === 'python') {
+        executableCodeCounter++;
+        const idx = executableCodeCounter;
+        
+        return `
+        <div class="executable-code">
+            <div class="code-header">
+                <span class="lang-label">Python</span>
+                <div class="code-buttons">
+                    <button class="btn-toggle" id="toggle-btn-${idx}" onclick="toggleCode('wrapper-${idx}', 'toggle-btn-${idx}')">Show Code</button>
+                    <button class="btn-toggle btn-output-toggle" id="output-toggle-btn-${idx}" onclick="toggleOutput('output-${idx}', 'output-toggle-btn-${idx}')" style="display:none;">Hide Output</button>
+                    <button class="btn-run" onclick="runPython('code-${idx}', 'output-${idx}')">Run</button>
+                </div>
+            </div>
+            <div class="code-wrapper collapsed" id="wrapper-${idx}">
+                <pre><code id="code-${idx}" class="language-python">${escapeHtml(code)}</code></pre>
+            </div>
+            <div class="code-output" id="output-${idx}"></div>
+        </div>`;
+    }
+    
+    // 일반 코드 블록 (기존 방식)
+    const langClass = actualLang ? `language-${actualLang}` : '';
+    return `<pre><code class="${langClass}">${escapeHtml(code)}</code></pre>`;
+};
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+marked.use({ renderer });
 
 function parseMarkdownWithFrontmatter(text) {
     const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
@@ -263,6 +320,9 @@ function addCopyButtons() {
   
       // 이미 버튼 있으면 중복 생성 방지
       if (pre.querySelector('.copy-code-button')) return;
+      
+      // executable-code 내부의 코드 블록은 제외 (이미 버튼 있음)
+      if (pre.closest('.executable-code')) return;
   
       const button = document.createElement('button');
       button.className = 'copy-code-button';
@@ -286,17 +346,22 @@ function addCopyButtons() {
 
 // ==================== RENDER ARTICLE ====================
 function renderArticle(data, contentElement) {
+    // 카운터 리셋 (새 글 렌더링 시)
+    executableCodeCounter = 0;
+    
     const html = marked.parse(data.content);
     contentElement.innerHTML = html;
 
-    // 🔥 반드시 추가 (핵심)
+    // Prism 하이라이팅
     if (window.Prism) {
         Prism.highlightAllUnder(contentElement);
     }
+    
     setTimeout(() => {
         addCopyButtons();
     }, 0);
-    // KaTeX (기존 코드 유지)
+    
+    // KaTeX
     if (typeof renderMathInElement !== 'undefined') {
         setTimeout(() => {
             renderMathInElement(contentElement, {
@@ -310,7 +375,6 @@ function renderArticle(data, contentElement) {
             });
         }, 50);
     }
-    
 }
 
 
@@ -455,5 +519,3 @@ window.LibraryBlog = {
     renderBookShelves,
     renderCourseShelves
 };
-
-  
