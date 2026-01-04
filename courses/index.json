@@ -1,7 +1,7 @@
 {
     "categories": {
       "2025 F - 2026 S": {
-        "icon": "🎓",
+        "icon": "⊗",
         "courses": [
           {
             "slug": "html/advanced-statistics-for-data-science",
@@ -27,7 +27,7 @@
         ]
       },
       "2024 F - 2025 S": {
-        "icon": "📚",
+        "icon": "∑",
         "courses": [
           {
             "slug": "html/algorithm-design-analysis-implementation",
@@ -88,42 +88,42 @@
         ]
       },
       "2023 F - 2024 S": {
-        "icon": "📖",
+        "icon": "ℒ",
         "courses": [
           {
             "slug": "html/abstract-algebra",
             "title": "Abstract Algebra",
             "category": "MATH",
             "semester": "2024 S",
-            "color": 5
+            "color": 6
           },
           {
             "slug": "html/applied-quantum-computing",
             "title": "Applied Quantum Computing",
             "category": "QUANTUM",
             "semester": "2024 S",
-            "color": 6
+            "color": 1
           },
           {
             "slug": "html/regression-analysis",
             "title": "Regression Analysis",
             "category": "STATISTICS",
             "semester": "2023 F",
-            "color": 1
+            "color": 2
           },
           {
             "slug": "html/computer-architecture",
             "title": "Computer Architecture",
             "category": "CS",
             "semester": "2023 F",
-            "color": 2
+            "color": 3
           },
           {
-            "slug": "html/linear-algebra",
-            "title": "Linear Algebra",
-            "category": "MATH",
-            "semester": "2023 F",
-            "color": 3
+            "slug": "html/data-structures-and-algorithms",
+            "title": "Data Structures and Algorithms",
+            "category": "CS",
+            "semester": "2024 S",
+            "color": 4
           },
           {
             "slug": "html/vector-calculus",
@@ -135,7 +135,7 @@
         ]
       },
       "2022 F - 2023 S": {
-        "icon": "📝",
+        "icon": "𝒜",
         "courses": [
           {
             "slug": "html/c-programming",
@@ -145,39 +145,60 @@
             "color": 6
           },
           {
+            "slug": "html/competitive-programming",
+            "title": "Competitive Programming",
+            "category": "CS",
+            "semester": "2023 S",
+            "color": 1
+          },           
+          {
+            "slug": "html/data-engineering",
+            "title": "Data Engineering",
+            "category": "CS",
+            "semester": "2023 S",
+            "color": 2
+          },          
+          {
             "slug": "html/discrete-mathematics",
             "title": "Discrete Mathematics",
             "category": "MATH",
             "semester": "2023 S",
-            "color": 2
+            "color": 3
+          },
+          {
+            "slug": "html/linear-algebra",
+            "title": "Linear Algebra",
+            "category": "MATH",
+            "semester": "2023 S",
+            "color": 4
           },
           {
             "slug": "html/multivariate-calculus",
             "title": "Multivariate Calculus",
             "category": "MATH",
             "semester": "2022 F",
-            "color": 3
+            "color": 5
           },
           {
             "slug": "html/object-oriented-programming",
             "title": "Object Oriented Programming",
             "category": "CS",
             "semester": "2022 F",
-            "color": 4
+            "color": 6
           },
           {
             "slug": "html/probability",
             "title": "Probability",
             "category": "STATISTICS",
             "semester": "2023 S",
-            "color": 5
+            "color": 1
           },
           {
             "slug": "html/statistical-theory",
             "title": "Statistical Theory",
             "category": "STATISTICS",
             "semester": "2023 S",
-            "color": 6
+            "color": 2
           }
         ]
       }

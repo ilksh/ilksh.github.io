@@ -1,7 +1,7 @@
 ---
 title: Linear Algebra
 category: MATH
-semester: 2024 S
+semester: 2023 S
 ---
 
 # Linear Algebra
