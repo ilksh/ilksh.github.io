@@ -250,7 +250,7 @@ Delta Method
 $$\sqrt{n}\big(g(\hat\theta)-g(\theta_0)\big) \xrightarrow{d} N\\left(0,(g'(\theta_0))^2 I(\theta_0)^{-1}\right)$$
 
 Wald Statistic
-$$W = (\hat\theta-\theta_0)^\top \big[I(\hat\theta)^{-1}\big]^{-1} (\hat\theta-\theta_0) \;\xrightarrow{d}\; \chi^2_k$$
+$$W = (\hat\theta-\theta_0)^\top \big[I(\hat\theta)^{-1}\big]^{-1} (\hat\theta-\theta_0) \;\xrightarrow{d}\ \chi^2_k$$
 Score Statistic
 $$S = U(\theta_0)^\top I(\theta_0)^{-1} U(\theta_0) \;\xrightarrow{d}\; \chi^2_k$$
 
