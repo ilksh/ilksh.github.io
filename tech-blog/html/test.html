@@ -17,7 +17,7 @@
     href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
   >
 
-  <!-- Main style (⚠️ Courses와 동일한 경로) -->
+  <!-- Main style -->
   <link rel="stylesheet" href="../../assets/css/style.css">
 
   <!-- Prism theme -->
@@ -47,8 +47,13 @@
         </div>
       </header>
 
-      <div class="article-content prism-scope" id="article-content">
-        <p style="color: var(--text-muted);">Loading content...</p>
+      <div class="article-layout">
+        <aside class="article-sidebar" id="article-sidebar"></aside>
+        <div class="article-main">
+          <div class="article-content prism-scope" id="article-content">
+            <p style="color: var(--text-muted);">Loading content...</p>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -58,8 +63,6 @@
       <p class="footer-text">Crafted with curiosity and caffeine</p>
     </footer>
   </article>
-
-  <!-- ===== JS DEPENDENCIES ===== -->
 
   <!-- Markdown -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -79,15 +82,13 @@
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-rust.min.js"></script>
 
-  <!-- Main JS (⚠️ Courses와 동일한 경로) -->
+  <!-- Main JS -->
   <script src="../../assets/js/main.js"></script>
 
-  <!-- ===== INIT (TECH ARTICLE ONLY) ===== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const file = window.location.pathname.split('/').pop();
 
-      // 실제 글 페이지만 실행
       if (file && file.endsWith('.html') && file !== 'index.html') {
         const slug = file.replace('.html', '');
         LibraryBlog.initTechArticle(slug);
