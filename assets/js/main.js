@@ -345,6 +345,39 @@ function addCopyButtons() {
   }
 
 // ==================== RENDER ARTICLE ====================
+// function renderArticle(data, contentElement) {
+//     // 카운터 리셋 (새 글 렌더링 시)
+//     executableCodeCounter = 0;
+    
+//     const html = marked.parse(data.content);
+//     contentElement.innerHTML = html;
+
+//     // Prism 하이라이팅
+//     if (window.Prism) {
+//         Prism.highlightAllUnder(contentElement);
+//     }
+    
+//     setTimeout(() => {
+//         addCopyButtons();
+//     }, 0);
+    
+//     // KaTeX
+//     if (typeof renderMathInElement !== 'undefined') {
+//         setTimeout(() => {
+//             renderMathInElement(contentElement, {
+//                 delimiters: [
+//                     {left: '$$', right: '$$', display: true},
+//                     {left: '$', right: '$', display: false},
+//                     {left: '\\[', right: '\\]', display: true},
+//                     {left: '\\(', right: '\\)', display: false}
+//                 ],
+//                 throwOnError: false
+//             });
+//         }, 50);
+//     }
+// }
+
+// ==================== RENDER ARTICLE ====================
 function renderArticle(data, contentElement) {
     // 카운터 리셋 (새 글 렌더링 시)
     executableCodeCounter = 0;
@@ -375,6 +408,10 @@ function renderArticle(data, contentElement) {
             });
         }, 50);
     }
+    
+    // Generate TOC (사이드바)
+    const sidebarElement = document.getElementById('article-sidebar');
+    setTimeout(() => generateTOC(contentElement, sidebarElement), 100);
 }
 
 
@@ -505,6 +542,64 @@ async function initCourseArticle(slug) {
         contentElement.innerHTML = '<p>Course not found.</p>';
     }
 }
+// ==================== GENERATE TABLE OF CONTENTS ====================
+function generateTOC(contentElement, sidebarElement) {
+    if (!contentElement || !sidebarElement) return;
+    
+    const headings = contentElement.querySelectorAll('h1, h2');
+    if (headings.length === 0) {
+        sidebarElement.style.display = 'none';
+        return;
+    }
+    
+    // Add IDs to headings
+    headings.forEach((heading, index) => {
+        if (!heading.id) {
+            heading.id = `heading-${index}`;
+        }
+    });
+    
+    // Generate TOC HTML
+    let tocHTML = '<p class="sidebar-title">Contents</p><ul class="sidebar-nav">';
+    
+    headings.forEach((heading) => {
+        const level = heading.tagName.toLowerCase();
+        const text = heading.textContent;
+        const id = heading.id;
+        
+        tocHTML += `<li><a href="#${id}" class="toc-${level}">${text}</a></li>`;
+    });
+    
+    tocHTML += '</ul>';
+    sidebarElement.innerHTML = tocHTML;
+    
+    // Scroll spy
+    const tocLinks = sidebarElement.querySelectorAll('a');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                tocLinks.forEach(link => link.classList.remove('active'));
+                const activeLink = sidebarElement.querySelector(`a[href="#${entry.target.id}"]`);
+                if (activeLink) activeLink.classList.add('active');
+            }
+        });
+    }, { rootMargin: '-20% 0px -80% 0px' });
+    
+    headings.forEach(heading => observer.observe(heading));
+    
+    // Smooth scroll
+    tocLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').slice(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+}
 
 // Export for global use
 window.LibraryBlog = {
@@ -517,5 +612,6 @@ window.LibraryBlog = {
     loadIndex,
     renderTechShelves,
     renderBookShelves,
-    renderCourseShelves
+    renderCourseShelves,
+    generateTOC
 };
