@@ -14,10 +14,11 @@ readtime: 10 min
 내용 작성...
 ```
 
-# Step 2: HTML 파일 생성
+# Step 2: HTML 껍데기 (URL: `…/[섹션]/[slug]/`)
 ``` bash
-cp _template.html [slug].html
+mkdir -p [slug] && cp _template.html [slug]/index.html
 ```
+(`tech-blog/`, `book-notes/`, `courses/` 각각의 `_template.html` 사용)
 
 # Step 3: index.json에 추가
 
@@ -44,7 +45,7 @@ cp _template.html [slug].html
 # Add article in same category
 
 ``` bash
-cp _template.html [slug].html
+mkdir -p [slug] && cp _template.html [slug]/index.html
 ```
 
 ```json
@@ -81,15 +82,12 @@ cp _template.html [slug].html
 python3 -m http.server 8000
 ```
 
-# copy all
-
+# 예: courses에서 새 코스 껍데기
 ```bash
-for f in *.html; do
-  cp ../_template.html "$f"
-done
+mkdir -p courses/bayesian-inference && cp courses/_template.html courses/bayesian-inference/index.html
 ```
 
-# copy specifically
+# 예: tech-blog에서 새 글 껍데기
 ```bash
-cp courses/_template.html courses/html/bayesian-inference.html
+mkdir -p tech-blog/my-post && cp tech-blog/_template.html tech-blog/my-post/index.html
 ```

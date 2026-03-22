@@ -4,21 +4,21 @@
         "icon": "⊗",
         "courses": [
           {
-            "slug": "html/advanced-statistics-for-data-science",
+            "slug": "advanced-statistics-for-data-science",
             "title": "Advanced Statistics for Data Science",
             "category": "STATISTICS",
             "semester": "2025 F",
             "color": 1
           },
           {
-            "slug": "html/artificial-intelligence-and-deep-learning",
+            "slug": "artificial-intelligence-and-deep-learning",
             "title": "Artificial Intelligence and Deep Learning",
             "category": "AI/ML",
             "semester": "2025 F",
             "color": 2
           },
           {
-            "slug": "html/machine-learning-algorithms-for-data-science",
+            "slug": "machine-learning-algorithms-for-data-science",
             "title": "Machine Learning Algorithms for Data Science",
             "category": "AI/ML",
             "semester": "2026 S",
@@ -30,56 +30,56 @@
         "icon": "∑",
         "courses": [
           {
-            "slug": "html/algorithm-design-analysis-implementation",
+            "slug": "algorithm-design-analysis-implementation",
             "title": "Algorithm Design, Analysis, and Implementation",
             "category": "CS",
             "semester": "2024 F",
             "color": 4
           },
           {
-            "slug": "html/artificial-intelligence",
+            "slug": "artificial-intelligence",
             "title": "Artificial Intelligence",
             "category": "AI/ML",
             "semester": "2024 F",
             "color": 5
           },
           {
-            "slug": "html/data-mining-machine-learning",
+            "slug": "data-mining-machine-learning",
             "title": "Data Mining & Machine Learning",
             "category": "AI/ML",
             "semester": "2024 F",
             "color": 6
           },
           {
-            "slug": "html/large-scale-data-analytics",
+            "slug": "large-scale-data-analytics",
             "title": "Large Scale Data Analytics",
             "category": "CS",
             "semester": "2025 S",
             "color": 1
           },
           {
-            "slug": "html/mathematics-of-quantum-computing",
+            "slug": "mathematics-of-quantum-computing",
             "title": "Mathematics of Quantum Computing",
             "category": "QUANTUM",
             "semester": "2024 F",
             "color": 2
           },
           {
-            "slug": "html/randomized-algorithms",
+            "slug": "randomized-algorithms",
             "title": "Randomized Algorithms",
             "category": "CS",
             "semester": "2025 S",
             "color": 3
           },
           {
-            "slug": "html/statistical-machine-learning",
+            "slug": "statistical-machine-learning",
             "title": "Statistical Machine Learning",
             "category": "AI/ML",
             "semester": "2025 S",
             "color": 4
           },
           {
-            "slug": "html/system-programming",
+            "slug": "system-programming",
             "title": "System Programming",
             "category": "CS",
             "semester": "2025 S",
@@ -91,42 +91,42 @@
         "icon": "ℒ",
         "courses": [
           {
-            "slug": "html/abstract-algebra",
+            "slug": "abstract-algebra",
             "title": "Abstract Algebra",
             "category": "MATH",
             "semester": "2024 S",
             "color": 6
           },
           {
-            "slug": "html/applied-quantum-computing",
+            "slug": "applied-quantum-computing",
             "title": "Applied Quantum Computing",
             "category": "QUANTUM",
             "semester": "2024 S",
             "color": 1
           },
           {
-            "slug": "html/regression-analysis",
+            "slug": "regression-analysis",
             "title": "Regression Analysis",
             "category": "STATISTICS",
             "semester": "2023 F",
             "color": 2
           },
           {
-            "slug": "html/computer-architecture",
+            "slug": "computer-architecture",
             "title": "Computer Architecture",
             "category": "CS",
             "semester": "2023 F",
             "color": 3
           },
           {
-            "slug": "html/data-structures-and-algorithms",
+            "slug": "data-structures-and-algorithms",
             "title": "Data Structures and Algorithms",
             "category": "CS",
             "semester": "2024 S",
             "color": 4
           },
           {
-            "slug": "html/vector-calculus",
+            "slug": "vector-calculus",
             "title": "Vector Calculus",
             "category": "MATH",
             "semester": "2023 F",
@@ -138,63 +138,63 @@
         "icon": "𝒜",
         "courses": [
           {
-            "slug": "html/c-programming",
+            "slug": "c-programming",
             "title": "C Programming",
             "category": "CS",
             "semester": "2023 S",
             "color": 6
           },
           {
-            "slug": "html/competitive-programming",
+            "slug": "competitive-programming",
             "title": "Competitive Programming",
             "category": "CS",
             "semester": "2023 S",
             "color": 1
           },           
           {
-            "slug": "html/data-engineering",
+            "slug": "data-engineering",
             "title": "Data Engineering",
             "category": "CS",
             "semester": "2023 S",
             "color": 2
           },          
           {
-            "slug": "html/discrete-mathematics",
+            "slug": "discrete-mathematics",
             "title": "Discrete Mathematics",
             "category": "MATH",
             "semester": "2023 S",
             "color": 3
           },
           {
-            "slug": "html/linear-algebra",
+            "slug": "linear-algebra",
             "title": "Linear Algebra",
             "category": "MATH",
             "semester": "2023 S",
             "color": 4
           },
           {
-            "slug": "html/multivariate-calculus",
+            "slug": "multivariate-calculus",
             "title": "Multivariate Calculus",
             "category": "MATH",
             "semester": "2022 F",
             "color": 5
           },
           {
-            "slug": "html/object-oriented-programming",
+            "slug": "object-oriented-programming",
             "title": "Object Oriented Programming",
             "category": "CS",
             "semester": "2022 F",
             "color": 6
           },
           {
-            "slug": "html/probability",
+            "slug": "probability",
             "title": "Probability",
             "category": "STATISTICS",
             "semester": "2023 S",
             "color": 1
           },
           {
-            "slug": "html/statistical-theory",
+            "slug": "statistical-theory",
             "title": "Statistical Theory",
             "category": "STATISTICS",
             "semester": "2023 S",

@@ -110,7 +110,7 @@ function renderTechShelves(data, container) {
         section.dataset.category = category;
         
         const booksHTML = categoryData.posts.map(post => `
-            <a href="${post.slug}.html" 
+            <a href="${post.slug}/" 
                class="book-front book-tech-${post.color || 1}" 
                data-title="${post.title.toLowerCase()}" 
                data-id="${post.slug}">
@@ -159,7 +159,7 @@ function renderBookShelves(data, container) {
         section.dataset.category = category;
 
         const renderBook = (book) => `
-            <a href="${book.slug}.html" 
+            <a href="${book.slug}/" 
                class="book-with-cover" 
                data-title="${book.title.toLowerCase()}" 
                data-author="${(book.author || '').toLowerCase()}" 
@@ -211,7 +211,7 @@ function renderCourseShelves(data, container) {
         section.dataset.category = category;
         
         const coursesHTML = categoryData.courses.map(course => `
-            <a href="${course.slug}.html" 
+            <a href="${course.slug}/" 
                class="book-front book-tech-${course.color || 1}" 
                data-title="${course.title.toLowerCase()}" 
                data-id="${course.slug}">
