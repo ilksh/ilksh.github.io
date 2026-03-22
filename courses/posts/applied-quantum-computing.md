@@ -173,141 +173,152 @@ $$\hat y = f\!\left(\langle O\rangle_{\psi(x,\theta)}\right)$$
 
 # 4. Circuit and state visualization
 
-## Bell-state circuit (Qiskit — local)
+Visualizations below are meant to **connect symbols to geometry**: time flows left-to-right on circuits, amplitudes and probabilities for entanglement, and the Bloch sphere for single-qubit unitary motion.
 
-아래는 **로컬에 Qiskit이 설치된 환경**에서 `qc.draw("mpl")`로 얻는 방식입니다. 브라우저(Pyodide)에는 Qiskit이 없으므로, 바로 다음 블록에서 **동일 회로를 matplotlib로 그린** 버전을 실행할 수 있습니다.
-
-```python
-from qiskit import QuantumCircuit
-
-qc = QuantumCircuit(2, 2)
-qc.h(0)
-qc.cx(0, 1)
-qc.measure([0, 1], [0, 1])
-
-qc.draw("mpl")
-```
-
-- Minimal circuit: product state → **entangled** Bell pair; ties together gates, measurement, and entanglement.
-
-### Bell circuit — matplotlib (browser)
+## Bell-state preparation circuit
 
 ```python {run}
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, Circle, Rectangle
-import matplotlib.patches as mpatches
+from matplotlib.colors import LinearSegmentedColormap
 
-fig, ax = plt.subplots(figsize=(9, 3.2), facecolor="#1a1a1a")
-ax.set_facecolor("#1a1a1a")
+fig, ax = plt.subplots(figsize=(10.5, 3.6), facecolor="#0f0f0f")
+ax.set_facecolor("#0f0f0f")
+grad = LinearSegmentedColormap.from_list("bg", ["#1a2230", "#0f0f0f"])
+ax.imshow([[0, 1]], extent=[0, 1, 0, 1], aspect="auto", cmap=grad, zorder=0)
 
 y0, y1 = 0.72, 0.28
 for y, lab in [(y0, r"$q_0$"), (y1, r"$q_1$")]:
-    ax.plot([0.05, 0.92], [y, y], color="#555", lw=1.8, zorder=1)
-    ax.text(0.02, y, lab, fontsize=13, color="#c9a961", va="center")
+    ax.plot([0.06, 0.93], [y, y], color="#3a4555", lw=2.2, solid_capstyle="round", zorder=1)
+    ax.text(0.018, y, lab, fontsize=14, color="#d4b976", va="center", fontweight="medium")
 
-def box(x, y, w, h, text, fc="#2d3a4a", ec="#6b9ac4"):
-    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.02,rounding_size=0.04", facecolor=fc, edgecolor=ec, linewidth=1.8))
-    ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=12, color="#e8e8e8", fontweight="bold")
+def gate_box(x, y, w, h, text, fc="#243044", ec="#7eb8e8"):
+    ax.add_patch(
+        FancyBboxPatch(
+            (x, y), w, h,
+            boxstyle="round,pad=0.03,rounding_size=0.06",
+            facecolor=fc,
+            edgecolor=ec,
+            linewidth=2,
+            zorder=3,
+        )
+    )
+    ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=13, color="#f0f0f0", fontweight="bold")
 
-box(0.18, y0 - 0.09, 0.1, 0.18, "H")
-ax.plot([0.28, 0.42], [y0, y0], color="#888", lw=1.8)
-ax.add_patch(Circle((0.46, y0), 0.028, facecolor="#c9a961", edgecolor="#e8d5a3", zorder=4))
-ax.plot([0.46, 0.46], [y0, y1], color="#c9a961", lw=1.8, zorder=3)
+gate_box(0.16, y0 - 0.095, 0.11, 0.19, "H", fc="#2a3850", ec="#6b9ac4")
+ax.plot([0.27, 0.4], [y0, y0], color="#5a6575", lw=2, zorder=2)
+ax.add_patch(Circle((0.44, y0), 0.032, facecolor="#c9a961", edgecolor="#f0e0b0", linewidth=1.5, zorder=5))
+ax.plot([0.44, 0.44], [y0, y1], color="#c9a961", lw=2.2, zorder=4)
 ax.add_patch(
-    FancyBboxPatch((0.43, y1 - 0.1), 0.06, 0.2, boxstyle="square,pad=0", facecolor="#1a1a1a", edgecolor="#c9a961", linewidth=2)
+    FancyBboxPatch((0.405, y1 - 0.11), 0.07, 0.22, boxstyle="square,pad=0", facecolor="#0f0f0f", edgecolor="#c9a961", linewidth=2.5, zorder=4)
 )
-ax.plot([0.43, 0.49], [y1, y1], color="#c9a961", lw=2)
-ax.text(0.52, (y0 + y1) / 2, "CNOT", fontsize=10, color="#97c4a0", va="center")
+ax.plot([0.405, 0.475], [y1, y1], color="#c9a961", lw=2.5)
+ax.annotate(
+    "CNOT",
+    xy=(0.52, (y0 + y1) / 2),
+    fontsize=11,
+    color="#a8d4a8",
+    va="center",
+    fontweight="bold",
+)
 
 for y in (y0, y1):
-    ax.add_patch(Rectangle((0.78, y - 0.08), 0.1, 0.16, facecolor="#333", edgecolor="#888"))
-    ax.plot([0.83, 0.88, 0.83], [y + 0.04, y, y - 0.04], color="#ccc", lw=1)
+    ax.add_patch(Rectangle((0.76, y - 0.085), 0.12, 0.17, facecolor="#252525", edgecolor="#707080", linewidth=1.5, zorder=3))
+    ax.plot([0.82, 0.875, 0.82], [y + 0.045, y, y - 0.045], color="#c0c0c0", lw=1.2)
 
-ax.text(0.835, y0 + 0.14, "meas", fontsize=8, color="#888", ha="center")
-ax.text(0.835, y1 + 0.14, "meas", fontsize=8, color="#888", ha="center")
+ax.text(0.82, y0 + 0.16, "measure", fontsize=8, color="#888", ha="center")
+ax.text(0.82, y1 + 0.16, "measure", fontsize=8, color="#888", ha="center")
 
 ax.set_xlim(0, 1)
 ax.set_ylim(0, 1)
 ax.axis("off")
-ax.set_title(r'Bell: $H \otimes I$ then CNOT — $|\Phi^+\rangle$ preparation', color="#ddd", fontsize=12)
+ax.set_title(
+    r"Bell pair: $H$ on $q_0$, then CNOT $(q_0 \rightarrow q_1)$ — prepares $|\Phi^+\rangle$",
+    color="#e8e8e8",
+    fontsize=12,
+    pad=14,
+)
 plt.tight_layout()
 plt.show()
 ```
 
-## QFT circuit (Qiskit — local)
+### What this figure shows
 
-```python
-from qiskit import QuantumCircuit
-from qiskit.circuit.library import QFT
+- **Time reads left to right**: first superposition on $q_0$, then entanglement with $q_1$.
+- **CNOT** uses control (solid dot) and target (boxed $\oplus$ line)—the standard diagram idiom.
+- **Meters** denote projective measurement in the computational basis after the unitary stage.
+- Same logic as any framework: only the drawing style changes.
 
-n = 4
-qc = QFT(num_qubits=n, do_swaps=True).decompose()
-qc.draw("mpl", fold=-1)
-```
+---
 
-- QFT diagrams show repeated **Hadamards**, **controlled phases**, and **swaps**.
-
-### QFT structure — schematic ($n=4$)
+## QFT structure ($n=4$ schematic)
 
 ```python {run}
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch
+from matplotlib.patches import FancyBboxPatch, Circle
+from matplotlib.colors import LinearSegmentedColormap
+import numpy as np
 
-fig, ax = plt.subplots(figsize=(10, 4), facecolor="#1a1a1a")
-ax.set_facecolor("#1a1a1a")
+fig, ax = plt.subplots(figsize=(11, 4.2), facecolor="#0f0f0f")
+ax.set_facecolor("#0f0f0f")
+grad = LinearSegmentedColormap.from_list("g", ["#152028", "#0a0a0a"])
+ax.imshow(np.linspace(0, 1, 100).reshape(1, -1), extent=[0, 1, 0, 1], aspect="auto", cmap=grad, zorder=0)
+
 n = 4
-ys = [0.82 - i * 0.2 for i in range(n)]
+ys = [0.84 - i * 0.2 for i in range(n)]
 for i, y in enumerate(ys):
-    ax.plot([0.06, 0.94], [y, y], color="#444", lw=1.5)
-    ax.text(0.02, y, f"q{i}", fontsize=11, color="#aaa", va="center")
+    ax.plot([0.05, 0.92], [y, y], color="#3d4a5c", lw=1.8, zorder=1)
+    ax.text(0.015, y, f"$q_{i}$", fontsize=12, color="#b8c4d4", va="center")
 
-cols = [0.14, 0.32, 0.5, 0.68]
+cols = [0.12, 0.30, 0.48, 0.66]
 for j, x in enumerate(cols):
     for i in range(n):
         if i == j:
-            ax.add_patch(FancyBboxPatch((x - 0.05, ys[i] - 0.06), 0.1, 0.12, boxstyle="round,pad=0.02", facecolor="#2a3545", edgecolor="#6b9ac4"))
-            ax.text(x, ys[i], "H", ha="center", va="center", fontsize=9, color="#ddd")
+            ax.add_patch(
+                FancyBboxPatch(
+                    (x - 0.055, ys[i] - 0.065),
+                    0.11,
+                    0.13,
+                    boxstyle="round,pad=0.02,rounding_size=0.05",
+                    facecolor="#1e3a50",
+                    edgecolor="#6b9ac4",
+                    linewidth=1.8,
+                    zorder=3,
+                )
+            )
+            ax.text(x, ys[i], "H", ha="center", va="center", fontsize=10, color="#e0e8f0", fontweight="bold")
         elif i > j:
-            ax.text(x, ys[i], "•", ha="center", va="center", fontsize=14, color="#c9a961")
-            ax.plot([x, x], [ys[j], ys[i]], color="#666", lw=1, linestyle=":")
+            ax.add_patch(Circle((x, ys[i]), 0.022, facecolor="#c9a961", edgecolor="#f5e6c0", linewidth=1, zorder=4))
+            ax.plot([x, x], [ys[j], ys[i]], color="#8a7a60", lw=1.4, linestyle=(0, (2, 3)), zorder=2)
 
-ax.text(0.86, 0.5, "⋯\n+ swaps", ha="center", va="center", fontsize=10, color="#777")
+ax.text(0.84, 0.5, "⋯\n+ swaps", ha="center", va="center", fontsize=11, color="#6a7585", linespacing=1.3)
 ax.set_xlim(0, 1)
-ax.set_ylim(0.05, 0.95)
+ax.set_ylim(0.02, 0.98)
 ax.axis("off")
-ax.set_title("QFT(n=4): Hadamard on diagonal + controlled phases below", color="#ccc", fontsize=11)
+ax.set_title("QFT($n{=}4$): Hadamard on each line, controlled phases to lower qubits, then swap layer", color="#ddd", fontsize=11)
 plt.tight_layout()
 plt.show()
 ```
 
-## Bloch sphere — pure state
+### What this figure shows
 
-$$|\psi\rangle = \cos\frac{\theta}{2}|0\rangle + e^{i\phi}\sin\frac{\theta}{2}|1\rangle$$
+- **Diagonal $H$ pattern**: each qubit gets a Hadamard at a different stage of the transform.
+- **Gold dots + vertical ties**: schematic controlled phase dependencies (detail omitted—focus is **structure**).
+- **Swaps** are essential in the canonical QFT layout; label reminds you the 2D diagram is incomplete without them.
+- Matches how you read QFT complexity: $O(n^2)$ gates from nested phases.
 
-$$x=\sin\theta\cos\phi,\qquad y=\sin\theta\sin\phi,\qquad z=\cos\theta$$
+---
 
-### Qiskit (local)
+## Bloch sphere — animated state trajectory
 
-```python
-from qiskit import QuantumCircuit
-from qiskit.quantum_info import Statevector
-from qiskit.visualization import plot_bloch_multivector
-import matplotlib.pyplot as plt
-
-qc = QuantumCircuit(1)
-qc.h(0)
-qc.s(0)
-
-sv = Statevector.from_instruction(qc)
-fig = plot_bloch_multivector(sv)
-plt.show()
-```
-
-### 3D Bloch trajectory (browser — numpy unitaries)
+A single qubit $|\psi\rangle$ maps to a point on the **unit sphere**; applying $R_y(\cdot)$ and $R_z(\cdot)$ moves that point. The animation traces a **continuous unitary path** from $|0\rangle$ and slowly **rotates the camera** so depth and curvature are visible.
 
 ```python {run}
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import base64
+import os
 
 def ry(theta):
     c, s = np.cos(theta / 2), np.sin(theta / 2)
@@ -319,124 +330,147 @@ def rz(phi):
         dtype=complex,
     )
 
-def bloch_from_state(psi):
+def bloch(psi):
     a, b = psi[0], psi[1]
     x = 2 * np.real(np.conj(a) * b)
     y = 2 * np.imag(np.conj(a) * b)
     z = np.abs(a) ** 2 - np.abs(b) ** 2
     return x, y, z
 
-num_steps = 72
+t_vals = np.linspace(0, 2 * np.pi, 48)
 points = []
-psi = np.array([1.0, 0.0], dtype=complex)
-for t in np.linspace(0, 2 * np.pi, num_steps):
-    U = ry(0.85 * np.sin(t) + np.pi / 2) @ rz(1.4 * t)
-    psi = U @ np.array([1.0, 0.0], dtype=complex)
-    psi /= np.linalg.norm(psi)
-    points.append(bloch_from_state(psi))
+for t in t_vals:
+    U = ry(0.82 * np.sin(t) + np.pi / 2.15) @ rz(1.35 * t)
+    p = U @ np.array([1.0, 0.0], dtype=complex)
+    p /= np.linalg.norm(p)
+    points.append(bloch(p))
 points = np.array(points)
 
-fig = plt.figure(figsize=(7, 6.5), facecolor="#1a1a1a")
-ax = fig.add_subplot(111, projection="3d")
-ax.set_facecolor("#1a1a1a")
-
-u = np.linspace(0, 2 * np.pi, 64)
-v = np.linspace(0, np.pi, 32)
+u = np.linspace(0, 2 * np.pi, 48)
+v = np.linspace(0, np.pi, 24)
 xs = np.outer(np.cos(u), np.sin(v))
 ys = np.outer(np.sin(u), np.sin(v))
 zs = np.outer(np.ones_like(u), np.cos(v))
-ax.plot_surface(xs, ys, zs, alpha=0.14, color="#6b9ac4", edgecolor="none", shade=False)
 
-ax.plot(points[:, 0], points[:, 1], points[:, 2], color="#c9a961", lw=2.4, zorder=10)
-ax.scatter([points[-1, 0]], [points[-1, 1]], [points[-1, 2]], color="#e8d5a3", s=60, zorder=11)
+fig = plt.figure(figsize=(7.2, 6.4), facecolor="#0f0f0f")
+ax = fig.add_subplot(111, projection="3d")
+ax.set_facecolor("#0f0f0f")
 
-for v0, lab, col in [([1, 0, 0], "X", "#888"), ([0, 1, 0], "Y", "#888"), ([0, 0, 1], "Z", "#888")]:
-    ax.plot([0, v0[0]], [0, v0[1]], [0, v0[2]], color=col, lw=1)
-    ax.text(v0[0] * 1.15, v0[1] * 1.15, v0[2] * 1.15, lab, color="#aaa", fontsize=11)
 
-ax.set_title("Single-qubit trajectory on the Bloch sphere", color="#e0e0e0", fontsize=12, pad=12)
-ax.set_box_aspect([1, 1, 1])
-ax.grid(False)
-ax.xaxis.pane.fill = False
-ax.yaxis.pane.fill = False
-ax.zaxis.pane.fill = False
-for axis in (ax.xaxis, ax.yaxis, ax.zaxis):
-    axis.line.set_color("#333")
-plt.tight_layout()
-plt.show()
+def draw_frame(k):
+    ax.clear()
+    ax.set_facecolor("#0f0f0f")
+    ax.plot_surface(
+        xs, ys, zs,
+        alpha=0.18,
+        color="#4a7ab0",
+        edgecolor="#2a4058",
+        linewidth=0.15,
+        rstride=2,
+        cstride=2,
+    )
+    trail = points[: k + 1]
+    if len(trail) > 1:
+        ax.plot(trail[:, 0], trail[:, 1], trail[:, 2], color="#c9a961", lw=2.8, zorder=10)
+    ax.scatter(
+        [points[k, 0]], [points[k, 1]], [points[k, 2]],
+        s=85,
+        c="#fff4d0",
+        edgecolors="#c9a961",
+        linewidths=1.5,
+        zorder=11,
+    )
+    for v0, lab in [([1, 0, 0], "X"), ([0, 1, 0], "Y"), ([0, 0, 1], "Z")]:
+        ax.plot([0, v0[0]], [0, v0[1]], [0, v0[2]], color="#555", lw=1.1)
+        ax.text(v0[0] * 1.12, v0[1] * 1.12, v0[2] * 1.12, lab, color="#999", fontsize=10)
+    ax.set_box_aspect([1, 1, 1])
+    ax.grid(False)
+    for axis in (ax.xaxis, ax.yaxis, ax.zaxis):
+        axis.pane.fill = False
+        axis.line.set_color("#333")
+    ax.view_init(elev=18, azim=25 + k * 5.5)
+    ax.set_title("Bloch trajectory + rotating view", color="#e0e0e0", fontsize=11, pad=10)
+
+
+anim = animation.FuncAnimation(fig, draw_frame, frames=len(t_vals), interval=75, repeat=True)
+path = "_bloch_q_anim.gif"
+anim.save(path, writer="pillow", fps=12)
+plt.close("all")
+with open(path, "rb") as f:
+    _ANIM_GIF = base64.b64encode(f.read()).decode()
+try:
+    os.remove(path)
+except OSError:
+    pass
+print("Frames:", len(t_vals))
 ```
 
-## Bell state — amplitudes and probabilities
+### What this animation shows
 
-### Qiskit `plot_state_city` / histogram (local)
+- The **state vector** of one qubit is a point on the **surface** of the Bloch sphere (pure states).
+- **Unitary gates** are rigid motions of that point; here $R_y$ and $R_z$ combine into a smooth path.
+- The **highlighted dot** is the current state; the **gold curve** is the history—continuity of evolution.
+- **Rotating camera** stresses 3D structure; without motion, depth is easy to misread on a flat screen.
 
-```python
-from qiskit import QuantumCircuit
-from qiskit.quantum_info import Statevector
-from qiskit.visualization import plot_state_city, plot_histogram
-import matplotlib.pyplot as plt
+---
 
-qc = QuantumCircuit(2)
-qc.h(0)
-qc.cx(0, 1)
-
-sv = Statevector.from_instruction(qc)
-
-fig1 = plot_state_city(sv)
-plt.show()
-
-probs = sv.probabilities_dict()
-fig2 = plot_histogram(probs)
-plt.show()
-```
-
-### Browser — $|\Phi^+\rangle$ real/imag bars + measurement probabilities
+## $|\Phi^+\rangle$: amplitudes and measurement statistics
 
 ```python {run}
 import numpy as np
 import matplotlib.pyplot as plt
-
 labels = [r"$|00\rangle$", r"$|01\rangle$", r"$|10\rangle$", r"$|11\rangle$"]
 psi = np.array([1, 0, 0, 1], dtype=complex) / np.sqrt(2)
 real = np.real(psi)
 imag = np.imag(psi)
 probs = np.abs(psi) ** 2
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4), facecolor="#1a1a1a")
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4.2), facecolor="#0f0f0f")
 for ax in (ax1, ax2):
-    ax.set_facecolor("#1a1a1a")
+    ax.set_facecolor("#141820")
 
 x = np.arange(4)
-w = 0.35
-ax1.bar(x - w / 2, real, w, label="Re", color="#6b9ac4", edgecolor="#444")
-ax1.bar(x + w / 2, imag, w, label="Im", color="#c9a961", edgecolor="#444")
+w = 0.36
+colors_r = ["#4a7ab8", "#5a8ac8", "#5a8ac8", "#4a7ab8"]
+colors_i = ["#b8945a", "#c9a45a", "#c9a45a", "#b8945a"]
+ax1.bar(x - w / 2, real, w, color=colors_r, edgecolor="#2a3545", linewidth=1.2, label="Re")
+ax1.bar(x + w / 2, imag, w, color=colors_i, edgecolor="#2a3545", linewidth=1.2, label="Im")
 ax1.set_xticks(x)
-ax1.set_xticklabels(labels, color="#ccc")
-ax1.set_ylabel("Amplitude", color="#aaa")
-ax1.legend(facecolor="#252525", labelcolor="#ccc", edgecolor="#444")
-ax1.set_title(r"$|\Phi^+\rangle$: amplitude components", color="#ddd")
+ax1.set_xticklabels(labels, color="#d0d8e0", fontsize=11)
+ax1.set_ylabel("Amplitude", color="#a8b0c0")
+ax1.legend(frameon=True, facecolor="#1c2430", edgecolor="#3a4555", labelcolor="#ccc", loc="upper right")
+ax1.set_title(r"$|\Phi^+\rangle$: complex amplitudes", color="#e8e8e8", fontsize=12)
 ax1.tick_params(colors="#888")
-ax1.axhline(0, color="#555", lw=0.8)
-ax1.grid(axis="y", alpha=0.2)
+ax1.axhline(0, color="#4a5565", lw=0.9)
+ax1.grid(axis="y", alpha=0.15)
+ax1.set_ylim(-0.75, 0.75)
 
-ax2.bar(x, probs, color="#97c4a0", edgecolor="#444")
+colors_p = ["#414487", "#2a788e", "#22a884", "#7ad151"]
+ax2.bar(x, probs, color=colors_p, edgecolor="#2a3545", linewidth=1.2)
 ax2.set_xticks(x)
-ax2.set_xticklabels(labels, color="#ccc")
-ax2.set_ylabel("Probability", color="#aaa")
-ax2.set_ylim(0, 0.6)
-ax2.set_title("Born rule: measurement in computational basis", color="#ddd")
+ax2.set_xticklabels(labels, color="#d0d8e0", fontsize=11)
+ax2.set_ylabel("Probability", color="#a8b0c0")
+ax2.set_ylim(0, 0.65)
+ax2.set_title("Computational-basis measurement (Born rule)", color="#e8e8e8", fontsize=12)
 ax2.tick_params(colors="#888")
-ax2.grid(axis="y", alpha=0.2)
+ax2.grid(axis="y", alpha=0.15)
 
 plt.tight_layout()
 plt.show()
 ```
 
+### What this figure shows
+
+- **Left**: only $|00\rangle$ and $|11\rangle$ have nonzero amplitude; real parts are equal, imaginaries zero for this standard Bell state.
+- **Right**: squaring magnitudes gives **50/50** for those two outcomes—no $|01\rangle$ or $|10\rangle$ probability.
+- Together, the panels link **complex amplitudes** (interference) to **observed frequencies** (measurement).
+- This is the same information a density-matrix or histogram view would emphasize for a pure state.
+
 ---
 
 # 5. Hardware-aware and algorithm-aware visualization
 
-## Device connectivity (coupling graph)
+## Device connectivity
 
 ```python {run}
 import networkx as nx
@@ -457,27 +491,35 @@ pos = {
     7: (1, -1),
 }
 
-fig, ax = plt.subplots(figsize=(7.5, 5), facecolor="#1a1a1a")
-ax.set_facecolor("#1a1a1a")
-nx.draw_networkx(
+fig, ax = plt.subplots(figsize=(8, 5.2), facecolor="#0f0f0f")
+ax.set_facecolor("#0f0f0f")
+
+nx.draw_networkx_edges(G, pos, ax=ax, edge_color="#5a8ab0", width=2.8, alpha=0.9)
+nx.draw_networkx_nodes(
     G,
-    pos=pos,
+    pos,
     ax=ax,
-    with_labels=True,
-    node_color="#2a3545",
-    node_size=1100,
-    font_color="#e8e8e8",
-    font_size=11,
-    edge_color="#6b9ac4",
-    width=2,
+    node_color="#1c2a38",
+    node_size=1600,
+    edgecolors="#c9a961",
+    linewidths=2,
 )
-ax.set_title("Example hardware connectivity (not a complete graph)", color="#ddd", fontsize=12)
+nx.draw_networkx_labels(G, pos, ax=ax, font_size=12, font_color="#f0f0f0", font_weight="bold")
+
+ax.set_title("Coupling map: physical neighbors only (not all-to-all)", color="#e8e8e8", fontsize=12)
 ax.axis("off")
 plt.tight_layout()
 plt.show()
 ```
 
-- Real chips constrain **routing**, **SWAP depth**, and **effective noise**.
+### What this figure shows
+
+- **Nodes** are physical qubits; **edges** are native two-qubit couplings.
+- Circuits must be **routed** onto this graph—non-local gates cost extra SWAP depth.
+- Sparse connectivity interacts with **noise**: longer decompositions accumulate more error.
+- This is the same object transpilers and schedulers use as input.
+
+---
 
 ## Variational optimization trace
 
@@ -485,22 +527,32 @@ plt.show()
 import numpy as np
 import matplotlib.pyplot as plt
 
-np.random.seed(4)
-steps = np.arange(1, 51)
-energy = -0.52 - 0.44 * (1 - np.exp(-steps / 12)) + 0.012 * np.random.randn(len(steps))
+np.random.seed(5)
+steps = np.arange(1, 61)
+base = -0.54 - 0.42 * (1 - np.exp(-steps / 14))
+noise = 0.008 * np.random.randn(len(steps))
+energy = base + noise
 
-fig, ax = plt.subplots(figsize=(8.5, 4.5), facecolor="#1a1a1a")
-ax.set_facecolor("#1a1a1a")
-ax.plot(steps, energy, marker="o", ms=4, lw=2, color="#c9a961", markerfacecolor="#e8d5a3")
-ax.fill_between(steps, energy - 0.02, energy + 0.02, alpha=0.15, color="#6b9ac4")
-ax.set_title("VQE / QAOA style energy trace (schematic)", color="#ddd", fontsize=12)
-ax.set_xlabel("Iteration", color="#aaa")
-ax.set_ylabel("Estimated energy", color="#aaa")
+fig, ax = plt.subplots(figsize=(9, 4.8), facecolor="#0f0f0f")
+ax.set_facecolor("#141820")
+ax.plot(steps, energy, color="#c9a961", lw=2.4, zorder=2)
+ax.scatter(steps, energy, c=steps, cmap="plasma", s=28, zorder=3, edgecolors="#2a2030", linewidths=0.4)
+ax.fill_between(steps, energy - 0.018, energy + 0.018, alpha=0.2, color="#4a7ab0", zorder=1)
+ax.set_title("Hybrid loop: estimated energy vs classical iteration (schematic)", color="#e8e8e8", fontsize=12)
+ax.set_xlabel("Iteration", color="#a0a8b8")
+ax.set_ylabel("Estimated energy", color="#a0a8b8")
 ax.tick_params(colors="#888")
-ax.grid(alpha=0.22)
+ax.grid(alpha=0.18)
 plt.tight_layout()
 plt.show()
 ```
+
+### What this figure shows
+
+- Each point is one **classical update** after quantum measurements fed an objective (e.g. VQE energy).
+- **Downward trend** is what you hope for; **jitter** stands in for shot noise and device variability.
+- The shaded band suggests **uncertainty** in the estimate—not a smooth deterministic descent.
+- The object of study is the **loop**, not a single circuit diagram.
 
 ---
 
@@ -508,4 +560,4 @@ plt.show()
 
 - **Three layers together**: quantum formalism, imperfect hardware, algorithms and software stacks.  
 - **Flow**: postulates → device physics → superposition, interference, entanglement in algorithms → compilation onto **noisy, sparse** graphs.  
-- **Visualization** is not decoration: circuits, states, connectivity, and optimization traces are how we **interpret** what the machine is doing.
+- **Visualization** ties abstract symbols to **circuits**, **Bloch geometry**, **probabilities**, and **hardware constraints**—the usual interfaces for interpreting quantum experiments and simulations.
