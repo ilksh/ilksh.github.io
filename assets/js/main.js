@@ -394,9 +394,10 @@ function renderArticle(data, contentElement) {
         addCopyButtons();
     }, 0);
     
-    // KaTeX
-    if (typeof renderMathInElement !== 'undefined') {
-        setTimeout(() => {
+    const sidebarElement = document.getElementById('article-sidebar');
+
+    const finishArticle = () => {
+        if (typeof renderMathInElement !== 'undefined') {
             renderMathInElement(contentElement, {
                 delimiters: [
                     {left: '$$', right: '$$', display: true},
@@ -406,12 +407,11 @@ function renderArticle(data, contentElement) {
                 ],
                 throwOnError: false
             });
-        }, 50);
-    }
-    
-    // Generate TOC (사이드바)
-    const sidebarElement = document.getElementById('article-sidebar');
-    setTimeout(() => generateTOC(contentElement, sidebarElement), 100);
+        }
+        generateTOC(contentElement, sidebarElement);
+    };
+
+    requestAnimationFrame(finishArticle);
 }
 
 
@@ -545,51 +545,68 @@ async function initCourseArticle(slug) {
 // ==================== GENERATE TABLE OF CONTENTS ====================
 function generateTOC(contentElement, sidebarElement) {
     if (!contentElement || !sidebarElement) return;
-    
-    const headings = contentElement.querySelectorAll('h1, h2');
+
+    const headings = Array.from(contentElement.querySelectorAll('h1, h2'));
     if (headings.length === 0) {
         sidebarElement.style.display = 'none';
         return;
     }
-    
-    // Add IDs to headings
+
+    sidebarElement.style.display = '';
+
     headings.forEach((heading, index) => {
         if (!heading.id) {
             heading.id = `heading-${index}`;
         }
     });
-    
-    // Generate TOC HTML
+
     let tocHTML = '<p class="sidebar-title">Contents</p><ul class="sidebar-nav">';
-    
+
     headings.forEach((heading) => {
         const level = heading.tagName.toLowerCase();
-        const text = heading.textContent;
         const id = heading.id;
-        
-        tocHTML += `<li><a href="#${id}" class="toc-${level}">${text}</a></li>`;
+        const labelHtml = heading.innerHTML.trim();
+        tocHTML += `<li><a href="#${id}" class="toc-${level}">${labelHtml}</a></li>`;
     });
-    
+
     tocHTML += '</ul>';
     sidebarElement.innerHTML = tocHTML;
-    
-    // Scroll spy
+
     const tocLinks = sidebarElement.querySelectorAll('a');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                tocLinks.forEach(link => link.classList.remove('active'));
-                const activeLink = sidebarElement.querySelector(`a[href="#${entry.target.id}"]`);
-                if (activeLink) activeLink.classList.add('active');
+
+    const scrollOffset = 140;
+    let scrollTicking = false;
+
+    function syncTocWithScroll() {
+        if (scrollTicking) return;
+        scrollTicking = true;
+        requestAnimationFrame(() => {
+            scrollTicking = false;
+            let current = headings[0];
+            for (const h of headings) {
+                if (h.getBoundingClientRect().top <= scrollOffset) {
+                    current = h;
+                }
+            }
+            tocLinks.forEach((link) => link.classList.remove('active'));
+            const activeLink = sidebarElement.querySelector(
+                `a[href="#${CSS.escape(current.id)}"]`
+            );
+            if (activeLink) {
+                activeLink.classList.add('active');
+                activeLink.scrollIntoView({
+                    block: 'nearest',
+                    inline: 'nearest',
+                    behavior: 'auto'
+                });
             }
         });
-    }, { rootMargin: '-20% 0px -80% 0px' });
-    
-    headings.forEach(heading => observer.observe(heading));
-    
-    // Smooth scroll
-    tocLinks.forEach(link => {
+    }
+
+    window.addEventListener('scroll', syncTocWithScroll, { passive: true });
+    syncTocWithScroll();
+
+    tocLinks.forEach((link) => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href').slice(1);

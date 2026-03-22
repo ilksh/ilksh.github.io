@@ -1159,6 +1159,18 @@ pre[class*="language-"] {
     padding-left: 1.2rem;
 }
 
+/* 목차 안 KaTeX (제목에 수식이 있을 때) */
+.sidebar-nav a .katex {
+    font-size: 0.92em;
+}
+.sidebar-nav a .katex-display {
+    display: inline-block;
+    margin: 0.2rem 0 0;
+    max-width: 100%;
+    overflow-x: auto;
+    vertical-align: middle;
+}
+
 .article-main {
     width: 100%;
 }
