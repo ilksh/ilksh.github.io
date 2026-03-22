@@ -1004,18 +1004,18 @@ int main() {
 * It is a clean modeling technique for assignment-like problems.
 
 ---
-## 8. Python animations (Run)
+## Python animations
 
 Press **Run** to build a looping GIF of the traversal or flow buildup. First run may install packages (matplotlib, pillow, networkx).
 
-### 8.1 DFS / BFS step-by-step
+### DFS / BFS step-by-step
 
 ```python {run}
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from collections import deque
-from io import BytesIO
 import base64
+import os
 
 graph = {
     1: [2, 3],
@@ -1122,10 +1122,15 @@ def update(fid):
 
 
 anim = animation.FuncAnimation(fig, update, frames=max_f, interval=650, repeat=True)
-buf = BytesIO()
-anim.save(buf, writer='pillow', fps=1.4)
+_gif_path = '_cp_anim_dfs_bfs.gif'
+anim.save(_gif_path, writer='pillow', fps=1.4)
 plt.close('all')
-_ANIM_GIF = base64.b64encode(buf.getvalue()).decode()
+with open(_gif_path, 'rb') as f:
+    _ANIM_GIF = base64.b64encode(f.read()).decode()
+try:
+    os.remove(_gif_path)
+except OSError:
+    pass
 print('Frames:', max_f)
 ```
 
@@ -1137,14 +1142,14 @@ print('Frames:', max_f)
 
 ---
 
-### 8.2 Maximum flow buildup
+### Maximum flow buildup
 
 ```python {run}
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import networkx as nx
-from io import BytesIO
 import base64
+import os
 
 edges = [
     ("S", "A", 10),
@@ -1229,10 +1234,15 @@ def update(t):
 
 
 anim = animation.FuncAnimation(fig, update, frames=nframes, interval=480, repeat=True)
-buf = BytesIO()
-anim.save(buf, writer='pillow', fps=2)
+_gif_path = '_cp_anim_maxflow.gif'
+anim.save(_gif_path, writer='pillow', fps=2)
 plt.close('all')
-_ANIM_GIF = base64.b64encode(buf.getvalue()).decode()
+with open(_gif_path, 'rb') as f:
+    _ANIM_GIF = base64.b64encode(f.read()).decode()
+try:
+    os.remove(_gif_path)
+except OSError:
+    pass
 print('Max flow value:', flow_val)
 ```
 
