@@ -237,28 +237,6 @@ sys.stderr = _stderr_capture
     }
 }
 
-function toggleCode(wrapperId, btnId) {
-    const wrapper = document.getElementById(wrapperId);
-    const btn = document.getElementById(btnId);
-    if (wrapper) {
-        wrapper.classList.toggle('collapsed');
-        if (btn) {
-            btn.textContent = wrapper.classList.contains('collapsed') ? 'Show Code' : 'Hide Code';
-        }
-    }
-}
-
-function toggleOutput(outputId, btnId) {
-    const output = document.getElementById(outputId);
-    const btn = document.getElementById(btnId);
-    if (output) {
-        output.classList.toggle('collapsed');
-        if (btn) {
-            btn.textContent = output.classList.contains('collapsed') ? 'Show Output' : 'Hide Output';
-        }
-    }
-}
-
 function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;

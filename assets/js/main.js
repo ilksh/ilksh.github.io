@@ -29,7 +29,6 @@ renderer.code = function(codeObj, language) {
     
     const rawLang = lang || '';
     const isExecutable = rawLang.includes('{run}');
-    const isFold = rawLang.includes('{fold}') || rawLang.includes('{view}');
     const actualLang = rawLang
         .replace(/\{run\}/gi, '')
         .replace(/\{fold\}/gi, '')
@@ -45,9 +44,9 @@ renderer.code = function(codeObj, language) {
             <div class="code-header">
                 <span class="lang-label">Python</span>
                 <div class="code-buttons">
-                    <button class="btn-toggle" id="toggle-btn-${idx}" onclick="toggleCode('wrapper-${idx}', 'toggle-btn-${idx}')">Show Code</button>
-                    <button class="btn-toggle btn-output-toggle" id="output-toggle-btn-${idx}" onclick="toggleOutput('output-${idx}', 'output-toggle-btn-${idx}')" style="display:none;">Hide Output</button>
-                    <button class="btn-run" onclick="runPython('code-${idx}', 'output-${idx}')">Run</button>
+                    <button type="button" class="btn-toggle" id="toggle-btn-${idx}" onclick="toggleCode('wrapper-${idx}', 'toggle-btn-${idx}')">Show full code</button>
+                    <button type="button" class="btn-toggle btn-output-toggle" id="output-toggle-btn-${idx}" onclick="toggleOutput('output-${idx}', 'output-toggle-btn-${idx}')" style="display:none;">Hide Output</button>
+                    <button type="button" class="btn-run" onclick="runPython('code-${idx}', 'output-${idx}')">Run</button>
                 </div>
             </div>
             <div class="code-wrapper collapsed" id="wrapper-${idx}">
@@ -57,34 +56,54 @@ renderer.code = function(codeObj, language) {
         </div>`;
     }
 
-    if (isFold && actualLang) {
-        executableCodeCounter++;
-        const idx = executableCodeCounter;
-        const langClass = `language-${actualLang}`;
-        const label = actualLang.toUpperCase();
+    // All other fenced blocks: collapsible (C++, plain python, bash, etc. — {fold}/{view} optional)
+    executableCodeCounter++;
+    const idx = executableCodeCounter;
+    const langClass = actualLang ? `language-${actualLang}` : '';
+    const label = actualLang ? actualLang.toUpperCase() : 'CODE';
 
-        return `
+    return `
         <div class="executable-code collapsible-code-block">
             <div class="code-header">
                 <span class="lang-label">${label}</span>
                 <div class="code-buttons">
-                    <button type="button" class="btn-toggle" id="fold-toggle-btn-${idx}" onclick="toggleCode('fold-wrapper-${idx}', 'fold-toggle-btn-${idx}')">Show Code</button>
+                    <button type="button" class="btn-toggle" id="fold-toggle-btn-${idx}" onclick="toggleCode('fold-wrapper-${idx}', 'fold-toggle-btn-${idx}')">Show full code</button>
                 </div>
             </div>
             <div class="code-wrapper collapsed" id="fold-wrapper-${idx}">
                 <pre><code class="${langClass}">${escapeHtml(code)}</code></pre>
             </div>
         </div>`;
-    }
-
-    const langClass = actualLang ? `language-${actualLang}` : '';
-    return `<pre><code class="${langClass}">${escapeHtml(code)}</code></pre>`;
 };
 
 function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+function toggleCode(wrapperId, btnId) {
+    const wrapper = document.getElementById(wrapperId);
+    const btn = document.getElementById(btnId);
+    if (wrapper) {
+        wrapper.classList.toggle('collapsed');
+        if (btn) {
+            btn.textContent = wrapper.classList.contains('collapsed')
+                ? 'Show full code'
+                : 'Close full code';
+        }
+    }
+}
+
+function toggleOutput(outputId, btnId) {
+    const output = document.getElementById(outputId);
+    const btn = document.getElementById(btnId);
+    if (output) {
+        output.classList.toggle('collapsed');
+        if (btn) {
+            btn.textContent = output.classList.contains('collapsed') ? 'Show Output' : 'Hide Output';
+        }
+    }
 }
 
 marked.use({ renderer });
