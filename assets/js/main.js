@@ -27,14 +27,19 @@ renderer.code = function(codeObj, language) {
         lang = language || '';
     }
     
-    // ```python {run} 형식 감지
-    const isExecutable = lang && lang.includes('{run}');
-    const actualLang = lang ? lang.replace('{run}', '').replace('{RUN}', '').trim() : '';
-    
+    const rawLang = lang || '';
+    const isExecutable = rawLang.includes('{run}');
+    const isFold = rawLang.includes('{fold}') || rawLang.includes('{view}');
+    const actualLang = rawLang
+        .replace(/\{run\}/gi, '')
+        .replace(/\{fold\}/gi, '')
+        .replace(/\{view\}/gi, '')
+        .trim();
+
     if (isExecutable && actualLang === 'python') {
         executableCodeCounter++;
         const idx = executableCodeCounter;
-        
+
         return `
         <div class="executable-code">
             <div class="code-header">
@@ -51,8 +56,27 @@ renderer.code = function(codeObj, language) {
             <div class="code-output" id="output-${idx}"></div>
         </div>`;
     }
-    
-    // 일반 코드 블록 (기존 방식)
+
+    if (isFold && actualLang) {
+        executableCodeCounter++;
+        const idx = executableCodeCounter;
+        const langClass = `language-${actualLang}`;
+        const label = actualLang.toUpperCase();
+
+        return `
+        <div class="executable-code collapsible-code-block">
+            <div class="code-header">
+                <span class="lang-label">${label}</span>
+                <div class="code-buttons">
+                    <button type="button" class="btn-toggle" id="fold-toggle-btn-${idx}" onclick="toggleCode('fold-wrapper-${idx}', 'fold-toggle-btn-${idx}')">Show Code</button>
+                </div>
+            </div>
+            <div class="code-wrapper collapsed" id="fold-wrapper-${idx}">
+                <pre><code class="${langClass}">${escapeHtml(code)}</code></pre>
+            </div>
+        </div>`;
+    }
+
     const langClass = actualLang ? `language-${actualLang}` : '';
     return `<pre><code class="${langClass}">${escapeHtml(code)}</code></pre>`;
 };

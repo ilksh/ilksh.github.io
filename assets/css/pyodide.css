@@ -158,6 +158,11 @@
     border-radius: 4px;
 }
 
+.code-output.has-plot img.plot-anim {
+    max-width: min(100%, 720px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .code-output pre {
     margin: 0;
     font-family: 'JetBrains Mono', monospace;

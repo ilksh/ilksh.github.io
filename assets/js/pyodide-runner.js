@@ -51,12 +51,13 @@ function detectPackages(code) {
             'np': 'numpy',
             'pandas': 'pandas',
             'pd': 'pandas',
-            'matplotlib': 'matplotlib',
-            'plt': 'matplotlib',
+        'matplotlib': 'matplotlib',
+        'plt': 'matplotlib',
+        'animation': 'matplotlib',
+        'PIL': 'pillow',
             'scipy': 'scipy',
             'sklearn': 'scikit-learn',
             'cv2': 'opencv-python',
-            'PIL': 'pillow',
             'sympy': 'sympy',
             'networkx': 'networkx'
         };
@@ -96,6 +97,15 @@ async function runPython(codeBlockId, outputId) {
         
         // 필요한 패키지 감지 및 설치
         const neededPackages = detectPackages(code);
+        if ((code.includes('FuncAnimation') || code.includes('_ANIM_GIF') || code.includes('pillow')) &&
+            !neededPackages.includes('pillow') &&
+            !loadedPackages.has('pillow')) {
+            neededPackages.push('pillow');
+        }
+        if (code.includes('networkx') || code.includes('nx.')) {
+            const nx = 'networkx';
+            if (!neededPackages.includes(nx) && !loadedPackages.has(nx)) neededPackages.push(nx);
+        }
         if (neededPackages.length > 0) {
             outputEl.innerHTML = `<span class="loading">Installing ${neededPackages.join(', ')}...</span>`;
             await pyodide.loadPackage(neededPackages);
@@ -127,6 +137,8 @@ plt.rcParams.update({
 })
 
 def _show_plot():
+    if not plt.get_fignums():
+        return ''
     buf = io.BytesIO()
     plt.savefig(buf, format='png', dpi=120, bbox_inches='tight', 
                 facecolor='#1a1a1a', edgecolor='none', pad_inches=0.2)
@@ -163,13 +175,21 @@ sys.stderr = _stderr_capture
         const stdout = pyodide.runPython('_stdout_capture.getvalue()');
         const stderr = pyodide.runPython('_stderr_capture.getvalue()');
         
-        // 그래프가 있으면 이미지로 변환
         let plotImg = '';
+        let animGif = '';
+        try {
+            animGif = pyodide.runPython('globals().get("_ANIM_GIF") or ""');
+        } catch (e) {
+            animGif = '';
+        }
+        if (animGif) {
+            plotImg += `<img src="data:image/gif;base64,${animGif}" class="plot-image plot-anim" alt="Algorithm animation" onclick="openImageModal(this.src)" title="Click to enlarge">`;
+        }
         if (code.includes('matplotlib') || code.includes('plt')) {
             try {
                 const imgBase64 = pyodide.runPython('_show_plot()');
                 if (imgBase64) {
-                    plotImg = `<img src="data:image/png;base64,${imgBase64}" class="plot-image" onclick="openImageModal(this.src)" title="Click to enlarge">`;
+                    plotImg += `<img src="data:image/png;base64,${imgBase64}" class="plot-image" onclick="openImageModal(this.src)" title="Click to enlarge">`;
                 }
             } catch (e) {
                 // 그래프 없으면 무시
