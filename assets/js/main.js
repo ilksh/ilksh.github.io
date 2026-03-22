@@ -377,12 +377,45 @@ function addCopyButtons() {
 //     }
 // }
 
+// marked가 $$ 블록 안의 _ 를 <em>으로 깨뜨리는 문제 방지: 펜스 밖 display math만 잠시 코드로 치환
+function isolateDisplayMath(markdown) {
+    const blocks = [];
+    const fenceRe = /```[\s\S]*?```/g;
+    let last = 0;
+    let out = '';
+    let m;
+    while ((m = fenceRe.exec(markdown)) !== null) {
+        const mdChunk = markdown.slice(last, m.index);
+        out += mdChunk.replace(/\$\$([\s\S]*?)\$\$/g, (_, inner) => {
+            const idx = blocks.length;
+            blocks.push(inner);
+            return '\n\n`LIBDISPLAYMATH' + idx + '`\n\n';
+        });
+        out += m[0];
+        last = m.index + m[0].length;
+    }
+    out += markdown.slice(last).replace(/\$\$([\s\S]*?)\$\$/g, (_, inner) => {
+        const idx = blocks.length;
+        blocks.push(inner);
+        return '\n\n`LIBDISPLAYMATH' + idx + '`\n\n';
+    });
+    return { text: out, blocks };
+}
+
+function reinjectDisplayMath(html, blocks) {
+    return html.replace(
+        /<code(?: class="[^"]*")?>LIBDISPLAYMATH(\d+)<\/code>/g,
+        (_, i) => '$$' + blocks[Number(i)] + '$$'
+    );
+}
+
 // ==================== RENDER ARTICLE ====================
 function renderArticle(data, contentElement) {
     // 카운터 리셋 (새 글 렌더링 시)
     executableCodeCounter = 0;
-    
-    const html = marked.parse(data.content);
+
+    const { text: mdForMarked, blocks: displayMathBlocks } = isolateDisplayMath(data.content);
+    const html = reinjectDisplayMath(marked.parse(mdForMarked), displayMathBlocks);
     contentElement.innerHTML = html;
 
     // Prism 하이라이팅
