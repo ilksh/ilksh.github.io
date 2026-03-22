@@ -171,7 +171,7 @@ $$
 and its coordinate vector in that basis is
 
 $$
-[\mathbf{x}]_{\mathcal{B}}=
+\left[\mathbf{x}\right]_{\mathcal{B}}=
 \begin{bmatrix}
 c_1 \\
 c_2
@@ -181,15 +181,13 @@ $$
 If
 
 $$
-P=[\mathbf{v}_1 \ \mathbf{v}_2]
+P=\left[\mathbf{v}_1 \ \mathbf{v}_2\right]
 $$
 
 then
 
 $$
-\mathbf{x}=P[\mathbf{x}]_{\mathcal{B}}
-\qquad \text{and} \qquad
-[\mathbf{x}]_{\mathcal{B}}=P^{-1}\mathbf{x}
+\mathbf{x}=P\left[\mathbf{x}\right]_{\mathcal{B}} \qquad \text{and} \qquad \left[\mathbf{x}\right]_{\mathcal{B}}=P^{-1}\mathbf{x}
 $$
 
 ---
