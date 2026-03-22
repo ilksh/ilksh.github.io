@@ -63,7 +63,7 @@ For example,
 $$
 A=
 \begin{bmatrix}
-2 & 1 \\
+2 & 1 \\\\
 0 & 3
 \end{bmatrix}
 $$
@@ -110,7 +110,7 @@ For
 $$
 A=
 \begin{bmatrix}
-a & b \\
+a & b \\\\
 c & d
 \end{bmatrix}
 $$
@@ -133,7 +133,7 @@ $$
 A^{-1}=
 \frac{1}{ad-bc}
 \begin{bmatrix}
-d & -b \\
+d & -b \\\\
 -c & a
 \end{bmatrix}
 $$
@@ -155,7 +155,7 @@ In the standard basis,
 $$
 \mathbf{x}=
 \begin{bmatrix}
-x_1 \\
+x_1 \\\\
 x_2
 \end{bmatrix}
 =
@@ -173,7 +173,7 @@ and its coordinate vector in that basis is
 $$
 \left[\mathbf{x}\right]_{\mathcal{B}}=
 \begin{bmatrix}
-c_1 \\
+c_1 \\\\
 c_2
 \end{bmatrix}
 $$
@@ -230,9 +230,9 @@ and since $D$ is diagonal,
 $$
 D^k=
 \begin{bmatrix}
-\lambda_1^k & 0 & \cdots & 0 \\
-0 & \lambda_2^k & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
+\lambda_1^k & 0 & \cdots & 0 \\\\
+0 & \lambda_2^k & \cdots & 0 \\\\
+\vdots & \vdots & \ddots & \vdots \\\\
 0 & 0 & \cdots & \lambda_n^k
 \end{bmatrix}
 $$
@@ -495,7 +495,7 @@ $$
 $$
 \det
 \begin{bmatrix}
-a & b \\
+a & b \\\\
 c & d
 \end{bmatrix}
 =ad-bc
@@ -505,7 +505,7 @@ $$
 A^{-1}=
 \frac{1}{ad-bc}
 \begin{bmatrix}
-d & -b \\
+d & -b \\\\
 -c & a
 \end{bmatrix}
 $$
