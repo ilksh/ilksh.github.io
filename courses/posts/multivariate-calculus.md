@@ -1,385 +1,775 @@
 ---
-title: Multivariate Calculus
+title: Multivariable Calculus and Vector Analysis
 category: MATH
 semester: 2022 F
 ---
 
-## 1. Vectors & Geometry in $\mathbb{R}^3$
+# Multivariable Calculus and Vector Analysis
 
-### Norms, Dot, Cross
-$$
-\|\mathbf{v}\|=\sqrt{v_1^2+v_2^2+v_3^2}
-$$
+## 1. The Geometry of Euclidean Space
 
-$$
-\mathbf{a}\cdot\mathbf{b}=\sum_{i=1}^3 a_i b_i=\|\mathbf{a}\|\|\mathbf{b}\|\cos\theta
-$$
+Euclidean space extends familiar 2D geometry to $\mathbb{R}^n$.
 
-Areas/volumes:
-$$
-\|\mathbf{a}\times\mathbf{b}\|=\text{area of parallelogram}
-$$
-$$
-\mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})=\det[\mathbf{a}\ \mathbf{b}\ \mathbf{c}]
-$$
-
-### Projections
-$$
-\mathrm{proj}_{\mathbf{b}}\mathbf{a}=\frac{\mathbf{a}\cdot\mathbf{b}}{\|\mathbf{b}\|^2}\mathbf{b}
-$$
+A point in $\mathbb{R}^3$ is written as
 
 $$
-\mathrm{comp}_{\mathbf{b}}\mathbf{a}=\frac{\mathbf{a}\cdot\mathbf{b}}{\|\mathbf{b}\|}
+\mathbf{x} = (x,y,z)
 $$
 
-### Lines & Planes
-Line (vector/parametric):
+The dot product measures angle and projection:
+
+$$
+\mathbf{u}\cdot\mathbf{v} = \|\mathbf{u}\|\,\|\mathbf{v}\|\cos\theta
+$$
+
+The norm gives length:
+
+$$
+\|\mathbf{u}\|=\sqrt{\mathbf{u}\cdot\mathbf{u}}
+$$
+
+The cross product gives an oriented normal vector in $\mathbb{R}^3$:
+
+$$
+\mathbf{u}\times\mathbf{v}
+=
+\begin{bmatrix}
+u_2v_3-u_3v_2 \\\\
+u_3v_1-u_1v_3 \\\\
+u_1v_2-u_2v_1
+\end{bmatrix}
+$$
+
+Planes in $\mathbb{R}^3$ are described by
+
+$$
+ax+by+cz=d
+$$
+
+and lines can be written parametrically as
+
 $$
 \mathbf{r}(t)=\mathbf{r}_0+t\mathbf{v}
 $$
 
-Plane (normal form):
+---
+
+## 2. Differentiation
+
+For a scalar-valued function $f(x,y,z)$, the derivative in multivariable calculus is encoded by the gradient:
+
 $$
-\mathbf{n}\cdot(\mathbf{r}-\mathbf{r}_0)=0
-$$
-Plane through 3 points $A,B,C$:
-$$
-\mathbf{n}=(\overrightarrow{AB})\times(\overrightarrow{AC}),\quad \mathbf{n}\cdot(\mathbf{r}-\mathbf{r}_A)=0
+\nabla f =
+\begin{bmatrix}
+\frac{\partial f}{\partial x} \\\\
+\frac{\partial f}{\partial y} \\\\
+\frac{\partial f}{\partial z}
+\end{bmatrix}
 $$
 
-### Distances
-Point $P$ to plane $\mathbf{n}\cdot(\mathbf{r}-\mathbf{r}_0)=0$:
+The directional derivative in the unit direction $\mathbf{u}$ is
+
 $$
-d=\frac{|\mathbf{n}\cdot(\mathbf{r}_P-\mathbf{r}_0)|}{\|\mathbf{n}\|}
+D_{\mathbf{u}}f = \nabla f \cdot \mathbf{u}
 $$
 
-### Quadratic Surfaces (canonical)
-- Ellipsoid: $\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$
-- Hyperboloid (1 sheet): $\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$
-- Hyperboloid (2 sheets): $-\frac{x^2}{a^2}-\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$
-- Elliptic paraboloid: $z=\frac{x^2}{a^2}+\frac{y^2}{b^2}$
-- Hyperbolic paraboloid: $z=\frac{x^2}{a^2}-\frac{y^2}{b^2}$
-- Elliptic cone: $\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=0$
-- Cylinders: variable missing (e.g., $x^2+y^2=1$)
+The gradient points in the direction of steepest ascent.
+
+The tangent plane to $z=f(x,y)$ at $(x_0,y_0)$ is
+
+$$
+z \approx f(x_0,y_0)
++ f_x(x_0,y_0)(x-x_0)
++ f_y(x_0,y_0)(y-y_0)
+$$
+
+### Visualization — surface and tangent plane
+
+```python {run}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-2, 2, 200)
+y = np.linspace(-2, 2, 200)
+X, Y = np.meshgrid(x, y)
+Z = np.sin(X) * np.cos(Y)
+
+x0, y0 = 0.8, -0.6
+z0 = np.sin(x0) * np.cos(y0)
+fx = np.cos(x0) * np.cos(y0)
+fy = -np.sin(x0) * np.sin(y0)
+
+Xt, Yt = np.meshgrid(np.linspace(x0 - 1, x0 + 1, 40),
+                     np.linspace(y0 - 1, y0 + 1, 40))
+Zt = z0 + fx * (Xt - x0) + fy * (Yt - y0)
+
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z, linewidth=0, antialiased=True, alpha=0.85)
+ax.plot_surface(Xt, Yt, Zt, linewidth=0, alpha=0.65)
+ax.scatter([x0], [y0], [z0], s=80)
+ax.set_title("Surface and local tangent plane")
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
+plt.show()
+```
 
 ---
 
-## 2. Vector-Valued Functions & Space Curves
+## 3. Higher-Order Derivatives, Maxima, and Minima
 
-Curve:
+### Iterated Partial Derivatives
+
+Second-order partials include
+
+$$
+f_{xx}, \quad f_{xy}, \quad f_{yx}, \quad f_{yy}
+$$
+
+Under regularity conditions,
+
+$$
+f_{xy}=f_{yx}
+$$
+
+### Taylor's Theorem
+
+A second-order Taylor approximation of $f(x,y)$ near $(a,b)$ is
+
+$$
+f(x,y)\approx f(a,b)
++ f_x(a,b)(x-a)+f_y(a,b)(y-b)
++ \frac{1}{2}
+\begin{bmatrix}
+x-a & y-b
+\end{bmatrix}
+H_f(a,b)
+\begin{bmatrix}
+x-a \\\\
+y-b
+\end{bmatrix}
+$$
+
+where $H_f$ is the Hessian matrix.
+
+### Visualization — second-order Taylor approximation
+
+```python {run}
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(x, y):
+    return np.exp(-(x**2 + y**2)) * (1 + 0.5 * x - 0.3 * y)
+
+a, b = 0.4, -0.5
+fa = f(a, b)
+
+fx = (-2*a) * np.exp(-(a**2 + b**2)) * (1 + 0.5*a - 0.3*b) + 0.5*np.exp(-(a**2 + b**2))
+fy = (-2*b) * np.exp(-(a**2 + b**2)) * (1 + 0.5*a - 0.3*b) - 0.3*np.exp(-(a**2 + b**2))
+
+fxx = np.exp(-(a**2+b**2)) * ((4*a*a-2)*(1+0.5*a-0.3*b) - 2*a)
+fyy = np.exp(-(a**2+b**2)) * ((4*b*b-2)*(1+0.5*a-0.3*b) + 1.2*b)
+fxy = np.exp(-(a**2+b**2)) * (4*a*b*(1+0.5*a-0.3*b) + 0.6*a - b)
+
+x = np.linspace(a - 1.2, a + 1.2, 180)
+y = np.linspace(b - 1.2, b + 1.2, 180)
+X, Y = np.meshgrid(x, y)
+Z = f(X, Y)
+
+dx = X - a
+dy = Y - b
+T2 = fa + fx*dx + fy*dy + 0.5*(fxx*dx**2 + 2*fxy*dx*dy + fyy*dy**2)
+
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z, linewidth=0, antialiased=True, alpha=0.82)
+ax.plot_surface(X, Y, T2, linewidth=0, alpha=0.55)
+ax.set_title("Function surface and second-order Taylor approximation")
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
+plt.show()
+```
+
+### Extrema of Real-Valued Functions
+
+Critical points satisfy
+
+$$
+\nabla f = \mathbf{0}
+$$
+
+For functions of two variables, the second derivative test uses
+
+$$
+D=f_{xx}f_{yy}-f_{xy}^2
+$$
+
+- $D>0$ and $f_{xx}>0$: local minimum
+- $D>0$ and $f_{xx}<0$: local maximum
+- $D<0$: saddle point
+
+### Constrained Extrema and Lagrange Multipliers
+
+To optimize $f(x,y,z)$ subject to $g(x,y,z)=c$, solve
+
+$$
+\nabla f = \lambda \nabla g
+$$
+
+together with
+
+$$
+g(x,y,z)=c
+$$
+
+---
+
+## 4. Vector-Valued Functions
+
+A curve in space is represented by
+
 $$
 \mathbf{r}(t)=\langle x(t),y(t),z(t)\rangle
 $$
 
-Velocity / speed / acceleration:
+Its derivatives describe motion:
+
 $$
-\mathbf{v}(t)=\mathbf{r}'(t),\quad |\mathbf{v}(t)|=\|\mathbf{r}'(t)\|,\quad \mathbf{a}(t)=\mathbf{r}''(t)
+\mathbf{v}(t)=\mathbf{r}'(t), \qquad
+\mathbf{a}(t)=\mathbf{r}''(t)
 $$
 
-Arc length:
+### Acceleration and Newton's Second Law
+
+Newton's second law is
+
+$$
+\mathbf{F}=m\mathbf{a}
+$$
+
+### Arc Length
+
+The arc length of a curve is
+
 $$
 L=\int_a^b \|\mathbf{r}'(t)\|\,dt
 $$
 
-Unit tangent:
+### Visualization — helix, velocity, and acceleration
+
+```python {run}
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.linspace(0, 6*np.pi, 500)
+x = np.cos(t)
+y = np.sin(t)
+z = 0.15 * t
+
+vx = -np.sin(t)
+vy = np.cos(t)
+vz = 0.15 * np.ones_like(t)
+
+axv = -np.cos(t)
+ayv = -np.sin(t)
+azv = np.zeros_like(t)
+
+k = 240
+
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot(x, y, z, linewidth=2)
+ax.quiver(x[k], y[k], z[k], vx[k], vy[k], vz[k], length=0.9, normalize=True)
+ax.quiver(x[k], y[k], z[k], axv[k], ayv[k], azv[k], length=0.9, normalize=True)
+ax.scatter([x[k]], [y[k]], [z[k]], s=70)
+ax.set_title("Helix with velocity and acceleration vectors")
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
+plt.show()
+```
+
+### Vector Fields
+
+A vector field in $\mathbb{R}^3$ has the form
+
 $$
-\mathbf{T}=\frac{\mathbf{r}'(t)}{\|\mathbf{r}'(t)\|}
+\mathbf{F}(x,y,z)=\langle P(x,y,z),Q(x,y,z),R(x,y,z)\rangle
 $$
 
-Curvature:
+### Divergence and Curl
+
+Divergence measures local expansion:
+
 $$
-\kappa=\left\|\frac{d\mathbf{T}}{ds}\right\|
-$$
-Equivalent:
-$$
-\kappa=\frac{\|\mathbf{r}'(t)\times\mathbf{r}''(t)\|}{\|\mathbf{r}'(t)\|^3}
+\nabla\cdot\mathbf{F}
+=
+\frac{\partial P}{\partial x}
++
+\frac{\partial Q}{\partial y}
++
+\frac{\partial R}{\partial z}
 $$
 
-Normal/binormal (optional but standard in many Calc III syllabi):
-$$
-\mathbf{N}=\frac{\mathbf{T}'(s)}{\|\mathbf{T}'(s)\|},\qquad \mathbf{B}=\mathbf{T}\times\mathbf{N}
-$$
+Curl measures local rotation:
 
----
-
-## 3. Multivariable Limits, Continuity, Derivatives
-
-Limit:
 $$
-\lim_{(x,y)\to(a,b)} f(x,y)
-$$
-
-Partials:
-$$
-f_x=\frac{\partial f}{\partial x},\quad f_y=\frac{\partial f}{\partial y},\quad f_z=\frac{\partial f}{\partial z}
-$$
-
-Higher-order partials / Clairaut:
-$$
-f_{xy}=f_{yx}\quad (\text{when continuous near the point})
-$$
-
-Gradient:
-$$
-\nabla f=\left\langle f_x,f_y,f_z\right\rangle
-$$
-
-Directional derivative (unit $\mathbf{u}$):
-$$
-D_{\mathbf{u}}f=\nabla f\cdot \mathbf{u}
-$$
-
-Tangent plane / linearization for $z=f(x,y)$ at $(a,b)$:
-$$
-z\approx f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)
-$$
-
-Total differential:
-$$
-dz=f_x\,dx+f_y\,dy\quad (\text{and } df=\nabla f\cdot d\mathbf{r})
-$$
-
-Level sets:
-$$
-f(x,y,z)=c,\qquad \nabla f \perp \text{level surface}
-$$
-
-### Implicit Differentiation (2 variables)
-If $F(x,y)=0$ and $F_y\neq 0$:
-$$
-\frac{dy}{dx}=-\frac{F_x}{F_y}
-$$
-
----
-
-## 4. **Multivariable Chain Rule (Complete)**
-
-### A) Scalar output, one parameter
-If $z=f(x,y)$ with $x=x(t),y=y(t)$:
-$$
-\frac{dz}{dt}=f_x(x(t),y(t))\frac{dx}{dt}+f_y(x(t),y(t))\frac{dy}{dt}
-$$
-If $z=f(x,y,z)$ with $(x,y,z)=(x(t),y(t),z(t))$:
-$$
-\frac{df}{dt}=f_x x'(t)+f_y y'(t)+f_z z'(t)
-$$
-
-### B) Scalar output, several parameters
-If $w=f(x,y)$ with $x=x(s,t),y=y(s,t)$:
-$$
-\frac{\partial w}{\partial s}=f_x\frac{\partial x}{\partial s}+f_y\frac{\partial y}{\partial s},\qquad
-\frac{\partial w}{\partial t}=f_x\frac{\partial x}{\partial t}+f_y\frac{\partial y}{\partial t}
-$$
-
-### C) Jacobian / matrix form (the clean statement)
-Let $f:\mathbb{R}^m\to\mathbb{R}^p$ and $g:\mathbb{R}^n\to\mathbb{R}^m$ be differentiable.
-Then:
-$$
-D(f\circ g)(\mathbf{x}) = Df(g(\mathbf{x}))\,Dg(\mathbf{x})
-$$
-In terms of Jacobians:
-$$
-J_{f\circ g}(\mathbf{x}) = J_f(g(\mathbf{x}))\,J_g(\mathbf{x})
-$$
-
-### D) Gradient form (common special case)
-If $f:\mathbb{R}^m\to\mathbb{R}$ and $g:\mathbb{R}^n\to\mathbb{R}^m$:
-$$
-\nabla (f\circ g)(\mathbf{x}) = (J_g(\mathbf{x}))^\top \nabla f(g(\mathbf{x}))
-$$
-
----
-
-## 5. Optimization (Unconstrained & Constrained)
-
-Critical points:
-$$
-\nabla f(\mathbf{x})=\mathbf{0}
-$$
-
-Hessian (2D):
-$$
-H_f=
+\nabla\times\mathbf{F}
+=
 \begin{bmatrix}
-f_{xx} & f_{xy}\\
-f_{yx} & f_{yy}
+\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z} \\\\
+\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x} \\\\
+\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}
 \end{bmatrix}
 $$
 
-Second derivative test (2D):
-$$
-D=f_{xx}f_{yy}-f_{xy}^2
-$$
-- If $D>0$ and $f_{xx}>0$: local min  
-- If $D>0$ and $f_{xx}<0$: local max  
-- If $D<0$: saddle
+### Visualization — 3D vector field
 
-### Lagrange Multipliers
-One constraint $g(\mathbf{x})=c$:
-$$
-\nabla f=\lambda \nabla g
-$$
+```python {run}
+import numpy as np
+import matplotlib.pyplot as plt
 
-Multiple constraints $g_i(\mathbf{x})=c_i$:
-$$
-\nabla f=\sum_{i=1}^k \lambda_i \nabla g_i
-$$
+x = np.linspace(-1.5, 1.5, 7)
+y = np.linspace(-1.5, 1.5, 7)
+z = np.linspace(-1.5, 1.5, 5)
+X, Y, Z = np.meshgrid(x, y, z)
 
----
+U = X - Y
+V = X + Y
+W = 0.8 * Z
 
-## 6. Multiple Integrals & Coordinate Systems
-
-### Double / Triple Integrals
-$$
-\iint_R f(x,y)\,dA,\qquad \iiint_E f(x,y,z)\,dV
-$$
-
-Iterated integrals (Type I region):
-$$
-\iint_R f\,dA=\int_a^b\int_{g(x)}^{h(x)} f(x,y)\,dy\,dx
-$$
-
-### Polar Coordinates
-$$
-x=r\cos\theta,\quad y=r\sin\theta,\quad dA=r\,dr\,d\theta
-$$
-
-### Cylindrical Coordinates
-$$
-x=r\cos\theta,\quad y=r\sin\theta,\quad z=z,\quad dV=r\,dr\,d\theta\,dz
-$$
-
-### Spherical Coordinates
-$$
-x=\rho\sin\phi\cos\theta,\quad y=\rho\sin\phi\sin\theta,\quad z=\rho\cos\phi
-$$
-$$
-dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta
-$$
-
-### Change of Variables / Jacobian
-If $(x,y)=(x(u,v),y(u,v))$:
-$$
-\iint_R f(x,y)\,dA = \iint_S f(x(u,v),y(u,v))\,\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv
-$$
-where
-$$
-\frac{\partial(x,y)}{\partial(u,v)}=
-\begin{vmatrix}
-x_u & x_v\\
-y_u & y_v
-\end{vmatrix}
-$$
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
+ax.quiver(X, Y, Z, U, V, W, length=0.12, normalize=False)
+ax.set_title("Vector field: expansion + rotation")
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
+plt.show()
+```
 
 ---
 
-## 7. Vector Fields, Line Integrals, Flux
+## 5. Double and Triple Integrals
 
-Vector field:
+A double integral accumulates values over a planar region:
+
 $$
-\mathbf{F}=\langle P,Q,R\rangle
+\iint_D f(x,y)\,dA
 $$
 
-### Line Integrals
-Scalar line integral (with arc length):
+A triple integral accumulates over a spatial region:
+
+$$
+\iiint_E f(x,y,z)\,dV
+$$
+
+These can represent
+
+- mass,
+- area-weighted averages,
+- volume,
+- charge,
+- probability.
+
+For constant density,
+
+$$
+\iiint_E 1\,dV = \text{Volume}(E)
+$$
+
+### Visualization — region in the plane and height over it
+
+```python {run}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-1.2, 1.2, 220)
+y = np.linspace(-1.2, 1.2, 220)
+X, Y = np.meshgrid(x, y)
+
+mask = X**2 + Y**2 <= 1
+Z = 1 - X**2 - Y**2
+Z[~mask] = np.nan
+
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z, linewidth=0, antialiased=True, alpha=0.92)
+ax.contour(X, Y, X**2 + Y**2, levels=[1], zdir='z', offset=-0.25)
+ax.set_zlim(-0.25, 1.05)
+ax.set_title("Surface above a circular integration region")
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
+plt.show()
+```
+
+---
+
+## 6. The Change of Variables Formula
+
+### The Geometry of Maps from $\mathbb{R}^2 \to \mathbb{R}^2$
+
+A transformation
+
+$$
+T(u,v)=(x(u,v),y(u,v))
+$$
+
+deforms grids and regions.
+
+The Jacobian matrix is
+
+$$
+DT=
+\begin{bmatrix}
+\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\\\
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+\end{bmatrix}
+$$
+
+and the Jacobian determinant is
+
+$$
+J=\frac{\partial(x,y)}{\partial(u,v)}
+$$
+
+### Change of Variables Theorem
+
+If $T$ is smooth and one-to-one, then
+
+$$
+\iint_D f(x,y)\,dA
+=
+\iint_{D^\ast} f(x(u,v),y(u,v))
+\left|
+\frac{\partial(x,y)}{\partial(u,v)}
+\right|
+\,du\,dv
+$$
+
+Likewise in three dimensions,
+
+$$
+\iiint_E f(x,y,z)\,dV
+=
+\iiint_{E^\ast} f(T(u,v,w))
+\left|
+\frac{\partial(x,y,z)}{\partial(u,v,w)}
+\right|
+\,du\,dv\,dw
+$$
+
+### Visualization — $(u,v)$ grid and its image in $(x,y)$
+
+```python {run}
+import numpy as np
+import matplotlib.pyplot as plt
+
+u = np.linspace(-1.5, 1.5, 16)
+v = np.linspace(-1.5, 1.5, 16)
+
+def T(u, v):
+    x = u + 0.35 * u * v
+    y = v + 0.25 * (u**2 - v**2)
+    return x, y
+
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+for c in u:
+    vv = np.linspace(-1.5, 1.5, 300)
+    uu = np.full_like(vv, c)
+    axes[0].plot(uu, vv, linewidth=1)
+    x, y = T(uu, vv)
+    axes[1].plot(x, y, linewidth=1)
+
+for c in v:
+    uu = np.linspace(-1.5, 1.5, 300)
+    vv = np.full_like(uu, c)
+    axes[0].plot(uu, vv, linewidth=1)
+    x, y = T(uu, vv)
+    axes[1].plot(x, y, linewidth=1)
+
+axes[0].set_title("Original grid in $(u,v)$")
+axes[1].set_title("Deformed grid in $(x,y)$")
+for ax in axes:
+    ax.axhline(0)
+    ax.axvline(0)
+    ax.set_aspect('equal')
+plt.show()
+```
+
+---
+
+## 7. Integrals over Paths and Surfaces
+
+### Path / Line Integrals
+
+For a scalar field,
+
 $$
 \int_C f\,ds
+=
+\int_a^b f(\mathbf{r}(t))\|\mathbf{r}'(t)\|\,dt
 $$
 
-Vector line integral (work):
+For a vector field,
+
 $$
 \int_C \mathbf{F}\cdot d\mathbf{r}
-$$
-If $\mathbf{r}(t)$, $t\in[a,b]$:
-$$
-\int_C \mathbf{F}\cdot d\mathbf{r}=\int_a^b \mathbf{F}(\mathbf{r}(t))\cdot \mathbf{r}'(t)\,dt
+=
+\int_a^b \mathbf{F}(\mathbf{r}(t))\cdot \mathbf{r}'(t)\,dt
 $$
 
-### Conservative Fields
-$\mathbf{F}$ is conservative if $\exists \phi$ such that:
+### Parametrized Surfaces and Surface Area
+
+A surface is parametrized by
+
 $$
-\mathbf{F}=\nabla \phi
-$$
-Then:
-$$
-\int_C \mathbf{F}\cdot d\mathbf{r}=\phi(B)-\phi(A)
-$$
-Curl test (simply connected domain):
-$$
-\nabla\times\mathbf{F}=\mathbf{0}\ \Longrightarrow\ \mathbf{F}\ \text{conservative}
-$$
-In 2D ($\mathbf{F}=\langle P,Q\rangle$):
-$$
-\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}
+\mathbf{X}(u,v)
+=
+\langle x(u,v),y(u,v),z(u,v)\rangle
 $$
 
+Its area element is
 
-### Flux / Surface Integrals
-Flux through oriented surface $S$:
+$$
+dS = \|\mathbf{X}_u\times \mathbf{X}_v\|\,du\,dv
+$$
+
+So the surface area is
+
+$$
+\iint_S 1\,dS
+=
+\iint_D \|\mathbf{X}_u\times \mathbf{X}_v\|\,du\,dv
+$$
+
+### Visualization — parametrized surface and normal vectors
+
+```python {run}
+import numpy as np
+import matplotlib.pyplot as plt
+
+u = np.linspace(0, 2*np.pi, 120)
+v = np.linspace(0.2, 1.0, 80)
+U, V = np.meshgrid(u, v)
+
+X = V * np.cos(U)
+Y = V * np.sin(U)
+Z = 0.7 * (X**2 - Y**2)
+
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z, linewidth=0, antialiased=True, alpha=0.88)
+
+uq = np.linspace(0, 2*np.pi, 10)
+vq = np.linspace(0.3, 0.95, 5)
+
+for uu in uq:
+    for vv in vq:
+        x = vv * np.cos(uu)
+        y = vv * np.sin(uu)
+        z = 0.7 * (x**2 - y**2)
+
+        Xu = np.array([-vv*np.sin(uu), vv*np.cos(uu), 0.7 * (2*x*(-vv*np.sin(uu)) - 2*y*(vv*np.cos(uu)) )])
+        Xv = np.array([np.cos(uu), np.sin(uu), 0.7 * (2*x*np.cos(uu) - 2*y*np.sin(uu))])
+        n = np.cross(Xu, Xv)
+        n = n / np.linalg.norm(n)
+
+        ax.quiver(x, y, z, n[0], n[1], n[2], length=0.18, normalize=True)
+
+ax.set_title("Parametrized surface with normal directions")
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
+plt.show()
+```
+
+### Surface Integrals of Vector Fields
+
+Flux through a surface is
 
 $$
 \iint_S \mathbf{F}\cdot \mathbf{n}\,dS
 $$
 
-Parametrized surface $\mathbf{r}(u,v)$, $(u,v)\in D$:
+or, in parametrized form,
 
----
-## 8. Import Theorems
-
-### A. Green’s Theorem
-
-Green’s Theorem relates a line integral around a closed curve in the plane to a double integral over the region it encloses.
-It is the 2D special case connecting circulation / flux to partial derivatives inside the region.
-
-### B. Stokes’ Theorem
-
-Stokes’ Theorem generalizes Green’s Theorem to surfaces in 3D.
-It states that the circulation along the boundary curve equals the surface integral of the curl over the surface.
-
-### C. Divergence Theorem
-
-The Divergence Theorem relates the flux through a closed surface to a triple integral of divergence over the enclosed volume.
-It converts a boundary surface integral into a volume integral.
-
----
-
-## 9. Common Parameterizations (handy in practice)
-
-Plane $ax+by+cz=d$ (solve for $z$):$
-\mathbf{r}(x,y)=\langle x,y,\tfrac{d-ax-by}{c}\rangle
-$
-
-Graph surface $z=g(x,y)$:
 $$
-\mathbf{r}(x,y)=\langle x,y,g(x,y)\rangle,\quad
-\mathbf{r}_x\times\mathbf{r}_y=\langle -g_x,-g_y,1\rangle
-$$
-
-Cylinder $x^2+y^2=a^2$:
-$$
-\mathbf{r}(\theta,z)=\langle a\cos\theta,a\sin\theta,z\rangle
-$$
-
-Sphere $x^2+y^2+z^2=R^2$:
-$$
-\mathbf{r}(\phi,\theta)=\langle R\sin\phi\cos\theta,\ R\sin\phi\sin\theta,\ R\cos\phi\rangle
+\iint_D \mathbf{F}(\mathbf{X}(u,v))\cdot(\mathbf{X}_u\times \mathbf{X}_v)\,du\,dv
 $$
 
 ---
 
-## 10. Quick Identity Block (often used)
+## 8. The Integral Theorems of Vector Analysis
 
-Product rules (componentwise):
+### Green's Theorem
+
+For a positively oriented simple closed curve $C$ bounding a region $D$,
+
 $$
-\nabla(fg)=f\nabla g+g\nabla f
+\oint_C P\,dx+Q\,dy
+=
+\iint_D
+\left(
+\frac{\partial Q}{\partial x}
+-
+\frac{\partial P}{\partial y}
+\right)\,dA
 $$
 
-Chain rule (scalar):
+### Stokes' Theorem
+
+For an oriented surface $S$ with boundary $\partial S$,
+
 $$
-\nabla (f\circ g) = (J_g)^\top \nabla f\circ g
+\oint_{\partial S}\mathbf{F}\cdot d\mathbf{r}
+=
+\iint_S (\nabla\times\mathbf{F})\cdot\mathbf{n}\,dS
 $$
 
-Fundamental theorem for line integrals:
+### Conservative Fields
+
+A vector field is conservative if
+
 $$
-\int_C \nabla \phi\cdot d\mathbf{r}=\phi(B)-\phi(A)
+\mathbf{F}=\nabla \phi
 $$
+
+for some potential function $\phi$.
+
+Then line integrals depend only on endpoints:
+
+$$
+\int_C \mathbf{F}\cdot d\mathbf{r}
+=
+\phi(B)-\phi(A)
+$$
+
+### Gauss' Theorem (Divergence Theorem)
+
+For a closed surface $S=\partial E$,
+
+$$
+\iint_S \mathbf{F}\cdot\mathbf{n}\,dS
+=
+\iiint_E \nabla\cdot\mathbf{F}\,dV
+$$
+
+This connects outward flux through a surface to total divergence inside the volume.
+
+### Visualization — outward field on a sphere (flux intuition)
+
+```python {run}
+import numpy as np
+import matplotlib.pyplot as plt
+
+phi = np.linspace(0, np.pi, 80)
+theta = np.linspace(0, 2*np.pi, 160)
+Phi, Theta = np.meshgrid(phi, theta)
+
+X = np.sin(Phi) * np.cos(Theta)
+Y = np.sin(Phi) * np.sin(Theta)
+Z = np.cos(Phi)
+
+U = X
+V = Y
+W = Z
+
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z, linewidth=0, antialiased=True, alpha=0.35)
+
+step_t, step_p = 12, 8
+ax.quiver(X[::step_t, ::step_p], Y[::step_t, ::step_p], Z[::step_t, ::step_p],
+          U[::step_t, ::step_p], V[::step_t, ::step_p], W[::step_t, ::step_p],
+          length=0.15, normalize=True)
+
+ax.set_title("Outward flux field on a sphere")
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
+plt.show()
+```
+
+---
+
+## Core Formulas
+
+$$
+\nabla f=
+\begin{bmatrix}
+f_x\\\\f_y\\\\f_z
+\end{bmatrix}
+$$
+
+$$
+D_{\mathbf{u}}f=\nabla f\cdot\mathbf{u}
+$$
+
+$$
+\nabla\cdot\mathbf{F}
+=
+P_x+Q_y+R_z
+$$
+
+$$
+\nabla\times\mathbf{F}
+=
+\begin{bmatrix}
+R_y-Q_z\\\\P_z-R_x\\\\Q_x-P_y
+\end{bmatrix}
+$$
+
+$$
+L=\int_a^b \|\mathbf{r}'(t)\|\,dt
+$$
+
+$$
+\int_C \mathbf{F}\cdot d\mathbf{r}
+=
+\int_a^b \mathbf{F}(\mathbf{r}(t))\cdot \mathbf{r}'(t)\,dt
+$$
+
+$$
+dS=\|\mathbf{X}_u\times \mathbf{X}_v\|\,du\,dv
+$$
+
+$$
+\iint_D f(x,y)\,dA
+=
+\iint_{D^\ast} f(x(u,v),y(u,v))
+\left|
+\frac{\partial(x,y)}{\partial(u,v)}
+\right|
+\,du\,dv
+$$
+
+$$
+\oint_C P\,dx+Q\,dy
+=
+\iint_D
+\left(
+\frac{\partial Q}{\partial x}
+-
+\frac{\partial P}{\partial y}
+\right)\,dA
+$$
+
+$$
+\oint_{\partial S}\mathbf{F}\cdot d\mathbf{r}
+=
+\iint_S (\nabla\times\mathbf{F})\cdot\mathbf{n}\,dS
+$$
+
+$$
+\iint_{\partial E}\mathbf{F}\cdot\mathbf{n}\,dS
+=
+\iiint_E \nabla\cdot\mathbf{F}\,dV
+$$
+
+---
+
