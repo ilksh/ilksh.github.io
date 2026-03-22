@@ -45,6 +45,7 @@ renderer.code = function(codeObj, language) {
                 <span class="lang-label">Python</span>
                 <div class="code-buttons">
                     <button type="button" class="btn-toggle" id="toggle-btn-${idx}" onclick="toggleCode('wrapper-${idx}', 'toggle-btn-${idx}')">Show full code</button>
+                    <button type="button" class="btn-copy" id="copy-btn-${idx}" onclick="copyCodeBlock('code-${idx}', 'copy-btn-${idx}')">Copy</button>
                     <button type="button" class="btn-toggle btn-output-toggle" id="output-toggle-btn-${idx}" onclick="toggleOutput('output-${idx}', 'output-toggle-btn-${idx}')" style="display:none;">Hide Output</button>
                     <button type="button" class="btn-run" onclick="runPython('code-${idx}', 'output-${idx}')">Run</button>
                 </div>
@@ -68,10 +69,11 @@ renderer.code = function(codeObj, language) {
                 <span class="lang-label">${label}</span>
                 <div class="code-buttons">
                     <button type="button" class="btn-toggle" id="fold-toggle-btn-${idx}" onclick="toggleCode('fold-wrapper-${idx}', 'fold-toggle-btn-${idx}')">Show full code</button>
+                    <button type="button" class="btn-copy" id="fold-copy-btn-${idx}" onclick="copyCodeBlock('fold-code-${idx}', 'fold-copy-btn-${idx}')">Copy</button>
                 </div>
             </div>
             <div class="code-wrapper collapsed" id="fold-wrapper-${idx}">
-                <pre><code class="${langClass}">${escapeHtml(code)}</code></pre>
+                <pre><code id="fold-code-${idx}" class="${langClass}">${escapeHtml(code)}</code></pre>
             </div>
         </div>`;
 };
@@ -104,6 +106,45 @@ function toggleOutput(outputId, btnId) {
             btn.textContent = output.classList.contains('collapsed') ? 'Show Output' : 'Hide Output';
         }
     }
+}
+
+async function copyCodeBlock(codeElementId, buttonId) {
+    const codeEl = document.getElementById(codeElementId);
+    const btn = document.getElementById(buttonId);
+    if (!codeEl || !btn) return;
+
+    const text = codeEl.textContent || '';
+    const defaultLabel = 'Copy';
+
+    let ok = false;
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+            ok = true;
+        } else {
+            throw new Error('clipboard unavailable');
+        }
+    } catch (e) {
+        try {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.setAttribute('readonly', '');
+            ta.style.cssText = 'position:fixed;left:-9999px;top:0';
+            document.body.appendChild(ta);
+            ta.select();
+            ok = document.execCommand('copy');
+            document.body.removeChild(ta);
+        } catch (e2) {
+            ok = false;
+        }
+    }
+
+    btn.textContent = ok ? 'Copied!' : 'Failed';
+    btn.disabled = true;
+    setTimeout(() => {
+        btn.textContent = defaultLabel;
+        btn.disabled = false;
+    }, ok ? 1200 : 2000);
 }
 
 marked.use({ renderer });

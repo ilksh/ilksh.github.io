@@ -73,6 +73,17 @@
     color: #d4b976;
 }
 
+.btn-copy {
+    color: rgba(107, 154, 196, 0.95);
+    border-color: rgba(107, 154, 196, 0.35);
+}
+
+.btn-copy:hover:not(:disabled) {
+    color: #8eb4d4;
+    border-color: rgba(107, 154, 196, 0.55);
+    background: rgba(107, 154, 196, 0.08);
+}
+
 /* Code Area */
 .code-wrapper {
     max-height: 500px;
