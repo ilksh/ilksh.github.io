@@ -1,170 +1,432 @@
 ---
 title: Applied Quantum Computing
-category: QUANTUM
-semester: 2024 S
+category: "QUANTUM COMPUTING"
+semester: 2023 S
 ---
 
-# Applied Quantum Computing
+# 1. Fundamentals
 
-Quantum algorithms are built on **discrete state spaces** and **linear algebra**. The same habit of encoding configurations in bits shows up classically—below is a standard **bitmask** exercise: counting non-overlapping four-seat **families** per airplane row when some middle seats are reserved.
+## Postulates of quantum mechanics
+
+### 1) State space
+
+$$|\psi\rangle \in \mathcal{H}, \qquad \lVert \psi \rVert = 1$$
+
+- A quantum system is described by a **normalized** vector in a complex Hilbert space.
+- For one qubit,
+
+$$|\psi\rangle = \alpha|0\rangle + \beta|1\rangle,\qquad |\alpha|^2+|\beta|^2=1$$
+
+### 2) Observables
+
+$$A = A^\dagger$$
+
+- Physical observables are **Hermitian** operators.
+- Measurement outcomes are **eigenvalues**.
+
+### 3) Measurement
+
+$$\mathbb{P}(a_i)=|\langle a_i|\psi\rangle|^2$$
+
+- The Born rule turns amplitudes into probabilities.
+- After measurement, the state **collapses** into the observed eigenspace.
+
+### 4) Time evolution
+
+$$|\psi(t)\rangle = U(t)|\psi(0)\rangle,\qquad U^\dagger U = I$$
+
+- Closed systems evolve **unitarily**.
+- Quantum gates are finite-dimensional unitaries.
+
+### 5) Composite systems
+
+$$\mathcal{H}_{AB}=\mathcal{H}_A\otimes \mathcal{H}_B$$
+
+- Multi-qubit systems use **tensor products**.
+- **Entanglement** means the joint state is not a product of subsystem states.
+
+### Canonical entangled state
+
+$$|\Phi^+\rangle=\frac{|00\rangle+|11\rangle}{\sqrt{2}}$$
+
+- The step from classical correlated bits to **non-separable** quantum states.
+
+## Gate-based quantum computing
+
+Single-qubit gates:
+
+$$X=\begin{bmatrix}0&1\\1&0\end{bmatrix},\quad
+Z=\begin{bmatrix}1&0\\0&-1\end{bmatrix},\quad
+H=\frac{1}{\sqrt{2}}\begin{bmatrix}1&1\\1&-1\end{bmatrix}$$
+
+Two-qubit entangling gate:
+
+$$\mathrm{CNOT}\,|a,b\rangle = |a, a\oplus b\rangle$$
+
+- Circuits are sequences of unitaries and measurements.
+- **Universality**: arbitrary one-qubit gates + one entangling two-qubit gate.
+
+## Quantum errors and error correction
+
+- Hardware noise: bit-flip, phase-flip, decoherence, gate/readout error.
+
+Encoding intuition:
+
+$$\alpha|0\rangle+\beta|1\rangle
+\;\mapsto\;
+\alpha|000\rangle+\beta|111\rangle$$
+
+- Logical information is spread over many physical qubits.
+- **Syndromes** detect errors without directly measuring the logical qubit.
+
+## Adiabatic quantum computing
+
+$$H(s)=(1-s)H_0+sH_1,\qquad s\in[0,1]$$
+
+- Start in the ground state of a simple $H_0$; sweep slowly to $H_1$.
+- If the sweep is slow enough, the system **tracks** the instantaneous ground state.
 
 ---
 
-## Cinema row model
+# 2. Hardware
 
-- **10 seats** per row (labels `1 … 10`). Only seats **`2–9`** matter for families; **`1` and `10`** are aisles and do not block the three four-seat patterns.
-- A **family** needs one of these contiguous blocks (LeetCode-style “cinema seat allocation”):
+## Mapping postulates to devices
 
-| Block   | Seats   |
-|---------|---------|
-| Left    | 2–5     |
-| Middle  | 4–7     |
-| Right   | 6–9     |
+A platform must implement:
 
-- Each row can host **at most two** families if the middle is empty; reservations in `2–9` shrink that count. We store occupied seats in `2–9` as a **bitmask** per row: bit `col` set means seat `col` is taken.
+- state preparation  
+- coherent control  
+- measurement  
+- multi-qubit coupling  
+- noise mitigation and scaling  
 
-### Seat map and three family regions
+## Superconducting qubits
+
+- Nonlinear superconducting circuits; microwave pulses for gates.  
+- **Pros**: fast gates, fabrication, ecosystem.  
+- **Cons**: cryogenics, crosstalk, calibration drift, coherence limits.
+
+## Atomic and ionic platforms
+
+- Internal atomic/ionic levels; laser control and readout.  
+- **Pros**: long coherence, high fidelity.  
+- **Cons**: optical complexity, slower gates, scaling cost.
+
+## Spin-based platforms
+
+- Electron or nuclear spin in dots, donors, or defects.  
+- **Pros**: semiconductor compatibility, small footprint.  
+- **Cons**: readout difficulty, variability, control precision.
+
+## Bottlenecks (all platforms)
+
+- coherence, gate fidelity, connectivity, control noise  
+- error-correction overhead  
+- scaling toward **fault-tolerant** systems  
+
+---
+
+# 3. Algorithms and software
+
+## Quantum Fourier transform and search
+
+### QFT
+
+For $N=2^n$,
+
+$$|x\rangle \mapsto \frac{1}{\sqrt{N}}\sum_{k=0}^{N-1} e^{2\pi i xk/N}|k\rangle$$
+
+- Structured **interference**; core of phase estimation and period finding.
+
+### Search
+
+- Grover: $O(N)\to O(\sqrt{N})$ queries via **amplitude amplification**.
+
+## Hybrid quantum–classical algorithms
+
+$$\theta^*=\arg\min_\theta \langle \psi(\theta)|H|\psi(\theta)\rangle$$
+
+- Parameterized circuits + **classical** optimizers on measurement data.  
+- Examples: **VQE**, **QAOA**, variational classifiers.
+
+## Quantum annealing and optimization
+
+$$E(z)=\sum_i h_i z_i+\sum_{i<j}J_{ij}z_i z_j,\qquad z_i\in\{-1,1\}$$
+
+- Encode problems as **energy** landscapes; seek low-energy states.
+
+## Quantum chemistry
+
+$$E_0 \approx \min_\theta \langle \psi(\theta)|H_{\text{mol}}|\psi(\theta)\rangle$$
+
+- Natural fit for **VQE**-style ground-state estimation.
+
+## Quantum machine learning
+
+- Feature maps, variational models, quantum kernels, hybrid training.
+
+$$\hat y = f\!\left(\langle O\rangle_{\psi(x,\theta)}\right)$$
+
+- Question: does quantum structure yield **useful** advantage, not just runnable models?
+
+---
+
+# 4. Circuit and state visualization
+
+## Bell-state circuit (Qiskit — local)
+
+아래는 **로컬에 Qiskit이 설치된 환경**에서 `qc.draw("mpl")`로 얻는 방식입니다. 브라우저(Pyodide)에는 Qiskit이 없으므로, 바로 다음 블록에서 **동일 회로를 matplotlib로 그린** 버전을 실행할 수 있습니다.
+
+```python
+from qiskit import QuantumCircuit
+
+qc = QuantumCircuit(2, 2)
+qc.h(0)
+qc.cx(0, 1)
+qc.measure([0, 1], [0, 1])
+
+qc.draw("mpl")
+```
+
+- Minimal circuit: product state → **entangled** Bell pair; ties together gates, measurement, and entanglement.
+
+### Bell circuit — matplotlib (browser)
 
 ```python {run}
 import matplotlib.pyplot as plt
+from matplotlib.patches import FancyBboxPatch, Circle, Rectangle
 import matplotlib.patches as mpatches
-from matplotlib.patches import Rectangle
 
-fig, ax = plt.subplots(figsize=(11, 2.6), facecolor="#1a1a1a")
+fig, ax = plt.subplots(figsize=(9, 3.2), facecolor="#1a1a1a")
 ax.set_facecolor("#1a1a1a")
 
-left_seats = {2, 3, 4, 5}
-mid_seats = {4, 5, 6, 7}
-right_seats = {6, 7, 8, 9}
-region_style = [
-    ("left", left_seats, "#6b9ac4", 0.42),
-    ("mid", mid_seats, "#c9a961", 0.35),
-    ("right", right_seats, "#97c4a0", 0.42),
-]
+y0, y1 = 0.72, 0.28
+for y, lab in [(y0, r"$q_0$"), (y1, r"$q_1$")]:
+    ax.plot([0.05, 0.92], [y, y], color="#555", lw=1.8, zorder=1)
+    ax.text(0.02, y, lab, fontsize=13, color="#c9a961", va="center")
 
-for name, seats_set, hex_c, a in region_style:
-    for s in seats_set:
-        ax.add_patch(
-            Rectangle(
-                (s - 1 - 0.45, 0.15), 0.9, 0.7,
-                facecolor=hex_c, alpha=a, edgecolor="none", zorder=1,
-            )
-        )
+def box(x, y, w, h, text, fc="#2d3a4a", ec="#6b9ac4"):
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.02,rounding_size=0.04", facecolor=fc, edgecolor=ec, linewidth=1.8))
+    ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=12, color="#e8e8e8", fontweight="bold")
 
-for s in range(1, 11):
-    ax.add_patch(
-        Rectangle(
-            (s - 1 - 0.48, 0.12),
-            0.96,
-            0.76,
-            fill=False,
-            edgecolor="#666",
-            linewidth=1.2,
-            zorder=2,
-        )
-    )
-    col = "#888" if s in (1, 10) else "#ddd"
-    ax.text(s - 1, 0.48, str(s), ha="center", va="center", fontsize=12, color=col, fontweight="bold", zorder=3)
+box(0.18, y0 - 0.09, 0.1, 0.18, "H")
+ax.plot([0.28, 0.42], [y0, y0], color="#888", lw=1.8)
+ax.add_patch(Circle((0.46, y0), 0.028, facecolor="#c9a961", edgecolor="#e8d5a3", zorder=4))
+ax.plot([0.46, 0.46], [y0, y1], color="#c9a961", lw=1.8, zorder=3)
+ax.add_patch(
+    FancyBboxPatch((0.43, y1 - 0.1), 0.06, 0.2, boxstyle="square,pad=0", facecolor="#1a1a1a", edgecolor="#c9a961", linewidth=2)
+)
+ax.plot([0.43, 0.49], [y1, y1], color="#c9a961", lw=2)
+ax.text(0.52, (y0 + y1) / 2, "CNOT", fontsize=10, color="#97c4a0", va="center")
 
-ax.text(0, -0.35, "1", ha="center", fontsize=9, color="#666")
-ax.text(9, -0.35, "10", ha="center", fontsize=9, color="#666")
-ax.text(4.5, -0.55, "aisle seats (ignored for family masks)", ha="center", fontsize=9, color="#777")
+for y in (y0, y1):
+    ax.add_patch(Rectangle((0.78, y - 0.08), 0.1, 0.16, facecolor="#333", edgecolor="#888"))
+    ax.plot([0.83, 0.88, 0.83], [y + 0.04, y, y - 0.04], color="#ccc", lw=1)
 
-legend_el = [
-    mpatches.Patch(facecolor="#6b9ac4", alpha=0.5, edgecolor="#6b9ac4", label="Left 2–5"),
-    mpatches.Patch(facecolor="#c9a961", alpha=0.45, edgecolor="#c9a961", label="Middle 4–7"),
-    mpatches.Patch(facecolor="#97c4a0", alpha=0.5, edgecolor="#97c4a0", label="Right 6–9"),
-]
-ax.legend(handles=legend_el, loc="upper center", bbox_to_anchor=(0.5, 1.35), ncol=3, frameon=False, labelcolor="#ccc")
+ax.text(0.835, y0 + 0.14, "meas", fontsize=8, color="#888", ha="center")
+ax.text(0.835, y1 + 0.14, "meas", fontsize=8, color="#888", ha="center")
 
-ax.set_xlim(-0.8, 9.8)
-ax.set_ylim(-0.7, 1.05)
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
 ax.axis("off")
-ax.set_title("One row: three overlapping four-seat family regions (seats 2–9)", color="#e0e0e0", fontsize=11, pad=28)
+ax.set_title(r'Bell: $H \otimes I$ then CNOT — $|\Phi^+\rangle$ preparation', color="#ddd", fontsize=12)
 plt.tight_layout()
 plt.show()
 ```
 
----
+## QFT circuit (Qiskit — local)
 
-## Bitmasks per row
+```python
+from qiskit import QuantumCircuit
+from qiskit.circuit.library import QFT
 
-For each row, build `mask` with `mask |= (1 << col)` for every reserved `col` in `2…9`. Test blocks:
+n = 4
+qc = QFT(num_qubits=n, do_swaps=True).decompose()
+qc.draw("mpl", fold=-1)
+```
 
-- `leftBlock   = (1<<2)|(1<<3)|(1<<4)|(1<<5)`
-- `middleBlock = (1<<4)|(1<<5)|(1<<6)|(1<<7)`
-- `rightBlock  = (1<<6)|(1<<7)|(1<<8)|(1<<9)`
+- QFT diagrams show repeated **Hadamards**, **controlled phases**, and **swaps**.
 
-Start from **`2n`** families (two per row). For each row that has at least one reservation in `2–9`:
-
-- If **both** left and right regions are free → still **2** families (`continue`).
-- Else if **any one** of left / middle / right fits → **1** family (`maxGroups -= 1`).
-- Else → **0** families (`maxGroups -= 2`).
-
-Rows with **no** reserved seats in `2–9` are absent from the map and keep the default **2** families.
-
-### Example: reserved seats and block feasibility
+### QFT structure — schematic ($n=4$)
 
 ```python {run}
 import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle
+from matplotlib.patches import FancyBboxPatch
 
-def blocks_free(mask):
-    left = (1 << 2) | (1 << 3) | (1 << 4) | (1 << 5)
-    mid = (1 << 4) | (1 << 5) | (1 << 6) | (1 << 7)
-    right = (1 << 6) | (1 << 7) | (1 << 8) | (1 << 9)
-    return (
-        (mask & left) == 0,
-        (mask & mid) == 0,
-        (mask & right) == 0,
+fig, ax = plt.subplots(figsize=(10, 4), facecolor="#1a1a1a")
+ax.set_facecolor("#1a1a1a")
+n = 4
+ys = [0.82 - i * 0.2 for i in range(n)]
+for i, y in enumerate(ys):
+    ax.plot([0.06, 0.94], [y, y], color="#444", lw=1.5)
+    ax.text(0.02, y, f"q{i}", fontsize=11, color="#aaa", va="center")
+
+cols = [0.14, 0.32, 0.5, 0.68]
+for j, x in enumerate(cols):
+    for i in range(n):
+        if i == j:
+            ax.add_patch(FancyBboxPatch((x - 0.05, ys[i] - 0.06), 0.1, 0.12, boxstyle="round,pad=0.02", facecolor="#2a3545", edgecolor="#6b9ac4"))
+            ax.text(x, ys[i], "H", ha="center", va="center", fontsize=9, color="#ddd")
+        elif i > j:
+            ax.text(x, ys[i], "•", ha="center", va="center", fontsize=14, color="#c9a961")
+            ax.plot([x, x], [ys[j], ys[i]], color="#666", lw=1, linestyle=":")
+
+ax.text(0.86, 0.5, "⋯\n+ swaps", ha="center", va="center", fontsize=10, color="#777")
+ax.set_xlim(0, 1)
+ax.set_ylim(0.05, 0.95)
+ax.axis("off")
+ax.set_title("QFT(n=4): Hadamard on diagonal + controlled phases below", color="#ccc", fontsize=11)
+plt.tight_layout()
+plt.show()
+```
+
+## Bloch sphere — pure state
+
+$$|\psi\rangle = \cos\frac{\theta}{2}|0\rangle + e^{i\phi}\sin\frac{\theta}{2}|1\rangle$$
+
+$$x=\sin\theta\cos\phi,\qquad y=\sin\theta\sin\phi,\qquad z=\cos\theta$$
+
+### Qiskit (local)
+
+```python
+from qiskit import QuantumCircuit
+from qiskit.quantum_info import Statevector
+from qiskit.visualization import plot_bloch_multivector
+import matplotlib.pyplot as plt
+
+qc = QuantumCircuit(1)
+qc.h(0)
+qc.s(0)
+
+sv = Statevector.from_instruction(qc)
+fig = plot_bloch_multivector(sv)
+plt.show()
+```
+
+### 3D Bloch trajectory (browser — numpy unitaries)
+
+```python {run}
+import numpy as np
+import matplotlib.pyplot as plt
+
+def ry(theta):
+    c, s = np.cos(theta / 2), np.sin(theta / 2)
+    return np.array([[c, -s], [s, c]], dtype=complex)
+
+def rz(phi):
+    return np.array(
+        [[np.exp(-1j * phi / 2), 0], [0, np.exp(1j * phi / 2)]],
+        dtype=complex,
     )
 
-reserved_cols = [2, 3, 8]
-mask = 0
-for c in reserved_cols:
-    mask |= 1 << c
-cl, cm, cr = blocks_free(mask)
+def bloch_from_state(psi):
+    a, b = psi[0], psi[1]
+    x = 2 * np.real(np.conj(a) * b)
+    y = 2 * np.imag(np.conj(a) * b)
+    z = np.abs(a) ** 2 - np.abs(b) ** 2
+    return x, y, z
 
-fig, axes = plt.subplots(2, 1, figsize=(10, 4.2), facecolor="#1a1a1a", height_ratios=[1.1, 0.9])
-for ax in axes:
+num_steps = 72
+points = []
+psi = np.array([1.0, 0.0], dtype=complex)
+for t in np.linspace(0, 2 * np.pi, num_steps):
+    U = ry(0.85 * np.sin(t) + np.pi / 2) @ rz(1.4 * t)
+    psi = U @ np.array([1.0, 0.0], dtype=complex)
+    psi /= np.linalg.norm(psi)
+    points.append(bloch_from_state(psi))
+points = np.array(points)
+
+fig = plt.figure(figsize=(7, 6.5), facecolor="#1a1a1a")
+ax = fig.add_subplot(111, projection="3d")
+ax.set_facecolor("#1a1a1a")
+
+u = np.linspace(0, 2 * np.pi, 64)
+v = np.linspace(0, np.pi, 32)
+xs = np.outer(np.cos(u), np.sin(v))
+ys = np.outer(np.sin(u), np.sin(v))
+zs = np.outer(np.ones_like(u), np.cos(v))
+ax.plot_surface(xs, ys, zs, alpha=0.14, color="#6b9ac4", edgecolor="none", shade=False)
+
+ax.plot(points[:, 0], points[:, 1], points[:, 2], color="#c9a961", lw=2.4, zorder=10)
+ax.scatter([points[-1, 0]], [points[-1, 1]], [points[-1, 2]], color="#e8d5a3", s=60, zorder=11)
+
+for v0, lab, col in [([1, 0, 0], "X", "#888"), ([0, 1, 0], "Y", "#888"), ([0, 0, 1], "Z", "#888")]:
+    ax.plot([0, v0[0]], [0, v0[1]], [0, v0[2]], color=col, lw=1)
+    ax.text(v0[0] * 1.15, v0[1] * 1.15, v0[2] * 1.15, lab, color="#aaa", fontsize=11)
+
+ax.set_title("Single-qubit trajectory on the Bloch sphere", color="#e0e0e0", fontsize=12, pad=12)
+ax.set_box_aspect([1, 1, 1])
+ax.grid(False)
+ax.xaxis.pane.fill = False
+ax.yaxis.pane.fill = False
+ax.zaxis.pane.fill = False
+for axis in (ax.xaxis, ax.yaxis, ax.zaxis):
+    axis.line.set_color("#333")
+plt.tight_layout()
+plt.show()
+```
+
+## Bell state — amplitudes and probabilities
+
+### Qiskit `plot_state_city` / histogram (local)
+
+```python
+from qiskit import QuantumCircuit
+from qiskit.quantum_info import Statevector
+from qiskit.visualization import plot_state_city, plot_histogram
+import matplotlib.pyplot as plt
+
+qc = QuantumCircuit(2)
+qc.h(0)
+qc.cx(0, 1)
+
+sv = Statevector.from_instruction(qc)
+
+fig1 = plot_state_city(sv)
+plt.show()
+
+probs = sv.probabilities_dict()
+fig2 = plot_histogram(probs)
+plt.show()
+```
+
+### Browser — $|\Phi^+\rangle$ real/imag bars + measurement probabilities
+
+```python {run}
+import numpy as np
+import matplotlib.pyplot as plt
+
+labels = [r"$|00\rangle$", r"$|01\rangle$", r"$|10\rangle$", r"$|11\rangle$"]
+psi = np.array([1, 0, 0, 1], dtype=complex) / np.sqrt(2)
+real = np.real(psi)
+imag = np.imag(psi)
+probs = np.abs(psi) ** 2
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4), facecolor="#1a1a1a")
+for ax in (ax1, ax2):
     ax.set_facecolor("#1a1a1a")
 
-ax = axes[0]
-for s in range(1, 11):
-    taken = s in reserved_cols
-    face = "#5c3030" if taken else "#2a2a2a"
-    edge = "#c9a961" if taken else "#555"
-    ax.add_patch(Rectangle((s - 1 - 0.45, 0.2), 0.9, 0.65, facecolor=face, edgecolor=edge, linewidth=1.5))
-    ax.text(s - 1, 0.52, "R" if taken else str(s), ha="center", va="center", fontsize=11, color="#eee")
-ax.set_xlim(-0.7, 9.7)
-ax.set_ylim(0, 1.05)
-ax.axis("off")
-bitstr = "".join("1" if mask & (1 << c) else "0" for c in range(2, 10))
-ax.set_title(
-    f"Sample row — reserved at {reserved_cols}  |  bits for seats 2→9: {bitstr}",
-    color="#ddd",
-    fontsize=10,
-)
+x = np.arange(4)
+w = 0.35
+ax1.bar(x - w / 2, real, w, label="Re", color="#6b9ac4", edgecolor="#444")
+ax1.bar(x + w / 2, imag, w, label="Im", color="#c9a961", edgecolor="#444")
+ax1.set_xticks(x)
+ax1.set_xticklabels(labels, color="#ccc")
+ax1.set_ylabel("Amplitude", color="#aaa")
+ax1.legend(facecolor="#252525", labelcolor="#ccc", edgecolor="#444")
+ax1.set_title(r"$|\Phi^+\rangle$: amplitude components", color="#ddd")
+ax1.tick_params(colors="#888")
+ax1.axhline(0, color="#555", lw=0.8)
+ax1.grid(axis="y", alpha=0.2)
 
-ax = axes[1]
-ax.axis("off")
-status = [
-    ("Left 2–5", cl, "#6b9ac4"),
-    ("Middle 4–7", cm, "#c9a961"),
-    ("Right 6–9", cr, "#97c4a0"),
-]
-y = 0.75
-for name, ok, color in status:
-    ax.text(0.05, y, f"{name}:  {'FITS' if ok else 'blocked'}", fontsize=11, color=color if ok else "#888", transform=ax.transAxes, family="monospace")
-    y -= 0.35
-ax.text(
-    0.05,
-    0.05,
-    "Here: left & right blocks hit reserved seats; only middle 4–7 is free → one family.",
-    fontsize=10,
-    color="#aaa",
-    transform=ax.transAxes,
-)
+ax2.bar(x, probs, color="#97c4a0", edgecolor="#444")
+ax2.set_xticks(x)
+ax2.set_xticklabels(labels, color="#ccc")
+ax2.set_ylabel("Probability", color="#aaa")
+ax2.set_ylim(0, 0.6)
+ax2.set_title("Born rule: measurement in computational basis", color="#ddd")
+ax2.tick_params(colors="#888")
+ax2.grid(axis="y", alpha=0.2)
 
 plt.tight_layout()
 plt.show()
@@ -172,59 +434,78 @@ plt.show()
 
 ---
 
-## C++ reference implementation
+# 5. Hardware-aware and algorithm-aware visualization
 
-```cpp
-#include <vector>
-#include <unordered_map>
+## Device connectivity (coupling graph)
 
-using namespace std;
+```python {run}
+import networkx as nx
+import matplotlib.pyplot as plt
 
-class Solution {
-public:
-    int maxNumberOfFamilies(int n, vector<vector<int>>& reservedSeats) {
-        unordered_map<int, int> rowMasks;
+edges = [(0, 1), (1, 2), (2, 3), (1, 4), (4, 5), (5, 6), (4, 7)]
+G = nx.Graph()
+G.add_edges_from(edges)
 
-        for (const auto& seat : reservedSeats) {
-            int row = seat[0];
-            int col = seat[1];
-            if (col >= 2 && col <= 9) {
-                rowMasks[row] |= (1 << col);
-            }
-        }
+pos = {
+    0: (0, 1),
+    1: (1, 1),
+    2: (2, 1),
+    3: (3, 1),
+    4: (1, 0),
+    5: (2, 0),
+    6: (3, 0),
+    7: (1, -1),
+}
 
-        int maxGroups = 2 * n;
+fig, ax = plt.subplots(figsize=(7.5, 5), facecolor="#1a1a1a")
+ax.set_facecolor("#1a1a1a")
+nx.draw_networkx(
+    G,
+    pos=pos,
+    ax=ax,
+    with_labels=True,
+    node_color="#2a3545",
+    node_size=1100,
+    font_color="#e8e8e8",
+    font_size=11,
+    edge_color="#6b9ac4",
+    width=2,
+)
+ax.set_title("Example hardware connectivity (not a complete graph)", color="#ddd", fontsize=12)
+ax.axis("off")
+plt.tight_layout()
+plt.show()
+```
 
-        int leftBlock = (1 << 2) | (1 << 3) | (1 << 4) | (1 << 5);
-        int middleBlock = (1 << 4) | (1 << 5) | (1 << 6) | (1 << 7);
-        int rightBlock = (1 << 6) | (1 << 7) | (1 << 8) | (1 << 9);
+- Real chips constrain **routing**, **SWAP depth**, and **effective noise**.
 
-        for (const auto& [row, mask] : rowMasks) {
-            bool canFitLeft = (mask & leftBlock) == 0;
-            bool canFitRight = (mask & rightBlock) == 0;
-            bool canFitMiddle = (mask & middleBlock) == 0;
+## Variational optimization trace
 
-            if (canFitLeft && canFitRight) {
-                continue;
-            } else if (canFitLeft || canFitRight || canFitMiddle) {
-                maxGroups -= 1;
-            } else {
-                maxGroups -= 2;
-            }
-        }
+```python {run}
+import numpy as np
+import matplotlib.pyplot as plt
 
-        return maxGroups;
-    }
-};
+np.random.seed(4)
+steps = np.arange(1, 51)
+energy = -0.52 - 0.44 * (1 - np.exp(-steps / 12)) + 0.012 * np.random.randn(len(steps))
+
+fig, ax = plt.subplots(figsize=(8.5, 4.5), facecolor="#1a1a1a")
+ax.set_facecolor("#1a1a1a")
+ax.plot(steps, energy, marker="o", ms=4, lw=2, color="#c9a961", markerfacecolor="#e8d5a3")
+ax.fill_between(steps, energy - 0.02, energy + 0.02, alpha=0.15, color="#6b9ac4")
+ax.set_title("VQE / QAOA style energy trace (schematic)", color="#ddd", fontsize=12)
+ax.set_xlabel("Iteration", color="#aaa")
+ax.set_ylabel("Estimated energy", color="#aaa")
+ax.tick_params(colors="#888")
+ax.grid(alpha=0.22)
+plt.tight_layout()
+plt.show()
 ```
 
 ---
 
-## Topics (course outline)
+# 6. Applied perspective
 
-- Quantum circuits and gate notation  
-- Frameworks (e.g. Qiskit-style programming patterns)  
-- Variational and optimization-style quantum algorithms  
-- NISQ hardware constraints and noise  
-
-The seating example is **classical**; it rehearses **bit-encoded state** and **combinatorial constraints** that reappear when you label basis states and feasible configurations in quantum information.
+- **Three layers together**: quantum formalism, imperfect hardware, algorithms and software stacks.  
+- **Flow**: postulates → device physics → superposition, interference, entanglement in algorithms → compilation onto **noisy, sparse** graphs.  
+- **Visualization** is not decoration: circuits, states, connectivity, and optimization traces are how we **interpret** what the machine is doing.
