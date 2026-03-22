@@ -173,7 +173,7 @@ $$\hat y = f\!\left(\langle O\rangle_{\psi(x,\theta)}\right)$$
 
 # 4. Circuit and state visualization
 
-Visualizations below are meant to **connect symbols to geometry**: time flows left-to-right on circuits, amplitudes and probabilities for entanglement, and the Bloch sphere for single-qubit unitary motion.
+Visualizations below are meant to **connect symbols to geometry**: time flows left-to-right on circuits, amplitudes and probabilities for entanglement, and the Bloch sphere for where a single-qubit state lives under unitaries.
 
 ## Bell-state preparation circuit
 
@@ -309,16 +309,13 @@ plt.show()
 
 ---
 
-## Bloch sphere — animated state trajectory
+## Bloch sphere — state trajectory (static)
 
-A single qubit $|\psi\rangle$ maps to a point on the **unit sphere**; applying $R_y(\cdot)$ and $R_z(\cdot)$ moves that point. The animation traces a **continuous unitary path** from $|0\rangle$ and slowly **rotates the camera** so depth and curvature are visible.
+A pure qubit state lives on the **unit sphere**. Here $R_y(\cdot)$ and $R_z(\cdot)$ are composed along a parameter $t$; the plot shows the **entire path at once** from $|0\rangle$ (north pole) to the endpoint, with a **fixed** viewing angle—no spinning camera and no looping GIF.
 
 ```python {run}
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-import base64
-import os
 
 def ry(theta):
     c, s = np.cos(theta / 2), np.sin(theta / 2)
@@ -337,7 +334,7 @@ def bloch(psi):
     z = np.abs(a) ** 2 - np.abs(b) ** 2
     return x, y, z
 
-t_vals = np.linspace(0, 2 * np.pi, 48)
+t_vals = np.linspace(0, 2 * np.pi, 120)
 points = []
 for t in t_vals:
     U = ry(0.82 * np.sin(t) + np.pi / 2.15) @ rz(1.35 * t)
@@ -356,61 +353,49 @@ fig = plt.figure(figsize=(7.2, 6.4), facecolor="#0f0f0f")
 ax = fig.add_subplot(111, projection="3d")
 ax.set_facecolor("#0f0f0f")
 
+ax.plot_surface(
+    xs, ys, zs,
+    alpha=0.16,
+    color="#4a7ab0",
+    edgecolor="#2a4058",
+    linewidth=0.12,
+    rstride=2,
+    cstride=2,
+)
+ax.plot(points[:, 0], points[:, 1], points[:, 2], color="#c9a961", lw=2.6, zorder=10)
+ax.scatter([0], [0], [1], s=70, c="#6b9ac4", edgecolors="#a0c0e0", linewidths=1.2, zorder=11, label=r"start $|0\rangle$")
+ax.scatter(
+    [points[-1, 0]], [points[-1, 1]], [points[-1, 2]],
+    s=85,
+    c="#fff4d0",
+    edgecolors="#c9a961",
+    linewidths=1.5,
+    zorder=11,
+    label="end",
+)
 
-def draw_frame(k):
-    ax.clear()
-    ax.set_facecolor("#0f0f0f")
-    ax.plot_surface(
-        xs, ys, zs,
-        alpha=0.18,
-        color="#4a7ab0",
-        edgecolor="#2a4058",
-        linewidth=0.15,
-        rstride=2,
-        cstride=2,
-    )
-    trail = points[: k + 1]
-    if len(trail) > 1:
-        ax.plot(trail[:, 0], trail[:, 1], trail[:, 2], color="#c9a961", lw=2.8, zorder=10)
-    ax.scatter(
-        [points[k, 0]], [points[k, 1]], [points[k, 2]],
-        s=85,
-        c="#fff4d0",
-        edgecolors="#c9a961",
-        linewidths=1.5,
-        zorder=11,
-    )
-    for v0, lab in [([1, 0, 0], "X"), ([0, 1, 0], "Y"), ([0, 0, 1], "Z")]:
-        ax.plot([0, v0[0]], [0, v0[1]], [0, v0[2]], color="#555", lw=1.1)
-        ax.text(v0[0] * 1.12, v0[1] * 1.12, v0[2] * 1.12, lab, color="#999", fontsize=10)
-    ax.set_box_aspect([1, 1, 1])
-    ax.grid(False)
-    for axis in (ax.xaxis, ax.yaxis, ax.zaxis):
-        axis.pane.fill = False
-        axis.line.set_color("#333")
-    ax.view_init(elev=18, azim=25 + k * 5.5)
-    ax.set_title("Bloch trajectory + rotating view", color="#e0e0e0", fontsize=11, pad=10)
+for v0, lab in [([1, 0, 0], "X"), ([0, 1, 0], "Y"), ([0, 0, 1], "Z")]:
+    ax.plot([0, v0[0]], [0, v0[1]], [0, v0[2]], color="#555", lw=1.1)
+    ax.text(v0[0] * 1.12, v0[1] * 1.12, v0[2] * 1.12, lab, color="#999", fontsize=10)
 
-
-anim = animation.FuncAnimation(fig, draw_frame, frames=len(t_vals), interval=75, repeat=True)
-path = "_bloch_q_anim.gif"
-anim.save(path, writer="pillow", fps=12)
-plt.close("all")
-with open(path, "rb") as f:
-    _ANIM_GIF = base64.b64encode(f.read()).decode()
-try:
-    os.remove(path)
-except OSError:
-    pass
-print("Frames:", len(t_vals))
+ax.set_box_aspect([1, 1, 1])
+ax.grid(False)
+for axis in (ax.xaxis, ax.yaxis, ax.zaxis):
+    axis.pane.fill = False
+    axis.line.set_color("#333")
+ax.view_init(elev=22, azim=42)
+ax.set_title("Bloch sphere: one continuous unitary path (fixed view)", color="#e0e0e0", fontsize=11, pad=12)
+ax.legend(loc="upper left", bbox_to_anchor=(0.02, 0.98), frameon=True, facecolor="#1a1a1a", edgecolor="#444", labelcolor="#ccc", fontsize=9)
+plt.tight_layout()
+plt.show()
 ```
 
-### What this animation shows
+### What this figure shows
 
-- The **state vector** of one qubit is a point on the **surface** of the Bloch sphere (pure states).
-- **Unitary gates** are rigid motions of that point; here $R_y$ and $R_z$ combine into a smooth path.
-- The **highlighted dot** is the current state; the **gold curve** is the history—continuity of evolution.
-- **Rotating camera** stresses 3D structure; without motion, depth is easy to misread on a flat screen.
+- A **pure** qubit state is a point on the **surface** of the Bloch ball (boundary drawn as a mesh).
+- **Unitary evolution** moves that point along a curve; the gold line is the full trajectory for one chosen sequence of $R_y,R_z$.
+- **Blue dot** at the north pole marks $|0\rangle$ before the sequence; **gold dot** marks the state at $t=2\pi$.
+- The view is **fixed** so you can study shape and depth without motion clutter.
 
 ---
 
