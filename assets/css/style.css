@@ -1093,11 +1093,15 @@ pre[class*="language-"] {
 .article-sidebar {
     position: fixed;
     left: max(2rem, calc((100vw - 750px) / 2 - 280px));
-    top: 35%;
-    transform: translateY(-50%);
+    /* 세로 중앙(translate -50%)은 목차가 길 때 위로 잘려 나감 → 상단 기준 + 뷰포트 안 스크롤 */
+    top: max(0.75rem, env(safe-area-inset-top, 0px) + 4.25rem);
+    transform: none;
     width: 220px;
-    max-height: 70vh;
+    max-height: calc(100vh - 5.5rem - env(safe-area-inset-bottom, 0px));
     overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    -webkit-overflow-scrolling: touch;
 }
 
 .sidebar-title {
