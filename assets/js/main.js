@@ -493,6 +493,34 @@ function reinjectDisplayMath(html, blocks) {
     );
 }
 
+let prismSqlLoadingPromise = null;
+
+function contentHasSqlCode(contentElement) {
+    if (!contentElement) return false;
+    return Boolean(
+        contentElement.querySelector('code.language-sql') ||
+        contentElement.querySelector('pre[class*="language-sql"] code')
+    );
+}
+
+function ensurePrismSqlLoaded(contentElement) {
+    if (!window.Prism) return Promise.resolve();
+    if (!contentHasSqlCode(contentElement)) return Promise.resolve();
+    if (window.Prism.languages && window.Prism.languages.sql) return Promise.resolve();
+
+    if (!prismSqlLoadingPromise) {
+        prismSqlLoadingPromise = new Promise((resolve) => {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js';
+            script.async = true;
+            script.onload = () => resolve();
+            script.onerror = () => resolve(); // Fail silently; code is still readable.
+            document.head.appendChild(script);
+        });
+    }
+    return prismSqlLoadingPromise;
+}
+
 // ==================== RENDER ARTICLE ====================
 function renderArticle(data, contentElement) {
     // 카운터 리셋 (새 글 렌더링 시)
@@ -504,7 +532,9 @@ function renderArticle(data, contentElement) {
 
     // Prism 하이라이팅
     if (window.Prism) {
-        Prism.highlightAllUnder(contentElement);
+        ensurePrismSqlLoaded(contentElement).then(() => {
+            Prism.highlightAllUnder(contentElement);
+        });
     }
     
     setTimeout(() => {
