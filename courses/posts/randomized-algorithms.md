@@ -7,7 +7,7 @@ semester: 2025 S
 
 Probabilistic algorithms and analysis.
 
-## Course Mindset
+# Course Mindset
 Randomization is not “guessing”; it is a controlled computational resource. The recurring workflow in this course is:
 
 - design a randomized object (pivot, sampled edge, hash, random bits)
@@ -18,28 +18,28 @@ The goal of this note is to record the core algorithms/ideas and the analysis pa
 
 ---
 
-## 1. Randomness: Las Vegas vs Monte Carlo
+# 1. Randomness: Las Vegas vs Monte Carlo
 
-### Las Vegas
+## Las Vegas
 The output is always correct, but runtime is random.
 
-### Monte Carlo
+## Monte Carlo
 Runtime is bounded, but the output may be wrong with small probability.
 
 Most algorithmic questions reduce to: how small can the failure probability be, and how do we amplify it?
 
 ---
 
-## 2. Probabilistic Tools (the analysis toolkit)
+# 2. Probabilistic Tools (the analysis toolkit)
 
-### Linearity of Expectation
+## Linearity of Expectation
 For any random variables $X_1,\dots,X_n$,
 $$
 \mathbb{E}\left[\sum_i X_i\right] = \sum_i \mathbb{E}[X_i].
 $$
 This is the fastest route to expected-cost analyses (sorting, hashing collisions, random cuts surviving).
 
-### Markov and Chebyshev (quick tail control)
+## Markov and Chebyshev (quick tail control)
 For nonnegative $X$ and $a>0$,
 $$
 \Pr[X \ge a] \le \frac{\mathbb{E}[X]}{a}.
@@ -49,7 +49,7 @@ $$
 \Pr[|X-\mathbb{E}X| \ge t] \le \frac{\sigma^2}{t^2}.
 $$
 
-### Chernoff Bounds (Bernoulli sums; concentration)
+## Chernoff Bounds (Bernoulli sums; concentration)
 Let $X=\sum_{i=1}^n X_i$ where $X_i\in\{0,1\}$ are independent and $\mu=\mathbb{E}[X]$.
 For $\varepsilon\in(0,1]$,
 $$
@@ -61,7 +61,7 @@ $$
 \exp\left(-\frac{\varepsilon^2\mu}{2}\right).
 $$
 
-### Amplification (failure probability to high probability)
+## Amplification (failure probability to high probability)
 If one run fails with probability at most $p$, then $k$ independent runs fail together with probability at most
 $$
 p^k.
@@ -70,10 +70,10 @@ Equivalently, to get failure $\le \delta$, choose $k=O(\log(1/\delta)/\log(1/p))
 
 ---
 
-## 3. Randomized Quicksort
+# 3. Randomized Quicksort
 Randomized Quicksort removes worst-case dependence on pivot quality by choosing the pivot uniformly at random.
 
-### Guarantee
+## Guarantee
 The expected running time is
 $$
 \mathbb{E}[T(n)] = O(n\log n).
@@ -84,7 +84,7 @@ $$
 $$
 where $H_n$ is the $n$-th harmonic number.
 
-### Pseudocode
+## Pseudocode
 ```text
 RANDOMIZED-QUICKSORT(A, l, r):
     if l >= r:
@@ -96,7 +96,7 @@ RANDOMIZED-QUICKSORT(A, l, r):
     RANDOMIZED-QUICKSORT(A, q + 1, r)
 ```
 
-### C++ Sketch
+## C++ Sketch
 ```cpp
 int partition(vector<int>& a, int l, int r) {
     int pivot = a[r];
@@ -123,7 +123,7 @@ void randomizedQuickSort(vector<int>& a, int l, int r) {
 
 ---
 
-## 4. Random Graphs and Cuts
+# 4. Random Graphs and Cuts
 
 ## 4.1 Randomized Minimum Cut (Karger)
 Karger's algorithm repeatedly contracts a uniformly random edge until only two supernodes remain.
@@ -186,7 +186,7 @@ In concrete problems, you then (i) scale the fractional solution to satisfy cons
 
 ---
 
-## 5. Hashing and Frequency (Randomized data structures)
+# 5. Hashing and Frequency (Randomized data structures)
 
 ## 5.1 Universal Hashing
 A family $\mathcal{H}$ is universal if for distinct keys $x\neq y$,
@@ -246,7 +246,7 @@ The randomized viewpoint is: you do not need exact counts for everything, only e
 
 ---
 
-## 6. Sampling and Sketching
+# 6. Sampling and Sketching
 
 ## 6.1 Reservoir Sampling (uniform sample without knowing length)
 Given a stream and unknown length, reservoir sampling returns a uniformly random element among all seen items.
@@ -285,7 +285,7 @@ $$
 
 ---
 
-## 7. Randomized Verification (when you can test correctness fast)
+# 7. Randomized Verification (when you can test correctness fast)
 This is where randomness becomes a “cheap consistency checker.”
 
 ## 7.1 Schwartz-Zippel Lemma (polynomial identity test)
@@ -333,9 +333,9 @@ FREIVALDS(A, B, C, iterations T):
 
 ---
 
-## 8. Random Walks and Mixing Analysis
+# 8. Random Walks and Mixing Analysis
 
-### Spectral Gap
+## Spectral Gap
 For an ergodic Markov chain with transition matrix $P$,
 the second-largest eigenvalue (in magnitude) controls convergence speed.
 
@@ -345,7 +345,7 @@ $$
 $$
 Larger gap typically implies faster mixing.
 
-### Mixing Time (total variation)
+## Mixing Time (total variation)
 Mixing time is the minimal $t$ such that the distribution is close to stationarity:
 $$
 t_{\mathrm{mix}}(\varepsilon)
@@ -356,7 +356,7 @@ t :
 \right\}.
 $$
 
-### Conductance (bottleneck view)
+## Conductance (bottleneck view)
 Conductance measures how easily the chain escapes a subset $S$:
 $$
 \Phi(S) = \frac{Q(S,S^c)}{\pi(S)}.
@@ -366,10 +366,10 @@ Low conductance corresponds to bottlenecks and slow mixing.
 
 ---
 
-## 9. PageRank as a Random Process
+# 9. PageRank as a Random Process
 PageRank models a random surfer who follows links most of the time, but teleports occasionally.
 
-### Stationary Equation
+## Stationary Equation
 $$
 \pi = \alpha P^\top \pi + (1-\alpha)v,
 $$
@@ -379,27 +379,27 @@ Teleportation ensures ergodicity and stabilizes the ranking.
 
 ---
 
-## 10. Derandomization (brief record)
+# 10. Derandomization (brief record)
 A central theme is whether randomized algorithms can be replaced with deterministic ones using less or structured randomness.
 
 Random walks and limited independence are typical tools for building pseudorandom objects that mimic true randomness sufficiently for algorithmic guarantees.
 
 ---
 
-## 11. Probabilistically Checkable Proofs (PCP) (high-level)
+# 11. Probabilistically Checkable Proofs (PCP) (high-level)
 PCP theory connects randomness to hardness of approximation.
 
 Informally:
 every NP proof can be reformulated so a verifier reads only $O(1)$ bits of the proof, using $O(\log n)$ random bits.
 
-### Informal Statement
+## Informal Statement
 $$
 \mathrm{NP} = \mathrm{PCP}(O(\log n), O(1)).
 $$
 
 ---
 
-## Course Summary
+# Course Summary
 The most important takeaway is not a single theorem, but the analysis habit:
 
 - use randomness to avoid brittle worst cases

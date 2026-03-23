@@ -1,50 +1,70 @@
-# Step 1: 마크다운 파일 작성
-- `posts/` 폴더에 `[slug].md` 파일 생성
+# README — Authoring Workflow (Markdown + Static Pages)
+
+This repository is organized around a convention-based pipeline:
+you write content in Markdown with consistent front matter,
+and then the appropriate `_template.html` wrapper turns it into a static HTML page under the target section.
+
+Most “correctness” here is therefore about following the expected naming and routing conventions.
+
+---
+
+## Step 1: Author the Markdown Source
+- Create `posts/[slug].md`.
 
 ```markdown
 ---
-title: 글 제목
-category: 카테고리명
+title: Article title
+category: Category name
 date: 2024.03.01
 readtime: 10 min
 ---
 
-# Step 2: 글 제목
+# Article Title
 
-내용 작성...
+Content goes here...
 ```
 
-# Step 2: HTML 껍데기 (URL: `…/[섹션]/[slug]/`)
-``` bash
+---
+
+## Step 2: Create the HTML Wrapper (URL: `…/[section]/[slug]/`)
+Use the `_template.html` file belonging to the section you are targeting.
+
+```bash
 mkdir -p [slug] && cp _template.html [slug]/index.html
 ```
-(`tech-blog/`, `book-notes/`, `courses/` 각각의 `_template.html` 사용)
 
-# Step 3: index.json에 추가
+This pattern applies to `tech-blog/`, `book-notes/`, and `courses/` (each uses its own `_template.html`).
 
-``` json
+---
+
+## Step 3: Register the Post in `index.json`
+Add a new entry to the relevant index.
+
+```json
 {
-  "slug": "[slug]",        // 파일명과 동일해야 함
-  "title": "글 제목",
-  "category": "카테고리명",
+  "slug": "[slug]",        // Must match the filename (and the route slug)
+  "title": "Article title",
+  "category": "Category name",
   "date": "2024.03.01",
   "readtime": "10 min",
-  "color": 1              // 1~6 (책 색상)
+  "color": 1               // 1~6 (UI palette color for the book/article)
 }
 ```
 
-# Color 옵션 (책 색상)
-- 색상1: 파랑
-- 색상2: 초록
-- 색상 3: 빨강
-- 색상 4: 갈색
-- 색상 5: 청록
-- 색상 6: 보라
+### Color Options (UI Palette)
+- Color 1: Blue
+- Color 2: Green
+- Color 3: Red
+- Color 4: Brown
+- Color 5: Teal
+- Color 6: Purple
 
 ---
-# Add article in same category
 
-``` bash
+## Add Another Article in the Same Category
+If you are extending an existing `categories` entry, keep the wrapper creation the same as above, and update `index.json` accordingly.
+
+```bash
 mkdir -p [slug] && cp _template.html [slug]/index.html
 ```
 
@@ -76,18 +96,23 @@ mkdir -p [slug] && cp _template.html [slug]/index.html
 }
 ```
 
-# Local Server Run
+---
 
-``` bash
+## Local Server (Preview)
+```bash
 python3 -m http.server 8000
 ```
 
-# 예: courses에서 새 코스 껍데기
+---
+
+## Examples
+
+### New course wrapper under `courses/`
 ```bash
 mkdir -p courses/bayesian-inference && cp courses/_template.html courses/bayesian-inference/index.html
 ```
 
-# 예: tech-blog에서 새 글 껍데기
+### New article wrapper under `tech-blog/`
 ```bash
 mkdir -p tech-blog/my-post && cp tech-blog/_template.html tech-blog/my-post/index.html
 ```
