@@ -4,9 +4,7 @@ category: CS
 semester: 2023 S
 ---
 
-# Algorithms Notes
-
-## 1. Ad Hoc
+# 1. Ad Hoc
 
 ### Algorithm
 
@@ -23,9 +21,9 @@ semester: 2023 S
 
 ---
 
-## 2. Dynamic Programming
+# 2. Dynamic Programming
 
-### 2.1 Matrix Chain Multiplication
+## 2.1 Matrix Chain Multiplication
 
 ```cpp {fold}
 using pii = pair<int, int>;
@@ -41,11 +39,12 @@ int solve(int left, int right) {
     if (ret != 0x7f7f7f7f) return ret;
 
     for (int mid = left; mid < right; mid++) {
+        auto left = matrices[left].first;
+        auto mid = matrices[mid].second;
+        auto right = matrices[right].second;
         ret = min(
             ret,
-            solve(left, mid) +
-            solve(mid + 1, right) +
-            matrices[left].first * matrices[mid].second * matrices[right].second
+            solve(left, mid) + solve(mid + 1, right) + left * mid * right
         );
     }
     return ret;
@@ -68,7 +67,7 @@ int solve(int left, int right) {
 
 ---
 
-### 2.2 Coin Change Counting
+## 2.2 Coin Change Counting
 
 ```cpp {fold}
 int coins[MAX_N];
@@ -117,9 +116,9 @@ int main() {
 * Space complexity is $O(n \cdot target)$.
 
 ---
-## 3. Tree and Graph Algorithms
+# 3. Tree and Graph Algorithms
 
-### 3.1 DFS and BFS
+## 3.1 DFS and BFS
 
 ```cpp {fold}
 #include <bits/stdc++.h>
@@ -176,7 +175,7 @@ void bfs(int start) {
 
 ---
 
-### 3.2 Lowest Common Ancestor (Binary Lifting)
+## 3.2 Lowest Common Ancestor (Binary Lifting)
 
 ```cpp {fold}
 #include <bits/stdc++.h>
@@ -275,7 +274,7 @@ int main() {
 
 ---
 
-### 3.3 Fenwick Tree
+## 3.3 Fenwick Tree
 
 ```cpp {fold}
 #include <bits/stdc++.h>
@@ -329,7 +328,7 @@ int main() {
 * They are simpler than segment trees for sum-based problems.
 
 ---
-### 3.4 Segment Tree
+## 3.4 Segment Tree
 
 ```cpp {fold}
 #include <bits/stdc++.h>
@@ -417,7 +416,7 @@ int main() {
 
 ---
 
-## 4. Convex Hull
+# 4. Convex Hull
 
 ```cpp {fold}
 #include <bits/stdc++.h>
@@ -499,9 +498,9 @@ int main() {
 
 ---
 
-## 5. Number Theory
+# 5. Number Theory
 
-### 5.1 Binomial Coefficient Modulo Prime
+## 5.1 Binomial Coefficient Modulo Prime
 
 ```cpp {fold}
 #include <bits/stdc++.h>
@@ -567,7 +566,7 @@ int main() {
 * It is standard for repeated combination queries under a prime modulus.
 
 ---
-### 5.2 Miller–Rabin + Pollard’s Rho
+## 5.2 Miller–Rabin + Pollard’s Rho
 
 ```cpp {fold}
 #include <bits/stdc++.h>
@@ -693,9 +692,9 @@ int main() {
 
 ---
 
-## 6. Network Flow
+# 6. Network Flow
 
-### 6.1 Maximum Flow (Edmonds–Karp Style)
+## 6.1 Maximum Flow (Edmonds–Karp Style)
 
 ```cpp {fold}
 #include <bits/stdc++.h>
@@ -802,7 +801,7 @@ int main() {
 
 ---
 
-### 6.2 Min-Cost Max-Flow
+## 6.2 Min-Cost Max-Flow
 
 Function-only snippet (wire `adj`, `capacity`, `cost`, and zero `flowArr` in your `main`, then call `minCostMaxFlow(source, sink)`):
 
@@ -888,7 +887,7 @@ int minCostMaxFlow(int source, int sink) {
 
 ---
 
-### 6.3 Bipartite Matching via Flow Reduction
+## 6.3 Bipartite Matching via Flow Reduction
 
 ```cpp {fold}
 #include <bits/stdc++.h>
