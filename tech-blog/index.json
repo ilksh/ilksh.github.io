@@ -1,51 +1,17 @@
 {
-    "categories": {
-      "Frontend": {
-        "icon": "🎨",
-        "posts": [
-          {
-            "slug": "example-post",
-            "title": "Example Post Title",
-            "category": "REACT",
-            "date": "2024.01.15",
-            "readtime": "5 min",
-            "color": 1
-          }
-        ]
-      },
-      "DOCKER": {
-        "icon": "+",
-        "posts": [
-          {
-            "slug": "test",
-            "title": "A",
-            "category": "DOCKER",
-            "date": "2024.05.10",
-            "readtime": "10 min",
-            "color": 8
-          }
-        ]
-      },
-      "DevOps": {
-        "icon": "🐳",
-        "posts": [
-          {
-            "slug": "docker-basics",
-            "title": "Docker Getting Started",
-            "category": "DOCKER",
-            "date": "2024.03.20",
-            "readtime": "10 min",
-            "color": 5
-          },
-          {
-            "slug": "kubernetes-intro",
-            "title": "Kubernetes Introduction",
-            "category": "K8S",
-            "date": "2024.03.25",
-            "readtime": "15 min",
-            "color": 6
-          }
-        ]
-      }
+  "categories": {
+    "Theory": {
+      "icon": "∎",
+      "posts": [
+        {
+          "slug": "p-vs-np-and-reductions",
+          "title": "P vs NP, Reductions, and Beyond",
+          "category": "COMPLEXITY THEORY",
+          "date": "2026.03.24",
+          "readtime": "22 min",
+          "color": 1
+        }
+      ]
     }
   }
+}
