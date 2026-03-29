@@ -12,6 +12,19 @@
           "color": 1
         }
       ]
+    },
+    "PS": {
+      "icon": "◇",
+      "posts": [
+        {
+          "slug": "ps-basic-note-01",
+          "title": "Basic Note I",
+          "category": "PS",
+          "date": "2026.03.29",
+          "readtime": "35 min",
+          "color": 2
+        }
+      ]
     }
   }
 }
