@@ -1,6 +1,6 @@
 ---
 title: P vs NP, Reductions, and Beyond
-category: COMPLEXITY THEORY
+category: ALGORITHM
 date: 2026.03.24
 readtime: 22 min
 ---

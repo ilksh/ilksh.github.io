@@ -1,6 +1,6 @@
 ---
 title: Basic Note I
-category: PS
+category: PROBLEM SOLVING
 date: 2026.03.29
 readtime: 35 min
 ---
