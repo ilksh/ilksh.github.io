@@ -1,5 +1,5 @@
 ---
-title: Quantum N-Queens as LP, Grover Search, and QRL
+title: Quantum N-Queens
 category: ALGORITHM
 date: 2026.03.29
 readtime: 28 min
